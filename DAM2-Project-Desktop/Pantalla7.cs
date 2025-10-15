@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winDesktopForm
+namespace DAM2_Project_Desktop
 {
     public partial class Pantalla7 : Form
     {

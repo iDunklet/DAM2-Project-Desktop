@@ -1,4 +1,4 @@
-﻿namespace winDesktopForm
+﻿namespace DAM2_Project_Desktop
 {
     partial class Pantalla7
     {
