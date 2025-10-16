@@ -6,5 +6,10 @@ namespace DAM2_Project_Desktop
         {
             InitializeComponent();
         }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
