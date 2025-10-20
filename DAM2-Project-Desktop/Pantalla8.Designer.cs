@@ -39,14 +39,14 @@
             button2 = new Button();
             button1 = new Button();
             dataGridViewListadoUsuarios = new DataGridView();
-            ImgPerfil = new DataGridViewTextBoxColumn();
+            ImgPerfil = new DataGridViewImageColumn();
             Username = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellidos = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             Curso = new DataGridViewTextBoxColumn();
-            iconoEditar = new DataGridViewTextBoxColumn();
-            IconoDelete = new DataGridViewTextBoxColumn();
+            iconoEditar = new DataGridViewImageColumn();
+            IconoDelete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -217,6 +217,8 @@
             // 
             ImgPerfil.HeaderText = "";
             ImgPerfil.Name = "ImgPerfil";
+            ImgPerfil.Resizable = DataGridViewTriState.True;
+            ImgPerfil.SortMode = DataGridViewColumnSortMode.Automatic;
             ImgPerfil.Width = 30;
             // 
             // Username
@@ -252,13 +254,18 @@
             // 
             iconoEditar.HeaderText = "";
             iconoEditar.Name = "iconoEditar";
+            iconoEditar.Resizable = DataGridViewTriState.True;
+            iconoEditar.SortMode = DataGridViewColumnSortMode.Automatic;
             iconoEditar.Width = 40;
             // 
             // IconoDelete
             // 
             IconoDelete.HeaderText = "";
             IconoDelete.Name = "IconoDelete";
+            IconoDelete.Resizable = DataGridViewTriState.True;
+            IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
+            IconoDelete.DefaultCellStyle.BackColor = Color.FromArgb(255, 111, 97);
             // 
             // Pantalla8
             // 
@@ -291,13 +298,13 @@
         private Button button2;
         private Button button1;
         private DataGridView dataGridViewListadoUsuarios;
-        private DataGridViewTextBoxColumn ImgPerfil;
+        private DataGridViewImageColumn ImgPerfil;
         private DataGridViewTextBoxColumn Username;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellidos;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Curso;
-        private DataGridViewTextBoxColumn iconoEditar;
-        private DataGridViewTextBoxColumn IconoDelete;
+        private DataGridViewImageColumn iconoEditar;
+        private DataGridViewImageColumn IconoDelete;
     }
 }

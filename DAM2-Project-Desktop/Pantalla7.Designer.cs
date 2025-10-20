@@ -1,4 +1,4 @@
-﻿namespace DAM2_Project_Desktop
+namespace DAM2_Project_Desktop
 {
     partial class Pantalla7
     {
@@ -76,6 +76,10 @@
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
+
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.SplitterDistance = 95;
+            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -97,6 +101,9 @@
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.Location = new Point(0, 0);
             splitContainer2.Name = "splitContainer2";
+
+            splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.SplitterDistance = 250;
             // 
             // splitContainer2.Panel1
             // 
@@ -450,6 +457,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1424, 985);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.MinimumSize = new Size(1024, 768);
             Controls.Add(splitContainer1);
             Name = "Pantalla7";
             Text = "Pantalla7";

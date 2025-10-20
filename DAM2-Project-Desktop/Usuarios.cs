@@ -1,5 +1,7 @@
 ﻿using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using DAM2_Project_Desktop.Properties;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
 namespace DAM2_Project_Desktop
 {
@@ -42,6 +44,8 @@ namespace DAM2_Project_Desktop
             this.password = password;
             this.userName = userName;
             this.imgPerfil = imgPerfil;
+
+           
         }
 
         public Usuarios(string nombre, string apellido1, DateTime fechaNacimiento,
@@ -64,6 +68,7 @@ namespace DAM2_Project_Desktop
 
 
         //metodos 
+
         private string UserNameGenerator()
         {
             string username = "";

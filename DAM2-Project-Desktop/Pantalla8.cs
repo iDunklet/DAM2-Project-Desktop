@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAM2_Project_Desktop.Properties;
 
 namespace DAM2_Project_Desktop
 {
@@ -68,7 +69,7 @@ namespace DAM2_Project_Desktop
                 "juan.perez@ejemplo.com",
                 "1º DAM",
                 null, // iconoEditar
-                null  // IconoDelete
+               GetImgIconDelete()
             );
 
             // Fila 2 (Impar/Alterna)
@@ -92,9 +93,26 @@ namespace DAM2_Project_Desktop
             dataGridViewListadoUsuarios.Height = totalHeight + 3;
         }
 
+        public Bitmap GetImgIconDelete()
+        {
+            Bitmap icon = Properties.Resources.icon_delete;
+            Bitmap resizedIcon = new Bitmap(icon, new Size(15, 15));
+            return resizedIcon;
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
 
+            if (columnName == "IconoDelete")
+            {
+                dataGridViewListadoUsuarios.Rows.RemoveAt(e.RowIndex);
+
+            }
+            if (columnName == "iconoEdit")
+            {
+                //falta
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
