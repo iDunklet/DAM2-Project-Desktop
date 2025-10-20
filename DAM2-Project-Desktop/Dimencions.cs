@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +15,9 @@ namespace DAM2_Project_Desktop
         {
             form.MinimumSize = new Size(MinWidth, MinHeight);
         }
+///lol
+
+
 
         public static Size Scale(Size originalSize, Size currentFormSize)
         {
