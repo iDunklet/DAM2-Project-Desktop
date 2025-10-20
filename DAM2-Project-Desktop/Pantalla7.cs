@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace DAM2_Project_Desktop
 {
-    public partial class Pantalla7 : Form
+    public partial class Tasky : Form
     {
-        public Pantalla7()
+        public Tasky()
         {
             InitializeComponent();
             ActivarEdicionPorDobleClick();
-            Dimencions.ApplyMinimum(this);  
+            Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla7_Resize;
         }
 
         private void Pantalla7_Resize(object sender, EventArgs e)
         {
-    
+
             button1.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button2.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button3.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
@@ -32,17 +32,17 @@ namespace DAM2_Project_Desktop
             button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
 
         }
-        
+
         private void ActivarEdicionPorDobleClick()
         {
-            
+
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox textBox)
                 {
-                    textBox.ReadOnly = true; 
+                    textBox.ReadOnly = true;
                     textBox.DoubleClick += TextBox_DoubleClick;
-                    textBox.Leave += TextBox_Leave; 
+                    textBox.Leave += TextBox_Leave;
                 }
             }
         }
@@ -89,5 +89,9 @@ namespace DAM2_Project_Desktop
 
         }
 
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
