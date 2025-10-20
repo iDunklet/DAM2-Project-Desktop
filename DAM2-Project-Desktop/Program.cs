@@ -14,6 +14,7 @@ namespace DAM2_Project_Desktop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Pantalla7());
+            //tonto quien lo lea
         }
     }
 }
