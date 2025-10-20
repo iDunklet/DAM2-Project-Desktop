@@ -37,6 +37,7 @@ namespace DAM2_Project_Desktop
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
             buttonConfigurarUsuarioNuevaIMG = new Button();
             buttonConfigurarUsuarioGuardar = new Button();
             label10 = new Label();
@@ -57,7 +58,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido1 = new TextBox();
             label1 = new Label();
             textBoxConfigurarUsuarioName = new TextBox();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -90,7 +90,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer1.Size = new Size(1424, 985);
-            splitContainer1.SplitterDistance = 95;
+            splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 2;
             splitContainer1.TabIndex = 0;
             // 
@@ -141,8 +141,8 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.Controls.Add(label1);
             splitContainer2.Panel2.Controls.Add(textBoxConfigurarUsuarioName);
             splitContainer2.Panel2.ForeColor = Color.FromArgb(35, 78, 82);
-            splitContainer2.Size = new Size(1424, 888);
-            splitContainer2.SplitterDistance = 244;
+            splitContainer2.Size = new Size(1424, 889);
+            splitContainer2.SplitterDistance = 243;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
@@ -226,6 +226,14 @@ namespace DAM2_Project_Desktop
             button1.TabIndex = 3;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(70, 112);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 200);
+            pictureBox1.TabIndex = 25;
+            pictureBox1.TabStop = false;
             // 
             // buttonConfigurarUsuarioNuevaIMG
             // 
@@ -325,8 +333,10 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioClase.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioClase.Location = new Point(758, 476);
             textBoxConfigurarUsuarioClase.Name = "textBoxConfigurarUsuarioClase";
+            textBoxConfigurarUsuarioClase.ReadOnly = true;
             textBoxConfigurarUsuarioClase.Size = new Size(300, 34);
             textBoxConfigurarUsuarioClase.TabIndex = 15;
+            textBoxConfigurarUsuarioClase.DoubleClick += TextBox_DoubleClick;
             // 
             // label5
             // 
@@ -345,18 +355,20 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioEmail.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioEmail.Location = new Point(381, 476);
             textBoxConfigurarUsuarioEmail.Name = "textBoxConfigurarUsuarioEmail";
+            textBoxConfigurarUsuarioEmail.ReadOnly = true;
             textBoxConfigurarUsuarioEmail.Size = new Size(300, 34);
             textBoxConfigurarUsuarioEmail.TabIndex = 13;
+            textBoxConfigurarUsuarioEmail.DoubleClick += TextBox_DoubleClick;
             // 
             // dateTimePickerConfigurarUsuarioFechaNacimiento
             // 
+            dateTimePickerConfigurarUsuarioFechaNacimiento.CustomFormat = "dd/MM/yyyy";
             dateTimePickerConfigurarUsuarioFechaNacimiento.Font = new Font("Segoe UI", 15F);
+            dateTimePickerConfigurarUsuarioFechaNacimiento.Format = DateTimePickerFormat.Custom;
             dateTimePickerConfigurarUsuarioFechaNacimiento.Location = new Point(758, 368);
             dateTimePickerConfigurarUsuarioFechaNacimiento.Name = "dateTimePickerConfigurarUsuarioFechaNacimiento";
             dateTimePickerConfigurarUsuarioFechaNacimiento.Size = new Size(300, 34);
             dateTimePickerConfigurarUsuarioFechaNacimiento.TabIndex = 12;
-            dateTimePickerConfigurarUsuarioFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dateTimePickerConfigurarUsuarioFechaNacimiento.CustomFormat = "dd/MM/yyyy";
             // 
             // label4
             // 
@@ -385,9 +397,12 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido2.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioApellido2.Location = new Point(381, 368);
             textBoxConfigurarUsuarioApellido2.Name = "textBoxConfigurarUsuarioApellido2";
+            textBoxConfigurarUsuarioApellido2.ReadOnly = true;
             textBoxConfigurarUsuarioApellido2.Size = new Size(300, 34);
             textBoxConfigurarUsuarioApellido2.TabIndex = 8;
             textBoxConfigurarUsuarioApellido2.TextChanged += textBox1_TextChanged;
+
+            textBoxConfigurarUsuarioApellido2.DoubleClick += TextBox_DoubleClick;
             // 
             // label2
             // 
@@ -407,8 +422,11 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido1.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioApellido1.Location = new Point(758, 268);
             textBoxConfigurarUsuarioApellido1.Name = "textBoxConfigurarUsuarioApellido1";
+            textBoxConfigurarUsuarioApellido1.ReadOnly = true;
             textBoxConfigurarUsuarioApellido1.Size = new Size(300, 34);
             textBoxConfigurarUsuarioApellido1.TabIndex = 6;
+
+            textBoxConfigurarUsuarioApellido1.DoubleClick += TextBox_DoubleClick;
             // 
             // label1
             // 
@@ -427,16 +445,12 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioName.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioName.Location = new Point(381, 268);
             textBoxConfigurarUsuarioName.Name = "textBoxConfigurarUsuarioName";
+            textBoxConfigurarUsuarioName.ReadOnly = true;
             textBoxConfigurarUsuarioName.Size = new Size(300, 34);
             textBoxConfigurarUsuarioName.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(70, 112);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 200);
-            pictureBox1.TabIndex = 25;
-            pictureBox1.TabStop = false;
+            textBoxConfigurarUsuarioName.TextChanged += textBoxConfigurarUsuarioName_TextChanged;
+
+            textBoxConfigurarUsuarioName.DoubleClick += TextBox_DoubleClick;
             // 
             // Pantalla7
             // 
