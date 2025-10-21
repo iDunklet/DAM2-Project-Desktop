@@ -61,6 +61,11 @@ namespace DAM2_Project_Desktop
             this.userName = userName;
             this.imgPerfil = imgPerfil;
         }
+        //constructor de test para proyecto Hugo
+        public Usuarios(string nombre)
+        {
+            this.nombre = nombre;
+        }
 
 
 
