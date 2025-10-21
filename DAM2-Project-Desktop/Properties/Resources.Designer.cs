@@ -73,9 +73,9 @@ namespace DAM2_Project_Desktop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logotipo__1_ {
+        internal static System.Drawing.Bitmap icon_delete {
             get {
-                object obj = ResourceManager.GetObject("logotipo (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -87,6 +87,15 @@ namespace DAM2_Project_Desktop.Properties {
             get {
                 object obj = ResourceManager.GetObject("logotipo (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a lol.
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }
