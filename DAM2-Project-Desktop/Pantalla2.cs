@@ -15,11 +15,34 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla2 : Form
     {
+        List<Usuarios> listaUsuarios;
+        List<Tarea> listaTareas;
+        Proyecto proyectoDemo;
         public Pantalla2()
         {
             InitializeComponent();
             RedondearPanel(projectTemplatePanel, 25);
+
+            listaUsuarios = new List<Usuarios>
+            {
+                new Usuarios("Carlos"),
+                new Usuarios("María"),
+                new Usuarios("Lucía")
+            };
+
+            listaTareas = new List<Tarea> {
+                new Tarea("Tarea1"),
+                new Tarea("Tarea2"),
+                new Tarea("Tarea3")
+            };
+            proyectoDemo = new Proyecto(
+                "Proyecto Demo",
+                listaUsuarios,
+                listaTareas,
+                null
+            );
         }
+
 
 
         //Redondear panel
@@ -35,7 +58,19 @@ namespace DAM2_Project_Desktop
             panel.Region = new Region(path);
         }
 
-        private void label5_Click(object sender, EventArgs e)
+
+
+        private void projectTemplatePanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void projectNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pantalla2_Load(object sender, EventArgs e)
         {
 
         }
