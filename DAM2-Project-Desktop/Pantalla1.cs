@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +42,38 @@ namespace DAM2_Project_Desktop
 
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonLogin_Click(object sender, EventArgs e)
+        {
+            string username = textBoxUser.Text.Trim();
+            string password = textBoxPass.Text.Trim();
+
+            
+            string correctUsername = "Tasky";
+            string correctPassword = "123456";
+
+            if (username == correctUsername & password == correctPassword) 
+            {
+                MessageBox.Show("Login successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Tasky tasky = new Tasky();
+                tasky.Show();
+               
+                this.Hide();
+            }
+                else
+                {
+                MessageBox.Show("Incorrect username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxPass.Clear();
+                textBoxUser.Clear();
+                textBoxUser.Focus(); 
+                }
+            }
+
+        }
     }
-}
+
 
