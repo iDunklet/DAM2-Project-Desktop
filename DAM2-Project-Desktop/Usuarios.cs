@@ -1,5 +1,7 @@
 ﻿using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using DAM2_Project_Desktop.Properties;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
 namespace DAM2_Project_Desktop
 {
@@ -14,24 +16,27 @@ namespace DAM2_Project_Desktop
         public string email { get; set;}
         public string password { get; set; }
 
-        private string userName;
-        public string userNameGetSet
-        {
-            get { return userNameGetSet; }
-            set { userNameGetSet = UserNameGenerator(); }
-        }
+        public string userName { get; }
+  
 
         private Bitmap imgPerfil;
         public Bitmap imgPerfilGetSet
         {
-            get { return imgPerfilGetSet; }
-            set { imgPerfilGetSet = GenerarImagenIniciales(100); }
+            get { return imgPerfil; }
+            set { imgPerfil = GenerarImagenIniciales(100); }
         }
 
+        private string apellidoCompleto;
+
+        public string apellidoCompletoGetSet
+        { 
+            get { return apellidoCompleto; }
+            set { apellidoCompleto = setApellidoCompleto(); }
+        }
 
         //constructores
         public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
-            string classe, string email, string password, string userName, Bitmap imgPerfil)
+            string classe, string email, string password, string userName)
         {
             this.nombre = nombre;
             this.apellido1 = apellido1;
@@ -40,12 +45,18 @@ namespace DAM2_Project_Desktop
             this.classe = classe;
             this.email = email;
             this.password = password;
-            this.userName = userName;
-            this.imgPerfil = imgPerfil;
+
+
+            this.userName = UserNameGenerator();
+
+            this.imgPerfil = GenerarImagenIniciales(100);
+            this.apellidoCompleto = "asdxasd";
+
+           
         }
 
         public Usuarios(string nombre, string apellido1, DateTime fechaNacimiento,
-    string classe, string email, string password, string userName, Bitmap imgPerfil)
+    string classe, string email, string password, string userName)
         {
             this.nombre = nombre;
             this.apellido1 = apellido1;
@@ -54,8 +65,12 @@ namespace DAM2_Project_Desktop
             this.classe = classe;
             this.email = email;
             this.password = password;
-            this.userName = userName;
-            this.imgPerfil = imgPerfil;
+
+
+            this.userName = UserNameGenerator();
+
+            this.imgPerfil = GenerarImagenIniciales(100);
+            this.apellidoCompleto = setApellidoCompleto();
         }
 
 
@@ -64,6 +79,11 @@ namespace DAM2_Project_Desktop
 
 
         //metodos 
+
+        public string setApellidoCompleto() 
+        { return this.apellido1 + " " + this.apellido2; } 
+        
+
         private string UserNameGenerator()
         {
             string username = "";

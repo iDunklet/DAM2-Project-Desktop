@@ -15,7 +15,7 @@ namespace DAM2_Project_Desktop
         {
             form.MinimumSize = new Size(MinWidth, MinHeight);
         }
-///lol
+///lol23333
 
 
 
