@@ -13,9 +13,11 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla8 : Form
     {
+
         public Pantalla8()
         {
             InitializeComponent();
+            dataGridViewListadoUsuarios.AutoGenerateColumns = false;
             this.Load += new EventHandler(Pantalla8_Load);
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla8_Resize;
@@ -58,31 +60,10 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla8_Load(object sender, EventArgs e)
         {
-            // --- CÓDIGO PARA AÑADIR LAS FILAS DE PRUEBA ---
+            dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
 
-            // Fila 1 (Par)
-            dataGridViewListadoUsuarios.Rows.Add(
-                null, // ImgPerfil
-                "juanp", // Username
-                "Juan",
-                "Pérez García",
-                "juan.perez@ejemplo.com",
-                "1º DAM",
-                null, // iconoEditar
-               GetImgIconDelete()
-            );
+            ConfigurarColumnaIconoDelete();
 
-            // Fila 2 (Impar/Alterna)
-            dataGridViewListadoUsuarios.Rows.Add(
-                null, // ImgPerfil
-                "anal", // Username
-                "Ana",
-                "López Fernández",
-                "ana.lopez@ejemplo.com",
-                "2º DAW",
-                null, // iconoEditar
-                null  // IconoDelete
-            );
 
             // --- CÓDIGO PARA EL REDIMENSIONAMIENTO AUTOMÁTICO DE ALTURA ---
 
@@ -102,22 +83,59 @@ namespace DAM2_Project_Desktop
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int pepe = 14;
+
             string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
+            DataGridViewRow clickedRow = dataGridViewListadoUsuarios.Rows[e.RowIndex];
 
             if (columnName == "IconoDelete")
             {
-                dataGridViewListadoUsuarios.Rows.RemoveAt(e.RowIndex);
+                Usuarios usuarioAEliminar = clickedRow.DataBoundItem as Usuarios;
+
+                if (usuarioAEliminar != null)
+                {
+
+                    ListadoDatosClasses.ListadoUsuarios.Remove(usuarioAEliminar);
+                    ActualizarAlturaDataGridView();
+                }
 
             }
-            if (columnName == "iconoEdit")
+            if (columnName == "iconoEditar")
             {
-                //falta
+                Pantalla7 p = new Pantalla7(clickedRow.DataBoundItem as Usuarios);
+                p.Show();
+            }
+        }
+        private void ActualizarAlturaDataGridView()
+        {
+
+            int totalHeight = dataGridViewListadoUsuarios.ColumnHeadersHeight;
+
+
+            if (dataGridViewListadoUsuarios.Rows.Count > 0)
+            {
+                totalHeight += dataGridViewListadoUsuarios.Rows.Cast<DataGridViewRow>().Sum(row => row.Height);
+            }
+
+            dataGridViewListadoUsuarios.Height = totalHeight + 3;
+        }
+        private void ConfigurarColumnaIconoDelete()
+        {
+            if (dataGridViewListadoUsuarios.Columns.Contains("IconoDelete"))
+            {
+                DataGridViewImageColumn deleteCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["IconoDelete"];
+                deleteCol.Image = GetImgIconDelete();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewListadoUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+  
         }
     }
 }

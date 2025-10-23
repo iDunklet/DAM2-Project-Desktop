@@ -12,12 +12,37 @@ namespace DAM2_Project_Desktop
 {
     public partial class Tasky : Form
     {
-        public Tasky()
+        private Usuarios usuarioEncontrado;
+
+
+
+        public Pantalla7(Usuarios usuarioEncontrado)
         {
+
             InitializeComponent();
+
+
+            if (usuarioEncontrado != null)
+            {
+
+                textBoxConfigurarUsuarioName.Text = usuarioEncontrado.nombre;
+                textBoxConfigurarUsuarioApellido1.Text = usuarioEncontrado.apellido1;
+                dateTimePickerConfigurarUsuarioFechaNacimiento.Value = usuarioEncontrado.fechaNacimiento;
+                textBoxConfigurarUsuarioClase.Text = usuarioEncontrado.classe;
+                textBoxConfigurarUsuarioEmail.Text = usuarioEncontrado.email;
+
+            }
+
+
+
             ActivarEdicionPorDobleClick();
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla7_Resize;
+
+
+
+
+
         }
 
         private void Pantalla7_Resize(object sender, EventArgs e)
@@ -89,9 +114,19 @@ namespace DAM2_Project_Desktop
 
         }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        private void buttonConfigurarUsuarioGuardar_Click(object sender, EventArgs e)
         {
+            string nuevaContrase�a = textBoxConfigurarUsuarioNuevaContrase�a.Text;
+            string confirmarContrase�a = textBoxConfigurarUsuarioConfirmarContrase�a.Text;
+            if (nuevaContrase�a.Equals(confirmarContrase�a))
+            {
+                usuarioEncontrado.password = nuevaContrase�a;
 
+                textBoxConfigurarUsuarioNuevaContrase�a.Clear();
+                textBoxConfigurarUsuarioConfirmarContrase�a.Clear();
+                textBoxConfigurarUsuarioNuevaContrase�a.Focus();
+            }
         }
+
     }
 }

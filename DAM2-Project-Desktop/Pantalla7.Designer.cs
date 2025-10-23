@@ -261,6 +261,7 @@ namespace DAM2_Project_Desktop
             buttonConfigurarUsuarioGuardar.TabIndex = 23;
             buttonConfigurarUsuarioGuardar.Text = "Guardar";
             buttonConfigurarUsuarioGuardar.UseVisualStyleBackColor = true;
+            buttonConfigurarUsuarioGuardar.Click += buttonConfigurarUsuarioGuardar_Click;
             // 
             // label10
             // 
@@ -468,13 +469,11 @@ namespace DAM2_Project_Desktop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1627, 1055);
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1168, 1008);
-            Name = "Tasky";
-            Text = "Tasky";
+            MinimumSize = new Size(1024, 768);
+            Name = "Pantalla7";
+            Text = "Pantalla7";
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
