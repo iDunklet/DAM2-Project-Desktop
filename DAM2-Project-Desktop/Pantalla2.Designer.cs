@@ -219,21 +219,21 @@
             projectTemplatePanel.Name = "projectTemplatePanel";
             projectTemplatePanel.Size = new Size(255, 107);
             projectTemplatePanel.TabIndex = 0;
+            projectTemplatePanel.Click += projectTemplatePanel_Click;
             // 
             // peopleLabel
             // 
             peopleLabel.AutoSize = true;
-            peopleLabel.Location = new Point(110, 80);
+            peopleLabel.Location = new Point(110, 72);
             peopleLabel.Name = "peopleLabel";
             peopleLabel.Size = new Size(63, 15);
             peopleLabel.TabIndex = 3;
             peopleLabel.Text = "0 Personas";
-            peopleLabel.Click += label5_Click;
             // 
             // tasksLabel
             // 
             tasksLabel.AutoSize = true;
-            tasksLabel.Location = new Point(110, 62);
+            tasksLabel.Location = new Point(110, 56);
             tasksLabel.Name = "tasksLabel";
             tasksLabel.Size = new Size(93, 15);
             tasksLabel.TabIndex = 2;
@@ -242,11 +242,13 @@
             // projectNameLabel
             // 
             projectNameLabel.AutoSize = true;
+            projectNameLabel.Font = new Font("Segoe UI", 15F);
             projectNameLabel.Location = new Point(110, 17);
             projectNameLabel.Name = "projectNameLabel";
-            projectNameLabel.Size = new Size(54, 15);
+            projectNameLabel.Size = new Size(90, 28);
             projectNameLabel.TabIndex = 1;
             projectNameLabel.Text = "Nombre ";
+            projectNameLabel.Click += projectNameLabel_Click;
             // 
             // projectPictureBox
             // 
@@ -287,6 +289,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Pantalla2";
             Text = "Form1";
+            Load += Pantalla2_Load;
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
