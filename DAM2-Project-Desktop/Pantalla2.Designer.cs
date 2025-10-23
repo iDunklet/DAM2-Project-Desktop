@@ -38,11 +38,7 @@
             button2 = new Button();
             button1 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            projectTemplatePanel = new Panel();
-            peopleLabel = new Label();
-            tasksLabel = new Label();
-            projectNameLabel = new Label();
-            projectPictureBox = new PictureBox();
+            controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -53,8 +49,6 @@
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            projectTemplatePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)projectPictureBox).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -75,8 +69,8 @@
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1244, 733);
-            splitContainer1.SplitterDistance = 71;
+            splitContainer1.Size = new Size(1424, 985);
+            splitContainer1.SplitterDistance = 95;
             splitContainer1.SplitterWidth = 2;
             splitContainer1.TabIndex = 0;
             // 
@@ -106,14 +100,14 @@
             splitContainer2.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Panel2.Controls.Add(label1);
-            splitContainer2.Size = new Size(1244, 660);
-            splitContainer2.SplitterDistance = 213;
+            splitContainer2.Size = new Size(1424, 888);
+            splitContainer2.SplitterDistance = 243;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
             // button7
             // 
-            button7.Location = new Point(18, 603);
+            button7.Location = new Point(18, 818);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(175, 45);
@@ -201,62 +195,24 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(projectTemplatePanel);
+            flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Location = new Point(54, 127);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(922, 285);
+            flowLayoutPanel1.Size = new Size(1096, 736);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // projectTemplatePanel
+            // controlProyectoPantalla21
             // 
-            projectTemplatePanel.BackColor = Color.FromArgb(242, 222, 166);
-            projectTemplatePanel.Controls.Add(peopleLabel);
-            projectTemplatePanel.Controls.Add(tasksLabel);
-            projectTemplatePanel.Controls.Add(projectNameLabel);
-            projectTemplatePanel.Controls.Add(projectPictureBox);
-            projectTemplatePanel.Location = new Point(15, 15);
-            projectTemplatePanel.Margin = new Padding(15);
-            projectTemplatePanel.Name = "projectTemplatePanel";
-            projectTemplatePanel.Size = new Size(255, 107);
-            projectTemplatePanel.TabIndex = 0;
-            projectTemplatePanel.Click += projectTemplatePanel_Click;
-            // 
-            // peopleLabel
-            // 
-            peopleLabel.AutoSize = true;
-            peopleLabel.Location = new Point(110, 72);
-            peopleLabel.Name = "peopleLabel";
-            peopleLabel.Size = new Size(63, 15);
-            peopleLabel.TabIndex = 3;
-            peopleLabel.Text = "0 Personas";
-            // 
-            // tasksLabel
-            // 
-            tasksLabel.AutoSize = true;
-            tasksLabel.Location = new Point(110, 56);
-            tasksLabel.Name = "tasksLabel";
-            tasksLabel.Size = new Size(93, 15);
-            tasksLabel.TabIndex = 2;
-            tasksLabel.Text = "0 Tareas abiertas";
-            // 
-            // projectNameLabel
-            // 
-            projectNameLabel.AutoSize = true;
-            projectNameLabel.Font = new Font("Segoe UI", 15F);
-            projectNameLabel.Location = new Point(110, 17);
-            projectNameLabel.Name = "projectNameLabel";
-            projectNameLabel.Size = new Size(90, 28);
-            projectNameLabel.TabIndex = 1;
-            projectNameLabel.Text = "Nombre ";
-            projectNameLabel.Click += projectNameLabel_Click;
-            // 
-            // projectPictureBox
-            // 
-            projectPictureBox.Location = new Point(12, 17);
-            projectPictureBox.Name = "projectPictureBox";
-            projectPictureBox.Size = new Size(81, 70);
-            projectPictureBox.TabIndex = 0;
-            projectPictureBox.TabStop = false;
+            controlProyectoPantalla21.BackColor = Color.White;
+            controlProyectoPantalla21.BorderStyle = BorderStyle.FixedSingle;
+            controlProyectoPantalla21.Imagen = null;
+            controlProyectoPantalla21.Location = new Point(10, 10);
+            controlProyectoPantalla21.Margin = new Padding(10);
+            controlProyectoPantalla21.Name = "controlProyectoPantalla21";
+            controlProyectoPantalla21.Proyecto = null;
+            controlProyectoPantalla21.Size = new Size(259, 108);
+            controlProyectoPantalla21.TabIndex = 1;
+            
             // 
             // label2
             // 
@@ -284,7 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1244, 733);
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Pantalla2";
@@ -299,9 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            projectTemplatePanel.ResumeLayout(false);
-            projectTemplatePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)projectPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -319,10 +272,6 @@
         private Label label1;
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel projectTemplatePanel;
-        private Label peopleLabel;
-        private Label tasksLabel;
-        private Label projectNameLabel;
-        private PictureBox projectPictureBox;
+        private ControlProyectoPantalla2 controlProyectoPantalla21;
     }
 }
