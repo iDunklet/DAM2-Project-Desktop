@@ -77,6 +77,11 @@ namespace DAM2_Project_Desktop
         {
             this.nombre = nombre;
         }
+        //constructor de test para proyecto Hugo
+        public Usuarios(string nombre)
+        {
+            this.nombre = nombre;
+        }
 
 
 
