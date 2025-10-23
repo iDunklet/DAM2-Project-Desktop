@@ -76,10 +76,6 @@ namespace DAM2_Project_Desktop
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
-
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.SplitterDistance = 95;
-            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -101,9 +97,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.Location = new Point(0, 0);
             splitContainer2.Name = "splitContainer2";
-
-            splitContainer2.Dock = DockStyle.Fill;
-            splitContainer2.SplitterDistance = 250;
             // 
             // splitContainer2.Panel1
             // 
@@ -254,6 +247,7 @@ namespace DAM2_Project_Desktop
             buttonConfigurarUsuarioGuardar.TabIndex = 23;
             buttonConfigurarUsuarioGuardar.Text = "Guardar";
             buttonConfigurarUsuarioGuardar.UseVisualStyleBackColor = true;
+            buttonConfigurarUsuarioGuardar.Click += buttonConfigurarUsuarioGuardar_Click;
             // 
             // label10
             // 
@@ -401,7 +395,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido2.Size = new Size(300, 34);
             textBoxConfigurarUsuarioApellido2.TabIndex = 8;
             textBoxConfigurarUsuarioApellido2.TextChanged += textBox1_TextChanged;
-
             textBoxConfigurarUsuarioApellido2.DoubleClick += TextBox_DoubleClick;
             // 
             // label2
@@ -425,7 +418,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido1.ReadOnly = true;
             textBoxConfigurarUsuarioApellido1.Size = new Size(300, 34);
             textBoxConfigurarUsuarioApellido1.TabIndex = 6;
-
             textBoxConfigurarUsuarioApellido1.DoubleClick += TextBox_DoubleClick;
             // 
             // label1
@@ -449,7 +441,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioName.Size = new Size(300, 34);
             textBoxConfigurarUsuarioName.TabIndex = 0;
             textBoxConfigurarUsuarioName.TextChanged += textBoxConfigurarUsuarioName_TextChanged;
-
             textBoxConfigurarUsuarioName.DoubleClick += TextBox_DoubleClick;
             // 
             // Pantalla7
@@ -457,9 +448,8 @@ namespace DAM2_Project_Desktop
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1424, 985);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.MinimumSize = new Size(1024, 768);
             Controls.Add(splitContainer1);
+            MinimumSize = new Size(1024, 768);
             Name = "Pantalla7";
             Text = "Pantalla7";
             splitContainer1.Panel2.ResumeLayout(false);
