@@ -1,4 +1,4 @@
-﻿namespace DAM2_Project_Desktop
+namespace DAM2_Project_Desktop
 {
     partial class Pantalla8
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
@@ -207,16 +208,15 @@
             dataGridViewListadoUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewListadoUsuarios.ColumnHeadersVisible = false;
             dataGridViewListadoUsuarios.Columns.AddRange(new DataGridViewColumn[] { ImgPerfil, Username, Nombre, Apellidos, Email, Curso, iconoEditar, IconoDelete });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(242, 222, 166);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewListadoUsuarios.Location = new Point(59, 159);
-            dataGridViewListadoUsuarios.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(242, 222, 166);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewListadoUsuarios.Location = new Point(52, 119);
             dataGridViewListadoUsuarios.Name = "dataGridViewListadoUsuarios";
             dataGridViewListadoUsuarios.RowHeadersVisible = false;
             dataGridViewListadoUsuarios.RowHeadersWidth = 51;
@@ -224,9 +224,11 @@
             dataGridViewListadoUsuarios.Size = new Size(1227, 201);
             dataGridViewListadoUsuarios.TabIndex = 0;
             dataGridViewListadoUsuarios.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewListadoUsuarios.CellFormatting += dataGridViewListadoUsuarios_CellFormatting;
             // 
             // ImgPerfil
             // 
+            ImgPerfil.DataPropertyName = "imgPerfilGetSet";
             ImgPerfil.HeaderText = "";
             ImgPerfil.MinimumWidth = 6;
             ImgPerfil.Name = "ImgPerfil";
@@ -236,6 +238,7 @@
             // 
             // Username
             // 
+            Username.DataPropertyName = "userNameGetSet";
             Username.HeaderText = "Username";
             Username.MinimumWidth = 6;
             Username.Name = "Username";
@@ -243,6 +246,7 @@
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
@@ -250,6 +254,7 @@
             // 
             // Apellidos
             // 
+            Apellidos.DataPropertyName = "apellidoCompletoGetSet";
             Apellidos.HeaderText = "Apellidos";
             Apellidos.MinimumWidth = 6;
             Apellidos.Name = "Apellidos";
@@ -257,6 +262,7 @@
             // 
             // Email
             // 
+            Email.DataPropertyName = "email";
             Email.HeaderText = "Email";
             Email.MinimumWidth = 6;
             Email.Name = "Email";
@@ -264,6 +270,7 @@
             // 
             // Curso
             // 
+            Curso.DataPropertyName = "classe";
             Curso.HeaderText = "Cuerso";
             Curso.MinimumWidth = 6;
             Curso.Name = "Curso";
@@ -280,13 +287,16 @@
             // 
             // IconoDelete
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 111, 97);
+            dataGridViewCellStyle1.NullValue = resources.GetObject("dataGridViewCellStyle1.NullValue");
+            IconoDelete.DefaultCellStyle = dataGridViewCellStyle1;
             IconoDelete.HeaderText = "";
             IconoDelete.MinimumWidth = 6;
             IconoDelete.Name = "IconoDelete";
             IconoDelete.Resizable = DataGridViewTriState.True;
             IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
-            IconoDelete.DefaultCellStyle.BackColor = Color.FromArgb(255, 111, 97);
             // 
             // Pantalla8
             // 
