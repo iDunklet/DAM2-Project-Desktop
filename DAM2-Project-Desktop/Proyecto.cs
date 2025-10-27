@@ -30,27 +30,25 @@ namespace DAM2_Project_Desktop
         //Metodo
         private Bitmap GenerarImagenIniciales(string titulo, int tamano = 100)
         {
-            // Iniciales
-            string iniciales = "";
+            // Obtener solo la PRIMERA letra del título
+            string inicial = "";
             if (!string.IsNullOrWhiteSpace(titulo))
             {
-                var palabras = titulo.Split(' ');
-                foreach (var p in palabras)
-                    if (!string.IsNullOrEmpty(p))
-                        iniciales += p[0];
+                // Tomar solo el primer carácter no-espacio
+                inicial = titulo.Trim()[0].ToString();
             }
 
-            if (string.IsNullOrEmpty(iniciales))
-                iniciales = "?";
+            if (string.IsNullOrEmpty(inicial))
+                inicial = "?";
 
-            iniciales = iniciales.ToUpper();
+            inicial = inicial.ToUpper();
 
             // Colores posibles
             Color[] coloresAvatar = {
-                Color.SteelBlue, Color.DarkCyan, Color.IndianRed,
-                Color.DarkOliveGreen, Color.MediumVioletRed,
-                Color.SlateBlue, Color.DarkOrange
-            };
+        Color.SteelBlue, Color.DarkCyan, Color.IndianRed,
+        Color.DarkOliveGreen, Color.MediumVioletRed,
+        Color.SlateBlue, Color.DarkOrange
+    };
             Random random = new Random();
             Color fondoColor = coloresAvatar[random.Next(coloresAvatar.Length)];
 
@@ -61,13 +59,14 @@ namespace DAM2_Project_Desktop
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
 
-                // Fondo
+                // Fondo RECTANGULAR (sin cambios)
                 using (var brochaFondo = new SolidBrush(fondoColor))
                     g.FillRectangle(brochaFondo, 0, 0, tamano, tamano);
 
-                // Texto
-                float fontSize = tamano / (iniciales.Length > 1 ? 2.5f : 1.8f);
-                using (var fuente = new Font("Arial", fontSize, FontStyle.Bold))
+                // Fuente MÁS GRANDE para una sola letra
+                float fontSize = tamano * 0.7f; // 70% del tamaño para una letra más grande
+
+                using (var fuente = new Font("Arial", fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
                 using (var brochaTexto = new SolidBrush(Color.White))
                 {
                     var formato = new StringFormat
@@ -77,7 +76,11 @@ namespace DAM2_Project_Desktop
                     };
 
                     var areaDibujo = new RectangleF(0, 0, tamano, tamano);
-                    g.DrawString(iniciales, fuente, brochaTexto, areaDibujo, formato);
+
+                    // Pequeño ajuste para mejor centrado visual
+                    areaDibujo.Y -= tamano * 0.03f;
+
+                    g.DrawString(inicial, fuente, brochaTexto, areaDibujo, formato);
                 }
             }
 
