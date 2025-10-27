@@ -15,6 +15,7 @@ namespace DAM2_Project_Desktop
         public Pantalla3()
         {
             InitializeComponent();
+            dataGridView1_CellContentClick();
         }
 
         private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)
@@ -74,7 +75,14 @@ namespace DAM2_Project_Desktop
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewComboBoxColumn colOpciones = new DataGridViewComboBoxColumn();
+            colOpciones.HeaderText = "Opciones";
+            colOpciones.Items.AddRange("Opción 1", "Opción 2", "Opción 3");
+            dataGridView1.Columns.Add(colOpciones);
 
+            DataGridViewCheckBoxColumn colCheck = new DataGridViewCheckBoxColumn();
+            colCheck.HeaderText = "Activo";
+            dataGridView1.Columns.Add(colCheck);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -108,6 +116,11 @@ namespace DAM2_Project_Desktop
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }

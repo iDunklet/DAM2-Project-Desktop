@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla3));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
+            pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox5 = new PictureBox();
             splitContainer3 = new SplitContainer();
@@ -56,6 +57,7 @@
             button1 = new Button();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
@@ -69,6 +71,7 @@
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
@@ -135,6 +138,7 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(pictureBox6);
             splitContainer2.Panel1.Controls.Add(pictureBox7);
             splitContainer2.Panel1.Controls.Add(pictureBox5);
             splitContainer2.Panel1.ForeColor = SystemColors.MenuText;
@@ -148,6 +152,16 @@
             splitContainer2.SplitterDistance = 127;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.person;
+            pictureBox6.Location = new Point(1338, 30);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(63, 59);
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // pictureBox7
             // 
@@ -222,7 +236,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 20F);
-            label1.Location = new Point(28, 20);
+            label1.Location = new Point(35, 25);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(42, 31);
@@ -235,7 +249,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Microsoft Sans Serif", 14F);
             button5.ForeColor = Color.FromArgb(35, 78, 82);
-            button5.Location = new Point(35, 13);
+            button5.Location = new Point(35, 35);
             button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
             button5.Size = new Size(175, 63);
@@ -303,7 +317,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 25F);
-            label2.Location = new Point(18, 15);
+            label2.Location = new Point(29, 20);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(324, 39);
@@ -315,7 +329,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 25F);
-            label7.Location = new Point(14, 12);
+            label7.Location = new Point(14, 20);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(112, 39);
@@ -327,7 +341,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(498, 88);
+            label6.Location = new Point(450, 107);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(66, 20);
@@ -339,7 +353,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(345, 88);
+            label5.Location = new Point(315, 107);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(77, 20);
@@ -351,7 +365,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(229, 88);
+            label4.Location = new Point(199, 107);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(77, 20);
@@ -362,7 +376,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F);
-            label3.Location = new Point(112, 88);
+            label3.Location = new Point(71, 107);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(77, 20);
@@ -372,7 +386,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(503, 12);
+            pictureBox4.Location = new Point(450, 29);
             pictureBox4.Margin = new Padding(4, 3, 4, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(64, 64);
@@ -383,7 +397,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(350, 12);
+            pictureBox3.Location = new Point(315, 29);
             pictureBox3.Margin = new Padding(4, 3, 4, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(64, 64);
@@ -394,7 +408,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(233, 12);
+            pictureBox2.Location = new Point(199, 29);
             pictureBox2.Margin = new Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(64, 64);
@@ -405,7 +419,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(117, 12);
+            pictureBox1.Location = new Point(71, 29);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 64);
@@ -499,7 +513,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column7, Column2, Column3, Column4, Column5, Column6 });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
@@ -512,37 +526,43 @@
             // 
             Column1.HeaderText = "Nombre";
             Column1.Name = "Column1";
-            Column1.Width = 167;
+            Column1.Width = 164;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Descripcion";
+            Column7.Name = "Column7";
+            Column7.Width = 164;
             // 
             // Column2
             // 
             Column2.HeaderText = "Asignar";
             Column2.Name = "Column2";
-            Column2.Width = 167;
+            Column2.Width = 164;
             // 
             // Column3
             // 
             Column3.HeaderText = "Fecha inicio";
             Column3.Name = "Column3";
-            Column3.Width = 167;
+            Column3.Width = 164;
             // 
             // Column4
             // 
             Column4.HeaderText = "Fecha final";
             Column4.Name = "Column4";
-            Column4.Width = 167;
+            Column4.Width = 164;
             // 
             // Column5
             // 
             Column5.HeaderText = "Estado de la tarea";
             Column5.Name = "Column5";
-            Column5.Width = 167;
+            Column5.Width = 164;
             // 
             // Column6
             // 
             Column6.HeaderText = "Check";
             Column6.Name = "Column6";
-            Column6.Width = 167;
+            Column6.Width = 164;
             // 
             // Pantalla3
             // 
@@ -562,6 +582,7 @@
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             splitContainer3.Panel1.ResumeLayout(false);
@@ -626,11 +647,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
+        private PictureBox pictureBox6;
     }
 }
 
