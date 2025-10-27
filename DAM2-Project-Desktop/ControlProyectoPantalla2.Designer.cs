@@ -82,7 +82,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.IndianRed;
+            BackColor = Color.Khaki;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(labelTareas);
             Controls.Add(labelMiembros);

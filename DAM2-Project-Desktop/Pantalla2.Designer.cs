@@ -196,9 +196,10 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
-            flowLayoutPanel1.Location = new Point(54, 127);
+            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.Location = new Point(0, 150);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1096, 736);
+            flowLayoutPanel1.Size = new Size(1177, 736);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // controlProyectoPantalla21
@@ -212,7 +213,6 @@
             controlProyectoPantalla21.Proyecto = null;
             controlProyectoPantalla21.Size = new Size(259, 108);
             controlProyectoPantalla21.TabIndex = 1;
-            
             // 
             // label2
             // 

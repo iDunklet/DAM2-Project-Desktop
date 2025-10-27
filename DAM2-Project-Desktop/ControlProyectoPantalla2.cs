@@ -38,32 +38,22 @@ namespace DAM2_Project_Desktop
             labelTitulo.Text = _proyecto.titulo;
 
             // Actualizar número de miembros
-            int numMiembros = 0;
-            if (_proyecto.miembrosProyecto != null)
-            {
-                numMiembros = _proyecto.miembrosProyecto.Count;
-            }
+            int numMiembros = _proyecto.miembrosProyecto?.Count ?? 0;
             labelMiembros.Text = "miembros: " + numMiembros.ToString();
 
             // Actualizar número de tareas
-            int numTareas = 0;
-            if (_proyecto.tareasProyecto != null)
-            {
-                numTareas = _proyecto.tareasProyecto.Count;
-            }
+            int numTareas = _proyecto.tareasProyecto?.Count ?? 0;
             labelTareas.Text = "tareas: " + numTareas.ToString();
 
+            // DEBUG: Verificar si la imagen se está generando
+            bool tieneImagen = _proyecto.ImgProyecto != null;
+            System.Diagnostics.Debug.WriteLine($"Proyecto: {_proyecto.titulo}, Imagen generada: {tieneImagen}");
+
             // Actualizar imagen
-            if (_proyecto.ImgProyecto != null)
-            {
-                pictureBoxImagen.Image = _proyecto.ImgProyecto;
-                pictureBoxImagen.BackColor = Color.Transparent;
-            }
-            else
-            {
-                pictureBoxImagen.Image = null;
-                pictureBoxImagen.BackColor = Color.Silver;
-            }
+            pictureBoxImagen.Image = _proyecto.ImgProyecto;
+
+            // Forzar refresco visual
+            pictureBoxImagen.Refresh();
         }
 
         private void ControlProyectoPantalla2_Click(object sender, EventArgs e)
