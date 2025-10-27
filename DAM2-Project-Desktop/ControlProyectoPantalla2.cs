@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace DAM2_Project_Desktop
@@ -17,8 +12,11 @@ namespace DAM2_Project_Desktop
         public ControlProyectoPantalla2()
         {
             InitializeComponent();
-        }
+            pictureBoxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxImagen.BackColor = Color.LightGray;
 
+
+        }
 
         public Proyecto Proyecto
         {
@@ -32,38 +30,37 @@ namespace DAM2_Project_Desktop
 
         private void ActualizarDatos()
         {
-            if (_proyecto == null) return;
+            if (_proyecto == null)
+            {
+                labelTitulo.Text = "(sin proyecto)";
+                labelMiembros.Text = "miembros: 0";
+                labelTareas.Text = "tareas: 0";
+                pictureBoxImagen.Image = null;
+                pictureBoxImagen.BackColor = Color.LightGray;
+                return;
+            }
 
-            // Actualizar nombre del proyecto
-            labelTitulo.Text = _proyecto.titulo;
+            if (_proyecto.titulo != null)
+                labelTitulo.Text = _proyecto.titulo;
+            else
+                labelTitulo.Text = "(sin título)";
 
-            // Actualizar número de miembros
-            int numMiembros = _proyecto.miembrosProyecto?.Count ?? 0;
+            int numMiembros = 0;
+            if (_proyecto.miembrosProyecto != null)
+                numMiembros = _proyecto.miembrosProyecto.Count;
             labelMiembros.Text = "miembros: " + numMiembros.ToString();
 
-            // Actualizar número de tareas
-            int numTareas = _proyecto.tareasProyecto?.Count ?? 0;
+            int numTareas = 0;
+            if (_proyecto.tareasProyecto != null)
+                numTareas = _proyecto.tareasProyecto.Count;
             labelTareas.Text = "tareas: " + numTareas.ToString();
 
-            // DEBUG: Verificar si la imagen se está generando
-            bool tieneImagen = _proyecto.ImgProyecto != null;
-            System.Diagnostics.Debug.WriteLine($"Proyecto: {_proyecto.titulo}, Imagen generada: {tieneImagen}");
+            if (_proyecto.ImgProyecto == null)
+                _proyecto.ImgProyecto = null;
 
-            // Actualizar imagen
             pictureBoxImagen.Image = _proyecto.ImgProyecto;
-
-            // Forzar refresco visual
             pictureBoxImagen.Refresh();
         }
-
-        private void ControlProyectoPantalla2_Click(object sender, EventArgs e)
-        {
-            // Aquí irá el código cuando hagas click
-        }
-
-        
-
-       
 
         public Image Imagen
         {
@@ -72,13 +69,51 @@ namespace DAM2_Project_Desktop
             {
                 pictureBoxImagen.Image = value;
                 if (value == null)
-                {
                     pictureBoxImagen.BackColor = Color.Silver;
-                }
                 else
-                {
                     pictureBoxImagen.BackColor = Color.Transparent;
-                }
+            }
+        }
+
+
+
+        private void ControlProyectoPantalla2_Load(object sender, EventArgs e)
+        {
+            RedondearEsquinas(15);
+        }
+
+        private void ControlProyectoPantalla2_Resize(object sender, EventArgs e)
+        {
+            RedondearEsquinas(15);
+        }
+
+        private void RedondearEsquinas(int borderRadius)
+        {
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(-1, -1, this.Width, this.Height, borderRadius, borderRadius));
+        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
+            int nWidthEllipse, int nHeightEllipse);
+
+
+      
+        private void ControlProyectoPantalla2_Click(object sender, EventArgs e)
+        {
+            if (_proyecto != null)
+            {
+                // Crear y mostrar Pantalla3, pasando el proyecto
+                //Pantalla3 pantalla3 = new Pantalla3(_proyecto);
+                //pantalla3.Show();
+
+              
+                this.FindForm()?.Close();
+            }
+            else
+            {
+                MessageBox.Show("No hay proyecto seleccionado", "Información",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

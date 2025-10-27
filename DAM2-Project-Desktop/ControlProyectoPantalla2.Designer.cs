@@ -37,44 +37,46 @@
             // 
             // pictureBoxImagen
             // 
-            pictureBoxImagen.BackColor = Color.Silver;
-            pictureBoxImagen.Location = new Point(15, 15);
+            pictureBoxImagen.BackColor = Color.Khaki;
+            pictureBoxImagen.Location = new Point(15, 25);
             pictureBoxImagen.Name = "pictureBoxImagen";
-            pictureBoxImagen.Size = new Size(75, 75);
+            pictureBoxImagen.Padding = new Padding(5);
+            pictureBoxImagen.Size = new Size(119, 118);
             pictureBoxImagen.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImagen.TabIndex = 0;
             pictureBoxImagen.TabStop = false;
             // 
             // labelTitulo
             // 
-            labelTitulo.AutoEllipsis = true;
-            labelTitulo.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            labelTitulo.AllowDrop = true;
+            labelTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             labelTitulo.ForeColor = Color.FromArgb(35, 78, 82);
-            labelTitulo.Location = new Point(96, 24);
+            labelTitulo.Location = new Point(140, 29);
+            labelTitulo.MaximumSize = new Size(190, 70);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(136, 25);
+            labelTitulo.Size = new Size(173, 70);
             labelTitulo.TabIndex = 1;
             labelTitulo.Text = "Título Proyecto";
             // 
             // labelMiembros
             // 
             labelMiembros.AutoSize = true;
-            labelMiembros.Font = new Font("Segoe UI", 9F);
+            labelMiembros.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelMiembros.ForeColor = Color.FromArgb(64, 64, 64);
-            labelMiembros.Location = new Point(96, 60);
+            labelMiembros.Location = new Point(140, 101);
             labelMiembros.Name = "labelMiembros";
-            labelMiembros.Size = new Size(64, 15);
+            labelMiembros.Size = new Size(91, 21);
             labelMiembros.TabIndex = 3;
             labelMiembros.Text = "Miembros:";
             // 
             // labelTareas
             // 
             labelTareas.AutoSize = true;
-            labelTareas.Font = new Font("Segoe UI", 9F);
+            labelTareas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTareas.ForeColor = Color.FromArgb(64, 64, 64);
-            labelTareas.Location = new Point(96, 75);
+            labelTareas.Location = new Point(140, 122);
             labelTareas.Name = "labelTareas";
-            labelTareas.Size = new Size(43, 15);
+            labelTareas.Size = new Size(62, 21);
             labelTareas.TabIndex = 4;
             labelTareas.Text = "Tareas:";
             // 
@@ -88,10 +90,13 @@
             Controls.Add(labelMiembros);
             Controls.Add(labelTitulo);
             Controls.Add(pictureBoxImagen);
+            Cursor = Cursors.Hand;
             Margin = new Padding(12);
             Name = "ControlProyectoPantalla2";
-            Size = new Size(259, 108);
+            Size = new Size(366, 170);
+            Load += ControlProyectoPantalla2_Load;
             Click += ControlProyectoPantalla2_Click;
+            Resize += ControlProyectoPantalla2_Resize;
             ((System.ComponentModel.ISupportInitialize)pictureBoxImagen).EndInit();
             ResumeLayout(false);
             PerformLayout();
