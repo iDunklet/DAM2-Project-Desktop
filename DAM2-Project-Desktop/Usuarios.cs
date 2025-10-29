@@ -17,22 +17,13 @@ namespace DAM2_Project_Desktop
         public string password { get; set; }
 
         public string userName { get; }
-  
+ 
+        public Bitmap imgPerfil { get; set; }
 
-        private Bitmap imgPerfil;
-        public Bitmap imgPerfilGetSet
-        {
-            get { return imgPerfil; }
-            set { imgPerfil = GenerarImagenIniciales(100); }
-        }
+        public Bitmap miniImgPerfil { get; }
 
-        private string apellidoCompleto;
+        public string apellidoCompleto { get; }
 
-        public string apellidoCompletoGetSet
-        { 
-            get { return apellidoCompleto; }
-            set { apellidoCompleto = setApellidoCompleto(); }
-        }
 
         //constructores
         public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
@@ -50,7 +41,8 @@ namespace DAM2_Project_Desktop
             this.userName = UserNameGenerator();
 
             this.imgPerfil = GenerarImagenIniciales(100);
-            this.apellidoCompleto = "asdxasd";
+            this.miniImgPerfil = GenerarImagenIniciales(20);
+            this.apellidoCompleto = setApellidoCompleto();
 
            
         }
@@ -70,8 +62,10 @@ namespace DAM2_Project_Desktop
             this.userName = UserNameGenerator();
 
             this.imgPerfil = GenerarImagenIniciales(100);
+            this.miniImgPerfil = GenerarImagenIniciales(20);
             this.apellidoCompleto = setApellidoCompleto();
         }
+
         //constructor de test para proyecto Hugo
         public Usuarios(string nombre)
         {
@@ -122,7 +116,7 @@ namespace DAM2_Project_Desktop
 
         private static readonly Random random = new Random();
 
-        public Bitmap GenerarImagenIniciales(int tamano = 100)
+        public Bitmap GenerarImagenIniciales(int tamano)
         {
             // --- 1. SELECCIÓN DE INICIALES Y COLOR ALEATORIO ---
 

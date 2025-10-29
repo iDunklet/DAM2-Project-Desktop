@@ -17,7 +17,6 @@ namespace DAM2_Project_Desktop
         public Pantalla8()
         {
             InitializeComponent();
-            dataGridViewListadoUsuarios.AutoGenerateColumns = false;
             this.Load += new EventHandler(Pantalla8_Load);
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla8_Resize;
@@ -62,6 +61,7 @@ namespace DAM2_Project_Desktop
         {
             dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
 
+            ConfigurarColumnaIconoEdit();
             ConfigurarColumnaIconoDelete();
 
 
@@ -74,6 +74,8 @@ namespace DAM2_Project_Desktop
             dataGridViewListadoUsuarios.Height = totalHeight + 3;
         }
 
+        
+
         public Bitmap GetImgIconDelete()
         {
             Bitmap icon = Properties.Resources.icon_delete;
@@ -81,10 +83,48 @@ namespace DAM2_Project_Desktop
             return resizedIcon;
         }
 
+
+        public Bitmap GetImgIconEdit()
+        {
+            Bitmap icon = Properties.Resources.icon_edit;
+            Bitmap resizedIcon = new Bitmap(icon, new Size(15, 15));
+            return resizedIcon;
+        }
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int pepe = 14;
+            string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
+            DataGridViewRow clickedRow = dataGridViewListadoUsuarios.Rows[e.RowIndex];
 
+            if (columnName == "iconoEditar")
+            {
+                var usuario = clickedRow.DataBoundItem as Usuarios;
+
+                if (usuario == null)
+                {
+                    MessageBox.Show("❌ No se pudo obtener el usuario (DataBoundItem es null).");
+                    return;
+                }
+
+                // 💥 VERIFICACIÓN CLAVE 💥
+                MessageBox.Show(
+                    $"Usuario obtenido:\n\n" +
+                    $"Nombre: {usuario.nombre}\n" +
+                    $"Username: {usuario.username}\n" +
+                    $"Email: {usuario.email}"
+                );
+
+                Pantalla7 p = new Pantalla7(usuario);
+                p.Show();
+            }
+        }
+
+
+
+        /*
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
             DataGridViewRow clickedRow = dataGridViewListadoUsuarios.Rows[e.RowIndex];
 
@@ -127,6 +167,16 @@ namespace DAM2_Project_Desktop
                 deleteCol.Image = GetImgIconDelete();
             }
         }
+        */
+        private void ConfigurarColumnaIconoEdit()
+        {
+            if (dataGridViewListadoUsuarios.Columns.Contains("iconoEditar"))
+            {
+                DataGridViewImageColumn deleteCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["iconoEditar"];
+                deleteCol.Image = GetImgIconEdit();
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

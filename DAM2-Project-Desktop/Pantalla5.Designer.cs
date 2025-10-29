@@ -39,7 +39,6 @@ namespace DAM2_Project_Desktop
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
-            button2 = new Button();
             button1 = new Button();
             label7 = new Label();
             label13 = new Label();
@@ -146,7 +145,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.Controls.Add(button5);
             splitContainer2.Panel1.Controls.Add(button4);
             splitContainer2.Panel1.Controls.Add(button3);
-            splitContainer2.Panel1.Controls.Add(button2);
             splitContainer2.Panel1.Controls.Add(button1);
             // 
             // splitContainer2.Panel2
@@ -184,9 +182,9 @@ namespace DAM2_Project_Desktop
             // 
             button6.BackColor = Color.FromArgb(79, 209, 197);
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(35, 78, 82);
-            button6.Location = new Point(21, 437);
+            button6.Location = new Point(21, 344);
             button6.Name = "button6";
             button6.Size = new Size(200, 70);
             button6.TabIndex = 8;
@@ -197,9 +195,9 @@ namespace DAM2_Project_Desktop
             // 
             button5.BackColor = Color.FromArgb(79, 209, 197);
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             button5.ForeColor = Color.FromArgb(35, 78, 82);
-            button5.Location = new Point(21, 347);
+            button5.Location = new Point(21, 266);
             button5.Name = "button5";
             button5.Size = new Size(200, 67);
             button5.TabIndex = 7;
@@ -210,9 +208,9 @@ namespace DAM2_Project_Desktop
             // 
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(21, 263);
+            button4.Location = new Point(21, 182);
             button4.Name = "button4";
             button4.Size = new Size(200, 68);
             button4.TabIndex = 10;
@@ -223,33 +221,20 @@ namespace DAM2_Project_Desktop
             // 
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(21, 178);
+            button3.Location = new Point(21, 97);
             button3.Name = "button3";
             button3.Size = new Size(200, 70);
             button3.TabIndex = 5;
             button3.Text = "Proyectos \r\nprivados";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(79, 209, 197);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
-            button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(21, 98);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 64);
-            button2.TabIndex = 4;
-            button2.Text = "Favoritos";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Montserrat", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(21, 20);
             button1.Name = "button1";
@@ -261,26 +246,26 @@ namespace DAM2_Project_Desktop
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Montserrat SemiBold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(81, 517);
             label7.Name = "label7";
-            label7.Size = new Size(264, 55);
+            label7.Size = new Size(233, 39);
             label7.TabIndex = 23;
             label7.Text = "Datos cuenta";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Montserrat SemiBold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label13.Location = new Point(80, 132);
             label13.Name = "label13";
-            label13.Size = new Size(336, 55);
+            label13.Size = new Size(303, 39);
             label13.TabIndex = 22;
             label13.Text = "Datos personales";
             // 
             // button7
             // 
-            button7.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             button7.Location = new Point(402, 778);
             button7.Name = "button7";
             button7.Size = new Size(200, 60);
@@ -290,7 +275,7 @@ namespace DAM2_Project_Desktop
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CalendarFont = new Font("Montserrat", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(795, 321);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
@@ -306,10 +291,10 @@ namespace DAM2_Project_Desktop
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Montserrat", 20.25F);
+            label12.Font = new Font("Microsoft Sans Serif", 20.25F);
             label12.Location = new Point(602, 655);
             label12.Name = "label12";
-            label12.Size = new Size(175, 84);
+            label12.Size = new Size(156, 62);
             label12.TabIndex = 19;
             label12.Text = "Repetir\r\n contraseña";
             label12.TextAlign = ContentAlignment.TopCenter;
@@ -331,30 +316,30 @@ namespace DAM2_Project_Desktop
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Montserrat", 20.25F);
+            label11.Font = new Font("Microsoft Sans Serif", 20.25F);
             label11.Location = new Point(117, 668);
             label11.Name = "label11";
-            label11.Size = new Size(171, 42);
+            label11.Size = new Size(155, 31);
             label11.TabIndex = 16;
             label11.Text = "Contraseña";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Montserrat", 20.25F);
+            label10.Font = new Font("Microsoft Sans Serif", 20.25F);
             label10.Location = new Point(117, 598);
             label10.Name = "label10";
-            label10.Size = new Size(121, 42);
+            label10.Size = new Size(108, 31);
             label10.TabIndex = 15;
             label10.Text = "Usuario";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Montserrat", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(338, 27);
             label8.Name = "label8";
-            label8.Size = new Size(466, 75);
+            label8.Size = new Size(440, 55);
             label8.TabIndex = 13;
             label8.Text = "NUEVO USUARIO";
             label8.TextAlign = ContentAlignment.TopCenter;
@@ -397,30 +382,30 @@ namespace DAM2_Project_Desktop
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Montserrat", 20.25F);
+            label6.Font = new Font("Microsoft Sans Serif", 20.25F);
             label6.Location = new Point(117, 422);
             label6.Name = "label6";
-            label6.Size = new Size(95, 42);
+            label6.Size = new Size(81, 31);
             label6.TabIndex = 5;
             label6.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 20.25F);
+            label5.Font = new Font("Microsoft Sans Serif", 20.25F);
             label5.Location = new Point(117, 356);
             label5.Name = "label5";
-            label5.Size = new Size(95, 42);
+            label5.Size = new Size(87, 31);
             label5.TabIndex = 4;
             label5.Text = "Curso";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 20.25F);
+            label4.Font = new Font("Microsoft Sans Serif", 20.25F);
             label4.Location = new Point(583, 289);
             label4.Name = "label4";
-            label4.Size = new Size(171, 84);
+            label4.Size = new Size(145, 62);
             label4.TabIndex = 3;
             label4.Text = "Fecha \r\nnacimiento";
             label4.TextAlign = ContentAlignment.TopCenter;
@@ -429,30 +414,30 @@ namespace DAM2_Project_Desktop
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 20.25F);
+            label3.Font = new Font("Microsoft Sans Serif", 20.25F);
             label3.Location = new Point(117, 289);
             label3.Name = "label3";
-            label3.Size = new Size(157, 42);
+            label3.Size = new Size(138, 31);
             label3.TabIndex = 2;
             label3.Text = "2r apellido";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Montserrat", 20.25F);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F);
             label2.Location = new Point(602, 223);
             label2.Name = "label2";
-            label2.Size = new Size(152, 42);
+            label2.Size = new Size(138, 31);
             label2.TabIndex = 1;
             label2.Text = "1r apellido";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Montserrat", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(117, 227);
             label1.Name = "label1";
-            label1.Size = new Size(131, 42);
+            label1.Size = new Size(110, 31);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
@@ -505,7 +490,6 @@ namespace DAM2_Project_Desktop
         private Button button5;
         private Button button4;
         private Button button3;
-        private Button button2;
         private Button button1;
         private SplitContainer splitContainer2;
         private TextBox textBox1;

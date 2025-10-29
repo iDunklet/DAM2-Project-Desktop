@@ -20,24 +20,14 @@ namespace DAM2_Project_Desktop
         {
 
             InitializeComponent();
-
-
-            if (usuarioEncontrado != null)
-            {
-
-                textBoxConfigurarUsuarioName.Text = usuarioEncontrado.nombre;
-                textBoxConfigurarUsuarioApellido1.Text = usuarioEncontrado.apellido1;
-                dateTimePickerConfigurarUsuarioFechaNacimiento.Value = usuarioEncontrado.fechaNacimiento;
-                textBoxConfigurarUsuarioClase.Text = usuarioEncontrado.classe;
-                textBoxConfigurarUsuarioEmail.Text = usuarioEncontrado.email;
-
-            }
-
-
+            this.usuarioEncontrado = usuarioEncontrado;
+            textBoxConfigurarUsuarioName.Text = usuarioEncontrado.nombre;
 
             ActivarEdicionPorDobleClick();
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla7_Resize;
+
+
 
 
 
@@ -48,11 +38,11 @@ namespace DAM2_Project_Desktop
         private void Pantalla7_Resize(object sender, EventArgs e)
         {
 
-            button1.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button2.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonInicio.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonProyectosPrivados.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button3.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button4.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button5.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonExportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button6.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
 
@@ -116,17 +106,21 @@ namespace DAM2_Project_Desktop
 
         private void buttonConfigurarUsuarioGuardar_Click(object sender, EventArgs e)
         {
-            string nuevaContraseña = textBoxConfigurarUsuarioNuevaContraseña.Text;
-            string confirmarContraseña = textBoxConfigurarUsuarioConfirmarContraseña.Text;
-            if (nuevaContraseña.Equals(confirmarContraseña))
+            string nuevaContrasena = textBoxConfigurarUsuarioNuevaContrasena.Text;
+            string confirmarContrasena = textBoxConfigurarUsuarioConfirmarContrasena.Text;
+            if (nuevaContrasena.Equals(confirmarContrasena))
             {
-                usuarioEncontrado.password = nuevaContraseña;
+                usuarioEncontrado.password = nuevaContrasena;
 
-                textBoxConfigurarUsuarioNuevaContraseña.Clear();
-                textBoxConfigurarUsuarioConfirmarContraseña.Clear();
-                textBoxConfigurarUsuarioNuevaContraseña.Focus();
+                textBoxConfigurarUsuarioNuevaContrasena.Clear();
+                textBoxConfigurarUsuarioConfirmarContrasena.Clear();
+                textBoxConfigurarUsuarioNuevaContrasena.Focus();
             }
         }
 
+        private void buttonConfigurarUsuarioNuevaIMG_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

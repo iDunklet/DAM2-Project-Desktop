@@ -218,7 +218,7 @@
             // 
             // ImgPerfil
             // 
-            ImgPerfil.DataPropertyName = "imgPerfilGetSet";
+            ImgPerfil.DataPropertyName = "miniImgPerfil";
             ImgPerfil.HeaderText = "";
             ImgPerfil.Name = "ImgPerfil";
             ImgPerfil.Resizable = DataGridViewTriState.True;
@@ -227,7 +227,7 @@
             // 
             // Username
             // 
-            Username.DataPropertyName = "userNameGetSet";
+            Username.DataPropertyName = "userName";
             Username.HeaderText = "Username";
             Username.Name = "Username";
             Username.Width = 150;
@@ -241,7 +241,7 @@
             // 
             // Apellidos
             // 
-            Apellidos.DataPropertyName = "apellidoCompletoGetSet";
+            Apellidos.DataPropertyName = "apellidoCompleto";
             Apellidos.HeaderText = "Apellidos";
             Apellidos.Name = "Apellidos";
             Apellidos.Width = 285;
