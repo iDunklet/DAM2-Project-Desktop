@@ -514,9 +514,9 @@ namespace DAM2_Project_Desktop
         private TextBox textBoxConfigurarUsuarioEmail;
         private Label label10;
         private Label label8;
-        private TextBox textBoxConfigurarUsuarioConfirmarContraseña;
+        private TextBox textBoxConfigurarUsuarioConfirmarContrasena;
         private Label label9;
-        private TextBox textBoxConfigurarUsuarioNuevaContraseña;
+        private TextBox textBoxConfigurarUsuarioNuevaContrasena;
         private Label label7;
         private Button buttonConfigurarUsuarioGuardar;
         private Button buttonConfigurarUsuarioNuevaIMG;
