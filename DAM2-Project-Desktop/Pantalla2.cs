@@ -37,8 +37,9 @@ namespace DAM2_Project_Desktop
             }
         }
 
-        
+        private void buttonImportarJson_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
