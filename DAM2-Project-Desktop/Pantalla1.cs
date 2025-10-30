@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -116,4 +116,3 @@ namespace DAM2_Project_Desktop
             }
         }//hahahhaa
     }
-}
