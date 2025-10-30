@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla1));
-            Button1 = new Button();
+            ButtonLogin = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxUser = new TextBox();
+            textBoxPass = new TextBox();
             pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // Button1
+            // ButtonLogin
             // 
-            Button1.BackColor = Color.FromArgb(79, 209, 197);
-            Button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Button1.Location = new Point(195, 734);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(249, 55);
-            Button1.TabIndex = 7;
-            Button1.Text = "Log in";
-            Button1.UseVisualStyleBackColor = false;
+            ButtonLogin.BackColor = Color.FromArgb(79, 209, 197);
+            ButtonLogin.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ButtonLogin.Location = new Point(195, 734);
+            ButtonLogin.Name = "ButtonLogin";
+            ButtonLogin.Size = new Size(249, 55);
+            ButtonLogin.TabIndex = 7;
+            ButtonLogin.Text = "Log in";
+            ButtonLogin.UseVisualStyleBackColor = false;
+            ButtonLogin.Click += ButtonLogin_Click;
             // 
             // pictureBox1
             // 
@@ -93,25 +94,25 @@
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(183, 607);
             label2.Name = "label2";
-            label2.Size = new Size(101, 25);
+            label2.Size = new Size(183, 25);
             label2.TabIndex = 3;
-            label2.Text = "Contraseña";
+            label2.Text = "Password/Contraseña";
             // 
-            // textBox1
+            // textBoxUser
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(183, 565);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(273, 27);
-            textBox1.TabIndex = 4;
+            textBoxUser.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUser.Location = new Point(183, 565);
+            textBoxUser.Name = "textBoxUser";
+            textBoxUser.Size = new Size(273, 27);
+            textBoxUser.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxPass
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(183, 635);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(273, 27);
-            textBox2.TabIndex = 5;
+            textBoxPass.BorderStyle = BorderStyle.FixedSingle;
+            textBoxPass.Location = new Point(183, 635);
+            textBoxPass.Name = "textBoxPass";
+            textBoxPass.Size = new Size(273, 27);
+            textBoxPass.TabIndex = 5;
             // 
             // pictureBox3
             // 
@@ -130,9 +131,9 @@
             BackColor = Color.White;
             ClientSize = new Size(1422, 977);
             Controls.Add(pictureBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(Button1);
+            Controls.Add(textBoxPass);
+            Controls.Add(textBoxUser);
+            Controls.Add(ButtonLogin);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -148,13 +149,13 @@
         }
 
         #endregion
-        private Button Button1;
+        private Button ButtonLogin;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxUser;
+        private TextBox textBoxPass;
         private PictureBox pictureBox3;
     }
 }

@@ -116,15 +116,15 @@ namespace DAM2_Project_Desktop
 
         private void buttonConfigurarUsuarioGuardar_Click(object sender, EventArgs e)
         {
-            string nuevaContraseña = textBoxConfigurarUsuarioNuevaContraseña.Text;
-            string confirmarContraseña = textBoxConfigurarUsuarioConfirmarContraseña.Text;
-            if (nuevaContraseña.Equals(confirmarContraseña))
+            string nuevaContrasena = textBoxConfigurarUsuarioNuevaContrasena.Text;
+            string confirmarContrasena = textBoxConfigurarUsuarioConfirmarContrasena.Text;
+            if (nuevaContrasena.Equals(confirmarContrasena))
             {
-                usuarioEncontrado.password = nuevaContraseña;
+                usuarioEncontrado.password = nuevaContrasena;
 
-                textBoxConfigurarUsuarioNuevaContraseña.Clear();
-                textBoxConfigurarUsuarioConfirmarContraseña.Clear();
-                textBoxConfigurarUsuarioNuevaContraseña.Focus();
+                textBoxConfigurarUsuarioNuevaContrasena.Clear();
+                textBoxConfigurarUsuarioConfirmarContrasena.Clear();
+                textBoxConfigurarUsuarioNuevaContrasena.Focus();
             }
         }
 
