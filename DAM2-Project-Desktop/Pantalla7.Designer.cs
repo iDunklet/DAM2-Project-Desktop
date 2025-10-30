@@ -1,6 +1,6 @@
 namespace DAM2_Project_Desktop
 {
-    partial class Tasky
+    partial class Pantalla7
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tasky));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
@@ -86,8 +85,8 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1627, 1055);
-            splitContainer1.SplitterDistance = 100;
+            splitContainer1.Size = new Size(1424, 985);
+            splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
             // 
@@ -135,9 +134,8 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.Controls.Add(label1);
             splitContainer2.Panel2.Controls.Add(textBoxConfigurarUsuarioName);
             splitContainer2.Panel2.ForeColor = Color.FromArgb(35, 78, 82);
-            splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
-            splitContainer2.Size = new Size(1627, 952);
-            splitContainer2.SplitterDistance = 277;
+            splitContainer2.Size = new Size(1424, 889);
+            splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
@@ -445,7 +443,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioName.TextChanged += textBoxConfigurarUsuarioName_TextChanged;
             textBoxConfigurarUsuarioName.DoubleClick += TextBox_DoubleClick;
             // 
-            // Tasky
+            // Pantalla7
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DAM2_Project_Desktop
 {
-    public partial class Tasky : Form
+    public partial class Pantalla7 : Form
     {
         private Usuarios usuarioEncontrado;
 

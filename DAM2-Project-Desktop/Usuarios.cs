@@ -77,6 +77,7 @@ namespace DAM2_Project_Desktop
 
 
 
+
         //metodos 
 
         public string setApellidoCompleto() 

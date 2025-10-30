@@ -1,4 +1,4 @@
-﻿
+
 namespace DAM2_Project_Desktop
 {
     partial class Pantalla5
@@ -35,33 +35,34 @@ namespace DAM2_Project_Desktop
             pictureBoxMenu = new PictureBox();
             pictureBoxLogo = new PictureBox();
             splitContainer2 = new SplitContainer();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button1 = new Button();
-            label7 = new Label();
-            label13 = new Label();
-            button7 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            textBox9 = new TextBox();
-            label12 = new Label();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            label11 = new Label();
-            label10 = new Label();
-            label8 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            buttonExportarJson = new Button();
+            buttonImportarJson = new Button();
+            buttonUsuarios = new Button();
+            buttonProyectosPrivados = new Button();
+            buttonFavoritos = new Button();
+            buttonInicio = new Button();
+            labelDatosCuenta = new Label();
+            labelDatosPersonales = new Label();
+            buttonCrearUsuario = new Button();
+            dateTimePickerFechaNacimiento = new DateTimePicker();
+            textBoxApellido1 = new TextBox();
+            labelRepContrasenya = new Label();
+            textBoxContrasenya = new TextBox();
+            textBoxRepContrasenya = new TextBox();
+            labelContrasenya = new Label();
+            labelUsuario = new Label();
+            labelNuevoUsuario = new Label();
+            textBoxEmail = new TextBox();
+            textBoxUsuario = new TextBox();
+            textBoxApellido2 = new TextBox();
+            textBoxCurso = new TextBox();
+            textBoxNombre = new TextBox();
+            labelEmail = new Label();
+            labelCurso = new Label();
+            labelFechaNacimiento = new Label();
+            labelApellido2 = new Label();
+            labelApellido1 = new Label();
+            labelNombre = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -141,305 +142,319 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer2.Panel1.Controls.Add(button6);
-            splitContainer2.Panel1.Controls.Add(button5);
-            splitContainer2.Panel1.Controls.Add(button4);
-            splitContainer2.Panel1.Controls.Add(button3);
-            splitContainer2.Panel1.Controls.Add(button1);
+            splitContainer2.Panel1.Controls.Add(buttonExportarJson);
+            splitContainer2.Panel1.Controls.Add(buttonImportarJson);
+            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
+            splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
+            splitContainer2.Panel1.Controls.Add(buttonFavoritos);
+            splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer2.Panel2.Controls.Add(label7);
-            splitContainer2.Panel2.Controls.Add(label13);
-            splitContainer2.Panel2.Controls.Add(button7);
-            splitContainer2.Panel2.Controls.Add(dateTimePicker1);
-            splitContainer2.Panel2.Controls.Add(textBox9);
-            splitContainer2.Panel2.Controls.Add(label12);
-            splitContainer2.Panel2.Controls.Add(textBox8);
-            splitContainer2.Panel2.Controls.Add(textBox7);
-            splitContainer2.Panel2.Controls.Add(label11);
-            splitContainer2.Panel2.Controls.Add(label10);
-            splitContainer2.Panel2.Controls.Add(label8);
-            splitContainer2.Panel2.Controls.Add(textBox5);
-            splitContainer2.Panel2.Controls.Add(textBox4);
-            splitContainer2.Panel2.Controls.Add(textBox3);
-            splitContainer2.Panel2.Controls.Add(textBox2);
-            splitContainer2.Panel2.Controls.Add(textBox1);
-            splitContainer2.Panel2.Controls.Add(label6);
-            splitContainer2.Panel2.Controls.Add(label5);
-            splitContainer2.Panel2.Controls.Add(label4);
-            splitContainer2.Panel2.Controls.Add(label3);
-            splitContainer2.Panel2.Controls.Add(label2);
-            splitContainer2.Panel2.Controls.Add(label1);
+            splitContainer2.Panel2.Controls.Add(labelDatosCuenta);
+            splitContainer2.Panel2.Controls.Add(labelDatosPersonales);
+            splitContainer2.Panel2.Controls.Add(buttonCrearUsuario);
+            splitContainer2.Panel2.Controls.Add(dateTimePickerFechaNacimiento);
+            splitContainer2.Panel2.Controls.Add(textBoxApellido1);
+            splitContainer2.Panel2.Controls.Add(labelRepContrasenya);
+            splitContainer2.Panel2.Controls.Add(textBoxContrasenya);
+            splitContainer2.Panel2.Controls.Add(textBoxRepContrasenya);
+            splitContainer2.Panel2.Controls.Add(labelContrasenya);
+            splitContainer2.Panel2.Controls.Add(labelUsuario);
+            splitContainer2.Panel2.Controls.Add(labelNuevoUsuario);
+            splitContainer2.Panel2.Controls.Add(textBoxEmail);
+            splitContainer2.Panel2.Controls.Add(textBoxUsuario);
+            splitContainer2.Panel2.Controls.Add(textBoxApellido2);
+            splitContainer2.Panel2.Controls.Add(textBoxCurso);
+            splitContainer2.Panel2.Controls.Add(textBoxNombre);
+            splitContainer2.Panel2.Controls.Add(labelEmail);
+            splitContainer2.Panel2.Controls.Add(labelCurso);
+            splitContainer2.Panel2.Controls.Add(labelFechaNacimiento);
+            splitContainer2.Panel2.Controls.Add(labelApellido2);
+            splitContainer2.Panel2.Controls.Add(labelApellido1);
+            splitContainer2.Panel2.Controls.Add(labelNombre);
             splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
             splitContainer2.Size = new Size(1424, 888);
             splitContainer2.SplitterDistance = 244;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
-            // button6
+            // buttonExportarJson
             // 
-            button6.BackColor = Color.FromArgb(79, 209, 197);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button6.ForeColor = Color.FromArgb(35, 78, 82);
-            button6.Location = new Point(21, 344);
-            button6.Name = "button6";
-            button6.Size = new Size(200, 70);
-            button6.TabIndex = 8;
-            button6.Text = "Exportar JSON";
-            button6.UseVisualStyleBackColor = false;
+            buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJson.FlatStyle = FlatStyle.Flat;
+            buttonExportarJson.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJson.Location = new Point(21, 437);
+            buttonExportarJson.Name = "buttonExportarJson";
+            buttonExportarJson.Size = new Size(200, 70);
+            buttonExportarJson.TabIndex = 8;
+            buttonExportarJson.Text = "Exportar JSON";
+            buttonExportarJson.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonImportarJson
             // 
-            button5.BackColor = Color.FromArgb(79, 209, 197);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button5.ForeColor = Color.FromArgb(35, 78, 82);
-            button5.Location = new Point(21, 266);
-            button5.Name = "button5";
-            button5.Size = new Size(200, 67);
-            button5.TabIndex = 7;
-            button5.Text = "Importar JSON";
-            button5.UseVisualStyleBackColor = false;
+            buttonImportarJson.BackColor = Color.FromArgb(79, 209, 197);
+            buttonImportarJson.FlatStyle = FlatStyle.Flat;
+            buttonImportarJson.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonImportarJson.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonImportarJson.Location = new Point(21, 347);
+            buttonImportarJson.Name = "buttonImportarJson";
+            buttonImportarJson.Size = new Size(200, 67);
+            buttonImportarJson.TabIndex = 7;
+            buttonImportarJson.Text = "Importar JSON";
+            buttonImportarJson.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonUsuarios
             // 
-            button4.BackColor = Color.FromArgb(79, 209, 197);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(21, 182);
-            button4.Name = "button4";
-            button4.Size = new Size(200, 68);
-            button4.TabIndex = 10;
-            button4.Text = "Usuarios";
-            button4.UseVisualStyleBackColor = false;
+            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
+            buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonUsuarios.Location = new Point(21, 263);
+            buttonUsuarios.Name = "buttonUsuarios";
+            buttonUsuarios.Size = new Size(200, 68);
+            buttonUsuarios.TabIndex = 10;
+            buttonUsuarios.Text = "Usuarios";
+            buttonUsuarios.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttonProyectosPrivados
             // 
-            button3.BackColor = Color.FromArgb(79, 209, 197);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(21, 97);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 70);
-            button3.TabIndex = 5;
-            button3.Text = "Proyectos \r\nprivados";
-            button3.UseVisualStyleBackColor = false;
+            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
+            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
+            buttonProyectosPrivados.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonProyectosPrivados.Location = new Point(21, 178);
+            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
+            buttonProyectosPrivados.Size = new Size(200, 70);
+            buttonProyectosPrivados.TabIndex = 5;
+            buttonProyectosPrivados.Text = "Proyectos \r\nprivados";
+            buttonProyectosPrivados.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonFavoritos
             // 
-            button1.BackColor = Color.FromArgb(79, 209, 197);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(21, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 66);
-            button1.TabIndex = 3;
-            button1.Text = "Inicio";
-            button1.UseVisualStyleBackColor = false;
+            buttonFavoritos.BackColor = Color.FromArgb(79, 209, 197);
+            buttonFavoritos.FlatStyle = FlatStyle.Flat;
+            buttonFavoritos.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonFavoritos.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonFavoritos.Location = new Point(21, 98);
+            buttonFavoritos.Name = "buttonFavoritos";
+            buttonFavoritos.Size = new Size(200, 64);
+            buttonFavoritos.TabIndex = 4;
+            buttonFavoritos.Text = "Favoritos";
+            buttonFavoritos.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // buttonInicio
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(81, 517);
-            label7.Name = "label7";
-            label7.Size = new Size(233, 39);
-            label7.TabIndex = 23;
-            label7.Text = "Datos cuenta";
+            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
+            buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.Font = new Font("Montserrat", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonInicio.Location = new Point(21, 20);
+            buttonInicio.Name = "buttonInicio";
+            buttonInicio.Size = new Size(200, 66);
+            buttonInicio.TabIndex = 3;
+            buttonInicio.Text = "Inicio";
+            buttonInicio.UseVisualStyleBackColor = false;
             // 
-            // label13
+            // labelDatosCuenta
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(80, 132);
-            label13.Name = "label13";
-            label13.Size = new Size(303, 39);
-            label13.TabIndex = 22;
-            label13.Text = "Datos personales";
+            labelDatosCuenta.AutoSize = true;
+            labelDatosCuenta.Font = new Font("Montserrat SemiBold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDatosCuenta.Location = new Point(81, 517);
+            labelDatosCuenta.Name = "labelDatosCuenta";
+            labelDatosCuenta.Size = new Size(264, 55);
+            labelDatosCuenta.TabIndex = 23;
+            labelDatosCuenta.Text = "Datos cuenta";
             // 
-            // button7
+            // labelDatosPersonales
             // 
-            button7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button7.Location = new Point(402, 778);
-            button7.Name = "button7";
-            button7.Size = new Size(200, 60);
-            button7.TabIndex = 9;
-            button7.Text = "Crear usuario";
-            button7.UseVisualStyleBackColor = true;
+            labelDatosPersonales.AutoSize = true;
+            labelDatosPersonales.Font = new Font("Montserrat SemiBold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDatosPersonales.Location = new Point(80, 132);
+            labelDatosPersonales.Name = "labelDatosPersonales";
+            labelDatosPersonales.Size = new Size(336, 55);
+            labelDatosPersonales.TabIndex = 22;
+            labelDatosPersonales.Text = "Datos personales";
             // 
-            // dateTimePicker1
+            // buttonCrearUsuario
             // 
-            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(795, 321);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 21;
+            buttonCrearUsuario.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonCrearUsuario.Location = new Point(402, 778);
+            buttonCrearUsuario.Name = "buttonCrearUsuario";
+            buttonCrearUsuario.Size = new Size(200, 60);
+            buttonCrearUsuario.TabIndex = 9;
+            buttonCrearUsuario.Text = "Crear usuario";
+            buttonCrearUsuario.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // dateTimePickerFechaNacimiento
             // 
-            textBox9.Location = new Point(795, 238);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(181, 23);
-            textBox9.TabIndex = 20;
+            dateTimePickerFechaNacimiento.CalendarFont = new Font("Montserrat", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePickerFechaNacimiento.Location = new Point(795, 321);
+            dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
+            dateTimePickerFechaNacimiento.Size = new Size(200, 23);
+            dateTimePickerFechaNacimiento.TabIndex = 21;
             // 
-            // label12
+            // textBoxApellido1
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label12.Location = new Point(602, 655);
-            label12.Name = "label12";
-            label12.Size = new Size(156, 62);
-            label12.TabIndex = 19;
-            label12.Text = "Repetir\r\n contraseña";
-            label12.TextAlign = ContentAlignment.TopCenter;
+            textBoxApellido1.Location = new Point(795, 238);
+            textBoxApellido1.Name = "textBoxApellido1";
+            textBoxApellido1.Size = new Size(181, 23);
+            textBoxApellido1.TabIndex = 20;
             // 
-            // textBox8
+            // labelRepContrasenya
             // 
-            textBox8.Location = new Point(289, 683);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(181, 23);
-            textBox8.TabIndex = 18;
+            labelRepContrasenya.AutoSize = true;
+            labelRepContrasenya.Font = new Font("Montserrat", 20.25F);
+            labelRepContrasenya.Location = new Point(602, 655);
+            labelRepContrasenya.Name = "labelRepContrasenya";
+            labelRepContrasenya.Size = new Size(175, 84);
+            labelRepContrasenya.TabIndex = 19;
+            labelRepContrasenya.Text = "Repetir\r\n contraseña";
+            labelRepContrasenya.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox7
+            // textBoxContrasenya
             // 
-            textBox7.Location = new Point(795, 683);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(181, 23);
-            textBox7.TabIndex = 17;
+            textBoxContrasenya.Location = new Point(289, 683);
+            textBoxContrasenya.Name = "textBoxContrasenya";
+            textBoxContrasenya.Size = new Size(181, 23);
+            textBoxContrasenya.TabIndex = 18;
             // 
-            // label11
+            // textBoxRepContrasenya
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label11.Location = new Point(117, 668);
-            label11.Name = "label11";
-            label11.Size = new Size(155, 31);
-            label11.TabIndex = 16;
-            label11.Text = "Contraseña";
+            textBoxRepContrasenya.Location = new Point(795, 683);
+            textBoxRepContrasenya.Name = "textBoxRepContrasenya";
+            textBoxRepContrasenya.Size = new Size(181, 23);
+            textBoxRepContrasenya.TabIndex = 17;
             // 
-            // label10
+            // labelContrasenya
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label10.Location = new Point(117, 598);
-            label10.Name = "label10";
-            label10.Size = new Size(108, 31);
-            label10.TabIndex = 15;
-            label10.Text = "Usuario";
+            labelContrasenya.AutoSize = true;
+            labelContrasenya.Font = new Font("Montserrat", 20.25F);
+            labelContrasenya.Location = new Point(117, 668);
+            labelContrasenya.Name = "labelContrasenya";
+            labelContrasenya.Size = new Size(171, 42);
+            labelContrasenya.TabIndex = 16;
+            labelContrasenya.Text = "Contraseña";
             // 
-            // label8
+            // labelUsuario
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(338, 27);
-            label8.Name = "label8";
-            label8.Size = new Size(440, 55);
-            label8.TabIndex = 13;
-            label8.Text = "NUEVO USUARIO";
-            label8.TextAlign = ContentAlignment.TopCenter;
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Montserrat", 20.25F);
+            labelUsuario.Location = new Point(117, 598);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(121, 42);
+            labelUsuario.TabIndex = 15;
+            labelUsuario.Text = "Usuario";
             // 
-            // textBox5
+            // labelNuevoUsuario
             // 
-            textBox5.Location = new Point(289, 437);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(181, 23);
-            textBox5.TabIndex = 10;
+            labelNuevoUsuario.AutoSize = true;
+            labelNuevoUsuario.Font = new Font("Montserrat", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNuevoUsuario.Location = new Point(338, 27);
+            labelNuevoUsuario.Name = "labelNuevoUsuario";
+            labelNuevoUsuario.Size = new Size(466, 75);
+            labelNuevoUsuario.TabIndex = 13;
+            labelNuevoUsuario.Text = "NUEVO USUARIO";
+            labelNuevoUsuario.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox4
+            // textBoxEmail
             // 
-            textBox4.Location = new Point(289, 617);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(181, 23);
-            textBox4.TabIndex = 9;
+            textBoxEmail.Location = new Point(289, 437);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(181, 23);
+            textBoxEmail.TabIndex = 10;
             // 
-            // textBox3
+            // textBoxUsuario
             // 
-            textBox3.Location = new Point(289, 304);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(181, 23);
-            textBox3.TabIndex = 8;
+            textBoxUsuario.Location = new Point(289, 617);
+            textBoxUsuario.Name = "textBoxUsuario";
+            textBoxUsuario.Size = new Size(181, 23);
+            textBoxUsuario.TabIndex = 9;
             // 
-            // textBox2
+            // textBoxApellido2
             // 
-            textBox2.Location = new Point(289, 371);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(181, 23);
-            textBox2.TabIndex = 7;
+            textBoxApellido2.Location = new Point(289, 304);
+            textBoxApellido2.Name = "textBoxApellido2";
+            textBoxApellido2.Size = new Size(181, 23);
+            textBoxApellido2.TabIndex = 8;
             // 
-            // textBox1
+            // textBoxCurso
             // 
-            textBox1.Location = new Point(289, 242);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 23);
-            textBox1.TabIndex = 6;
+            textBoxCurso.Location = new Point(289, 371);
+            textBoxCurso.Name = "textBoxCurso";
+            textBoxCurso.Size = new Size(181, 23);
+            textBoxCurso.TabIndex = 7;
             // 
-            // label6
+            // textBoxNombre
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label6.Location = new Point(117, 422);
-            label6.Name = "label6";
-            label6.Size = new Size(81, 31);
-            label6.TabIndex = 5;
-            label6.Text = "Email";
+            textBoxNombre.Location = new Point(289, 242);
+            textBoxNombre.Name = "textBoxNombre";
+            textBoxNombre.Size = new Size(181, 23);
+            textBoxNombre.TabIndex = 6;
             // 
-            // label5
+            // labelEmail
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label5.Location = new Point(117, 356);
-            label5.Name = "label5";
-            label5.Size = new Size(87, 31);
-            label5.TabIndex = 4;
-            label5.Text = "Curso";
+            labelEmail.AutoSize = true;
+            labelEmail.Font = new Font("Montserrat", 20.25F);
+            labelEmail.Location = new Point(117, 422);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(95, 42);
+            labelEmail.TabIndex = 5;
+            labelEmail.Text = "Email";
             // 
-            // label4
+            // labelCurso
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label4.Location = new Point(583, 289);
-            label4.Name = "label4";
-            label4.Size = new Size(145, 62);
-            label4.TabIndex = 3;
-            label4.Text = "Fecha \r\nnacimiento";
-            label4.TextAlign = ContentAlignment.TopCenter;
-            label4.Click += label4_Click;
+            labelCurso.AutoSize = true;
+            labelCurso.Font = new Font("Montserrat", 20.25F);
+            labelCurso.Location = new Point(117, 356);
+            labelCurso.Name = "labelCurso";
+            labelCurso.Size = new Size(95, 42);
+            labelCurso.TabIndex = 4;
+            labelCurso.Text = "Curso";
             // 
-            // label3
+            // labelFechaNacimiento
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label3.Location = new Point(117, 289);
-            label3.Name = "label3";
-            label3.Size = new Size(138, 31);
-            label3.TabIndex = 2;
-            label3.Text = "2r apellido";
+            labelFechaNacimiento.AutoSize = true;
+            labelFechaNacimiento.Font = new Font("Montserrat", 20.25F);
+            labelFechaNacimiento.Location = new Point(583, 289);
+            labelFechaNacimiento.Name = "labelFechaNacimiento";
+            labelFechaNacimiento.Size = new Size(171, 84);
+            labelFechaNacimiento.TabIndex = 3;
+            labelFechaNacimiento.Text = "Fecha \r\nnacimiento";
+            labelFechaNacimiento.TextAlign = ContentAlignment.TopCenter;
+            labelFechaNacimiento.Click += label4_Click;
             // 
-            // label2
+            // labelApellido2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label2.Location = new Point(602, 223);
-            label2.Name = "label2";
-            label2.Size = new Size(138, 31);
-            label2.TabIndex = 1;
-            label2.Text = "1r apellido";
+            labelApellido2.AutoSize = true;
+            labelApellido2.Font = new Font("Montserrat", 20.25F);
+            labelApellido2.Location = new Point(117, 289);
+            labelApellido2.Name = "labelApellido2";
+            labelApellido2.Size = new Size(157, 42);
+            labelApellido2.TabIndex = 2;
+            labelApellido2.Text = "2r apellido";
             // 
-            // label1
+            // labelApellido1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(117, 227);
-            label1.Name = "label1";
-            label1.Size = new Size(110, 31);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre";
+            labelApellido1.AutoSize = true;
+            labelApellido1.Font = new Font("Montserrat", 20.25F);
+            labelApellido1.Location = new Point(602, 223);
+            labelApellido1.Name = "labelApellido1";
+            labelApellido1.Size = new Size(152, 42);
+            labelApellido1.TabIndex = 1;
+            labelApellido1.Text = "1r apellido";
+            // 
+            // labelNombre
+            // 
+            labelNombre.AutoSize = true;
+            labelNombre.Font = new Font("Montserrat", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelNombre.Location = new Point(117, 227);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(131, 42);
+            labelNombre.TabIndex = 0;
+            labelNombre.Text = "Nombre";
             // 
             // Pantalla5
             // 
@@ -472,38 +487,39 @@ namespace DAM2_Project_Desktop
         #endregion
 
         private SplitContainer splitContainer1;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
+        private Label labelDatosPersonales;
+        private Label labelRepContrasenya;
+        private Label labelContrasenya;
+        private Label labelUsuario;
         private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button1;
+        private Label labelNuevoUsuario;
+        private Label labelDatosCuenta;
+        private Label labelEmail;
+        private Label labelCurso;
+        private Label labelFechaNacimiento;
+        private Label labelApellido2;
+        private Label labelApellido1;
+        private Label labelNombre;
+        private Button buttonCrearUsuario;
+        private Button buttonExportarJson;
+        private Button buttonImportarJson;
+        private Button buttonUsuarios;
+        private Button buttonProyectosPrivados;
+        private Button buttonFavoritos;
+        private Button buttonInicio;
         private SplitContainer splitContainer2;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox textBoxNombre;
+        private DateTimePicker dateTimePickerFechaNacimiento;
         private PictureBox pictureBoxLogo;
         private PictureBox pictureBoxUsuario;
         private PictureBox pictureBoxMenu;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
+        private TextBox textBoxApellido1;
+        private TextBox textBoxContrasenya;
+        private TextBox textBoxRepContrasenya;
         private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox textBoxEmail;
+        private TextBox textBoxUsuario;
+        private TextBox textBoxApellido2;
+        private TextBox textBoxCurso;
     }
 }
