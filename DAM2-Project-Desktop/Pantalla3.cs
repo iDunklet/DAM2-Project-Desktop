@@ -15,7 +15,7 @@ namespace DAM2_Project_Desktop
         public Pantalla3()
         {
             InitializeComponent();
-            dataGridView1_CellContentClick();
+            
         }
 
         private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)

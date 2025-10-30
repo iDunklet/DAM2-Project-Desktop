@@ -571,6 +571,7 @@
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(4, 3, 4, 3);
+            MinimumSize = new Size(1440, 1024);
             Name = "Pantalla3";
             Text = "Pantalla3";
             Load += Pantalla3_Load;
