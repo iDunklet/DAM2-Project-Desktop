@@ -93,7 +93,7 @@ namespace DAM2_Project_Desktop
                 new PointF(180 * scaleX, 480 * scaleY));
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonLogin_Click(object sender, EventArgs e)
         {
             string username = textBoxUser.Text.Trim();
             string password = textBoxPass.Text.Trim();
@@ -114,6 +114,6 @@ namespace DAM2_Project_Desktop
                 textBoxUser.Clear();
                 textBoxUser.Focus();
             }
-        }
+        }//hahahhaa
     }
 }
