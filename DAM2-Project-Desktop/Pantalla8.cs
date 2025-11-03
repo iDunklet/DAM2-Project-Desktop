@@ -17,6 +17,7 @@ namespace DAM2_Project_Desktop
         public Pantalla8()
         {
             InitializeComponent();
+            dataGridViewListadoUsuarios.AutoGenerateColumns = false;
             this.Load += new EventHandler(Pantalla8_Load);
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla8_Resize;
@@ -60,7 +61,6 @@ namespace DAM2_Project_Desktop
         {
             dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
 
-            ConfigurarColumnaIconoEdit();
             ConfigurarColumnaIconoDelete();
             ConfigurarColumnaIconoEditar();
 
@@ -73,8 +73,6 @@ namespace DAM2_Project_Desktop
             // Establece la nueva altura (total de filas + pequeño margen de 3 píxeles).
             dataGridViewListadoUsuarios.Height = totalHeight + 3;
         }
-
-        
 
         public Bitmap GetImgIconDelete()
         {
@@ -93,34 +91,6 @@ namespace DAM2_Project_Desktop
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (columnName == "iconoEditar")
-            {
-                var usuario = clickedRow.DataBoundItem as Usuarios;
-
-                if (usuario == null)
-                {
-                    MessageBox.Show("❌ No se pudo obtener el usuario (DataBoundItem es null).");
-                    return;
-                }
-
-                // 💥 VERIFICACIÓN CLAVE 💥
-                MessageBox.Show(
-                    $"Usuario obtenido:\n\n" +
-                    $"Nombre: {usuario.nombre}\n" +
-                    $"Username: {usuario.username}\n" +
-                    $"Email: {usuario.email}"
-                );
-
-                Pantalla7 p = new Pantalla7(usuario);
-                p.Show();
-            }
-        }
-
-
-
-        /*
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
             DataGridViewRow clickedRow = dataGridViewListadoUsuarios.Rows[e.RowIndex];
 
@@ -161,15 +131,6 @@ namespace DAM2_Project_Desktop
             {
                 DataGridViewImageColumn deleteCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["IconoDelete"];
                 deleteCol.Image = GetImgIconDelete();
-            }
-        }
-        */
-        private void ConfigurarColumnaIconoEdit()
-        {
-            if (dataGridViewListadoUsuarios.Columns.Contains("iconoEditar"))
-            {
-                DataGridViewImageColumn deleteCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["iconoEditar"];
-                deleteCol.Image = GetImgIconEdit();
             }
         }
 
