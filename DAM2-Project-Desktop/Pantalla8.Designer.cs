@@ -28,19 +28,18 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            buttonExportarJSON = new Button();
+            buttonImportarJSON = new Button();
+            buttonUsuarios = new Button();
+            buttonProyectosPrivados = new Button();
+            buttonInicio = new Button();
             dataGridViewListadoUsuarios = new DataGridView();
             ImgPerfil = new DataGridViewImageColumn();
             Username = new DataGridViewTextBoxColumn();
@@ -78,8 +77,8 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1627, 1055);
-            splitContainer1.SplitterDistance = 101;
+            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
             // 
@@ -96,19 +95,18 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(button7);
-            splitContainer2.Panel1.Controls.Add(button6);
-            splitContainer2.Panel1.Controls.Add(button5);
-            splitContainer2.Panel1.Controls.Add(button4);
-            splitContainer2.Panel1.Controls.Add(button3);
-            splitContainer2.Panel1.Controls.Add(button2);
-            splitContainer2.Panel1.Controls.Add(button1);
+            splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
+            splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
+            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
+            splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
+            splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel2.Controls.Add(dataGridViewListadoUsuarios);
-            splitContainer2.Size = new Size(1627, 951);
-            splitContainer2.SplitterDistance = 278;
+            splitContainer2.Size = new Size(1422, 881);
+            splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
@@ -122,100 +120,86 @@ namespace DAM2_Project_Desktop
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonExportarJSON
             // 
-            button6.BackColor = Color.FromArgb(79, 209, 197);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.FromArgb(35, 78, 82);
-            button6.Location = new Point(24, 456);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(229, 80);
-            button6.TabIndex = 8;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
+            buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJSON.Location = new Point(21, 276);
+            buttonExportarJSON.Name = "buttonExportarJSON";
+            buttonExportarJSON.Size = new Size(200, 60);
+            buttonExportarJSON.TabIndex = 7;
+            buttonExportarJSON.Text = "ExportarJSON";
+            buttonExportarJSON.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonImportarJSON
             // 
-            button5.BackColor = Color.FromArgb(79, 209, 197);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = Color.FromArgb(35, 78, 82);
-            button5.Location = new Point(24, 368);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(229, 80);
-            button5.TabIndex = 7;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = false;
+            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonImportarJSON.Location = new Point(21, 210);
+            buttonImportarJSON.Name = "buttonImportarJSON";
+            buttonImportarJSON.Size = new Size(200, 60);
+            buttonImportarJSON.TabIndex = 10;
+            buttonImportarJSON.Text = "Importar JSON";
+            buttonImportarJSON.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonUsuarios
             // 
-            button4.BackColor = Color.FromArgb(79, 209, 197);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(24, 280);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(229, 80);
-            button4.TabIndex = 10;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
+            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
+            buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonUsuarios.Location = new Point(21, 144);
+            buttonUsuarios.Name = "buttonUsuarios";
+            buttonUsuarios.Size = new Size(200, 60);
+            buttonUsuarios.TabIndex = 5;
+            buttonUsuarios.Text = "Usuarios";
+            buttonUsuarios.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttonProyectosPrivados
             // 
-            button3.BackColor = Color.FromArgb(79, 209, 197);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(24, 192);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(229, 80);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
+            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
+            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
+            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonProyectosPrivados.Location = new Point(21, 78);
+            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
+            buttonProyectosPrivados.Size = new Size(200, 60);
+            buttonProyectosPrivados.TabIndex = 4;
+            buttonProyectosPrivados.Text = "Proyectos Privados";
+            buttonProyectosPrivados.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonInicio
             // 
-            button2.BackColor = Color.FromArgb(79, 209, 197);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(24, 104);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(229, 80);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(79, 209, 197);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(24, 16);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(229, 80);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
+            buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonInicio.Location = new Point(21, 12);
+            buttonInicio.Name = "buttonInicio";
+            buttonInicio.Size = new Size(200, 60);
+            buttonInicio.TabIndex = 3;
+            buttonInicio.Text = "Inicio";
+            buttonInicio.UseVisualStyleBackColor = false;
             // 
             // dataGridViewListadoUsuarios
             // 
             dataGridViewListadoUsuarios.AllowUserToAddRows = false;
             dataGridViewListadoUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewListadoUsuarios.BackgroundColor = Color.FromArgb(247, 250, 252);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(35, 78, 82);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(247, 250, 252);
+            dataGridViewListadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewListadoUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewListadoUsuarios.Columns.AddRange(new DataGridViewColumn[] { ImgPerfil, Username, Nombre, Apellidos, Email, Curso, iconoEdit, IconoDelete });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(242, 222, 166);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(242, 222, 166);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewListadoUsuarios.Location = new Point(52, 119);
             dataGridViewListadoUsuarios.Name = "dataGridViewListadoUsuarios";
             dataGridViewListadoUsuarios.RowHeadersVisible = false;
@@ -225,12 +209,6 @@ namespace DAM2_Project_Desktop
             dataGridViewListadoUsuarios.TabIndex = 0;
             dataGridViewListadoUsuarios.CellContentClick += dataGridView1_CellContentClick;
             dataGridViewListadoUsuarios.CellFormatting += dataGridViewListadoUsuarios_CellFormatting;
-            // header
-            headerStyle.ForeColor = Color.FromArgb(247, 250, 252); 
-            headerStyle.BackColor = Color.FromArgb(35, 78, 82);
-            headerStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            headerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewListadoUsuarios.ColumnHeadersDefaultCellStyle = headerStyle;
             // 
             // ImgPerfil
             // 
@@ -293,10 +271,10 @@ namespace DAM2_Project_Desktop
             // 
             // IconoDelete
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 111, 97);
-            dataGridViewCellStyle3.NullValue = resources.GetObject("dataGridViewCellStyle3.NullValue");
-            IconoDelete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 111, 97);
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            IconoDelete.DefaultCellStyle = dataGridViewCellStyle2;
             IconoDelete.HeaderText = "";
             IconoDelete.MinimumWidth = 6;
             IconoDelete.Name = "IconoDelete";
@@ -308,9 +286,10 @@ namespace DAM2_Project_Desktop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1627, 1055);
+            ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1440, 1024);
             Name = "Pantalla8";
             Text = "Tasky";
             splitContainer1.Panel2.ResumeLayout(false);
@@ -329,12 +308,11 @@ namespace DAM2_Project_Desktop
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button buttonExportarJSON;
+        private Button buttonImportarJSON;
+        private Button buttonUsuarios;
+        private Button buttonProyectosPrivados;
+        private Button buttonInicio;
         private DataGridView dataGridViewListadoUsuarios;
         private DataGridViewImageColumn ImgPerfil;
         private DataGridViewTextBoxColumn Username;

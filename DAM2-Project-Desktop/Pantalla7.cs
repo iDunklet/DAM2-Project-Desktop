@@ -40,10 +40,9 @@ namespace DAM2_Project_Desktop
 
             buttonInicio.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             buttonProyectosPrivados.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button3.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button4.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonUsuarios.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonImportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             buttonExportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button6.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
 
         }
@@ -119,6 +118,11 @@ namespace DAM2_Project_Desktop
         }
 
         private void buttonConfigurarUsuarioNuevaIMG_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e)
         {
 
         }

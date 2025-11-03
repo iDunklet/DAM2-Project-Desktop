@@ -32,9 +32,11 @@
             // 
             // Pantalla4
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1424, 985);
+            ClientSize = new Size(1422, 977);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1440, 1024);
             Name = "Pantalla4";
             Text = "Pantalla4";
             ResumeLayout(false);

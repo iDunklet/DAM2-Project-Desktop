@@ -21,7 +21,6 @@ namespace DAM2_Project_Desktop
         public Bitmap imgPerfil { get; set; }
 
         //artivutos ocultos
-        public Bitmap imgPerfil { get; set;}
         public Bitmap miniImgPerfil { get; set; }
 
         public string apellidoCompleto { get; }

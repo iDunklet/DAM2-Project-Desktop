@@ -32,8 +32,8 @@ namespace DAM2_Project_Desktop
             splitContainer2 = new SplitContainer();
             button7 = new Button();
             buttonExportarJSON = new Button();
-            this.buttonImportarJSON = new Button();
-            this.buttonUsuarios = new Button();
+            buttonImportarJSON = new Button();
+            buttonUsuarios = new Button();
             buttonProyectosPrivados = new Button();
             buttonInicio = new Button();
             pictureBox1 = new PictureBox();
@@ -85,8 +85,8 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1424, 985);
-            splitContainer1.SplitterDistance = 93;
+            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.SplitterDistance = 92;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
             // 
@@ -104,8 +104,8 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(button7);
             splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
-            splitContainer2.Panel1.Controls.Add(this.buttonImportarJSON);
-            splitContainer2.Panel1.Controls.Add(this.buttonUsuarios);
+            splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
+            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
             splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
             splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
@@ -134,8 +134,8 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.Controls.Add(label1);
             splitContainer2.Panel2.Controls.Add(textBoxConfigurarUsuarioName);
             splitContainer2.Panel2.ForeColor = Color.FromArgb(35, 78, 82);
-            splitContainer2.Size = new Size(1424, 889);
-            splitContainer2.SplitterDistance = 242;
+            splitContainer2.Size = new Size(1422, 882);
+            splitContainer2.SplitterDistance = 240;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
@@ -160,31 +160,30 @@ namespace DAM2_Project_Desktop
             buttonExportarJSON.TabIndex = 7;
             buttonExportarJSON.Text = "ExportarJSON";
             buttonExportarJSON.UseVisualStyleBackColor = false;
-            buttonExportarJSON.Click += this.buttonExportarJSON_Click;
             // 
             // buttonImportarJSON
             // 
-            this.buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
-            this.buttonImportarJSON.FlatStyle = FlatStyle.Flat;
-            this.buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
-            this.buttonImportarJSON.Location = new Point(21, 210);
-            this.buttonImportarJSON.Name = "buttonImportarJSON";
-            this.buttonImportarJSON.Size = new Size(200, 60);
-            this.buttonImportarJSON.TabIndex = 10;
-            this.buttonImportarJSON.Text = "Importar JSON";
-            this.buttonImportarJSON.UseVisualStyleBackColor = false;
+            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonImportarJSON.Location = new Point(21, 210);
+            buttonImportarJSON.Name = "buttonImportarJSON";
+            buttonImportarJSON.Size = new Size(200, 60);
+            buttonImportarJSON.TabIndex = 10;
+            buttonImportarJSON.Text = "Importar JSON";
+            buttonImportarJSON.UseVisualStyleBackColor = false;
             // 
             // buttonUsuarios
             // 
-            this.buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
-            this.buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            this.buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            this.buttonUsuarios.Location = new Point(21, 144);
-            this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new Size(200, 60);
-            this.buttonUsuarios.TabIndex = 5;
-            this.buttonUsuarios.Text = "Usuarios";
-            this.buttonUsuarios.UseVisualStyleBackColor = false;
+            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
+            buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonUsuarios.Location = new Point(21, 144);
+            buttonUsuarios.Name = "buttonUsuarios";
+            buttonUsuarios.Size = new Size(200, 60);
+            buttonUsuarios.TabIndex = 5;
+            buttonUsuarios.Text = "Usuarios";
+            buttonUsuarios.UseVisualStyleBackColor = false;
             // 
             // buttonProyectosPrivados
             // 
@@ -209,6 +208,7 @@ namespace DAM2_Project_Desktop
             buttonInicio.TabIndex = 3;
             buttonInicio.Text = "Inicio";
             buttonInicio.UseVisualStyleBackColor = false;
+            buttonInicio.Click += buttonInicio_Click;
             // 
             // pictureBox1
             // 
@@ -271,7 +271,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioConfirmarContrasena.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioConfirmarContrasena.Location = new Point(758, 689);
             textBoxConfigurarUsuarioConfirmarContrasena.Name = "textBoxConfigurarUsuarioConfirmarContrasena";
-            textBoxConfigurarUsuarioConfirmarContrasena.Size = new Size(300, 34);
+            textBoxConfigurarUsuarioConfirmarContrasena.Size = new Size(300, 41);
             textBoxConfigurarUsuarioConfirmarContrasena.TabIndex = 20;
             // 
             // label9
@@ -291,7 +291,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioNuevaContrasena.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioNuevaContrasena.Location = new Point(381, 689);
             textBoxConfigurarUsuarioNuevaContrasena.Name = "textBoxConfigurarUsuarioNuevaContrasena";
-            textBoxConfigurarUsuarioNuevaContrasena.Size = new Size(300, 34);
+            textBoxConfigurarUsuarioNuevaContrasena.Size = new Size(300, 41);
             textBoxConfigurarUsuarioNuevaContrasena.TabIndex = 18;
             // 
             // label7
@@ -447,9 +447,9 @@ namespace DAM2_Project_Desktop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1424, 985);
+            ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
-            MinimumSize = new Size(1024, 768);
+            MinimumSize = new Size(1440, 1024);
             Name = "Pantalla7";
             Text = "Pantalla7";
             splitContainer1.Panel2.ResumeLayout(false);
@@ -471,8 +471,8 @@ namespace DAM2_Project_Desktop
         private Button button7;
         private Button button6;
         private Button buttonExportarJSON;
-        private Button button4;
-        private Button button3;
+        private Button buttonImportarJSON;
+        private Button buttonUsuarios;
         private Button buttonProyectosPrivados;
         private Button buttonInicio;
         private TextBox textBox5;

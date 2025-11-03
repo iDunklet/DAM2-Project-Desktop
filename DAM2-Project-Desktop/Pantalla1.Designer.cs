@@ -139,6 +139,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(1440, 1024);
             Name = "Pantalla1";
             Text = "Tasky";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -25,12 +25,11 @@ namespace DAM2_Project_Desktop
         private void Pantalla8_Resize(object sender, EventArgs e)
         {
 
-            button1.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button2.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button3.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button4.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button5.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button6.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonInicio.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonProyectosPrivados.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonUsuarios.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonImportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            buttonExportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
             button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
 
             // Escalar DataGridView
