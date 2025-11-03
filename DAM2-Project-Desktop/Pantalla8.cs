@@ -34,7 +34,7 @@ namespace DAM2_Project_Desktop
             button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
 
             // Escalar DataGridView
-            dataGridViewListadoUsuarios.Size = Dimencions.Scale(new Size(1200, 151), this.ClientSize);
+            dataGridViewListadoUsuarios.Size = Dimencions.Scale(new Size(1200, 810), this.ClientSize);
 
             // Escalar columnas
             float scaleX = (float)this.ClientSize.Width / 1440;
@@ -44,7 +44,7 @@ namespace DAM2_Project_Desktop
             Apellidos.Width = (int)(285 * scaleX);
             Email.Width = (int)(250 * scaleX);
             Curso.Width = (int)(100 * scaleX);
-            iconoEditar.Width = (int)(40 * scaleX);
+            iconoEdit.Width = (int)(40 * scaleX);
             IconoDelete.Width = (int)(40 * scaleX);
 
             // Escalar altura de filas
@@ -63,6 +63,7 @@ namespace DAM2_Project_Desktop
 
             ConfigurarColumnaIconoEdit();
             ConfigurarColumnaIconoDelete();
+            ConfigurarColumnaIconoEditar();
 
 
             // --- CÓDIGO PARA EL REDIMENSIONAMIENTO AUTOMÁTICO DE ALTURA ---
@@ -83,7 +84,6 @@ namespace DAM2_Project_Desktop
             return resizedIcon;
         }
 
-
         public Bitmap GetImgIconEdit()
         {
             Bitmap icon = Properties.Resources.icon_edit;
@@ -91,11 +91,8 @@ namespace DAM2_Project_Desktop
             return resizedIcon;
         }
 
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string columnName = dataGridViewListadoUsuarios.Columns[e.ColumnIndex].Name;
-            DataGridViewRow clickedRow = dataGridViewListadoUsuarios.Rows[e.RowIndex];
 
             if (columnName == "iconoEditar")
             {
@@ -140,7 +137,7 @@ namespace DAM2_Project_Desktop
                 }
 
             }
-            if (columnName == "iconoEditar")
+            if (columnName == "iconoEdit")
             {
                 Pantalla7 p = new Pantalla7(clickedRow.DataBoundItem as Usuarios);
                 p.Show();
@@ -177,6 +174,14 @@ namespace DAM2_Project_Desktop
             }
         }
 
+        private void ConfigurarColumnaIconoEditar()
+        {
+            if (dataGridViewListadoUsuarios.Columns.Contains("IconoEdit"))
+            {
+                DataGridViewImageColumn ediCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["IconoEdit"];
+                ediCol.Image = GetImgIconEdit();
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -185,7 +190,12 @@ namespace DAM2_Project_Desktop
 
         private void dataGridViewListadoUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-  
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,8 +28,9 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
@@ -47,7 +48,7 @@ namespace DAM2_Project_Desktop
             Apellidos = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             Curso = new DataGridViewTextBoxColumn();
-            iconoEditar = new DataGridViewImageColumn();
+            iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
@@ -206,25 +207,30 @@ namespace DAM2_Project_Desktop
             dataGridViewListadoUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewListadoUsuarios.BackgroundColor = Color.FromArgb(247, 250, 252);
             dataGridViewListadoUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewListadoUsuarios.ColumnHeadersVisible = false;
-            dataGridViewListadoUsuarios.Columns.AddRange(new DataGridViewColumn[] { ImgPerfil, Username, Nombre, Apellidos, Email, Curso, iconoEditar, IconoDelete });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(242, 222, 166);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewListadoUsuarios.Columns.AddRange(new DataGridViewColumn[] { ImgPerfil, Username, Nombre, Apellidos, Email, Curso, iconoEdit, IconoDelete });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(242, 222, 166);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewListadoUsuarios.Location = new Point(52, 119);
             dataGridViewListadoUsuarios.Name = "dataGridViewListadoUsuarios";
             dataGridViewListadoUsuarios.RowHeadersVisible = false;
             dataGridViewListadoUsuarios.RowHeadersWidth = 51;
             dataGridViewListadoUsuarios.ScrollBars = ScrollBars.None;
-            dataGridViewListadoUsuarios.Size = new Size(1227, 201);
+            dataGridViewListadoUsuarios.Size = new Size(1227, 810);
             dataGridViewListadoUsuarios.TabIndex = 0;
             dataGridViewListadoUsuarios.CellContentClick += dataGridView1_CellContentClick;
             dataGridViewListadoUsuarios.CellFormatting += dataGridViewListadoUsuarios_CellFormatting;
+            // header
+            headerStyle.ForeColor = Color.FromArgb(247, 250, 252); 
+            headerStyle.BackColor = Color.FromArgb(35, 78, 82);
+            headerStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            headerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewListadoUsuarios.ColumnHeadersDefaultCellStyle = headerStyle;
             // 
             // ImgPerfil
             // 
@@ -271,26 +277,26 @@ namespace DAM2_Project_Desktop
             // Curso
             // 
             Curso.DataPropertyName = "classe";
-            Curso.HeaderText = "Cuerso";
+            Curso.HeaderText = "Curso";
             Curso.MinimumWidth = 6;
             Curso.Name = "Curso";
             Curso.Width = 125;
             // 
-            // iconoEditar
+            // iconoEdit
             // 
-            iconoEditar.HeaderText = "";
-            iconoEditar.MinimumWidth = 6;
-            iconoEditar.Name = "iconoEditar";
-            iconoEditar.Resizable = DataGridViewTriState.True;
-            iconoEditar.SortMode = DataGridViewColumnSortMode.Automatic;
-            iconoEditar.Width = 40;
+            iconoEdit.HeaderText = "";
+            iconoEdit.MinimumWidth = 6;
+            iconoEdit.Name = "iconoEdit";
+            iconoEdit.Resizable = DataGridViewTriState.True;
+            iconoEdit.SortMode = DataGridViewColumnSortMode.Automatic;
+            iconoEdit.Width = 40;
             // 
             // IconoDelete
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 111, 97);
-            dataGridViewCellStyle1.NullValue = resources.GetObject("dataGridViewCellStyle1.NullValue");
-            IconoDelete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 111, 97);
+            dataGridViewCellStyle3.NullValue = resources.GetObject("dataGridViewCellStyle3.NullValue");
+            IconoDelete.DefaultCellStyle = dataGridViewCellStyle3;
             IconoDelete.HeaderText = "";
             IconoDelete.MinimumWidth = 6;
             IconoDelete.Name = "IconoDelete";
@@ -304,7 +310,6 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1627, 1055);
             Controls.Add(splitContainer1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Pantalla8";
             Text = "Tasky";
@@ -337,7 +342,7 @@ namespace DAM2_Project_Desktop
         private DataGridViewTextBoxColumn Apellidos;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Curso;
-        private DataGridViewImageColumn iconoEditar;
+        private DataGridViewImageColumn iconoEdit;
         private DataGridViewImageColumn IconoDelete;
     }
 }

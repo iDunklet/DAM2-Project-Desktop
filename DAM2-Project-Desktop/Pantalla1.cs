@@ -9,7 +9,7 @@ namespace DAM2_Project_Desktop
     {
         private Size originalFormSize;
 
-        
+
         private Dictionary<Control, Rectangle> originalRects = new Dictionary<Control, Rectangle>();
         private Dictionary<Control, float> originalFonts = new Dictionary<Control, float>();
 
@@ -19,7 +19,7 @@ namespace DAM2_Project_Desktop
 
             originalFormSize = this.Size;
 
-           
+
             SaveOriginalControlData(this);
 
             ButtonLogin.FlatStyle = FlatStyle.Flat;
@@ -40,7 +40,7 @@ namespace DAM2_Project_Desktop
                 originalFonts[ctrl] = ctrl.Font.Size;
 
                 if (ctrl.Controls.Count > 0)
-                    SaveOriginalControlData(ctrl); 
+                    SaveOriginalControlData(ctrl);
             }
         }
 
@@ -51,7 +51,7 @@ namespace DAM2_Project_Desktop
 
             ScaleAllControls(this, scaleX, scaleY);
 
-            pictureBox3.Invalidate(); 
+            pictureBox3.Invalidate();
         }
 
         private void ScaleAllControls(Control parent, float scaleX, float scaleY)
@@ -68,7 +68,7 @@ namespace DAM2_Project_Desktop
                 ctrl.Font = new Font(ctrl.Font.FontFamily, originalFontSize * Math.Min(scaleX, scaleY), ctrl.Font.Style);
 
                 if (ctrl.Controls.Count > 0)
-                    ScaleAllControls(ctrl, scaleX, scaleY); 
+                    ScaleAllControls(ctrl, scaleX, scaleY);
             }
         }
 
@@ -115,4 +115,6 @@ namespace DAM2_Project_Desktop
                 textBoxUser.Focus();
             }
         }//hahahhaa
+        //jajajaj
     }
+}

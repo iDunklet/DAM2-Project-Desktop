@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using DAM2_Project_Desktop.Properties;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
@@ -20,9 +20,13 @@ namespace DAM2_Project_Desktop
  
         public Bitmap imgPerfil { get; set; }
 
-        public Bitmap miniImgPerfil { get; }
+        //artivutos ocultos
+        public Bitmap imgPerfil { get; set;}
+        public Bitmap miniImgPerfil { get; set; }
 
         public string apellidoCompleto { get; }
+
+
 
 
         //constructores
@@ -42,6 +46,7 @@ namespace DAM2_Project_Desktop
 
             this.imgPerfil = GenerarImagenIniciales(100);
             this.miniImgPerfil = GenerarImagenIniciales(20);
+
             this.apellidoCompleto = setApellidoCompleto();
 
            
@@ -71,11 +76,6 @@ namespace DAM2_Project_Desktop
         {
             this.nombre = nombre;
         }
-
-
-
-
-
 
 
         //metodos 
@@ -157,7 +157,7 @@ namespace DAM2_Project_Desktop
                 }
 
                 // 4. Definir la fuente (texto blanco)
-                float fontSize = tamano / (iniciales.Length > 1 ? 2.5f : 1.8f);
+                float fontSize = tamano / (iniciales.Length > 1 ? 1.5f : 1.8f);
                 using (var fuente = new Font("Arial", fontSize, FontStyle.Bold))
                 using (var brochaTexto = new SolidBrush(Color.White))
                 {
