@@ -481,7 +481,7 @@ namespace DAM2_Project_Desktop
             // Pantalla5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);

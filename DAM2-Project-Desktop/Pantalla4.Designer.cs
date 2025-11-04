@@ -33,7 +33,7 @@
             // Pantalla4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1422, 977);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1024);
