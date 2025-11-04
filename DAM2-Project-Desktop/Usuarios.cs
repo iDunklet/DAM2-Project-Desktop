@@ -75,8 +75,7 @@ namespace DAM2_Project_Desktop
         {
             this.nombre = nombre;
         }
-<<<<<<< HEAD
-=======
+
         /*constructor de test para proyecto Hugo
         public Usuarios(string nombre)
         {
@@ -86,7 +85,6 @@ namespace DAM2_Project_Desktop
         */
 
 
->>>>>>> ed2a2af (actualización)
 
 
         //metodos 
