@@ -1,4 +1,5 @@
 
+
 namespace DAM2_Project_Desktop
 {
     partial class Pantalla5
@@ -299,6 +300,7 @@ namespace DAM2_Project_Desktop
             buttonCrearUsuario.TabIndex = 9;
             buttonCrearUsuario.Text = "Crear usuario";
             buttonCrearUsuario.UseVisualStyleBackColor = true;
+            buttonCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // dateTimePickerFechaNacimiento
             // 
@@ -445,7 +447,6 @@ namespace DAM2_Project_Desktop
             labelFechaNacimiento.TabIndex = 3;
             labelFechaNacimiento.Text = "Fecha \r\nnacimiento";
             labelFechaNacimiento.TextAlign = ContentAlignment.TopCenter;
-            labelFechaNacimiento.Click += label4_Click;
             // 
             // labelApellido2
             // 
@@ -502,12 +503,66 @@ namespace DAM2_Project_Desktop
             ResumeLayout(false);
         }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string nombre = textBoxNombre.Text;
+            string apellido1 = textBoxApellido1.Text;
+            string apellido2 = textBoxApellido2.Text;
+            string clase = textBoxCurso.Text;
+            DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
+            string email = textBoxEmail.Text;
+            string password = textBoxContrasenya.Text;
+            string userName = textBoxUsuario.Text; // Ya se genera automáticamente antes
+
+            Usuarios nuevoUsuario = new Usuarios(
+                nombre, apellido1, fechaNacimiento,
+                clase, email, password, userName
+            );
+
+            ListadoDatosClasses.ListadoUsuarios.Add(nuevoUsuario);
+
+            MessageBox.Show($"Usuario creado correctamente ✅\n\n" +
+                            $"Nombre: {nuevoUsuario.nombre}\n" +
+                            $"UserName: {nuevoUsuario.userName}\n" +
+                            $"Usuarios totales: {ListadoDatosClasses.ListadoUsuarios.Count}");
+
+            string lista = "";
+            foreach (var usuario in ListadoDatosClasses.ListadoUsuarios)
+            {
+                lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1})\n";
+            }
+
+            MessageBox.Show(lista, "Lista de Usuarios");
+
+            LimpiarCamposUsuario();
+
+
         }
 
-        #endregion
+        private void LimpiarCamposUsuario()
+        {
+            textBoxNombre.Text = "";
+            textBoxApellido1.Text = "";
+            textBoxApellido2.Text = "";
+            textBoxCurso.Text = "";
+            textBoxEmail.Text = "";
+            textBoxContrasenya.Text = "";
+            textBoxRepContrasenya.Text = "";
+            textBoxUsuario.Text = ""; // Se generará automáticamente cuando el usuario escriba nombre/apellido/clase
+            dateTimePickerFechaNacimiento.Value = DateTime.Today; 
+        }
+
+
+
+
+        
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        
 
         private SplitContainer splitContainer1;
         private Label labelDatosPersonales;
@@ -544,5 +599,7 @@ namespace DAM2_Project_Desktop
         private TextBox textBoxUsuario;
         private TextBox textBoxApellido2;
         private TextBox textBoxCurso;
+
+        #endregion
     }
 }

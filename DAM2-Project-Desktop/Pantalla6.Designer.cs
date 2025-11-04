@@ -42,26 +42,30 @@ namespace DAM2_Project_Desktop
             button1 = new Button();
             label7 = new Label();
             label13 = new Label();
-            button7 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            textBox9 = new TextBox();
+            buttonGuardar = new Button();
+            dateTimePickerDataNeixament = new DateTimePicker();
+            textBoxApellido = new TextBox();
             label12 = new Label();
             textBox8 = new TextBox();
             textBox7 = new TextBox();
             label11 = new Label();
             label10 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
+            textBoxCorreo = new TextBox();
             textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
+            textBoxContrasenya = new TextBox();
+            textBoxNombre = new TextBox();
+            labelCorreo = new Label();
+            labelContrasenya = new Label();
             label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            labelApellido = new Label();
+            labelNombre = new Label();
+            textBoxNuevaContrasenya = new TextBox();
+            labelNuevaContrasenya = new Label();
+            textBoxClase = new TextBox();
+            labelClase = new Label();
+            textBoxConfirmarContrasenya = new TextBox();
+            labelConfirmarContrasenya = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -103,8 +107,8 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxUsuario
             // 
-            pictureBoxUsuario.Location = new Point(1491, 15);
-            pictureBoxUsuario.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxUsuario.Image = (Image)resources.GetObject("pictureBoxUsuario.Image");
+            pictureBoxUsuario.Location = new Point(1305, 11);
             pictureBoxUsuario.Name = "pictureBoxUsuario";
             pictureBoxUsuario.Size = new Size(110, 101);
             pictureBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,8 +117,8 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxMenu
             // 
-            pictureBoxMenu.Location = new Point(13, 4);
-            pictureBoxMenu.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxMenu.Image = (Image)resources.GetObject("pictureBoxMenu.Image");
+            pictureBoxMenu.Location = new Point(11, 3);
             pictureBoxMenu.Name = "pictureBoxMenu";
             pictureBoxMenu.Size = new Size(157, 112);
             pictureBoxMenu.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,8 +127,8 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Location = new Point(199, 4);
-            pictureBoxLogo.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
+            pictureBoxLogo.Location = new Point(174, 3);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(275, 112);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -153,28 +157,32 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel2.Controls.Add(textBoxConfirmarContrasenya);
+            splitContainer2.Panel2.Controls.Add(labelConfirmarContrasenya);
+            splitContainer2.Panel2.Controls.Add(textBoxClase);
+            splitContainer2.Panel2.Controls.Add(labelClase);
+            splitContainer2.Panel2.Controls.Add(textBoxNuevaContrasenya);
+            splitContainer2.Panel2.Controls.Add(labelNuevaContrasenya);
             splitContainer2.Panel2.Controls.Add(label7);
             splitContainer2.Panel2.Controls.Add(label13);
-            splitContainer2.Panel2.Controls.Add(button7);
-            splitContainer2.Panel2.Controls.Add(dateTimePicker1);
-            splitContainer2.Panel2.Controls.Add(textBox9);
+            splitContainer2.Panel2.Controls.Add(buttonGuardar);
+            splitContainer2.Panel2.Controls.Add(dateTimePickerDataNeixament);
+            splitContainer2.Panel2.Controls.Add(textBoxApellido);
             splitContainer2.Panel2.Controls.Add(label12);
             splitContainer2.Panel2.Controls.Add(textBox8);
             splitContainer2.Panel2.Controls.Add(textBox7);
             splitContainer2.Panel2.Controls.Add(label11);
             splitContainer2.Panel2.Controls.Add(label10);
             splitContainer2.Panel2.Controls.Add(label8);
-            splitContainer2.Panel2.Controls.Add(textBox5);
+            splitContainer2.Panel2.Controls.Add(textBoxCorreo);
             splitContainer2.Panel2.Controls.Add(textBox4);
-            splitContainer2.Panel2.Controls.Add(textBox3);
-            splitContainer2.Panel2.Controls.Add(textBox2);
-            splitContainer2.Panel2.Controls.Add(textBox1);
-            splitContainer2.Panel2.Controls.Add(label6);
-            splitContainer2.Panel2.Controls.Add(label5);
+            splitContainer2.Panel2.Controls.Add(textBoxContrasenya);
+            splitContainer2.Panel2.Controls.Add(textBoxNombre);
+            splitContainer2.Panel2.Controls.Add(labelCorreo);
+            splitContainer2.Panel2.Controls.Add(labelContrasenya);
             splitContainer2.Panel2.Controls.Add(label4);
-            splitContainer2.Panel2.Controls.Add(label3);
-            splitContainer2.Panel2.Controls.Add(label2);
-            splitContainer2.Panel2.Controls.Add(label1);
+            splitContainer2.Panel2.Controls.Add(labelApellido);
+            splitContainer2.Panel2.Controls.Add(labelNombre);
             splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
             splitContainer2.Size = new Size(1422, 880);
             splitContainer2.SplitterDistance = 243;
@@ -285,32 +293,29 @@ namespace DAM2_Project_Desktop
             label13.TabIndex = 22;
             label13.Text = "Datos personales";
             // 
-            // button7
+            // buttonGuardar
             // 
-            button7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            button7.Location = new Point(459, 1037);
-            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            button7.Location = new Point(402, 778);
             button7.Name = "button7";
-            button7.Size = new Size(229, 80);
+            button7.Size = new Size(200, 60);
             button7.TabIndex = 9;
             button7.Text = "Crear usuario";
             button7.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dateTimePickerDataNeixament
             // 
-            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(909, 428);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.CalendarFont = new Font("Montserrat", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(795, 321);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(228, 27);
+            dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 21;
             // 
-            // textBox9
+            // textBoxApellido
             // 
-            textBox9.Location = new Point(909, 317);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
+            textBox9.Location = new Point(795, 238);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(206, 27);
+            textBox9.Size = new Size(181, 23);
             textBox9.TabIndex = 20;
             // 
             // label12
@@ -371,12 +376,11 @@ namespace DAM2_Project_Desktop
             label8.Text = "NUEVO USUARIO";
             label8.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox5
+            // textBoxCorreo
             // 
-            textBox5.Location = new Point(330, 583);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Location = new Point(289, 437);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(206, 27);
+            textBox5.Size = new Size(181, 23);
             textBox5.TabIndex = 10;
             // 
             // textBox4
@@ -387,97 +391,138 @@ namespace DAM2_Project_Desktop
             textBox4.Size = new Size(206, 27);
             textBox4.TabIndex = 9;
             // 
-            // textBox3
+            // textBoxContrasenya
             // 
-            textBox3.Location = new Point(330, 405);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Location = new Point(289, 304);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(206, 27);
+            textBox3.Size = new Size(181, 23);
             textBox3.TabIndex = 8;
             // 
-            // textBox2
+            // textBoxNombre
             // 
-            textBox2.Location = new Point(330, 495);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Location = new Point(289, 371);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(206, 27);
+            textBox2.Size = new Size(181, 23);
             textBox2.TabIndex = 7;
             // 
-            // textBox1
+            // labelCorreo
             // 
-            textBox1.Location = new Point(330, 323);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(289, 242);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(206, 27);
+            textBox1.Size = new Size(181, 23);
             textBox1.TabIndex = 6;
             // 
-            // label6
+            // labelContrasenya
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label6.Location = new Point(134, 563);
+            label6.Font = new Font("Montserrat", 20.25F);
+            label6.Location = new Point(117, 422);
             label6.Name = "label6";
-            label6.Size = new Size(103, 39);
+            label6.Size = new Size(95, 42);
             label6.TabIndex = 5;
             label6.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label5.Location = new Point(134, 475);
+            label5.Font = new Font("Montserrat", 20.25F);
+            label5.Location = new Point(117, 356);
             label5.Name = "label5";
-            label5.Size = new Size(108, 39);
+            label5.Size = new Size(95, 42);
             label5.TabIndex = 4;
             label5.Text = "Curso";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label4.Location = new Point(666, 385);
+            label4.Font = new Font("Montserrat", 20.25F);
+            label4.Location = new Point(583, 289);
             label4.Name = "label4";
-            label4.Size = new Size(182, 78);
+            label4.Size = new Size(171, 84);
             label4.TabIndex = 3;
-            label4.Text = "Fecha \r\nnacimiento";
+            label4.Text = "Fecha nacimiento";
             label4.TextAlign = ContentAlignment.TopCenter;
             label4.Click += label4_Click;
             // 
-            // label3
+            // labelApellido
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label3.Location = new Point(134, 385);
+            label3.Font = new Font("Montserrat", 20.25F);
+            label3.Location = new Point(117, 289);
             label3.Name = "label3";
-            label3.Size = new Size(175, 39);
+            label3.Size = new Size(157, 42);
             label3.TabIndex = 2;
             label3.Text = "2r apellido";
             // 
-            // label2
+            // labelNombre
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F);
-            label2.Location = new Point(688, 297);
+            label2.Font = new Font("Montserrat", 20.25F);
+            label2.Location = new Point(602, 223);
             label2.Name = "label2";
-            label2.Size = new Size(175, 39);
+            label2.Size = new Size(152, 42);
             label2.TabIndex = 1;
             label2.Text = "1r apellido";
             // 
-            // label1
+            // textBoxNuevaContrasenya
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(134, 303);
+            label1.Font = new Font("Montserrat", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(117, 227);
             label1.Name = "label1";
-            label1.Size = new Size(138, 39);
+            label1.Size = new Size(131, 42);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
+            // 
+            // labelNuevaContrasenya
+            // 
+            labelNuevaContrasenya.AutoSize = true;
+            labelNuevaContrasenya.Font = new Font("Montserrat", 20.25F);
+            labelNuevaContrasenya.Location = new Point(117, 421);
+            labelNuevaContrasenya.Name = "labelNuevaContrasenya";
+            labelNuevaContrasenya.Size = new Size(262, 42);
+            labelNuevaContrasenya.TabIndex = 24;
+            labelNuevaContrasenya.Text = "Nueva contraseña";
+            // 
+            // textBoxClase
+            // 
+            textBoxClase.Location = new Point(718, 371);
+            textBoxClase.Name = "textBoxClase";
+            textBoxClase.Size = new Size(181, 23);
+            textBoxClase.TabIndex = 27;
+            // 
+            // labelClase
+            // 
+            labelClase.AutoSize = true;
+            labelClase.Font = new Font("Montserrat", 20.25F);
+            labelClase.Location = new Point(591, 356);
+            labelClase.Name = "labelClase";
+            labelClase.Size = new Size(89, 42);
+            labelClase.TabIndex = 26;
+            labelClase.Text = "Clase";
+            // 
+            // textBoxConfirmarContrasenya
+            // 
+            textBoxConfirmarContrasenya.Location = new Point(908, 436);
+            textBoxConfirmarContrasenya.Name = "textBoxConfirmarContrasenya";
+            textBoxConfirmarContrasenya.Size = new Size(181, 23);
+            textBoxConfirmarContrasenya.TabIndex = 29;
+            // 
+            // labelConfirmarContrasenya
+            // 
+            labelConfirmarContrasenya.AutoSize = true;
+            labelConfirmarContrasenya.Font = new Font("Montserrat", 20.25F);
+            labelConfirmarContrasenya.Location = new Point(591, 421);
+            labelConfirmarContrasenya.Name = "labelConfirmarContrasenya";
+            labelConfirmarContrasenya.Size = new Size(311, 42);
+            labelConfirmarContrasenya.TabIndex = 28;
+            labelConfirmarContrasenya.Text = "Confirmar contraseña";
             // 
             // Pantalla6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 977);
+            ClientSize = new Size(800, 450);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1024);
@@ -511,7 +556,7 @@ namespace DAM2_Project_Desktop
         #endregion
 
         private SplitContainer splitContainer1;
-        private Button button7;
+        private Button buttonGuardar;
         private Button button6;
         private Button button5;
         private Button button4;
@@ -526,24 +571,27 @@ namespace DAM2_Project_Desktop
         private Label label9;
         private Label label8;
         private Label label7;
-        private Label label6;
-        private Label label5;
+        private Label labelCorreo;
+        private Label labelContrasenya;
         private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private TextBox textBox9;
+        private Label labelApellido;
+        private Label labelNombre;
+        private TextBox textBoxApellido;
         private TextBox textBox8;
         private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox textBoxClase;
+        private TextBox textBoxCorreo;
         private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox textBoxContrasenya;
+        private TextBox textBoxNombre;
+        private DateTimePicker dateTimePickerDataNeixament;
         private PictureBox pictureBoxLogo;
         private PictureBox pictureBoxMenu;
         private PictureBox pictureBoxUsuario;
+        private TextBox textBoxConfirmarContrasenya;
+        private Label labelConfirmarContrasenya;
+        private Label labelClase;
+        private TextBox textBoxNuevaContrasenya;
+        private Label labelNuevaContrasenya;
     }
 }
