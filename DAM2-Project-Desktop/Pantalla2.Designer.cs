@@ -68,7 +68,7 @@
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
@@ -98,7 +98,7 @@
             splitContainer2.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Panel2.Controls.Add(label1);
-            splitContainer2.Size = new Size(1422, 880);
+            splitContainer2.Size = new Size(1424, 888);
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
@@ -188,10 +188,10 @@
             // 
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, -103);
+            flowLayoutPanel1.Location = new Point(0, -95);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1176, 981);
+            flowLayoutPanel1.Size = new Size(1178, 981);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // controlProyectoPantalla21
@@ -213,7 +213,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(121, 35);
+            label2.Size = new Size(96, 28);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -224,15 +224,14 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(158, 67);
+            label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
             // Pantalla2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 977);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla2";

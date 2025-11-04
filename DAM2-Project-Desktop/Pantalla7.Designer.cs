@@ -446,7 +446,7 @@ namespace DAM2_Project_Desktop
             // Pantalla7
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
             MinimumSize = new Size(1440, 1024);

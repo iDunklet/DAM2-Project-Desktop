@@ -576,7 +576,7 @@
             // Pantalla3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
             Margin = new Padding(5, 4, 5, 4);
