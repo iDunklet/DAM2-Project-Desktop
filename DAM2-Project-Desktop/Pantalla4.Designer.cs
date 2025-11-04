@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+using System.Windows.Forms;
 
 namespace DAM2_Project_Desktop
 {
@@ -502,7 +502,7 @@ namespace DAM2_Project_Desktop
             // 
             // Pantalla4
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);

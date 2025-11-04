@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using DAM2_Project_Desktop.Properties;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
@@ -17,22 +17,16 @@ namespace DAM2_Project_Desktop
         public string password { get; set; }
 
         public string userName { get; }
-  
+ 
+        public Bitmap imgPerfil { get; set; }
 
-        private Bitmap imgPerfil;
-        public Bitmap imgPerfilGetSet
-        {
-            get { return imgPerfil; }
-            set { imgPerfil = GenerarImagenIniciales(100); }
-        }
+        //artivutos ocultos
+        public Bitmap miniImgPerfil { get; set; }
 
-        private string apellidoCompleto;
+        public string apellidoCompleto { get; }
 
-        public string apellidoCompletoGetSet
-        { 
-            get { return apellidoCompleto; }
-            set { apellidoCompleto = setApellidoCompleto(); }
-        }
+
+
 
         //constructores
         public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
@@ -50,7 +44,9 @@ namespace DAM2_Project_Desktop
             this.userName = UserNameGenerator();
 
             this.imgPerfil = GenerarImagenIniciales(100);
-            this.apellidoCompleto = "asdxasd";
+            this.miniImgPerfil = GenerarImagenIniciales(20);
+
+            this.apellidoCompleto = setApellidoCompleto();
 
            
         }
@@ -70,17 +66,15 @@ namespace DAM2_Project_Desktop
             this.userName = UserNameGenerator();
 
             this.imgPerfil = GenerarImagenIniciales(100);
+            this.miniImgPerfil = GenerarImagenIniciales(20);
             this.apellidoCompleto = setApellidoCompleto();
         }
+
         //constructor de test para proyecto Hugo
         public Usuarios(string nombre)
         {
             this.nombre = nombre;
         }
-
-
-
-
 
 
         //metodos 
@@ -122,7 +116,7 @@ namespace DAM2_Project_Desktop
 
         private static readonly Random random = new Random();
 
-        public Bitmap GenerarImagenIniciales(int tamano = 100)
+        public Bitmap GenerarImagenIniciales(int tamano)
         {
             // --- 1. SELECCIÓN DE INICIALES Y COLOR ALEATORIO ---
 
@@ -162,7 +156,7 @@ namespace DAM2_Project_Desktop
                 }
 
                 // 4. Definir la fuente (texto blanco)
-                float fontSize = tamano / (iniciales.Length > 1 ? 2.5f : 1.8f);
+                float fontSize = tamano / (iniciales.Length > 1 ? 1.5f : 1.8f);
                 using (var fuente = new Font("Arial", fontSize, FontStyle.Bold))
                 using (var brochaTexto = new SolidBrush(Color.White))
                 {
