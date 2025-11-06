@@ -77,7 +77,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel2.Controls.Add(dataGridViewListadoUsuarios);
-            splitContainer2.Size = new Size(1422, 881);
+            splitContainer2.Size = new Size(1424, 889);
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
@@ -129,8 +129,9 @@ namespace DAM2_Project_Desktop
             buttonExportarJSON.Name = "buttonExportarJSON";
             buttonExportarJSON.Size = new Size(200, 60);
             buttonExportarJSON.TabIndex = 7;
-            buttonExportarJSON.Text = "ExportarJSON";
+            buttonExportarJSON.Text = "Exportar JSON";
             buttonExportarJSON.UseVisualStyleBackColor = false;
+            buttonExportarJSON.Click += buttonExportarJSON_Click;
             // 
             // buttonImportarJSON
             // 
@@ -284,9 +285,8 @@ namespace DAM2_Project_Desktop
             // 
             // Pantalla8
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 977);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1024);

@@ -1,19 +1,34 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel; // Necesario para BindingList<T>
+using System.IO;
+using System.Diagnostics;
+using System.Windows.Forms;
+using System.Linq; // Necesario para .ToList()
 
 namespace DAM2_Project_Desktop
 {
+
     internal interface InterfaceMetodos
     {
+        // Propiedad de solo lectura para la carpeta de exportación
         string CarpetaExportacion => Path.Combine(Directory.GetCurrentDirectory(), "Exports");
 
-        /// <summary>
-        /// Exporta TODOS los datos del sistema a JSON en la carpeta Exports
-        /// </summary>
+        // --- Clase de Soporte para la Deserialización (Importación) ---
+        public class DatosExportacion
+        {
+            public DateTime FechaExportacion { get; set; }
+            public string VersionSistema { get; set; }
+            public object Metadatos { get; set; }
+
+            // Usamos List<T> para la deserialización desde JSON
+            public List<Proyecto> Proyectos { get; set; }
+            public List<Usuarios> Usuarios { get; set; }
+            public List<Tarea> Tareas { get; set; }
+        }
+
+        // --- Método de Exportación ---
         bool ExportarTodoAJson()
         {
             try
@@ -22,7 +37,6 @@ namespace DAM2_Project_Desktop
                 if (!Directory.Exists(CarpetaExportacion))
                     Directory.CreateDirectory(CarpetaExportacion);
 
-                // Generar nombre de archivo con fecha
                 string nombreArchivo = $"Backup_DAM2_{DateTime.Now:yyyyMMdd_HHmmss}.json";
                 string rutaCompleta = Path.Combine(CarpetaExportacion, nombreArchivo);
 
@@ -36,9 +50,10 @@ namespace DAM2_Project_Desktop
                         TotalUsuarios = ListadoDatosClasses.ListadoUsuarios.Count,
                         TotalTareas = ListadoDatosClasses.ListaTareas.Count
                     },
-                    Proyectos = ListadoDatosClasses.ListadoProyectos,
-                    Usuarios = ListadoDatosClasses.ListadoUsuarios,
-                    Tareas = ListadoDatosClasses.ListaTareas
+                    // Convertir BindingList<T> a List<T> para una serialización JSON más limpia
+                    Proyectos = ListadoDatosClasses.ListadoProyectos.ToList(),
+                    Usuarios = ListadoDatosClasses.ListadoUsuarios.ToList(),
+                    Tareas = ListadoDatosClasses.ListaTareas.ToList()
                 };
 
                 var settings = new JsonSerializerSettings
@@ -72,16 +87,16 @@ namespace DAM2_Project_Desktop
             }
         }
 
-        /// <summary>
-        /// Método adicional: Abrir carpeta Exports
-        /// </summary>
+        // --- Método para Abrir la Carpeta ---
         void AbrirCarpetaExports()
         {
             if (!Directory.Exists(CarpetaExportacion))
                 Directory.CreateDirectory(CarpetaExportacion);
 
-            System.Diagnostics.Process.Start("explorer.exe", CarpetaExportacion);
+            Process.Start(new ProcessStartInfo("explorer.exe", CarpetaExportacion) { UseShellExecute = true });
         }
+
+        // --- Método de Importación ---
         bool ImportarTodoDesdeJson()
         {
             try
@@ -90,6 +105,7 @@ namespace DAM2_Project_Desktop
                 {
                     openDialog.Filter = "Archivos JSON (*.json)|*.json";
                     openDialog.Title = "Seleccionar archivo JSON para importar";
+                    openDialog.InitialDirectory = CarpetaExportacion;
 
                     if (openDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -98,22 +114,39 @@ namespace DAM2_Project_Desktop
 
                         if (datosImportados != null)
                         {
-                            // Limpiar datos existentes
+                            // 1. Limpiar datos existentes
                             ListadoDatosClasses.ListadoProyectos.Clear();
                             ListadoDatosClasses.ListadoUsuarios.Clear();
                             ListadoDatosClasses.ListaTareas.Clear();
 
-                            // Cargar nuevos datos
-                            foreach (var usuario in datosImportados.Usuarios)
-                                ListadoDatosClasses.ListadoUsuarios.Add(usuario);
+                            // 2. Cargar nuevos datos usando foreach (necesario para BindingList<T>)
+                            if (datosImportados.Usuarios != null)
+                            {
+                                foreach (var usuario in datosImportados.Usuarios)
+                                    ListadoDatosClasses.ListadoUsuarios.Add(usuario);
+                            }
 
-                            foreach (var tarea in datosImportados.Tareas)
-                                ListadoDatosClasses.ListaTareas.Add(tarea);
+                            if (datosImportados.Tareas != null)
+                            {
+                                foreach (var tarea in datosImportados.Tareas)
+                                    ListadoDatosClasses.ListaTareas.Add(tarea);
+                            }
 
-                            foreach (var proyecto in datosImportados.Proyectos)
-                                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+                            if (datosImportados.Proyectos != null)
+                            {
+                                foreach (var proyecto in datosImportados.Proyectos)
+                                    ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+                            }
 
-                            MessageBox.Show("Datos importados correctamente");
+                            MessageBox.Show(
+                                $"✅ Importación completada!\n\n" +
+                                $"📊 Proyectos importados: {ListadoDatosClasses.ListadoProyectos.Count}\n" +
+                                $"👥 Usuarios importados: {ListadoDatosClasses.ListadoUsuarios.Count}\n" +
+                                $"✅ Tareas importadas: {ListadoDatosClasses.ListaTareas.Count}",
+                                "Importación Exitosa",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
                             return true;
                         }
                     }
@@ -122,20 +155,10 @@ namespace DAM2_Project_Desktop
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al importar: {ex.Message}");
+                MessageBox.Show($"❌ Error al importar: {ex.Message}", "Error de Importación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
-        public class DatosExportacion
-        {
-            public DateTime FechaExportacion { get; set; }
-            public string VersionSistema { get; set; }
-            public System.Collections.Generic.List<Proyecto> Proyectos { get; set; }
-            public System.Collections.Generic.List<Usuarios> Usuarios { get; set; }
-            public System.Collections.Generic.List<Tarea> Tareas { get; set; }
-        }
-
-
-
     }
 }

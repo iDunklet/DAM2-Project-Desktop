@@ -115,6 +115,11 @@ namespace DAM2_Project_Desktop
                 textBoxUser.Focus();
             }
         }//hahahhaa
+
+        private void textBoxPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         //jajajaj
     }
 }

@@ -509,9 +509,9 @@ namespace DAM2_Project_Desktop
             // 
             // Pantalla3
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1424, 985);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
             Margin = new Padding(4, 3, 4, 3);
             MinimumSize = new Size(1440, 1024);

@@ -12,14 +12,13 @@ namespace DAM2_Project_Desktop
     public class Proyecto
     {
         //atributos
-        private int _nextID = 1;
+        private static int _nextID = 1;
         public int ID { get; private set; }
         public string titulo { get; set; }
         public DateTime fechaEntrega { get; set; }
         public List<Usuarios> miembrosProyecto { get; set; }
         public List<Tarea> tareasProyecto { get; set; }
 
-            //imagen
         private Bitmap imgProyecto;
         public Bitmap ImgProyecto
         {
@@ -27,7 +26,9 @@ namespace DAM2_Project_Desktop
             set { imgProyecto = value ?? GenerarImagenIniciales(titulo, 100); }
         }
 
-        //Metodo
+
+
+        //Metodo IMG
         private Bitmap GenerarImagenIniciales(string titulo, int tamano = 100)
         {
             // Obtener solo la PRIMERA letra del título
@@ -104,13 +105,16 @@ namespace DAM2_Project_Desktop
             this.titulo = titulo;
             this.fechaEntrega = fechaEntrega;
             this.miembrosProyecto = miembros;
+
         }
         public Proyecto(string titulo, List<Usuarios> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
         {
-            this.titulo             =   titulo;
-            this.miembrosProyecto   =   usuarios;
-            this.tareasProyecto     =   tareas;
-            this.ImgProyecto        =   imgProyecto;
+            this.ID = _nextID;
+            _nextID++;
+            this.titulo = titulo;
+            this.miembrosProyecto = usuarios;
+            this.tareasProyecto = tareas;
+            this.ImgProyecto = imgProyecto;
         }
 
     }
