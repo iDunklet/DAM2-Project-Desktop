@@ -84,7 +84,7 @@
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(183, 537);
             label1.Name = "label1";
-            label1.Size = new Size(243, 25);
+            label1.Size = new Size(204, 20);
             label1.TabIndex = 2;
             label1.Text = "Username/Correo electrònico";
             // 
@@ -94,7 +94,7 @@
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(183, 607);
             label2.Name = "label2";
-            label2.Size = new Size(183, 25);
+            label2.Size = new Size(150, 20);
             label2.TabIndex = 3;
             label2.Text = "Password/Contraseña";
             // 
@@ -103,16 +103,19 @@
             textBoxUser.BorderStyle = BorderStyle.FixedSingle;
             textBoxUser.Location = new Point(183, 565);
             textBoxUser.Name = "textBoxUser";
-            textBoxUser.Size = new Size(273, 27);
+            textBoxUser.Size = new Size(273, 23);
             textBoxUser.TabIndex = 4;
             // 
             // textBoxPass
             // 
+            textBoxPass.AccessibleRole = AccessibleRole.Sound;
             textBoxPass.BorderStyle = BorderStyle.FixedSingle;
             textBoxPass.Location = new Point(183, 635);
             textBoxPass.Name = "textBoxPass";
-            textBoxPass.Size = new Size(273, 27);
+            textBoxPass.Size = new Size(273, 23);
             textBoxPass.TabIndex = 5;
+            textBoxPass.UseSystemPasswordChar = true;
+            textBoxPass.TextChanged += textBoxPass_TextChanged;
             // 
             // pictureBox3
             // 
@@ -126,10 +129,9 @@
             // 
             // Pantalla1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1422, 977);
+            ClientSize = new Size(1424, 985);
             Controls.Add(pictureBox3);
             Controls.Add(textBoxPass);
             Controls.Add(textBoxUser);

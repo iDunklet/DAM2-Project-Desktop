@@ -530,7 +530,7 @@ namespace DAM2_Project_Desktop
             string lista = "";
             foreach (var usuario in ListadoDatosClasses.ListadoUsuarios)
             {
-                lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1})\n";
+                lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1}) {usuario.classe}\n";
             }
 
             MessageBox.Show(lista, "Lista de Usuarios");

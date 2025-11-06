@@ -31,7 +31,7 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
-            button6 = new Button();
+            buttonExportarJson = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -85,7 +85,7 @@
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(button7);
-            splitContainer2.Panel1.Controls.Add(button6);
+            splitContainer2.Panel1.Controls.Add(buttonExportarJson);
             splitContainer2.Panel1.Controls.Add(button5);
             splitContainer2.Panel1.Controls.Add(button4);
             splitContainer2.Panel1.Controls.Add(button3);
@@ -112,17 +112,18 @@
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonExportarJson
             // 
-            button6.BackColor = Color.FromArgb(79, 209, 197);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.FromArgb(35, 78, 82);
-            button6.Location = new Point(21, 341);
-            button6.Name = "button6";
-            button6.Size = new Size(200, 60);
-            button6.TabIndex = 8;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
+            buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJson.FlatStyle = FlatStyle.Flat;
+            buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJson.Location = new Point(21, 341);
+            buttonExportarJson.Name = "buttonExportarJson";
+            buttonExportarJson.Size = new Size(200, 60);
+            buttonExportarJson.TabIndex = 8;
+            buttonExportarJson.Text = "Exportar JSON";
+            buttonExportarJson.UseVisualStyleBackColor = false;
+            buttonExportarJson.Click += buttonExportarJson_Click;
             // 
             // button5
             // 
@@ -188,10 +189,10 @@
             // 
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, -95);
+            flowLayoutPanel1.Location = new Point(0, -1);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1178, 981);
+            flowLayoutPanel1.Size = new Size(1178, 887);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // controlProyectoPantalla21
@@ -205,6 +206,7 @@
             controlProyectoPantalla21.Proyecto = null;
             controlProyectoPantalla21.Size = new Size(296, 143);
             controlProyectoPantalla21.TabIndex = 1;
+            controlProyectoPantalla21.Load += controlProyectoPantalla21_Load;
             // 
             // label2
             // 
@@ -264,5 +266,6 @@
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel1;
         private ControlProyectoPantalla2 controlProyectoPantalla21;
+        private Button buttonExportarJson;
     }
 }

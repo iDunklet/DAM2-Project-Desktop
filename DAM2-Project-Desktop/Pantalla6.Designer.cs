@@ -107,7 +107,7 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxUsuario
             // 
-            pictureBoxUsuario.Image = (Image)resources.GetObject("pictureBoxUsuario.Image");
+            //pictureBoxUsuario.Image = (Image)resources.GetObject("pictureBoxUsuario.Image");
             pictureBoxUsuario.Location = new Point(1305, 11);
             pictureBoxUsuario.Name = "pictureBoxUsuario";
             pictureBoxUsuario.Size = new Size(110, 101);
@@ -117,7 +117,7 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxMenu
             // 
-            pictureBoxMenu.Image = (Image)resources.GetObject("pictureBoxMenu.Image");
+            //pictureBoxMenu.Image = (Image)resources.GetObject("pictureBoxMenu.Image");
             pictureBoxMenu.Location = new Point(11, 3);
             pictureBoxMenu.Name = "pictureBoxMenu";
             pictureBoxMenu.Size = new Size(157, 112);
@@ -127,7 +127,7 @@ namespace DAM2_Project_Desktop
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
+            //pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
             pictureBoxLogo.Location = new Point(174, 3);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(275, 112);
@@ -295,28 +295,28 @@ namespace DAM2_Project_Desktop
             // 
             // buttonGuardar
             // 
-            button7.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
-            button7.Location = new Point(402, 778);
-            button7.Name = "button7";
-            button7.Size = new Size(200, 60);
-            button7.TabIndex = 9;
-            button7.Text = "Crear usuario";
-            button7.UseVisualStyleBackColor = true;
+            buttonGuardar.Font = new Font("Montserrat", 14.25F, FontStyle.Bold);
+            buttonGuardar.Location = new Point(402, 778);
+            buttonGuardar.Name = "button7";
+            buttonGuardar.Size = new Size(200, 60);
+            buttonGuardar.TabIndex = 9;
+            buttonGuardar.Text = "Crear usuario";
+            buttonGuardar.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerDataNeixament
             // 
-            dateTimePicker1.CalendarFont = new Font("Montserrat", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(795, 321);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 21;
+            dateTimePickerDataNeixament.CalendarFont = new Font("Montserrat", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePickerDataNeixament.Location = new Point(795, 321);
+            dateTimePickerDataNeixament.Name = "dateTimePicker1";
+            dateTimePickerDataNeixament.Size = new Size(200, 23);
+            dateTimePickerDataNeixament.TabIndex = 21;
             // 
             // textBoxApellido
             // 
-            textBox9.Location = new Point(795, 238);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(181, 23);
-            textBox9.TabIndex = 20;
+            textBoxApellido.Location = new Point(795, 238);
+            textBoxApellido.Name = "textBox9";
+            textBoxApellido.Size = new Size(181, 23);
+            textBoxApellido.TabIndex = 20;
             // 
             // label12
             // 
@@ -378,10 +378,10 @@ namespace DAM2_Project_Desktop
             // 
             // textBoxCorreo
             // 
-            textBox5.Location = new Point(289, 437);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(181, 23);
-            textBox5.TabIndex = 10;
+            textBoxCorreo.Location = new Point(289, 437);
+            textBoxCorreo.Name = "textBox5";
+            textBoxCorreo.Size = new Size(181, 23);
+            textBoxCorreo.TabIndex = 10;
             // 
             // textBox4
             // 
@@ -393,44 +393,44 @@ namespace DAM2_Project_Desktop
             // 
             // textBoxContrasenya
             // 
-            textBox3.Location = new Point(289, 304);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(181, 23);
-            textBox3.TabIndex = 8;
+            textBoxContrasenya.Location = new Point(289, 304);
+            textBoxContrasenya.Name = "textBox3";
+            textBoxContrasenya.Size = new Size(181, 23);
+            textBoxContrasenya.TabIndex = 8;
             // 
             // textBoxNombre
             // 
-            textBox2.Location = new Point(289, 371);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(181, 23);
-            textBox2.TabIndex = 7;
+            textBoxNombre.Location = new Point(289, 371);
+            textBoxNombre.Name = "textBox2";
+            textBoxNombre.Size = new Size(181, 23);
+            textBoxNombre.TabIndex = 7;
             // 
             // labelCorreo
             // 
-            textBox1.Location = new Point(289, 242);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 23);
-            textBox1.TabIndex = 6;
+            labelCorreo.Location = new Point(289, 242);
+            labelCorreo.Name = "textBox1";
+            labelCorreo.Size = new Size(181, 23);
+            labelCorreo.TabIndex = 6;
             // 
             // labelContrasenya
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Montserrat", 20.25F);
-            label6.Location = new Point(117, 422);
-            label6.Name = "label6";
-            label6.Size = new Size(95, 42);
-            label6.TabIndex = 5;
-            label6.Text = "Email";
+            labelContrasenya.AutoSize = true;
+            labelContrasenya.Font = new Font("Montserrat", 20.25F);
+            labelContrasenya.Location = new Point(117, 422);
+            labelContrasenya.Name = "label6";
+            labelContrasenya.Size = new Size(95, 42);
+            labelContrasenya.TabIndex = 5;
+            labelContrasenya.Text = "Email";
             // 
-            // label5
+            // labelCorreo
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 20.25F);
-            label5.Location = new Point(117, 356);
-            label5.Name = "label5";
-            label5.Size = new Size(95, 42);
-            label5.TabIndex = 4;
-            label5.Text = "Curso";
+            labelCorreo.AutoSize = true;
+            labelCorreo.Font = new Font("Montserrat", 20.25F);
+            labelCorreo.Location = new Point(117, 356);
+            labelCorreo.Name = "label5";
+            labelCorreo.Size = new Size(95, 42);
+            labelCorreo.TabIndex = 4;
+            labelCorreo.Text = "Curso";
             // 
             // label4
             // 
@@ -446,33 +446,33 @@ namespace DAM2_Project_Desktop
             // 
             // labelApellido
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 20.25F);
-            label3.Location = new Point(117, 289);
-            label3.Name = "label3";
-            label3.Size = new Size(157, 42);
-            label3.TabIndex = 2;
-            label3.Text = "2r apellido";
+            labelApellido.AutoSize = true;
+            labelApellido.Font = new Font("Montserrat", 20.25F);
+            labelApellido.Location = new Point(117, 289);
+            labelApellido.Name = "label3";
+            labelApellido.Size = new Size(157, 42);
+            labelApellido.TabIndex = 2;
+            labelApellido.Text = "2r apellido";
             // 
             // labelNombre
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Montserrat", 20.25F);
-            label2.Location = new Point(602, 223);
-            label2.Name = "label2";
-            label2.Size = new Size(152, 42);
-            label2.TabIndex = 1;
-            label2.Text = "1r apellido";
+            labelNombre.AutoSize = true;
+            labelNombre.Font = new Font("Montserrat", 20.25F);
+            labelNombre.Location = new Point(602, 223);
+            labelNombre.Name = "label2";
+            labelNombre.Size = new Size(152, 42);
+            labelNombre.TabIndex = 1;
+            labelNombre.Text = "1r apellido";
             // 
             // textBoxNuevaContrasenya
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Montserrat", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(117, 227);
-            label1.Name = "label1";
-            label1.Size = new Size(131, 42);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre";
+            textBoxNuevaContrasenya.AutoSize = true;
+            textBoxNuevaContrasenya.Font = new Font("Montserrat", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxNuevaContrasenya.Location = new Point(117, 227);
+            textBoxNuevaContrasenya.Name = "label1";
+            textBoxNuevaContrasenya.Size = new Size(131, 42);
+            textBoxNuevaContrasenya.TabIndex = 0;
+            textBoxNuevaContrasenya.Text = "Nombre";
             // 
             // labelNuevaContrasenya
             // 
