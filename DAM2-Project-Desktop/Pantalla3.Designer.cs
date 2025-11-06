@@ -40,16 +40,11 @@ namespace DAM2_Project_Desktop
             button5 = new Button();
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
-            label2 = new Label();
-            label7 = new Label();
+            labelNombreProyecto = new Label();
+            labelFechaProyecto = new Label();
+            flowPanelMiembros = new FlowLayoutPanel();
             label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
             pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             splitContainer6 = new SplitContainer();
             button4 = new Button();
             button3 = new Button();
@@ -58,11 +53,11 @@ namespace DAM2_Project_Desktop
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewComboBoxColumn();
+            FechaInicioColumn = new DataGridViewTextBoxColumn();
+            FechaFinalColumn = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewComboBoxColumn();
+            colCheck = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -91,9 +86,6 @@ namespace DAM2_Project_Desktop
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer6).BeginInit();
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.Panel2.SuspendLayout();
@@ -107,7 +99,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.BorderStyle = BorderStyle.FixedSingle;
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Margin = new Padding(5, 4, 5, 4);
+            splitContainer1.Margin = new Padding(4, 3, 4, 3);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
             // 
@@ -119,9 +111,9 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer6);
-            splitContainer1.Size = new Size(1422, 977);
-            splitContainer1.SplitterDistance = 376;
-            splitContainer1.SplitterWidth = 3;
+            splitContainer1.Size = new Size(1424, 985);
+            splitContainer1.SplitterDistance = 379;
+            splitContainer1.SplitterWidth = 2;
             splitContainer1.TabIndex = 0;
             splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
@@ -131,7 +123,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.BorderStyle = BorderStyle.FixedSingle;
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.Location = new Point(0, 0);
-            splitContainer2.Margin = new Padding(5, 4, 5, 4);
+            splitContainer2.Margin = new Padding(4, 3, 4, 3);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
             // 
@@ -148,18 +140,17 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel2.Controls.Add(splitContainer3);
-            splitContainer2.Size = new Size(1422, 376);
+            splitContainer2.Size = new Size(1424, 379);
             splitContainer2.SplitterDistance = 125;
-            splitContainer2.SplitterWidth = 3;
+            splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.person;
-            pictureBox6.Location = new Point(1529, 40);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Location = new Point(1338, 30);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(72, 79);
+            pictureBox6.Size = new Size(63, 59);
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
             pictureBox6.Click += pictureBox6_Click;
@@ -167,20 +158,20 @@ namespace DAM2_Project_Desktop
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.menu;
-            pictureBox7.Location = new Point(14, 33);
-            pictureBox7.Margin = new Padding(5, 4, 5, 4);
+            pictureBox7.Location = new Point(12, 25);
+            pictureBox7.Margin = new Padding(4, 3, 4, 3);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(73, 85);
+            pictureBox7.Size = new Size(64, 64);
             pictureBox7.TabIndex = 2;
             pictureBox7.TabStop = false;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(113, 15);
-            pictureBox5.Margin = new Padding(5, 4, 5, 4);
+            pictureBox5.Location = new Point(99, 11);
+            pictureBox5.Margin = new Padding(4, 3, 4, 3);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(333, 104);
+            pictureBox5.Size = new Size(291, 88);
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
             // 
@@ -190,7 +181,7 @@ namespace DAM2_Project_Desktop
             splitContainer3.BorderStyle = BorderStyle.FixedSingle;
             splitContainer3.Dock = DockStyle.Fill;
             splitContainer3.Location = new Point(0, 0);
-            splitContainer3.Margin = new Padding(5, 4, 5, 4);
+            splitContainer3.Margin = new Padding(4, 3, 4, 3);
             splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -202,7 +193,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer3.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer3.Panel2.Controls.Add(splitContainer4);
-            splitContainer3.Size = new Size(1422, 248);
+            splitContainer3.Size = new Size(1424, 252);
             splitContainer3.SplitterDistance = 266;
             splitContainer3.SplitterWidth = 2;
             splitContainer3.TabIndex = 0;
@@ -213,7 +204,7 @@ namespace DAM2_Project_Desktop
             splitContainer7.BorderStyle = BorderStyle.FixedSingle;
             splitContainer7.Dock = DockStyle.Fill;
             splitContainer7.Location = new Point(0, 0);
-            splitContainer7.Margin = new Padding(5, 4, 5, 4);
+            splitContainer7.Margin = new Padding(4, 3, 4, 3);
             splitContainer7.Name = "splitContainer7";
             splitContainer7.Orientation = Orientation.Horizontal;
             // 
@@ -227,9 +218,9 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer7.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer7.Panel2.Controls.Add(button5);
-            splitContainer7.Size = new Size(266, 248);
-            splitContainer7.SplitterDistance = 81;
-            splitContainer7.SplitterWidth = 3;
+            splitContainer7.Size = new Size(266, 252);
+            splitContainer7.SplitterDistance = 82;
+            splitContainer7.SplitterWidth = 2;
             splitContainer7.TabIndex = 0;
             splitContainer7.SplitterMoved += splitContainer7_SplitterMoved;
             // 
@@ -237,10 +228,10 @@ namespace DAM2_Project_Desktop
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 20F);
-            label1.Location = new Point(40, 33);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(35, 25);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(52, 39);
+            label1.Size = new Size(42, 31);
             label1.TabIndex = 0;
             label1.Text = "ID";
             // 
@@ -250,10 +241,10 @@ namespace DAM2_Project_Desktop
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Microsoft Sans Serif", 14F);
             button5.ForeColor = Color.FromArgb(35, 78, 82);
-            button5.Location = new Point(40, 47);
-            button5.Margin = new Padding(5, 4, 5, 4);
+            button5.Location = new Point(35, 35);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(200, 84);
+            button5.Size = new Size(175, 63);
             button5.TabIndex = 4;
             button5.Text = "Crear nuevo usuario";
             button5.UseVisualStyleBackColor = false;
@@ -264,7 +255,7 @@ namespace DAM2_Project_Desktop
             splitContainer4.BorderStyle = BorderStyle.FixedSingle;
             splitContainer4.Dock = DockStyle.Fill;
             splitContainer4.Location = new Point(0, 0);
-            splitContainer4.Margin = new Padding(5, 4, 5, 4);
+            splitContainer4.Margin = new Padding(4, 3, 4, 3);
             splitContainer4.Name = "splitContainer4";
             splitContainer4.Orientation = Orientation.Horizontal;
             // 
@@ -276,17 +267,13 @@ namespace DAM2_Project_Desktop
             // splitContainer4.Panel2
             // 
             splitContainer4.Panel2.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer4.Panel2.Controls.Add(flowPanelMiembros);
             splitContainer4.Panel2.Controls.Add(label6);
-            splitContainer4.Panel2.Controls.Add(label5);
-            splitContainer4.Panel2.Controls.Add(label4);
-            splitContainer4.Panel2.Controls.Add(label3);
             splitContainer4.Panel2.Controls.Add(pictureBox4);
-            splitContainer4.Panel2.Controls.Add(pictureBox3);
-            splitContainer4.Panel2.Controls.Add(pictureBox2);
-            splitContainer4.Panel2.Controls.Add(pictureBox1);
-            splitContainer4.Size = new Size(1154, 248);
-            splitContainer4.SplitterDistance = 81;
-            splitContainer4.SplitterWidth = 3;
+            splitContainer4.Panel2.Paint += splitContainer4_Panel2_Paint;
+            splitContainer4.Size = new Size(1156, 252);
+            splitContainer4.SplitterDistance = 82;
+            splitContainer4.SplitterWidth = 2;
             splitContainer4.TabIndex = 0;
             splitContainer4.SplitterMoved += splitContainer4_SplitterMoved;
             // 
@@ -296,136 +283,74 @@ namespace DAM2_Project_Desktop
             splitContainer5.BorderStyle = BorderStyle.FixedSingle;
             splitContainer5.Dock = DockStyle.Fill;
             splitContainer5.Location = new Point(0, 0);
-            splitContainer5.Margin = new Padding(5, 4, 5, 4);
+            splitContainer5.Margin = new Padding(4, 3, 4, 3);
             splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
             // 
             splitContainer5.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer5.Panel1.Controls.Add(label2);
+            splitContainer5.Panel1.Controls.Add(labelNombreProyecto);
+            splitContainer5.Panel1.Paint += splitContainer5_Panel1_Paint;
             // 
             // splitContainer5.Panel2
             // 
             splitContainer5.Panel2.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer5.Panel2.Controls.Add(label7);
+            splitContainer5.Panel2.Controls.Add(labelFechaProyecto);
             splitContainer5.Panel2.Paint += splitContainer5_Panel2_Paint;
-            splitContainer5.Size = new Size(1154, 81);
-            splitContainer5.SplitterDistance = 846;
+            splitContainer5.Size = new Size(1156, 82);
+            splitContainer5.SplitterDistance = 847;
             splitContainer5.SplitterWidth = 2;
             splitContainer5.TabIndex = 0;
             // 
-            // label2
+            // labelNombreProyecto
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 25F);
-            label2.Location = new Point(33, 27);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(396, 48);
-            label2.TabIndex = 1;
-            label2.Text = "Nombre de proyecto";
-            label2.Click += label2_Click;
+            labelNombreProyecto.AutoSize = true;
+            labelNombreProyecto.Location = new Point(45, 32);
+            labelNombreProyecto.Name = "labelNombreProyecto";
+            labelNombreProyecto.Size = new Size(38, 15);
+            labelNombreProyecto.TabIndex = 0;
+            labelNombreProyecto.Text = "label2";
             // 
-            // label7
+            // labelFechaProyecto
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 25F);
-            label7.Location = new Point(16, 27);
-            label7.Margin = new Padding(5, 0, 5, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(136, 48);
-            label7.TabIndex = 2;
-            label7.Text = "Fecha";
-            label7.Click += label7_Click;
+            labelFechaProyecto.AutoSize = true;
+            labelFechaProyecto.Location = new Point(31, 41);
+            labelFechaProyecto.Name = "labelFechaProyecto";
+            labelFechaProyecto.Size = new Size(38, 15);
+            labelFechaProyecto.TabIndex = 0;
+            labelFechaProyecto.Text = "label2";
+            // 
+            // flowPanelMiembros
+            // 
+            flowPanelMiembros.AutoScroll = true;
+            flowPanelMiembros.Location = new Point(135, 10);
+            flowPanelMiembros.Name = "flowPanelMiembros";
+            flowPanelMiembros.Padding = new Padding(10);
+            flowPanelMiembros.Size = new Size(1008, 145);
+            flowPanelMiembros.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(514, 143);
-            label6.Margin = new Padding(5, 0, 5, 0);
+            label6.Location = new Point(40, 121);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(82, 25);
+            label6.Size = new Size(66, 20);
             label6.TabIndex = 7;
             label6.Text = "Agregar";
             label6.Click += label6_Click;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(360, 143);
-            label5.Margin = new Padding(5, 0, 5, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(95, 25);
-            label5.TabIndex = 6;
-            label5.Text = "Usuario 3";
-            label5.Click += label5_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(227, 143);
-            label4.Margin = new Padding(5, 0, 5, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(95, 25);
-            label4.TabIndex = 5;
-            label4.Text = "Usuario 2";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F);
-            label3.Location = new Point(81, 143);
-            label3.Margin = new Padding(5, 0, 5, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(95, 25);
-            label3.TabIndex = 4;
-            label3.Text = "Usuario 1";
-            // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(514, 39);
-            pictureBox4.Margin = new Padding(5, 4, 5, 4);
+            pictureBox4.Location = new Point(40, 54);
+            pictureBox4.Margin = new Padding(4, 3, 4, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(73, 85);
+            pictureBox4.Size = new Size(64, 64);
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(360, 39);
-            pictureBox3.Margin = new Padding(5, 4, 5, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(73, 85);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(227, 39);
-            pictureBox2.Margin = new Padding(5, 4, 5, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(73, 85);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(81, 39);
-            pictureBox1.Margin = new Padding(5, 4, 5, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(73, 85);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // splitContainer6
             // 
@@ -433,7 +358,7 @@ namespace DAM2_Project_Desktop
             splitContainer6.BorderStyle = BorderStyle.FixedSingle;
             splitContainer6.Dock = DockStyle.Fill;
             splitContainer6.Location = new Point(0, 0);
-            splitContainer6.Margin = new Padding(5, 4, 5, 4);
+            splitContainer6.Margin = new Padding(4, 3, 4, 3);
             splitContainer6.Name = "splitContainer6";
             // 
             // splitContainer6.Panel1
@@ -449,7 +374,7 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel2.Controls.Add(dataGridView1);
             splitContainer6.Panel2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             splitContainer6.Panel2.Paint += splitContainer6_Panel2_Paint;
-            splitContainer6.Size = new Size(1422, 598);
+            splitContainer6.Size = new Size(1424, 604);
             splitContainer6.SplitterDistance = 266;
             splitContainer6.SplitterWidth = 2;
             splitContainer6.TabIndex = 0;
@@ -460,10 +385,10 @@ namespace DAM2_Project_Desktop
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft Sans Serif", 14F);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(40, 268);
-            button4.Margin = new Padding(5, 4, 5, 4);
+            button4.Location = new Point(35, 201);
+            button4.Margin = new Padding(4, 3, 4, 3);
             button4.Name = "button4";
-            button4.Size = new Size(200, 60);
+            button4.Size = new Size(175, 45);
             button4.TabIndex = 3;
             button4.Text = "Exportar";
             button4.UseVisualStyleBackColor = false;
@@ -474,10 +399,10 @@ namespace DAM2_Project_Desktop
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 14F);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(40, 185);
-            button3.Margin = new Padding(5, 4, 5, 4);
+            button3.Location = new Point(35, 139);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
-            button3.Size = new Size(200, 60);
+            button3.Size = new Size(175, 45);
             button3.TabIndex = 2;
             button3.Text = "Diagrama";
             button3.UseVisualStyleBackColor = false;
@@ -488,10 +413,10 @@ namespace DAM2_Project_Desktop
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 14F);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(40, 105);
-            button2.Margin = new Padding(5, 4, 5, 4);
+            button2.Location = new Point(35, 79);
+            button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
-            button2.Size = new Size(200, 60);
+            button2.Size = new Size(175, 45);
             button2.TabIndex = 1;
             button2.Text = "Cuadricula";
             button2.UseVisualStyleBackColor = false;
@@ -502,10 +427,10 @@ namespace DAM2_Project_Desktop
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 14F);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(40, 24);
-            button1.Margin = new Padding(5, 4, 5, 4);
+            button1.Location = new Point(35, 18);
+            button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
-            button1.Size = new Size(200, 60);
+            button1.Size = new Size(175, 45);
             button1.TabIndex = 0;
             button1.Text = "Crear nueva tarea";
             button1.UseVisualStyleBackColor = false;
@@ -514,13 +439,13 @@ namespace DAM2_Project_Desktop
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column7, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column7, Column2, FechaInicioColumn, FechaFinalColumn, Column5, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Margin = new Padding(5, 4, 5, 4);
+            dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1152, 596);
+            dataGridView1.Size = new Size(1154, 602);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -529,6 +454,7 @@ namespace DAM2_Project_Desktop
             Column1.HeaderText = "Nombre";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.Resizable = DataGridViewTriState.True;
             Column1.Width = 164;
             // 
             // Column7
@@ -541,45 +467,53 @@ namespace DAM2_Project_Desktop
             // Column2
             // 
             Column2.HeaderText = "Asignar";
+            Column2.Items.AddRange(new object[] { "Juan", "Marta", "Carlos" });
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
+            Column2.Resizable = DataGridViewTriState.True;
+            Column2.SortMode = DataGridViewColumnSortMode.Automatic;
             Column2.Width = 164;
             // 
-            // Column3
+            // FechaInicioColumn
             // 
-            Column3.HeaderText = "Fecha inicio";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 164;
+            FechaInicioColumn.HeaderText = "Fecha inicio";
+            FechaInicioColumn.MinimumWidth = 6;
+            FechaInicioColumn.Name = "FechaInicioColumn";
+            FechaInicioColumn.Width = 164;
             // 
-            // Column4
+            // FechaFinalColumn
             // 
-            Column4.HeaderText = "Fecha final";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 164;
+            FechaFinalColumn.HeaderText = "Fecha final";
+            FechaFinalColumn.MinimumWidth = 6;
+            FechaFinalColumn.Name = "FechaFinalColumn";
+            FechaFinalColumn.Width = 164;
             // 
             // Column5
             // 
             Column5.HeaderText = "Estado de la tarea";
+            Column5.Items.AddRange(new object[] { "In progress", "Done", "In review", "Blocked", "To do" });
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
+            Column5.Resizable = DataGridViewTriState.True;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
             Column5.Width = 164;
             // 
-            // Column6
+            // colCheck
             // 
-            Column6.HeaderText = "Check";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Width = 164;
+            colCheck.HeaderText = "Check";
+            colCheck.MinimumWidth = 6;
+            colCheck.Name = "colCheck";
+            colCheck.Resizable = DataGridViewTriState.True;
+            colCheck.SortMode = DataGridViewColumnSortMode.Automatic;
+            colCheck.Width = 164;
             // 
             // Pantalla3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 977);
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(4, 3, 4, 3);
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla3";
             Text = "Pantalla3";
@@ -616,9 +550,6 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
             splitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             splitContainer6.Panel1.ResumeLayout(false);
             splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
@@ -643,27 +574,22 @@ namespace DAM2_Project_Desktop
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private PictureBox pictureBox6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private PictureBox pictureBox6;
+        private DataGridViewComboBoxColumn Column2;
+        private DataGridViewTextBoxColumn FechaInicioColumn;
+        private DataGridViewTextBoxColumn FechaFinalColumn;
+        private DataGridViewComboBoxColumn Column5;
+        private DataGridViewCheckBoxColumn colCheck;
+        private FlowLayoutPanel flowPanelMiembros;
+        private Label labelNombreProyecto;
+        private Label labelFechaProyecto;
     }
 }
 
