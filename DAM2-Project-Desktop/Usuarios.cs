@@ -76,7 +76,6 @@ namespace DAM2_Project_Desktop
             this.nombre = nombre;
         }
 
-
         //metodos 
 
         public string setApellidoCompleto() 

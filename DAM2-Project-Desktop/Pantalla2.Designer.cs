@@ -31,7 +31,7 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
-            button6 = new Button();
+            buttonExportarJson = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -68,7 +68,7 @@
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(button7);
-            splitContainer2.Panel1.Controls.Add(button6);
+            splitContainer2.Panel1.Controls.Add(buttonExportarJson);
             splitContainer2.Panel1.Controls.Add(button5);
             splitContainer2.Panel1.Controls.Add(button4);
             splitContainer2.Panel1.Controls.Add(button3);
@@ -98,7 +98,7 @@
             splitContainer2.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Panel2.Controls.Add(label1);
-            splitContainer2.Size = new Size(1422, 880);
+            splitContainer2.Size = new Size(1424, 888);
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
@@ -112,17 +112,18 @@
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonExportarJson
             // 
-            button6.BackColor = Color.FromArgb(79, 209, 197);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.FromArgb(35, 78, 82);
-            button6.Location = new Point(21, 341);
-            button6.Name = "button6";
-            button6.Size = new Size(200, 60);
-            button6.TabIndex = 8;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
+            buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJson.FlatStyle = FlatStyle.Flat;
+            buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJson.Location = new Point(21, 341);
+            buttonExportarJson.Name = "buttonExportarJson";
+            buttonExportarJson.Size = new Size(200, 60);
+            buttonExportarJson.TabIndex = 8;
+            buttonExportarJson.Text = "Exportar JSON";
+            buttonExportarJson.UseVisualStyleBackColor = false;
+            buttonExportarJson.Click += buttonExportarJson_Click;
             // 
             // button5
             // 
@@ -188,10 +189,10 @@
             // 
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, -103);
+            flowLayoutPanel1.Location = new Point(0, -1);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1176, 981);
+            flowLayoutPanel1.Size = new Size(1178, 887);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // controlProyectoPantalla21
@@ -205,6 +206,7 @@
             controlProyectoPantalla21.Proyecto = null;
             controlProyectoPantalla21.Size = new Size(296, 143);
             controlProyectoPantalla21.TabIndex = 1;
+            controlProyectoPantalla21.Load += controlProyectoPantalla21_Load;
             // 
             // label2
             // 
@@ -213,7 +215,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(121, 35);
+            label2.Size = new Size(96, 28);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -224,15 +226,14 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(158, 67);
+            label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
             // Pantalla2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 977);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla2";
@@ -265,5 +266,6 @@
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel1;
         private ControlProyectoPantalla2 controlProyectoPantalla21;
+        private Button buttonExportarJson;
     }
 }
