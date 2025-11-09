@@ -43,7 +43,7 @@ namespace DAM2_Project_Desktop
 
             this.userName = UserNameGenerator();
 
-            this.imgPerfil = GenerarImagenIniciales(100);
+            this.imgPerfil = GenerarImagenIniciales(200);
             this.miniImgPerfil = GenerarImagenIniciales(20);
 
             this.apellidoCompleto = setApellidoCompleto();

@@ -15,8 +15,10 @@ namespace DAM2_Project_Desktop
         private ComboBox comboUsuariosDAM2;
         //private ComboBox comboProyectos;
 
-        public Pantalla3()
+        public Pantalla3(Proyecto project)
         {
+
+
             InitializeComponent();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
