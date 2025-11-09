@@ -65,8 +65,8 @@ namespace DAM2_Project_Desktop
 
             this.userName = UserNameGenerator();
 
-            this.imgPerfil = GenerarImagenIniciales(100);
-            this.miniImgPerfil = GenerarImagenIniciales(20);
+            this.imgPerfil = GenerarImagenIniciales(200);
+            this.miniImgPerfil = GenerarImagenIniciales(25);
             this.apellidoCompleto = setApellidoCompleto();
         }
 
@@ -155,7 +155,7 @@ namespace DAM2_Project_Desktop
                 }
 
                 // 4. Definir la fuente (texto blanco)
-                float fontSize = tamano / (iniciales.Length > 1 ? 1.5f : 1.8f);
+                float fontSize = tamano / (iniciales.Length > 1 ? 3.5f : 3.5f);
                 using (var fuente = new Font("Arial", fontSize, FontStyle.Bold))
                 using (var brochaTexto = new SolidBrush(Color.White))
                 {

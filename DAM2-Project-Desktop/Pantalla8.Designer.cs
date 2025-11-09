@@ -49,7 +49,9 @@ namespace DAM2_Project_Desktop
             Curso = new DataGridViewTextBoxColumn();
             iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
+            pictureBoxTasky = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
@@ -57,6 +59,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -72,6 +75,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
             // 
@@ -180,6 +184,7 @@ namespace DAM2_Project_Desktop
             buttonInicio.TabIndex = 3;
             buttonInicio.Text = "Inicio";
             buttonInicio.UseVisualStyleBackColor = false;
+            buttonInicio.Click += buttonInicio_Click;
             // 
             // dataGridViewListadoUsuarios
             // 
@@ -283,6 +288,16 @@ namespace DAM2_Project_Desktop
             IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
             // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(300, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
+            // 
             // Pantalla8
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -292,6 +307,7 @@ namespace DAM2_Project_Desktop
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla8";
             Text = "Tasky";
+            splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
@@ -300,6 +316,7 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ResumeLayout(false);
         }
 
@@ -322,5 +339,6 @@ namespace DAM2_Project_Desktop
         private DataGridViewTextBoxColumn Curso;
         private DataGridViewImageColumn iconoEdit;
         private DataGridViewImageColumn IconoDelete;
+        private PictureBox pictureBoxTasky;
     }
 }
