@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
             buttonExportarJson = new Button();
@@ -42,8 +43,10 @@
             label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
@@ -63,6 +66,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
             // 
@@ -72,6 +76,16 @@
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(300, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
             // 
             // splitContainer2
             // 
@@ -215,7 +229,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(96, 28);
+            label2.Size = new Size(121, 35);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -226,7 +240,7 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(125, 54);
+            label1.Size = new Size(158, 67);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
@@ -239,9 +253,11 @@
             Name = "Pantalla2";
             Text = "Form1";
             Load += Pantalla2_Load;
+            splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
@@ -267,5 +283,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private ControlProyectoPantalla2 controlProyectoPantalla21;
         private Button buttonExportarJson;
+        private PictureBox pictureBoxTasky;
     }
 }

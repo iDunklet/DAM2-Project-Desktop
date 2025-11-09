@@ -207,5 +207,10 @@ namespace DAM2_Project_Desktop
                 }
             }
         }
+
+        private void buttonInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

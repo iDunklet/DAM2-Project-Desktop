@@ -33,8 +33,6 @@ namespace DAM2_Project_Desktop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla5));
             splitContainer1 = new SplitContainer();
             pictureBoxUsuario = new PictureBox();
-            pictureBoxMenu = new PictureBox();
-            pictureBoxLogo = new PictureBox();
             splitContainer2 = new SplitContainer();
             buttonExportarJson = new Button();
             buttonImportarJson = new Button();
@@ -64,17 +62,17 @@ namespace DAM2_Project_Desktop
             labelApellido2 = new Label();
             labelApellido1 = new Label();
             labelNombre = new Label();
+            pictureBoxTasky = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMenu).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -90,9 +88,8 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer1.Panel1.Controls.Add(pictureBoxUsuario);
-            splitContainer1.Panel1.Controls.Add(pictureBoxMenu);
-            splitContainer1.Panel1.Controls.Add(pictureBoxLogo);
             // 
             // splitContainer1.Panel2
             // 
@@ -113,28 +110,6 @@ namespace DAM2_Project_Desktop
             pictureBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxUsuario.TabIndex = 2;
             pictureBoxUsuario.TabStop = false;
-            // 
-            // pictureBoxMenu
-            // 
-            pictureBoxMenu.Image = (Image)resources.GetObject("pictureBoxMenu.Image");
-            pictureBoxMenu.Location = new Point(13, 4);
-            pictureBoxMenu.Margin = new Padding(3, 4, 3, 4);
-            pictureBoxMenu.Name = "pictureBoxMenu";
-            pictureBoxMenu.Size = new Size(157, 112);
-            pictureBoxMenu.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMenu.TabIndex = 1;
-            pictureBoxMenu.TabStop = false;
-            // 
-            // pictureBoxLogo
-            // 
-            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(199, 4);
-            pictureBoxLogo.Margin = new Padding(3, 4, 3, 4);
-            pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(275, 112);
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxLogo.TabIndex = 0;
-            pictureBoxLogo.TabStop = false;
             // 
             // splitContainer2
             // 
@@ -478,9 +453,18 @@ namespace DAM2_Project_Desktop
             labelNombre.TabIndex = 0;
             labelNombre.Text = "Nombre";
             // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(300, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
+            // 
             // Pantalla5
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1422, 977);
             Controls.Add(splitContainer1);
@@ -493,13 +477,12 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMenu).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ResumeLayout(false);
         }
 
@@ -588,9 +571,7 @@ namespace DAM2_Project_Desktop
         private SplitContainer splitContainer2;
         private TextBox textBoxNombre;
         private DateTimePicker dateTimePickerFechaNacimiento;
-        private PictureBox pictureBoxLogo;
         private PictureBox pictureBoxUsuario;
-        private PictureBox pictureBoxMenu;
         private TextBox textBoxApellido1;
         private TextBox textBoxContrasenya;
         private TextBox textBoxRepContrasenya;
@@ -601,5 +582,7 @@ namespace DAM2_Project_Desktop
         private TextBox textBoxCurso;
 
         #endregion
+
+        private PictureBox pictureBoxTasky;
     }
 }
