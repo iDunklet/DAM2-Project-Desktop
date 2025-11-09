@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,21 +8,56 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DAM2_Project_Desktop
 {
     public partial class Pantalla7 : Form
     {
         private Usuarios usuarioEncontrado;
+        private Size originalSize;
 
+        // Rectángulos de la Barra Lateral (Botones)
+        private Rectangle RectanglebuttonInicio;
+        private Rectangle RectanglebuttonProyectosPrivados;
+        private Rectangle RectanglebuttonUsuarios;
+        private Rectangle RectanglebuttonImportarJSON;
+        private Rectangle RectanglebuttonExportarJSON;
+        private Rectangle Rectanglebutton7;
 
+        // Rectángulos del Área de Contenido Principal
+        private Rectangle Rectanglelabel10;
+        private Rectangle RectanglepictureBoxImgPerfil;
+        private Rectangle Rectanglelabel1;
+        private Rectangle RectangletextBoxConfigurarUsuarioName;
+        private Rectangle Rectanglelabel2;
+        private Rectangle RectangletextBoxConfigurarUsuarioApellido1;
+        private Rectangle Rectanglelabel3;
+        private Rectangle RectangletextBoxConfigurarUsuarioApellido2;
+        private Rectangle Rectanglelabel4;
+        private Rectangle RectangledateTimePickerConfigurarUsuarioFechaNacimiento;
+        private Rectangle Rectanglelabel5;
+        private Rectangle RectangletextBoxConfigurarUsuarioEmail;
+        private Rectangle Rectanglelabel6;
+        private Rectangle RectangletextBoxConfigurarUsuarioClase;
+        private Rectangle Rectanglelabel7;
+        private Rectangle Rectanglelabel9;
+        private Rectangle RectangletextBoxConfigurarUsuarioNuevaContrasena;
+        private Rectangle Rectanglelabel8;
+        private Rectangle RectangletextBoxConfigurarUsuarioConfirmarContrasena;
+        private Rectangle RectanglebuttonConfigurarUsuarioGuardar;
+        private Rectangle RectanglepictureBoxTasky;
 
         public Pantalla7(Usuarios usuarioEncontrado)
         {
-
             InitializeComponent();
             this.usuarioEncontrado = usuarioEncontrado;
+
+            // Inicialización de datos de usuario...
             textBoxConfigurarUsuarioName.Text = usuarioEncontrado.nombre;
             textBoxConfigurarUsuarioApellido1.Text = usuarioEncontrado.apellido1;
             textBoxConfigurarUsuarioApellido2.Text = usuarioEncontrado.apellido2;
@@ -30,124 +65,109 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioEmail.Text = usuarioEncontrado.email;
             pictureBoxImgPerfil.Image = usuarioEncontrado.imgPerfil;
 
+
+
+
             ActivarEdicionPorDobleClick();
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla7_Resize;
 
-
+            originalSize = this.Size;
+            InitializeOriginalRectangles();
+            Pantalla7_Resize(null, null);
         }
 
         private void Pantalla7_Resize(object sender, EventArgs e)
         {
-            Size currentSize = this.ClientSize;
-
-            // Use the size of splitContainer2.Panel1 for relative positioning in the sidebar
-            Size sidebarSize = splitContainer2.Panel1.ClientSize;
-
-            Size sidebarSize2 = splitContainer1.Panel1.ClientSize;
-
-            // Scale and reposition the buttons in splitContainer2.Panel1
-            buttonInicio.Size = Dimencions.Scale(new Size(200, 60), currentSize);
-            buttonInicio.Location = Dimencions.Scale(new Point(21, 12), currentSize);
-
-            buttonProyectosPrivados.Size = Dimencions.Scale(new Size(200, 60), currentSize);
-            buttonProyectosPrivados.Location = Dimencions.Scale(new Point(21, 78), currentSize);
-
-            buttonUsuarios.Size = Dimencions.Scale(new Size(200, 60), currentSize);
-            buttonUsuarios.Location = Dimencions.Scale(new Point(21, 144), currentSize);
-
-            buttonImportarJSON.Size = Dimencions.Scale(new Size(200, 60), currentSize);
-            buttonImportarJSON.Location = Dimencions.Scale(new Point(21, 210), currentSize);
-
-            buttonExportarJSON.Size = Dimencions.Scale(new Size(200, 60), currentSize);
-            buttonExportarJSON.Location = Dimencions.Scale(new Point(21, 276), currentSize);
-
-            // button7 position update
-            button7.Size = Dimencions.Scale(new Size(229, 80), currentSize);
-            button7.Location = Dimencions.Scale(new Point(24, 1072), currentSize); // Note: This button is likely off-screen initially
-
-            // --- Main Content (splitContainer2.Panel2) Scaling ---
-            // Use the full client size (or the Panel2 size if you want to be more precise)
-
-            // Labels (Position and Font Size for responsiveness)
-            label10.Font = Dimencions.ScaleFont(label10.Font, 20f, currentSize);
-            label10.Location = Dimencions.Scale(new Point(60, 64), currentSize);
-
-            label1.Font = Dimencions.ScaleFont(label1.Font, 20f, currentSize);
-            label1.Location = Dimencions.Scale(new Point(349, 130), currentSize);
-
-            label2.Font = Dimencions.ScaleFont(label2.Font, 20f, currentSize);
-            label2.Location = Dimencions.Scale(new Point(790, 130), currentSize);
-
-            label3.Font = Dimencions.ScaleFont(label3.Font, 20f, currentSize);
-            label3.Location = Dimencions.Scale(new Point(359, 263), currentSize);
-
-            label4.Font = Dimencions.ScaleFont(label4.Font, 20f, currentSize);
-            label4.Location = Dimencions.Scale(new Point(790, 263), currentSize);
-
-            label5.Font = Dimencions.ScaleFont(label5.Font, 20f, currentSize);
-            label5.Location = Dimencions.Scale(new Point(359, 407), currentSize);
-
-            label6.Font = Dimencions.ScaleFont(label6.Font, 20f, currentSize);
-            label6.Location = Dimencions.Scale(new Point(790, 407), currentSize);
-
-            label7.Font = Dimencions.ScaleFont(label7.Font, 20f, currentSize);
-            label7.Location = Dimencions.Scale(new Point(60, 553), currentSize);
-
-            label9.Font = Dimencions.ScaleFont(label9.Font, 20f, currentSize);
-            label9.Location = Dimencions.Scale(new Point(106, 627), currentSize);
-
-            label8.Font = Dimencions.ScaleFont(label8.Font, 20f, currentSize);
-            label8.Location = Dimencions.Scale(new Point(547, 627), currentSize);
+            Size formOriginalSize = this.originalSize;
 
 
-            // PictureBox (Profile Image)
-            pictureBoxImgPerfil.Size = Dimencions.Scale(new Size(250, 250), currentSize);
-            pictureBoxImgPerfil.Location = Dimencions.Scale(new Point(60, 156), currentSize);
+            const int ORIGINAL_SPLITTER_DISTANCE = 93;
+            const int DESIGN_HEIGHT_BASE = 1100;
 
-            // TextBoxes and DateTimePicker (Size and Position)
+            Dimencions.ScaleAndCenterHeader(
+                pictureBoxTasky,
+                splitContainer1,
+                ORIGINAL_SPLITTER_DISTANCE,
+                this,
+                DESIGN_HEIGHT_BASE);
 
-            // Name
-            textBoxConfigurarUsuarioName.Size = Dimencions.Scale(new Size(343, 41), currentSize);
-            textBoxConfigurarUsuarioName.Location = Dimencions.Scale(new Point(359, 183), currentSize);
 
-            // Apellido 1
-            textBoxConfigurarUsuarioApellido1.Size = Dimencions.Scale(new Size(343, 41), currentSize);
-            textBoxConfigurarUsuarioApellido1.Location = Dimencions.Scale(new Point(790, 183), currentSize);
+            Dimencions.ResizeControl(buttonConfigurarUsuarioGuardar, RectanglebuttonConfigurarUsuarioGuardar, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioConfirmarContrasena, RectangletextBoxConfigurarUsuarioConfirmarContrasena, this, formOriginalSize);
+            Dimencions.ResizeControl(label8, Rectanglelabel8, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioNuevaContrasena, RectangletextBoxConfigurarUsuarioNuevaContrasena, this, formOriginalSize);
+            Dimencions.ResizeControl(label9, Rectanglelabel9, this, formOriginalSize);
+            Dimencions.ResizeControl(label7, Rectanglelabel7, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioClase, RectangletextBoxConfigurarUsuarioClase, this, formOriginalSize);
+            Dimencions.ResizeControl(label6, Rectanglelabel6, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioEmail, RectangletextBoxConfigurarUsuarioEmail, this, formOriginalSize);
+            Dimencions.ResizeControl(label5, Rectanglelabel5, this, formOriginalSize);
+            Dimencions.ResizeControl(dateTimePickerConfigurarUsuarioFechaNacimiento, RectangledateTimePickerConfigurarUsuarioFechaNacimiento, this, formOriginalSize);
+            Dimencions.ResizeControl(label4, Rectanglelabel4, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioApellido2, RectangletextBoxConfigurarUsuarioApellido2, this, formOriginalSize);
+            Dimencions.ResizeControl(label3, Rectanglelabel3, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioApellido1, RectangletextBoxConfigurarUsuarioApellido1, this, formOriginalSize);
+            Dimencions.ResizeControl(label2, Rectanglelabel2, this, formOriginalSize);
+            Dimencions.ResizeControl(textBoxConfigurarUsuarioName, RectangletextBoxConfigurarUsuarioName, this, formOriginalSize);
+            Dimencions.ResizeControl(label1, Rectanglelabel1, this, formOriginalSize);
+            Dimencions.ResizeControl(pictureBoxImgPerfil, RectanglepictureBoxImgPerfil, this, formOriginalSize);
+            Dimencions.ResizeControl(label10, Rectanglelabel10, this, formOriginalSize);
 
-            // Apellido 2
-            textBoxConfigurarUsuarioApellido2.Size = Dimencions.Scale(new Size(343, 41), currentSize);
-            textBoxConfigurarUsuarioApellido2.Location = Dimencions.Scale(new Point(359, 317), currentSize);
-
-            // Fecha Nacimiento
-            dateTimePickerConfigurarUsuarioFechaNacimiento.Size = Dimencions.Scale(new Size(342, 41), currentSize);
-            dateTimePickerConfigurarUsuarioFechaNacimiento.Location = Dimencions.Scale(new Point(790, 317), currentSize);
-
-            // Email
-            textBoxConfigurarUsuarioEmail.Size = Dimencions.Scale(new Size(343, 41), currentSize);
-            textBoxConfigurarUsuarioEmail.Location = Dimencions.Scale(new Point(359, 461), currentSize);
-
-            // Clase
-            textBoxConfigurarUsuarioClase.Size = Dimencions.Scale(new Size(343, 41), currentSize);
-            textBoxConfigurarUsuarioClase.Location = Dimencions.Scale(new Point(790, 461), currentSize);
-
-            // New Password
-            textBoxConfigurarUsuarioNuevaContrasena.Size = Dimencions.Scale(new Size(300, 41), currentSize);
-            textBoxConfigurarUsuarioNuevaContrasena.Location = Dimencions.Scale(new Point(107, 686), currentSize);
-
-            // Confirm Password
-            textBoxConfigurarUsuarioConfirmarContrasena.Size = Dimencions.Scale(new Size(300, 41), currentSize);
-            textBoxConfigurarUsuarioConfirmarContrasena.Location = Dimencions.Scale(new Point(557, 686), currentSize);
-
-            // Save Button
-            buttonConfigurarUsuarioGuardar.Font = Dimencions.ScaleFont(buttonConfigurarUsuarioGuardar.Font, 18f, currentSize);
-            buttonConfigurarUsuarioGuardar.Size = Dimencions.Scale(new Size(232, 68), currentSize);
-            buttonConfigurarUsuarioGuardar.Location = Dimencions.Scale(new Point(401, 773), currentSize);
-
-            // PictureBoxTasky (Header)
-            pictureBoxTasky.Size = Dimencions.Scale(new Size(300, 94), sidebarSize2);
-            pictureBoxTasky.Location = Dimencions.Scale(new Point(-1, -1), currentSize);
+            // Escalado de los botones laterales.
+            ResizeBotonesLaterales();
         }
+
+        private void ResizeBotonesLaterales()
+        {
+            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
+
+            int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
+
+            // Delega la lógica de centrado y escalado Y a la clase estática.
+            Dimencions.ResizeSidebarButtons(sidebarButtons, originalRects, sidebarPanelWidth, this);
+        }
+
+        // Método para inicializar los rectángulos originales con la posición y tamaño de diseño.
+        private void InitializeOriginalRectangles()
+        {
+
+            // Área de Contenido Principal (Datos) - Inicialización de rectángulos...
+            Rectanglelabel10 = new Rectangle(label10.Location, label10.Size);
+            RectanglepictureBoxImgPerfil = new Rectangle(pictureBoxImgPerfil.Location, pictureBoxImgPerfil.Size);
+            Rectanglelabel1 = new Rectangle(label1.Location, label1.Size);
+            RectangletextBoxConfigurarUsuarioName = new Rectangle(textBoxConfigurarUsuarioName.Location, textBoxConfigurarUsuarioName.Size);
+            Rectanglelabel2 = new Rectangle(label2.Location, label2.Size);
+            RectangletextBoxConfigurarUsuarioApellido1 = new Rectangle(textBoxConfigurarUsuarioApellido1.Location, textBoxConfigurarUsuarioApellido1.Size);
+            Rectanglelabel3 = new Rectangle(label3.Location, label3.Size);
+            RectangletextBoxConfigurarUsuarioApellido2 = new Rectangle(textBoxConfigurarUsuarioApellido2.Location, textBoxConfigurarUsuarioApellido2.Size);
+            RectangledateTimePickerConfigurarUsuarioFechaNacimiento = new Rectangle(dateTimePickerConfigurarUsuarioFechaNacimiento.Location, dateTimePickerConfigurarUsuarioFechaNacimiento.Size);
+            Rectanglelabel4 = new Rectangle(label4.Location, label4.Size);
+            Rectanglelabel5 = new Rectangle(label5.Location, label5.Size);
+            RectangletextBoxConfigurarUsuarioEmail = new Rectangle(textBoxConfigurarUsuarioEmail.Location, textBoxConfigurarUsuarioEmail.Size);
+            Rectanglelabel6 = new Rectangle(label6.Location, label6.Size);
+            RectangletextBoxConfigurarUsuarioClase = new Rectangle(textBoxConfigurarUsuarioClase.Location, textBoxConfigurarUsuarioClase.Size);
+            Rectanglelabel7 = new Rectangle(label7.Location, label7.Size);
+            Rectanglelabel9 = new Rectangle(label9.Location, label9.Size);
+            RectangletextBoxConfigurarUsuarioNuevaContrasena = new Rectangle(textBoxConfigurarUsuarioNuevaContrasena.Location, textBoxConfigurarUsuarioNuevaContrasena.Size);
+            Rectanglelabel8 = new Rectangle(label8.Location, label8.Size);
+            RectangletextBoxConfigurarUsuarioConfirmarContrasena = new Rectangle(textBoxConfigurarUsuarioConfirmarContrasena.Location, textBoxConfigurarUsuarioConfirmarContrasena.Size);
+            RectanglebuttonConfigurarUsuarioGuardar = new Rectangle(buttonConfigurarUsuarioGuardar.Location, buttonConfigurarUsuarioGuardar.Size);
+
+
+            // Barra Lateral (Botones) - Usamos las coordenadas del diseñador.
+            Size baseSize = new Size(200, 60);
+
+            RectanglebuttonInicio = new Rectangle(new Point(21, 12), baseSize);
+            RectanglebuttonProyectosPrivados = new Rectangle(new Point(21, 78), baseSize);
+            RectanglebuttonUsuarios = new Rectangle(new Point(21, 144), baseSize);
+            RectanglebuttonImportarJSON = new Rectangle(new Point(21, 210), baseSize);
+            RectanglebuttonExportarJSON = new Rectangle(new Point(21, 276), baseSize);
+            // button7 está en una posición Y alta.
+            Rectanglebutton7 = new Rectangle(new Point(24, 1072), baseSize);
+        }
+
 
         private void ActivarEdicionPorDobleClick()
         {
