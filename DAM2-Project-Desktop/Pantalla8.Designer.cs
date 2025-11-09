@@ -33,6 +33,7 @@ namespace DAM2_Project_Desktop
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
+            pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
             buttonExportarJSON = new Button();
@@ -49,17 +50,16 @@ namespace DAM2_Project_Desktop
             Curso = new DataGridViewTextBoxColumn();
             iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
-            pictureBoxTasky = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -85,6 +85,16 @@ namespace DAM2_Project_Desktop
             splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(300, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
             // 
             // splitContainer2
             // 
@@ -206,12 +216,12 @@ namespace DAM2_Project_Desktop
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewListadoUsuarios.Location = new Point(52, 119);
+            dataGridViewListadoUsuarios.Location = new Point(32, 27);
             dataGridViewListadoUsuarios.Name = "dataGridViewListadoUsuarios";
             dataGridViewListadoUsuarios.RowHeadersVisible = false;
             dataGridViewListadoUsuarios.RowHeadersWidth = 51;
             dataGridViewListadoUsuarios.ScrollBars = ScrollBars.None;
-            dataGridViewListadoUsuarios.Size = new Size(1227, 810);
+            dataGridViewListadoUsuarios.Size = new Size(1098, 810);
             dataGridViewListadoUsuarios.TabIndex = 0;
             dataGridViewListadoUsuarios.CellContentClick += dataGridView1_CellContentClick;
             dataGridViewListadoUsuarios.CellFormatting += dataGridViewListadoUsuarios_CellFormatting;
@@ -288,16 +298,6 @@ namespace DAM2_Project_Desktop
             IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
             // 
-            // pictureBoxTasky
-            // 
-            pictureBoxTasky.Image = Properties.Resources.Group_50;
-            pictureBoxTasky.Location = new Point(-1, -1);
-            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
-            pictureBoxTasky.Name = "pictureBoxTasky";
-            pictureBoxTasky.Size = new Size(300, 94);
-            pictureBoxTasky.TabIndex = 2;
-            pictureBoxTasky.TabStop = false;
-            // 
             // Pantalla8
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -311,12 +311,12 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ResumeLayout(false);
         }
 

@@ -1,57 +1,99 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
-namespace DAM2_Project_Desktop
+public static class Dimencions
 {
-    public static class Dimencions
+    // Dimensiones de diseño base (Formulario completo)
+    private const int DESIGN_WIDTH_BASE = 1422;
+    private const int DESIGN_HEIGHT_BASE = 1100;
+    private const int DESIGN_SIDEBAR_WIDTH = 242;
+
+    // Método para escalar el tamaño de un control.
+    public static Size Scale(Size baseSize, Size currentClientSize)
     {
-        // Resoluci�n de referencia base para el escalado.
-        private const int BASE_WIDTH = 1440;
-        private const int BASE_HEIGHT = 1024;
+        float ratioW = (float)currentClientSize.Width / DESIGN_WIDTH_BASE;
+        float ratioH = (float)currentClientSize.Height / DESIGN_HEIGHT_BASE;
 
-        public static Size Scale(Size originalSize, Size currentFormSize)
+        // Usa el ratio más restrictivo para el escalado proporcional.
+        float scaleFactor = Math.Min(ratioW, ratioH);
+
+        int newWidth = (int)(baseSize.Width * scaleFactor);
+        int newHeight = (int)(baseSize.Height * scaleFactor);
+
+        return new Size(newWidth, newHeight);
+    }
+
+    // Método general para escalar la posición y tamaño de un control (usa minRatio).
+    public static void ResizeControl(Control control, Rectangle originalRectangle, Form form, Size originalFormSize)
+    {
+        float xRatio = (float)form.Width / (float)originalFormSize.Width;
+        float yRatio = (float)form.Height / (float)originalFormSize.Height;
+
+        float minRatio = Math.Min(xRatio, yRatio);
+
+        int newX = (int)(originalRectangle.X * minRatio);
+        int newY = (int)(originalRectangle.Y * minRatio);
+
+        int newWidth = (int)(originalRectangle.Width * minRatio);
+        int newHeight = (int)(originalRectangle.Height * minRatio);
+
+        control.Location = new Point(newX, newY);
+        control.Size = new Size(newWidth, newHeight);
+    }
+
+    // Método específico para escalar los botones laterales.
+    // Usa yRatio para la posición Y (evitando el apilamiento) y centra en X.
+    public static void ResizeSidebarButtons(Control[] buttons, Rectangle[] originalRects, int sidebarPanelWidth, Form form)
+    {
+        Size currentClientSize = form.ClientSize;
+
+        float yRatio = (float)form.Height / DESIGN_HEIGHT_BASE;
+        float sidebarXRatio = (float)sidebarPanelWidth / DESIGN_SIDEBAR_WIDTH;
+
+        const int BUTTON_ORIGINAL_WIDTH = 200;
+
+        int buttonScaledWidth = (int)(BUTTON_ORIGINAL_WIDTH * sidebarXRatio);
+        int startX = (sidebarPanelWidth / 2) - (buttonScaledWidth / 2);
+
+        for (int i = 0; i < buttons.Length; i++)
         {
-            // Usa solo el factor de escala del ancho para mantener la proporci�n visual
-            float scaleFactor = (float)currentFormSize.Width / BASE_WIDTH;
+            int newWidth = (int)(BUTTON_ORIGINAL_WIDTH * sidebarXRatio);
+            int newHeight = (int)(60 * sidebarXRatio);
 
-            int newWidth = (int)(originalSize.Width * scaleFactor);
-            int newHeight = (int)(originalSize.Height * scaleFactor);
+            buttons[i].Size = new Size(newWidth, newHeight);
 
-            return new Size(newWidth, newHeight);
-        }
+            int newY = (int)(originalRects[i].Y * yRatio);
 
-        public static Point Scale(Point originalLocation, Size currentFormSize)
-        {
-            // Reutiliza los factores de escalado.
-            float scaleFactorW = (float)currentFormSize.Width / BASE_WIDTH;
-            float scaleFactorH = (float)currentFormSize.Height / BASE_HEIGHT;
-
-            // Aplica el escalado a la posici�n.
-            int newX = (int)(originalLocation.X * scaleFactorW);
-            int newY = (int)(originalLocation.Y * scaleFactorH);
-
-            return new Point(newX, newY);
-        }
-
-
-        public static Font ScaleFont(Font originalFont, float baseFontSize, Size currentFormSize)
-        {
-            float scaleFactor = (float)currentFormSize.Width / BASE_WIDTH;
-            float newSize = baseFontSize * scaleFactor;
-
-            // Mantiene un tama�o m�nimo legible.
-            if (newSize < 5f) newSize = 5f;
-
-            // Retorna un nuevo objeto Font.
-            return new Font(originalFont.FontFamily, newSize, originalFont.Style);
-        }
-
-        public static void ApplyMinimum(Form form)
-        {
-            form.MinimumSize = new Size(BASE_WIDTH, BASE_HEIGHT);
+            buttons[i].Location = new Point(startX, newY);
         }
     }
+    public static void ApplyMinimum(Form form)
+    {
+        
+    }
+     
+    public static void ScaleAndCenterHeader(
+    PictureBox pictureBoxHeader,
+    SplitContainer splitContainer,
+    int originalSplitterDistance,
+    Form form,
+    int formBaseHeight = 1024)
+    {
+       
+        float scaleY = (float)form.ClientSize.Height / formBaseHeight;
+        int newSplitterDistance = (int)(originalSplitterDistance * scaleY);
+        splitContainer.SplitterDistance = newSplitterDistance;
+
+        Control panelContainer = splitContainer.Panel1;
+        int containerHeight = panelContainer.ClientSize.Height;
+        int controlHeight = pictureBoxHeader.Height;
+        int newY = (containerHeight - controlHeight) / 2;
+        if (newY >= 0)
+        {
+            pictureBoxHeader.Top = newY;
+        }
+    }
+
+
 }

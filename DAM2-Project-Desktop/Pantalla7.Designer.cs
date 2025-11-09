@@ -96,11 +96,10 @@ namespace DAM2_Project_Desktop
             // pictureBoxTasky
             // 
             pictureBoxTasky.Image = Properties.Resources.Group_50;
-            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Location = new Point(0,0);
             pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
             pictureBoxTasky.Name = "pictureBoxTasky";
             pictureBoxTasky.Size = new Size(300, 94);
-            pictureBoxTasky.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBoxTasky.TabIndex = 2;
             pictureBoxTasky.TabStop = false;
             // 
