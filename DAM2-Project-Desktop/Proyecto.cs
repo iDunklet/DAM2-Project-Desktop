@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
@@ -23,13 +24,12 @@ namespace DAM2_Project_Desktop
         public Bitmap ImgProyecto
         {
             get { return imgProyecto; }
-            set { imgProyecto = value ?? GenerarImagenIniciales(titulo, 100); }
+            set { imgProyecto = value ?? GenerarImagenIniciales(titulo); }
         }
 
 
 
-        //Metodo IMG
-        private Bitmap GenerarImagenIniciales(string titulo, int tamano = 100)
+        private Bitmap GenerarImagenIniciales(string titulo, int tamano = 135)
         {
             // Obtener solo la PRIMERA letra del título
             string inicial = "";
@@ -54,18 +54,19 @@ namespace DAM2_Project_Desktop
             Color fondoColor = coloresAvatar[random.Next(coloresAvatar.Length)];
 
             // Crear imagen
+            // El tamaño del mapa de bits ahora usa el valor predeterminado de 135
             var bitmap = new Bitmap(tamano, tamano);
             using (Graphics g = Graphics.FromImage(bitmap))
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
 
-                // Fondo RECTANGULAR (sin cambios)
+                // Fondo RECTANGULAR
                 using (var brochaFondo = new SolidBrush(fondoColor))
                     g.FillRectangle(brochaFondo, 0, 0, tamano, tamano);
 
-                // Fuente MÁS GRANDE para una sola letra
-                float fontSize = tamano * 0.7f; // 70% del tamaño para una letra más grande
+                // Fuente. Usamos un 65% del tamaño total para una letra más grande y legible
+                float fontSize = tamano * 0.65f;
 
                 using (var fuente = new Font("Arial", fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
                 using (var brochaTexto = new SolidBrush(Color.White))
@@ -78,8 +79,9 @@ namespace DAM2_Project_Desktop
 
                     var areaDibujo = new RectangleF(0, 0, tamano, tamano);
 
-                    // Pequeño ajuste para mejor centrado visual
-                    areaDibujo.Y -= tamano * 0.03f;
+                    // Ajuste fino para la corrección del centrado vertical (las fuentes cuelgan)
+                    // Se reduce el ajuste a 2% (0.02f) del tamaño para un mejor centrado en 135px
+                    areaDibujo.Y -= tamano * 0.02f;
 
                     g.DrawString(inicial, fuente, brochaTexto, areaDibujo, formato);
                 }
@@ -115,6 +117,21 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = usuarios;
             this.tareasProyecto = tareas;
             this.ImgProyecto = imgProyecto;
+        }
+
+
+        public void exportarTodosLosProyectos()
+        {
+            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
+
+            var proyectosList = ListadoDatosClasses.ListadoProyectos;
+            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
+
+            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
+            Console.WriteLine("Exportación a JSON completada con éxito.");
+            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
         }
 
     }

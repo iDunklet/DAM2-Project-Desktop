@@ -95,5 +95,16 @@ public static class Dimencions
         }
     }
 
+    public static void CenterControlVerticalInPanel(Control controlToCenter, Control panelContainer)
+    {
+        int containerHeight = panelContainer.ClientSize.Height;
+        int controlHeight = controlToCenter.Height;
+        int newY = (containerHeight - controlHeight) / 2;
+        if (newY >= 0)
+        {
+            controlToCenter.Top = newY;
+        }
+    }
+
 
 }
