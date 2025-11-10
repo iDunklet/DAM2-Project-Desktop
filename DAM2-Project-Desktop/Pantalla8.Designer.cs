@@ -33,6 +33,7 @@ namespace DAM2_Project_Desktop
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
+            pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             button7 = new Button();
             buttonExportarJSON = new Button();
@@ -50,8 +51,10 @@ namespace DAM2_Project_Desktop
             iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
@@ -72,15 +75,26 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(300, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
             // 
             // splitContainer2
             // 
@@ -105,7 +119,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel2.Controls.Add(dataGridViewListadoUsuarios);
-            splitContainer2.Size = new Size(1422, 881);
+            splitContainer2.Size = new Size(1424, 889);
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
@@ -129,8 +143,9 @@ namespace DAM2_Project_Desktop
             buttonExportarJSON.Name = "buttonExportarJSON";
             buttonExportarJSON.Size = new Size(200, 60);
             buttonExportarJSON.TabIndex = 7;
-            buttonExportarJSON.Text = "ExportarJSON";
+            buttonExportarJSON.Text = "Exportar JSON";
             buttonExportarJSON.UseVisualStyleBackColor = false;
+            buttonExportarJSON.Click += buttonExportarJSON_Click;
             // 
             // buttonImportarJSON
             // 
@@ -179,6 +194,7 @@ namespace DAM2_Project_Desktop
             buttonInicio.TabIndex = 3;
             buttonInicio.Text = "Inicio";
             buttonInicio.UseVisualStyleBackColor = false;
+            buttonInicio.Click += buttonInicio_Click;
             // 
             // dataGridViewListadoUsuarios
             // 
@@ -200,12 +216,12 @@ namespace DAM2_Project_Desktop
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridViewListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewListadoUsuarios.Location = new Point(52, 119);
+            dataGridViewListadoUsuarios.Location = new Point(32, 27);
             dataGridViewListadoUsuarios.Name = "dataGridViewListadoUsuarios";
             dataGridViewListadoUsuarios.RowHeadersVisible = false;
             dataGridViewListadoUsuarios.RowHeadersWidth = 51;
             dataGridViewListadoUsuarios.ScrollBars = ScrollBars.None;
-            dataGridViewListadoUsuarios.Size = new Size(1227, 810);
+            dataGridViewListadoUsuarios.Size = new Size(1098, 810);
             dataGridViewListadoUsuarios.TabIndex = 0;
             dataGridViewListadoUsuarios.CellContentClick += dataGridView1_CellContentClick;
             dataGridViewListadoUsuarios.CellFormatting += dataGridViewListadoUsuarios_CellFormatting;
@@ -284,17 +300,18 @@ namespace DAM2_Project_Desktop
             // 
             // Pantalla8
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1422, 977);
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla8";
             Text = "Tasky";
+            splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
@@ -322,5 +339,6 @@ namespace DAM2_Project_Desktop
         private DataGridViewTextBoxColumn Curso;
         private DataGridViewImageColumn iconoEdit;
         private DataGridViewImageColumn IconoDelete;
+        private PictureBox pictureBoxTasky;
     }
 }

@@ -13,7 +13,21 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla8 : Form
     {
+        private readonly InterfaceMetodos _jsonService = new JsonFileService();
 
+        private Size originalSize;
+
+        // --- Rectángulos de la Barra Lateral (Botones) ---
+        private Rectangle RectanglebuttonInicio;
+        private Rectangle RectanglebuttonProyectosPrivados;
+        private Rectangle RectanglebuttonUsuarios;
+        private Rectangle RectanglebuttonImportarJSON;
+        private Rectangle RectanglebuttonExportarJSON;
+        private Rectangle Rectanglebutton7;
+
+        // --- Rectángulos del Contenido Principal ---
+        private Rectangle RectanglepictureBoxTasky;
+        private Rectangle RectangledataGridViewListadoUsuarios;
         public Pantalla8()
         {
             InitializeComponent();
@@ -21,39 +35,120 @@ namespace DAM2_Project_Desktop
             this.Load += new EventHandler(Pantalla8_Load);
             Dimencions.ApplyMinimum(this);
             this.Resize += Pantalla8_Resize;
+            originalSize = this.Size;
+            InitializeOriginalRectangles();
+            Pantalla8_Resize(null, null);
         }
 
         private void Pantalla8_Resize(object sender, EventArgs e)
         {
+            Size formOriginalSize = this.originalSize;
 
-            buttonInicio.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            buttonProyectosPrivados.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            buttonUsuarios.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            buttonImportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            buttonExportarJSON.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
-            button7.Size = Dimencions.Scale(new Size(200, 60), this.ClientSize);
+            // El escalado general de posición y altura se mantiene.
+            ResizeBotonesLaterales();
 
-            // Escalar DataGridView
-            dataGridViewListadoUsuarios.Size = Dimencions.Scale(new Size(1200, 810), this.ClientSize);
+            const int ORIGINAL_SPLITTER_DISTANCE = 93;
+            const int DESIGN_HEIGHT_BASE = 1100;
 
-            // Escalar columnas
+            Dimencions.ScaleAndCenterHeader(
+                pictureBoxTasky,
+                splitContainer1,
+                ORIGINAL_SPLITTER_DISTANCE,
+                this,
+                DESIGN_HEIGHT_BASE);
+
+            // Resize grid
+            Dimencions.ResizeControl(dataGridViewListadoUsuarios, RectangledataGridViewListadoUsuarios, this, formOriginalSize);
+
+            // --- CÁLCULO Y ASIGNACIÓN DE ANCHURA DE COLUMNAS (CLAVE) ---
+
+            // 1. Calcular el factor de escala X (usando 1440 como ancho base de diseño)
             float scaleX = (float)this.ClientSize.Width / 1440;
-            ImgPerfil.Width = (int)(30 * scaleX);
-            Username.Width = (int)(150 * scaleX);
-            Nombre.Width = (int)(175 * scaleX);
-            Apellidos.Width = (int)(285 * scaleX);
-            Email.Width = (int)(250 * scaleX);
-            Curso.Width = (int)(100 * scaleX);
-            iconoEdit.Width = (int)(40 * scaleX);
-            IconoDelete.Width = (int)(40 * scaleX);
 
-            // Escalar altura de filas
+            // 2. Calcular las nuevas anchuras escaladas y asignarlas
+            // Se recomienda usar una lista de las anchuras base para mayor claridad y mantenibilidad.
+            int[] baseWidths = { 30, 150, 175, 285, 250, 125, 40, 40 }; // Base total: 1095 o 1295
+            int totalScaledWidth = 0;
+
+            ImgPerfil.Width = (int)(baseWidths[0] * scaleX);
+            totalScaledWidth += ImgPerfil.Width;
+
+            Username.Width = (int)(baseWidths[1] * scaleX);
+            totalScaledWidth += Username.Width;
+
+            Nombre.Width = (int)(baseWidths[2] * scaleX);
+            totalScaledWidth += Nombre.Width;
+
+            Apellidos.Width = (int)(baseWidths[3] * scaleX);
+            totalScaledWidth += Apellidos.Width;
+
+            Email.Width = (int)(baseWidths[4] * scaleX);
+            totalScaledWidth += Email.Width;
+
+            Curso.Width = (int)(baseWidths[5] * scaleX);
+            totalScaledWidth += Curso.Width;
+
+            iconoEdit.Width = (int)(baseWidths[6] * scaleX);
+            totalScaledWidth += iconoEdit.Width;
+
+            IconoDelete.Width = (int)(baseWidths[7] * scaleX);
+            totalScaledWidth += IconoDelete.Width;
+
+            // 3. Establecer la anchura total de la Grid (sobrescribe la anchura de ResizeControl)
+            dataGridViewListadoUsuarios.Width = totalScaledWidth + 2;
+
+            // --- LÓGICA DE ESCALADO DE FILAS (Mantenida) ---
             float scaleY = (float)this.ClientSize.Height / 1024;
             foreach (DataGridViewRow row in dataGridViewListadoUsuarios.Rows)
             {
                 row.Height = (int)(30 * scaleY);
             }
 
+            // Opcional: Re-ajuste vertical para que la Grid coincida con la altura de las filas.
+            if (dataGridViewListadoUsuarios.Rows.Count > 0)
+            {
+                int totalRowsHeight = dataGridViewListadoUsuarios.Rows.Cast<DataGridViewRow>().Sum(row => row.Height);
+                int headerHeight = dataGridViewListadoUsuarios.ColumnHeadersHeight;
+                dataGridViewListadoUsuarios.Height = totalRowsHeight + headerHeight + 2;
+            }
+        }
+
+        private void ResizeBotonesLaterales()
+        {
+            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
+
+            // Obtener el ancho actual del panel lateral (asumiendo que está en splitContainer2)
+            // Si Pantalla8 usa splitContainer2 como Pantalla7:
+            int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
+
+            // Delega la lógica de centrado y escalado Y a la clase estática.
+            Dimencions.ResizeSidebarButtons(sidebarButtons, originalRects, sidebarPanelWidth, this);
+        }
+
+        private void InitializeOriginalRectangles()
+        {
+            // Header
+            RectanglepictureBoxTasky = new Rectangle(pictureBoxTasky.Location, pictureBoxTasky.Size);
+
+            const int GRID_DESIGN_WIDTH = 1146;
+            const int GRID_DESIGN_HEIGHT = 842;
+
+            // Contenido principal
+            RectangledataGridViewListadoUsuarios = new Rectangle(
+                  new Point(32, 27),
+                  new Size(GRID_DESIGN_WIDTH, GRID_DESIGN_HEIGHT));
+
+            // Barra Lateral (Botones) - Coordenadas del diseñador de Pantalla8
+            Size baseSize = new Size(200, 60);
+
+            // Posiciones Y críticas: 12 hasta 1072
+            RectanglebuttonInicio = new Rectangle(new Point(21, 12), baseSize);
+            RectanglebuttonProyectosPrivados = new Rectangle(new Point(21, 78), baseSize);
+            RectanglebuttonUsuarios = new Rectangle(new Point(21, 144), baseSize);
+            RectanglebuttonImportarJSON = new Rectangle(new Point(21, 210), baseSize);
+            RectanglebuttonExportarJSON = new Rectangle(new Point(21, 276), baseSize);
+            Rectanglebutton7 = new Rectangle(new Point(24, 1072), baseSize);
         }
 
 
@@ -63,15 +158,6 @@ namespace DAM2_Project_Desktop
 
             ConfigurarColumnaIconoDelete();
             ConfigurarColumnaIconoEditar();
-
-
-            // --- CÓDIGO PARA EL REDIMENSIONAMIENTO AUTOMÁTICO DE ALTURA ---
-
-            // Calcula la altura total de todas las filas y aplica el ajuste.
-            int totalHeight = dataGridViewListadoUsuarios.Rows.Cast<DataGridViewRow>().Sum(row => row.Height);
-
-            // Establece la nueva altura (total de filas + pequeño margen de 3 píxeles).
-            dataGridViewListadoUsuarios.Height = totalHeight + 3;
         }
 
         public Bitmap GetImgIconDelete()
@@ -154,6 +240,60 @@ namespace DAM2_Project_Desktop
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExportarJSON_Click(object sender, EventArgs e)
+        {
+            // Llamamos al método a través del servicio (_jsonService)
+            bool exito = _jsonService.ExportarTodoAJson();
+
+            if (exito)
+            {
+                // Opcional: Lógica para abrir la carpeta después de exportar
+                DialogResult result = MessageBox.Show(
+                    "¿Desea abrir la carpeta de exportación ahora?",
+                    "Abrir Carpeta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    _jsonService.AbrirCarpetaExports();
+                }
+            }
+        }
+
+        // --- Manejo del Botón de Importación ---
+        private void buttonImportarJSON_Click(object sender, EventArgs e)
+        {
+            // Lógica de confirmación antes de importar...
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Desea importar datos? Esto reemplazará todos los datos actuales.",
+                "Confirmar Importación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                // Llamamos al método a través del servicio
+                bool exito = _jsonService.ImportarTodoDesdeJson();
+
+                if (exito)
+                {
+                    // Lógica para refrescar la vista después de una importación exitosa
+                    dataGridViewListadoUsuarios.DataSource = null;
+                    dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
+
+                    ActualizarAlturaDataGridView();
+                    ConfigurarColumnaIconoDelete();
+                    ConfigurarColumnaIconoEditar();
+                }
+            }
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e)
         {
 
         }

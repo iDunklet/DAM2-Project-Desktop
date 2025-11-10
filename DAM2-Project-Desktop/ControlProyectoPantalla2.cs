@@ -12,8 +12,10 @@ namespace DAM2_Project_Desktop
         public ControlProyectoPantalla2()
         {
             InitializeComponent();
-            pictureBoxImagen.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxImagen.BackColor = Color.LightGray;
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.Click += ControlProyectoPantalla2_Click;
+            }
 
 
         }
@@ -98,23 +100,18 @@ namespace DAM2_Project_Desktop
             int nWidthEllipse, int nHeightEllipse);
 
 
-      
+
+        public event EventHandler<Proyecto> ProyectoClicado;
+
         private void ControlProyectoPantalla2_Click(object sender, EventArgs e)
         {
             if (_proyecto != null)
-            {
-                // Crear y mostrar Pantalla3, pasando el proyecto
-                //Pantalla3 pantalla3 = new Pantalla3(_proyecto);
-                //pantalla3.Show();
+                ProyectoClicado?.Invoke(this, _proyecto);
+        }
 
-              
-                this.FindForm()?.Close();
-            }
-            else
-            {
-                MessageBox.Show("No hay proyecto seleccionado", "Información",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+        private void labelTitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
