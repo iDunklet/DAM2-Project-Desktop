@@ -66,7 +66,7 @@ namespace DAM2_Project_Desktop
                     g.FillRectangle(brochaFondo, 0, 0, tamano, tamano);
 
                 // Fuente. Usamos un 65% del tamaño total para una letra más grande y legible
-                float fontSize = tamano * 0.65f;
+                float fontSize = tamano * 0.50f;
 
                 using (var fuente = new Font("Arial", fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
                 using (var brochaTexto = new SolidBrush(Color.White))
@@ -81,7 +81,7 @@ namespace DAM2_Project_Desktop
 
                     // Ajuste fino para la corrección del centrado vertical (las fuentes cuelgan)
                     // Se reduce el ajuste a 2% (0.02f) del tamaño para un mejor centrado en 135px
-                    areaDibujo.Y -= tamano * 0.02f;
+                    areaDibujo.Y -= tamano * 0.0001f;
 
                     g.DrawString(inicial, fuente, brochaTexto, areaDibujo, formato);
                 }

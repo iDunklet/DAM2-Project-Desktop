@@ -85,7 +85,7 @@
             // ControlProyectoPantalla2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Khaki;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(labelTareas);

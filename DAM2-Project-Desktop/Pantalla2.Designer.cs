@@ -35,12 +35,13 @@
             buttonExportarJSON = new Button();
             buttonImportarJSON = new Button();
             buttonUsuarios = new Button();
-            buttonProyectosPrivados = new Button();
             buttonInicio = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
             label1 = new Label();
+            label3 = new Label();
+            buttonProyectosPrivados = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -148,6 +149,7 @@
             buttonImportarJSON.TabIndex = 10;
             buttonImportarJSON.Text = "Importar JSON";
             buttonImportarJSON.UseVisualStyleBackColor = false;
+            buttonImportarJSON.Click += buttonImportarJSON_Click;
             // 
             // buttonUsuarios
             // 
@@ -161,18 +163,6 @@
             buttonUsuarios.Text = "Usuarios";
             buttonUsuarios.UseVisualStyleBackColor = false;
             buttonUsuarios.Click += buttonUsuarios_Click;
-            // 
-            // buttonProyectosPrivados
-            // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(21, 78);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 60);
-            buttonProyectosPrivados.TabIndex = 4;
-            buttonProyectosPrivados.Text = "Proyectos Privados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
             // 
             // buttonInicio
             // 
@@ -189,6 +179,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, -1);
@@ -199,11 +190,12 @@
             // 
             // controlProyectoPantalla21
             // 
+            controlProyectoPantalla21.Anchor = AnchorStyles.Left;
             controlProyectoPantalla21.BackColor = Color.White;
             controlProyectoPantalla21.BorderStyle = BorderStyle.FixedSingle;
             controlProyectoPantalla21.Imagen = null;
-            controlProyectoPantalla21.Location = new Point(11, 13);
-            controlProyectoPantalla21.Margin = new Padding();
+            controlProyectoPantalla21.Location = new Point(44, 0);
+            controlProyectoPantalla21.Margin = new Padding(0);
             controlProyectoPantalla21.Name = "controlProyectoPantalla21";
             controlProyectoPantalla21.Proyecto = null;
             controlProyectoPantalla21.Size = new Size(369, 222);
@@ -216,7 +208,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(121, 35);
+            label2.Size = new Size(96, 28);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -227,9 +219,30 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(158, 67);
+            label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 2;
+            label3.Text = "label3";
+            // 
+            // buttonProyectosPrivados
+            // 
+            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
+            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
+            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonProyectosPrivados.Location = new Point(21, 78);
+            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
+            buttonProyectosPrivados.Size = new Size(200, 60);
+            buttonProyectosPrivados.TabIndex = 4;
+            buttonProyectosPrivados.Text = "Proyectos Privados";
+            buttonProyectosPrivados.UseVisualStyleBackColor = false;
             // 
             // Pantalla2
             // 
@@ -251,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -262,7 +276,6 @@
         private Button button6;
         private Button buttonImportarJSON;
         private Button buttonUsuarios;
-        private Button buttonProyectosPrivados;
         private Button buttonInicio;
         private Label label1;
         private Label label2;
@@ -270,5 +283,7 @@
         private ControlProyectoPantalla2 controlProyectoPantalla21;
         private Button buttonExportarJSON;
         private PictureBox pictureBoxTasky;
+        private Label label3;
+        private Button buttonProyectosPrivados;
     }
 }

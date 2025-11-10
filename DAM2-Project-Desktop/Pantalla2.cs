@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 
@@ -68,7 +69,7 @@ namespace DAM2_Project_Desktop
 
         }
 
-       
+
 
         private void Pantalla2_Resize(object sender, EventArgs e)
         {
@@ -77,7 +78,7 @@ namespace DAM2_Project_Desktop
             const int ORIGINAL_SPLITTER_DISTANCE = 93;
             const int DESIGN_HEIGHT_BASE = 1100;
 
- 
+
             Dimencions.ScaleAndCenterHeader(
                 pictureBoxTasky,
                 splitContainer1,
@@ -139,7 +140,24 @@ namespace DAM2_Project_Desktop
             Console.WriteLine("Exportación a JSON completada con éxito.");
             Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
         }
-        
+        private void buttonImportarJSON_Click(object sender, EventArgs e)
+        {
+            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_Import.json");
+
+            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
+            var importData = proyectosImport.ToObject<List<Proyecto>>();
+
+            foreach (var proyecto in importData)
+            {
+                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+            }
+
+            Console.WriteLine("Importacion de JSON completada con éxito.");
+            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
+        }
+
         private void buttonUsuarios_Click(object sender, EventArgs e)
         {
             Pantalla8 pantalla8 = new Pantalla8();
@@ -151,5 +169,7 @@ namespace DAM2_Project_Desktop
             Pantalla2 pantalla2 = new Pantalla2();
             pantalla2.Show();
         }
+
+
     }
 }
