@@ -23,6 +23,7 @@ namespace DAM2_Project_Desktop
         private Rectangle RectanglebuttonUsuarios;
         private Rectangle RectanglebuttonImportarJSON;
         private Rectangle RectanglebuttonExportarJSON;
+        private Rectangle RectangelbuttonCrearUser;
         private Rectangle Rectanglebutton7;
 
         // --- Rectángulos del Contenido Principal ---
@@ -115,8 +116,8 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
-            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
+            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, buttonCrearUser, button7 };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, RectangelbuttonCrearUser, Rectanglebutton7 };
 
             // Obtener el ancho actual del panel lateral (asumiendo que está en splitContainer2)
             // Si Pantalla8 usa splitContainer2 como Pantalla7:
@@ -148,6 +149,7 @@ namespace DAM2_Project_Desktop
             RectanglebuttonUsuarios = new Rectangle(new Point(21, 144), baseSize);
             RectanglebuttonImportarJSON = new Rectangle(new Point(21, 210), baseSize);
             RectanglebuttonExportarJSON = new Rectangle(new Point(21, 276), baseSize);
+            RectangelbuttonCrearUser = new Rectangle(new Point(21, 796), baseSize);
             Rectanglebutton7 = new Rectangle(new Point(24, 1072), baseSize);
         }
 
@@ -296,6 +298,14 @@ namespace DAM2_Project_Desktop
         private void buttonInicio_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCrearUser_Click(object sender, EventArgs e)
+        {
+            /*
+            Pantalla5 pantalla5 = new Pantalla5();
+            pantalla5.Show();
+            */
         }
     }
 }
