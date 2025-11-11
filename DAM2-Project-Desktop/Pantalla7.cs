@@ -253,5 +253,10 @@ namespace DAM2_Project_Desktop
         {
 
         }
+
+        private void Pantalla7_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
