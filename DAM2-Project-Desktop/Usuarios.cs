@@ -28,6 +28,7 @@ namespace DAM2_Project_Desktop
 
 
 
+
         //constructores
         public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
             string classe, string email, string password, string userName)
