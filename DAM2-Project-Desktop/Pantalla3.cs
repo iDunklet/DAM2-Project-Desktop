@@ -13,6 +13,7 @@ namespace DAM2_Project_Desktop
     public partial class Pantalla3 : Form
     {
         private ComboBox comboUsuariosDAM2;
+        private Proyecto proyectoActual;
         //private ComboBox comboProyectos;
 
         public Pantalla3(Proyecto project)
@@ -22,6 +23,10 @@ namespace DAM2_Project_Desktop
             InitializeComponent();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
+            proyectoActual = project;
+            CargarInfoProyecto();
+            CargarUsuariosProyecto();
+            CargarTareasProyecto();
 
         }
 
@@ -81,7 +86,7 @@ namespace DAM2_Project_Desktop
         private void Pantalla3_Load(object sender, EventArgs e)
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
-            MostrarProyecto(proyecto);
+            //MostrarProyecto();
         }
 
         private void splitContainer6_Panel2_Paint(object sender, PaintEventArgs e)
@@ -196,8 +201,8 @@ namespace DAM2_Project_Desktop
 
             // 🟩 Colocarlo al lado del pictureBox4, en coordenadas del mismo Panel
             comboUsuariosDAM2.Location = new Point(
-                pictureBox4.Left,
-                pictureBox4.Top - comboUsuariosDAM2.Height - 5
+                splitContainer4.Panel2.Left,
+                pictureBox4.Top - 12
             );
 
             comboUsuariosDAM2.Width = 160;
@@ -220,24 +225,25 @@ namespace DAM2_Project_Desktop
             Panel panelUsuario = new Panel();
             panelUsuario.Width = 90;
             panelUsuario.Height = 120;
-            panelUsuario.Margin = new Padding(10);
+            panelUsuario.Margin = new Padding(0, 0, 10, 0);
 
             // Imagen (usamos la mini o la grande)
             PictureBox pic = new PictureBox();
             pic.Image = usuario.imgPerfil; // O miniImgPerfil si prefieres pequeño
             pic.SizeMode = PictureBoxSizeMode.Zoom;
-            pic.Width = 80;
-            pic.Height = 80;
-            pic.Location = new Point(5, 5);
+            pic.Width = 55;
+            pic.Height = 55;
+            pic.Location = new Point((panelUsuario.Width - pic.Width) / 2, 0);
 
             // Nombre debajo de la imagen
             Label lbl = new Label();
             lbl.Text = usuario.nombre;
+            lbl.Font = new Font("Microsoft Sans Serif", 10F);
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.AutoSize = false;
             lbl.Width = 80;
-            lbl.Height = 30;
-            lbl.Location = new Point(5, 90);
+            lbl.Height = 20;
+            lbl.Location = new Point((panelUsuario.Width - lbl.Width) / 2, pic.Height + 3);
 
             // Agregar al panel
             panelUsuario.Controls.Add(pic);
@@ -262,12 +268,104 @@ namespace DAM2_Project_Desktop
 
         }
 
-        private void MostrarProyecto(Proyecto proyecto)
+        private void CargarInfoProyecto()
         {
-            if (proyecto == null) return;
+            if (proyectoActual == null) return;
 
-            labelNombreProyecto.Text = proyecto.titulo;
-            labelFechaProyecto.Text = proyecto.fechaEntrega.ToString("dd/MM/yyyy");
+            // Suponiendo que tienes Labels dentro de cada SplitContainer:
+            labelId.Text = proyectoActual.ID.ToString(); // Id del proyecto
+            labelNombreProyecto.Text = proyectoActual.titulo; // Nombre
+            labelFechaProyecto.Text = proyectoActual.fechaEntrega.ToString("dd/MM/yyyy"); // Fecha
+
+            // Centrar texto (opcional)
+            labelId.TextAlign = ContentAlignment.MiddleCenter;
+            labelNombreProyecto.TextAlign = ContentAlignment.MiddleCenter;
+            labelFechaProyecto.TextAlign = ContentAlignment.MiddleCenter;
+        }
+
+        private void CargarUsuariosProyecto()
+        {
+            flowPanelMiembros.Controls.Clear(); // Limpiamos antes de cargar
+
+            foreach (var usuario in proyectoActual.miembrosProyecto)
+            {
+                // Creamos un panel individual para cada usuario
+                Panel panelUsuario = new Panel();
+                panelUsuario.Width = 90;
+                panelUsuario.Height = 120;
+                panelUsuario.Margin = new Padding(0, 0, 10, 0);
+
+                // PictureBox con la imagen del usuario
+                PictureBox pic = new PictureBox();
+                pic.Image = usuario.imgPerfil; // Usamos la imagen generada
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.Width = 55;
+                pic.Height = 55;
+                pic.Location = new Point((panelUsuario.Width - pic.Width) / 2, 0);
+
+                // Label con el nombre del usuario
+                Label lbl = new Label();
+                lbl.Text = usuario.nombre;
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.AutoSize = false;
+                lbl.Width = 80;
+                lbl.Height = 20;
+                lbl.Location = new Point((panelUsuario.Width - lbl.Width) / 2, pic.Height + 3);
+
+                // Añadimos PictureBox y Label al panel del usuario
+                panelUsuario.Controls.Add(pic);
+                panelUsuario.Controls.Add(lbl);
+
+                // Añadimos el panel al FlowLayoutPanel de miembros
+                flowPanelMiembros.Controls.Add(panelUsuario);
+            }
+        }
+
+        private void CargarTareasProyecto()
+        {
+            // Limpiamos el DataGridView antes de agregar nuevas tareas
+            
+            dataGridView1.Rows.Clear();
+
+            if (proyectoActual.tareasProyecto == null || proyectoActual.tareasProyecto.Count == 0)
+                return; // Si no hay tareas, salimos
+
+            foreach (var tarea in proyectoActual.tareasProyecto)
+            {
+                int rowIndex = dataGridView1.Rows.Add(); // Añadimos nueva fila
+                DataGridViewRow fila = dataGridView1.Rows[rowIndex];
+
+                // 0 - Nombre de la tarea
+                fila.Cells[0].Value = tarea.nombreTarea;
+
+                // 1 - Descripción breve
+                fila.Cells[1].Value = tarea.descripcionTarea;
+
+                // 2 - ComboBox con usuarios del proyecto
+                var comboCell = fila.Cells[2] as DataGridViewComboBoxCell;
+                comboCell.Items.Clear(); // Empezamos vacío
+                foreach (var usuario in proyectoActual.miembrosProyecto)
+                {
+                    comboCell.Items.Add(usuario.nombre); // O usuario.apellidoCompleto si quieres nombre completo
+                }
+
+                // Asegurarnos de que el valor de la celda sea alguno de los Items para evitar errores
+                if (tarea.responsableAsignado != null && proyectoActual.miembrosProyecto.Contains(tarea.responsableAsignado))
+                {
+                    comboCell.Value = tarea.responsableAsignado.nombre;
+                }
+
+                // 3 - Fecha inicio
+                fila.Cells[3].Value = tarea.fechaInicioTarea.ToShortDateString();
+
+                // 4 - Fecha fin
+                fila.Cells[4].Value = tarea.fechaFinTarea.ToShortDateString();
+
+                // 5 - Estado (ya configurado desde diseño)
+                fila.Cells[5].Value = tarea.statusTarea;
+
+                // 6 - CheckBox (no se asigna nada, queda vacío)
+            }
         }
 
         private void labelNombreProyecto_Click(object sender, EventArgs e)
@@ -276,6 +374,21 @@ namespace DAM2_Project_Desktop
         }
 
         private void labelFechaProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNombreProyecto_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowPanelMiembros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonCrearNuevoUsuario_Click(object sender, EventArgs e)
         {
 
         }
