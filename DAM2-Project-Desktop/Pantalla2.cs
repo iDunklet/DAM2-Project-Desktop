@@ -170,6 +170,12 @@ namespace DAM2_Project_Desktop
             pantalla2.Show();
         }
 
-
+        private void buttonCrearProyecto_Click(object sender, EventArgs e)
+        {
+            /*
+            Pantalla6 pantalla6 = new Pantalla6();
+            pantalla6.Show();
+            */
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace DAM2_Project_Desktop
             splitContainer1 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
+            buttonCrearUser = new Button();
             button7 = new Button();
             buttonExportarJSON = new Button();
             buttonImportarJSON = new Button();
@@ -108,6 +109,7 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(buttonCrearUser);
             splitContainer2.Panel1.Controls.Add(button7);
             splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
             splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
@@ -123,6 +125,19 @@ namespace DAM2_Project_Desktop
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
+            // 
+            // buttonCrearUser
+            // 
+            buttonCrearUser.BackColor = Color.FromArgb(35, 78, 82);
+            buttonCrearUser.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            buttonCrearUser.ForeColor = Color.White;
+            buttonCrearUser.Location = new Point(21, 796);
+            buttonCrearUser.Name = "buttonCrearUser";
+            buttonCrearUser.Size = new Size(200, 68);
+            buttonCrearUser.TabIndex = 11;
+            buttonCrearUser.Text = "Nuevo Usuario";
+            buttonCrearUser.UseVisualStyleBackColor = false;
+            buttonCrearUser.Click += buttonCrearUser_Click;
             // 
             // button7
             // 
@@ -340,5 +355,6 @@ namespace DAM2_Project_Desktop
         private DataGridViewImageColumn iconoEdit;
         private DataGridViewImageColumn IconoDelete;
         private PictureBox pictureBoxTasky;
+        private Button buttonCrearUser;
     }
 }

@@ -31,17 +31,18 @@
             splitContainer1 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
+            buttonCrearProyecto = new Button();
             button7 = new Button();
             buttonExportarJSON = new Button();
             buttonImportarJSON = new Button();
             buttonUsuarios = new Button();
+            buttonProyectosPrivados = new Button();
             buttonInicio = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            label3 = new Label();
             controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
             label1 = new Label();
-            label3 = new Label();
-            buttonProyectosPrivados = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -98,6 +99,7 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(buttonCrearProyecto);
             splitContainer2.Panel1.Controls.Add(button7);
             splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
             splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
@@ -115,6 +117,19 @@
             splitContainer2.SplitterDistance = 242;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
+            // 
+            // buttonCrearProyecto
+            // 
+            buttonCrearProyecto.BackColor = Color.FromArgb(35, 78, 82);
+            buttonCrearProyecto.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            buttonCrearProyecto.ForeColor = Color.White;
+            buttonCrearProyecto.Location = new Point(21, 796);
+            buttonCrearProyecto.Name = "buttonCrearProyecto";
+            buttonCrearProyecto.Size = new Size(200, 68);
+            buttonCrearProyecto.TabIndex = 11;
+            buttonCrearProyecto.Text = "Nuevo Proyecto";
+            buttonCrearProyecto.UseVisualStyleBackColor = false;
+            buttonCrearProyecto.Click += buttonCrearProyecto_Click;
             // 
             // button7
             // 
@@ -164,6 +179,18 @@
             buttonUsuarios.UseVisualStyleBackColor = false;
             buttonUsuarios.Click += buttonUsuarios_Click;
             // 
+            // buttonProyectosPrivados
+            // 
+            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
+            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
+            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonProyectosPrivados.Location = new Point(21, 78);
+            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
+            buttonProyectosPrivados.Size = new Size(200, 60);
+            buttonProyectosPrivados.TabIndex = 4;
+            buttonProyectosPrivados.Text = "Proyectos Privados";
+            buttonProyectosPrivados.UseVisualStyleBackColor = false;
+            // 
             // buttonInicio
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
@@ -187,6 +214,15 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1178, 887);
             flowLayoutPanel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 2;
+            label3.Text = "label3";
             // 
             // controlProyectoPantalla21
             // 
@@ -222,27 +258,6 @@
             label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
-            // 
-            // buttonProyectosPrivados
-            // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(21, 78);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 60);
-            buttonProyectosPrivados.TabIndex = 4;
-            buttonProyectosPrivados.Text = "Proyectos Privados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
             // 
             // Pantalla2
             // 
@@ -285,5 +300,6 @@
         private PictureBox pictureBoxTasky;
         private Label label3;
         private Button buttonProyectosPrivados;
+        private Button buttonCrearProyecto;
     }
 }
