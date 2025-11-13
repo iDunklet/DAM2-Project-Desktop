@@ -32,14 +32,15 @@ namespace DAM2_Project_Desktop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla5));
             splitContainer1 = new SplitContainer();
+            pictureBoxTasky = new PictureBox();
             pictureBoxUsuario = new PictureBox();
             splitContainer2 = new SplitContainer();
             buttonExportarJson = new Button();
             buttonImportarJson = new Button();
             buttonUsuarios = new Button();
             buttonProyectosPrivados = new Button();
-            buttonFavoritos = new Button();
             buttonInicio = new Button();
+            textBoxRepetirContrasenya = new TextBox();
             labelDatosCuenta = new Label();
             labelDatosPersonales = new Label();
             buttonCrearUsuario = new Button();
@@ -62,17 +63,16 @@ namespace DAM2_Project_Desktop
             labelApellido2 = new Label();
             labelApellido1 = new Label();
             labelNombre = new Label();
-            pictureBoxTasky = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -95,10 +95,20 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer1.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1422, 977);
+            splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictureBoxTasky
+            // 
+            pictureBoxTasky.Image = Properties.Resources.Group_50;
+            pictureBoxTasky.Location = new Point(-1, -1);
+            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxTasky.Name = "pictureBoxTasky";
+            pictureBoxTasky.Size = new Size(322, 94);
+            pictureBoxTasky.TabIndex = 2;
+            pictureBoxTasky.TabStop = false;
             // 
             // pictureBoxUsuario
             // 
@@ -127,12 +137,12 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.Controls.Add(buttonImportarJson);
             splitContainer2.Panel1.Controls.Add(buttonUsuarios);
             splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
-            splitContainer2.Panel1.Controls.Add(buttonFavoritos);
             splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel2.Controls.Add(textBoxRepetirContrasenya);
             splitContainer2.Panel2.Controls.Add(labelDatosCuenta);
             splitContainer2.Panel2.Controls.Add(labelDatosPersonales);
             splitContainer2.Panel2.Controls.Add(buttonCrearUsuario);
@@ -156,7 +166,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.Controls.Add(labelApellido1);
             splitContainer2.Panel2.Controls.Add(labelNombre);
             splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
-            splitContainer2.Size = new Size(1422, 880);
+            splitContainer2.Size = new Size(1424, 888);
             splitContainer2.SplitterDistance = 243;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
@@ -165,27 +175,23 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJson.FlatStyle = FlatStyle.Flat;
-            buttonExportarJson.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonExportarJson.Location = new Point(24, 583);
-            buttonExportarJson.Margin = new Padding(3, 4, 3, 4);
+            buttonExportarJson.Location = new Point(24, 283);
             buttonExportarJson.Name = "buttonExportarJson";
-            buttonExportarJson.Size = new Size(229, 93);
-            buttonExportarJson.TabIndex = 8;
-            buttonExportarJson.Text = "Exportar JSON";
+            buttonExportarJson.Size = new Size(200, 60);
+            buttonExportarJson.TabIndex = 15;
+            buttonExportarJson.Text = "ExportarJSON";
             buttonExportarJson.UseVisualStyleBackColor = false;
             // 
             // buttonImportarJson
             // 
             buttonImportarJson.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJson.FlatStyle = FlatStyle.Flat;
-            buttonImportarJson.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             buttonImportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonImportarJson.Location = new Point(24, 463);
-            buttonImportarJson.Margin = new Padding(3, 4, 3, 4);
+            buttonImportarJson.Location = new Point(24, 217);
             buttonImportarJson.Name = "buttonImportarJson";
-            buttonImportarJson.Size = new Size(229, 89);
-            buttonImportarJson.TabIndex = 7;
+            buttonImportarJson.Size = new Size(200, 60);
+            buttonImportarJson.TabIndex = 14;
             buttonImportarJson.Text = "Importar JSON";
             buttonImportarJson.UseVisualStyleBackColor = false;
             // 
@@ -193,13 +199,11 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonUsuarios.Location = new Point(24, 351);
-            buttonUsuarios.Margin = new Padding(3, 4, 3, 4);
+            buttonUsuarios.Location = new Point(24, 151);
             buttonUsuarios.Name = "buttonUsuarios";
-            buttonUsuarios.Size = new Size(229, 91);
-            buttonUsuarios.TabIndex = 10;
+            buttonUsuarios.Size = new Size(200, 60);
+            buttonUsuarios.TabIndex = 13;
             buttonUsuarios.Text = "Usuarios";
             buttonUsuarios.UseVisualStyleBackColor = false;
             // 
@@ -207,51 +211,45 @@ namespace DAM2_Project_Desktop
             // 
             buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
             buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(24, 237);
-            buttonProyectosPrivados.Margin = new Padding(3, 4, 3, 4);
+            buttonProyectosPrivados.Location = new Point(24, 85);
             buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(229, 93);
-            buttonProyectosPrivados.TabIndex = 5;
-            buttonProyectosPrivados.Text = "Proyectos \r\nprivados";
+            buttonProyectosPrivados.Size = new Size(200, 60);
+            buttonProyectosPrivados.TabIndex = 12;
+            buttonProyectosPrivados.Text = "Proyectos Privados";
             buttonProyectosPrivados.UseVisualStyleBackColor = false;
-            // 
-            // buttonFavoritos
-            // 
-            buttonFavoritos.BackColor = Color.FromArgb(79, 209, 197);
-            buttonFavoritos.FlatStyle = FlatStyle.Flat;
-            buttonFavoritos.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonFavoritos.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonFavoritos.Location = new Point(24, 131);
-            buttonFavoritos.Margin = new Padding(3, 4, 3, 4);
-            buttonFavoritos.Name = "buttonFavoritos";
-            buttonFavoritos.Size = new Size(229, 85);
-            buttonFavoritos.TabIndex = 4;
-            buttonFavoritos.Text = "Favoritos";
-            buttonFavoritos.UseVisualStyleBackColor = false;
             // 
             // buttonInicio
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonInicio.Location = new Point(24, 27);
-            buttonInicio.Margin = new Padding(3, 4, 3, 4);
+            buttonInicio.Location = new Point(24, 19);
             buttonInicio.Name = "buttonInicio";
-            buttonInicio.Size = new Size(229, 88);
-            buttonInicio.TabIndex = 3;
+            buttonInicio.Size = new Size(200, 60);
+            buttonInicio.TabIndex = 11;
             buttonInicio.Text = "Inicio";
             buttonInicio.UseVisualStyleBackColor = false;
+            // 
+            // textBoxRepetirContrasenya
+            // 
+            textBoxRepetirContrasenya.BackColor = SystemColors.Control;
+            textBoxRepetirContrasenya.BorderStyle = BorderStyle.FixedSingle;
+            textBoxRepetirContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxRepetirContrasenya.Location = new Point(825, 615);
+            textBoxRepetirContrasenya.Margin = new Padding(3, 4, 3, 4);
+            textBoxRepetirContrasenya.Name = "textBoxRepetirContrasenya";
+            textBoxRepetirContrasenya.Size = new Size(275, 23);
+            textBoxRepetirContrasenya.TabIndex = 24;
             // 
             // labelDatosCuenta
             // 
             labelDatosCuenta.AutoSize = true;
             labelDatosCuenta.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDatosCuenta.Location = new Point(93, 689);
+            labelDatosCuenta.ForeColor = Color.FromArgb(35, 78, 82);
+            labelDatosCuenta.Location = new Point(93, 489);
             labelDatosCuenta.Name = "labelDatosCuenta";
-            labelDatosCuenta.Size = new Size(290, 52);
+            labelDatosCuenta.Size = new Size(233, 39);
             labelDatosCuenta.TabIndex = 23;
             labelDatosCuenta.Text = "Datos cuenta";
             // 
@@ -259,16 +257,18 @@ namespace DAM2_Project_Desktop
             // 
             labelDatosPersonales.AutoSize = true;
             labelDatosPersonales.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDatosPersonales.Location = new Point(91, 176);
+            labelDatosPersonales.ForeColor = Color.FromArgb(35, 78, 82);
+            labelDatosPersonales.Location = new Point(93, 130);
             labelDatosPersonales.Name = "labelDatosPersonales";
-            labelDatosPersonales.Size = new Size(377, 52);
+            labelDatosPersonales.Size = new Size(303, 39);
             labelDatosPersonales.TabIndex = 22;
             labelDatosPersonales.Text = "Datos personales";
             // 
             // buttonCrearUsuario
             // 
-            buttonCrearUsuario.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonCrearUsuario.Location = new Point(459, 1037);
+            buttonCrearUsuario.Font = new Font("Segoe UI", 18F);
+            buttonCrearUsuario.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonCrearUsuario.Location = new Point(485, 754);
             buttonCrearUsuario.Margin = new Padding(3, 4, 3, 4);
             buttonCrearUsuario.Name = "buttonCrearUsuario";
             buttonCrearUsuario.Size = new Size(229, 80);
@@ -280,37 +280,44 @@ namespace DAM2_Project_Desktop
             // dateTimePickerFechaNacimiento
             // 
             dateTimePickerFechaNacimiento.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePickerFechaNacimiento.Location = new Point(909, 428);
+            dateTimePickerFechaNacimiento.Location = new Point(825, 276);
             dateTimePickerFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
-            dateTimePickerFechaNacimiento.Size = new Size(228, 27);
+            dateTimePickerFechaNacimiento.Size = new Size(275, 23);
             dateTimePickerFechaNacimiento.TabIndex = 21;
             // 
             // textBoxApellido1
             // 
-            textBoxApellido1.Location = new Point(909, 317);
+            textBoxApellido1.BackColor = SystemColors.Control;
+            textBoxApellido1.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido1.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxApellido1.Location = new Point(825, 208);
             textBoxApellido1.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido1.Name = "textBoxApellido1";
-            textBoxApellido1.Size = new Size(206, 27);
+            textBoxApellido1.Size = new Size(275, 23);
             textBoxApellido1.TabIndex = 20;
             // 
             // labelRepContrasenya
             // 
             labelRepContrasenya.AutoSize = true;
-            labelRepContrasenya.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelRepContrasenya.Location = new Point(688, 873);
+            labelRepContrasenya.Font = new Font("Segoe UI", 20F);
+            labelRepContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
+            labelRepContrasenya.Location = new Point(642, 599);
             labelRepContrasenya.Name = "labelRepContrasenya";
-            labelRepContrasenya.Size = new Size(194, 78);
+            labelRepContrasenya.Size = new Size(153, 74);
             labelRepContrasenya.TabIndex = 19;
             labelRepContrasenya.Text = "Repetir\r\n contraseña";
             labelRepContrasenya.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBoxContrasenya
             // 
-            textBoxContrasenya.Location = new Point(330, 911);
+            textBoxContrasenya.BackColor = SystemColors.Control;
+            textBoxContrasenya.BorderStyle = BorderStyle.FixedSingle;
+            textBoxContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxContrasenya.Location = new Point(267, 643);
             textBoxContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxContrasenya.Name = "textBoxContrasenya";
-            textBoxContrasenya.Size = new Size(206, 27);
+            textBoxContrasenya.Size = new Size(275, 23);
             textBoxContrasenya.TabIndex = 18;
             // 
             // textBoxRepContrasenya
@@ -318,26 +325,28 @@ namespace DAM2_Project_Desktop
             textBoxRepContrasenya.Location = new Point(909, 911);
             textBoxRepContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxRepContrasenya.Name = "textBoxRepContrasenya";
-            textBoxRepContrasenya.Size = new Size(206, 27);
+            textBoxRepContrasenya.Size = new Size(206, 23);
             textBoxRepContrasenya.TabIndex = 17;
             // 
             // labelContrasenya
             // 
             labelContrasenya.AutoSize = true;
-            labelContrasenya.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelContrasenya.Location = new Point(134, 891);
+            labelContrasenya.Font = new Font("Segoe UI", 20F);
+            labelContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
+            labelContrasenya.Location = new Point(106, 629);
             labelContrasenya.Name = "labelContrasenya";
-            labelContrasenya.Size = new Size(193, 39);
+            labelContrasenya.Size = new Size(151, 37);
             labelContrasenya.TabIndex = 16;
             labelContrasenya.Text = "Contraseña";
             // 
             // labelUsuario
             // 
             labelUsuario.AutoSize = true;
-            labelUsuario.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelUsuario.Location = new Point(134, 797);
+            labelUsuario.Font = new Font("Segoe UI", 20F);
+            labelUsuario.ForeColor = Color.FromArgb(35, 78, 82);
+            labelUsuario.Location = new Point(106, 552);
             labelUsuario.Name = "labelUsuario";
-            labelUsuario.Size = new Size(135, 39);
+            labelUsuario.Size = new Size(108, 37);
             labelUsuario.TabIndex = 15;
             labelUsuario.Text = "Usuario";
             // 
@@ -345,80 +354,99 @@ namespace DAM2_Project_Desktop
             // 
             labelNuevoUsuario.AutoSize = true;
             labelNuevoUsuario.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             labelNuevoUsuario.Location = new Point(386, 36);
             labelNuevoUsuario.Name = "labelNuevoUsuario";
-            labelNuevoUsuario.Size = new Size(545, 69);
+            labelNuevoUsuario.Size = new Size(440, 55);
             labelNuevoUsuario.TabIndex = 13;
             labelNuevoUsuario.Text = "NUEVO USUARIO";
             labelNuevoUsuario.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(330, 583);
+            textBoxEmail.BackColor = SystemColors.Control;
+            textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
+            textBoxEmail.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxEmail.Location = new Point(267, 418);
             textBoxEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(206, 27);
+            textBoxEmail.Size = new Size(275, 23);
             textBoxEmail.TabIndex = 10;
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.Location = new Point(330, 823);
+            textBoxUsuario.BackColor = SystemColors.Control;
+            textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUsuario.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxUsuario.Location = new Point(267, 566);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(206, 27);
+            textBoxUsuario.Size = new Size(275, 23);
             textBoxUsuario.TabIndex = 9;
             // 
             // textBoxApellido2
             // 
-            textBoxApellido2.Location = new Point(330, 405);
+            textBoxApellido2.BackColor = SystemColors.Control;
+            textBoxApellido2.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido2.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxApellido2.Location = new Point(267, 276);
             textBoxApellido2.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido2.Name = "textBoxApellido2";
-            textBoxApellido2.Size = new Size(206, 27);
+            textBoxApellido2.Size = new Size(275, 23);
             textBoxApellido2.TabIndex = 8;
             // 
             // textBoxCurso
             // 
-            textBoxCurso.Location = new Point(330, 495);
+            textBoxCurso.BackColor = SystemColors.Control;
+            textBoxCurso.BorderStyle = BorderStyle.FixedSingle;
+            textBoxCurso.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxCurso.Location = new Point(267, 346);
             textBoxCurso.Margin = new Padding(3, 4, 3, 4);
             textBoxCurso.Name = "textBoxCurso";
-            textBoxCurso.Size = new Size(206, 27);
+            textBoxCurso.Size = new Size(275, 23);
             textBoxCurso.TabIndex = 7;
             // 
             // textBoxNombre
             // 
-            textBoxNombre.Location = new Point(330, 323);
+            textBoxNombre.BackColor = SystemColors.Control;
+            textBoxNombre.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNombre.ForeColor = Color.FromArgb(35, 78, 82);
+            textBoxNombre.Location = new Point(267, 208);
             textBoxNombre.Margin = new Padding(3, 4, 3, 4);
             textBoxNombre.Name = "textBoxNombre";
-            textBoxNombre.Size = new Size(206, 27);
+            textBoxNombre.Size = new Size(275, 23);
             textBoxNombre.TabIndex = 6;
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelEmail.Location = new Point(134, 563);
+            labelEmail.Font = new Font("Segoe UI", 20F);
+            labelEmail.ForeColor = Color.FromArgb(35, 78, 82);
+            labelEmail.Location = new Point(106, 404);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(103, 39);
+            labelEmail.Size = new Size(82, 37);
             labelEmail.TabIndex = 5;
             labelEmail.Text = "Email";
             // 
             // labelCurso
             // 
             labelCurso.AutoSize = true;
-            labelCurso.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelCurso.Location = new Point(134, 475);
+            labelCurso.Font = new Font("Segoe UI", 20F);
+            labelCurso.ForeColor = Color.FromArgb(35, 78, 82);
+            labelCurso.Location = new Point(106, 332);
             labelCurso.Name = "labelCurso";
-            labelCurso.Size = new Size(108, 39);
+            labelCurso.Size = new Size(85, 37);
             labelCurso.TabIndex = 4;
             labelCurso.Text = "Curso";
             // 
             // labelFechaNacimiento
             // 
             labelFechaNacimiento.AutoSize = true;
-            labelFechaNacimiento.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelFechaNacimiento.Location = new Point(666, 385);
+            labelFechaNacimiento.Font = new Font("Segoe UI", 20F);
+            labelFechaNacimiento.ForeColor = Color.FromArgb(35, 78, 82);
+            labelFechaNacimiento.Location = new Point(642, 262);
             labelFechaNacimiento.Name = "labelFechaNacimiento";
-            labelFechaNacimiento.Size = new Size(182, 78);
+            labelFechaNacimiento.Size = new Size(149, 74);
             labelFechaNacimiento.TabIndex = 3;
             labelFechaNacimiento.Text = "Fecha \r\nnacimiento";
             labelFechaNacimiento.TextAlign = ContentAlignment.TopCenter;
@@ -426,47 +454,40 @@ namespace DAM2_Project_Desktop
             // labelApellido2
             // 
             labelApellido2.AutoSize = true;
-            labelApellido2.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelApellido2.Location = new Point(134, 385);
+            labelApellido2.Font = new Font("Segoe UI", 20F);
+            labelApellido2.ForeColor = Color.FromArgb(35, 78, 82);
+            labelApellido2.Location = new Point(106, 262);
             labelApellido2.Name = "labelApellido2";
-            labelApellido2.Size = new Size(175, 39);
+            labelApellido2.Size = new Size(145, 37);
             labelApellido2.TabIndex = 2;
             labelApellido2.Text = "2r apellido";
             // 
             // labelApellido1
             // 
             labelApellido1.AutoSize = true;
-            labelApellido1.Font = new Font("Microsoft Sans Serif", 20.25F);
-            labelApellido1.Location = new Point(688, 297);
+            labelApellido1.Font = new Font("Segoe UI", 20F);
+            labelApellido1.ForeColor = Color.FromArgb(35, 78, 82);
+            labelApellido1.Location = new Point(642, 200);
             labelApellido1.Name = "labelApellido1";
-            labelApellido1.Size = new Size(175, 39);
+            labelApellido1.Size = new Size(145, 37);
             labelApellido1.TabIndex = 1;
             labelApellido1.Text = "1r apellido";
             // 
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelNombre.Location = new Point(134, 303);
+            labelNombre.Font = new Font("Segoe UI", 20F);
+            labelNombre.ForeColor = Color.FromArgb(35, 78, 82);
+            labelNombre.Location = new Point(106, 200);
             labelNombre.Name = "labelNombre";
-            labelNombre.Size = new Size(138, 39);
+            labelNombre.Size = new Size(115, 37);
             labelNombre.TabIndex = 0;
             labelNombre.Text = "Nombre";
-            // 
-            // pictureBoxTasky
-            // 
-            pictureBoxTasky.Image = Properties.Resources.Group_50;
-            pictureBoxTasky.Location = new Point(-1, -1);
-            pictureBoxTasky.Margin = new Padding(4, 3, 4, 3);
-            pictureBoxTasky.Name = "pictureBoxTasky";
-            pictureBoxTasky.Size = new Size(300, 94);
-            pictureBoxTasky.TabIndex = 2;
-            pictureBoxTasky.TabStop = false;
             // 
             // Pantalla5
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1422, 977);
+            ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1024);
@@ -476,52 +497,52 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ResumeLayout(false);
         }
 
+        /*
+                private void btnCrearUsuario_Click(object sender, EventArgs e)
+                {
+                    string nombre = textBoxNombre.Text;
+                    string apellido1 = textBoxApellido1.Text;
+                    string clase = textBoxCurso.Text;
+                    DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
+                    string email = textBoxEmail.Text;
+                    string password = textBoxContrasenya.Text;
+                    string userName = textBoxUsuario.Text; // Ya se genera automáticamente antes
 
-        private void btnCrearUsuario_Click(object sender, EventArgs e)
-        {
-            string nombre = textBoxNombre.Text;
-            string apellido1 = textBoxApellido1.Text;
-            string apellido2 = textBoxApellido2.Text;
-            string clase = textBoxCurso.Text;
-            DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
-            string email = textBoxEmail.Text;
-            string password = textBoxContrasenya.Text;
-            string userName = textBoxUsuario.Text; // Ya se genera automáticamente antes
+                    Usuarios nuevoUsuario = new Usuarios(
+                        nombre, apellido1, fechaNacimiento,
+                        clase, email, password, userName
+                    );
 
-            Usuarios nuevoUsuario = new Usuarios(
-                nombre, apellido1, fechaNacimiento,
-                clase, email, password, userName
-            );
+                    ListadoDatosClasses.ListadoUsuarios.Add(nuevoUsuario);
 
-            ListadoDatosClasses.ListadoUsuarios.Add(nuevoUsuario);
+                    MessageBox.Show($"Usuario creado correctamente ✅\n\n" +
+                                    $"Nombre: {nuevoUsuario.nombre}\n" +
+                                    $"UserName: {nuevoUsuario.userName}\n" +
+                                    $"Usuarios totales: {ListadoDatosClasses.ListadoUsuarios.Count}");
 
-            MessageBox.Show($"Usuario creado correctamente ✅\n\n" +
-                            $"Nombre: {nuevoUsuario.nombre}\n" +
-                            $"UserName: {nuevoUsuario.userName}\n" +
-                            $"Usuarios totales: {ListadoDatosClasses.ListadoUsuarios.Count}");
+                    string lista = "";
+                    foreach (var usuario in ListadoDatosClasses.ListadoUsuarios)
+                    {
+                        lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1}) {usuario.classe}\n";
+                    }
 
-            string lista = "";
-            foreach (var usuario in ListadoDatosClasses.ListadoUsuarios)
-            {
-                lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1}) {usuario.classe}\n";
-            }
+                    MessageBox.Show(lista, "Lista de Usuarios");
 
-            MessageBox.Show(lista, "Lista de Usuarios");
-
-            LimpiarCamposUsuario();
+                    LimpiarCamposUsuario();
 
 
-        }
+                }
+                */
 
         private void LimpiarCamposUsuario()
         {
@@ -558,21 +579,17 @@ namespace DAM2_Project_Desktop
         private Label labelEmail;
         private Label labelCurso;
         private Label labelFechaNacimiento;
-        private Label labelApellido2;
         private Label labelApellido1;
         private Label labelNombre;
         private Button buttonCrearUsuario;
-        private Button buttonExportarJson;
-        private Button buttonImportarJson;
-        private Button buttonUsuarios;
         private Button buttonProyectosPrivados;
-        private Button buttonFavoritos;
-        private Button buttonInicio;
+        private Button buttonUsuarios;
+        private Button buttonImportarJson;
+        private Button buttonExportarJson;
         private SplitContainer splitContainer2;
         private TextBox textBoxNombre;
         private DateTimePicker dateTimePickerFechaNacimiento;
         private PictureBox pictureBoxUsuario;
-        private TextBox textBoxApellido1;
         private TextBox textBoxContrasenya;
         private TextBox textBoxRepContrasenya;
         private TextBox textBox6;
@@ -584,5 +601,9 @@ namespace DAM2_Project_Desktop
         #endregion
 
         private PictureBox pictureBoxTasky;
+        private Button buttonInicio;
+        private TextBox textBoxRepetirContrasenya;
+        private Label labelApellido2;
+        private TextBox textBoxApellido1;
     }
 }
