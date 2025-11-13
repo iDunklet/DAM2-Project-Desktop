@@ -18,6 +18,9 @@ namespace DAM2_Project_Desktop
             InitializeComponent();
 
             originalFormSize = this.Size;
+            ListadoDatosClasses.importProjects();
+            ListadoDatosClasses.exportUsers();
+            ListadoDatosClasses.importUsers();
 
 
             SaveOriginalControlData(this);

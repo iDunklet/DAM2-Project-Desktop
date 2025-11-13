@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -20,7 +21,9 @@ namespace DAM2_Project_Desktop
         public List<Usuarios> miembrosProyecto { get; set; }
         public List<Tarea> tareasProyecto { get; set; }
 
+        [JsonIgnore]
         private Bitmap imgProyecto;
+        [JsonIgnore]
         public Bitmap ImgProyecto
         {
             get { return imgProyecto; }
@@ -92,6 +95,7 @@ namespace DAM2_Project_Desktop
 
 
         //constructores
+        public Proyecto() { }
         public Proyecto(string titulo, DateTime fechaEntrega)
         {
             this.ID = _nextID;

@@ -1,5 +1,6 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using System.Text.Json.Serialization;
 using DAM2_Project_Desktop.Properties;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
@@ -17,10 +18,11 @@ namespace DAM2_Project_Desktop
         public string password { get; set; }
 
         public string userName { get; }
- 
+        [JsonIgnore]
         public Bitmap imgPerfil { get; set; }
 
         //artivutos ocultos
+        [JsonIgnore]
         public Bitmap miniImgPerfil { get; set; }
 
         public string apellidoCompleto { get; }
@@ -30,6 +32,7 @@ namespace DAM2_Project_Desktop
 
 
         //constructores
+        public Usuarios() { }
         public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
             string classe, string email, string password, string userName)
         {

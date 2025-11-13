@@ -4,14 +4,93 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace DAM2_Project_Desktop
 {
     public static class ListadoDatosClasses
     {
+        //Listas de datos
         public static BindingList<Proyecto> ListadoProyectos = new BindingList<Proyecto>();
         public static BindingList<Usuarios> ListadoUsuarios = new BindingList<Usuarios>();
         public static BindingList<Tarea> ListaTareas = new BindingList<Tarea>();
+
+
+        //metodos carga usuarios
+        public static void importUsers()
+        {
+            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+
+            if (!File.Exists(rutaCompletaArchivo))
+            {
+                Console.WriteLine("Archivo JSON de usuarios no existe.");
+                return;
+            }
+
+            string jsonText = File.ReadAllText(rutaCompletaArchivo, Encoding.Default);
+
+            JArray usersImport = JArray.Parse(jsonText);
+            var importData = usersImport.ToObject<List<Usuarios>>();
+
+            ListadoUsuarios.Clear();
+
+            foreach (var user in importData)
+            {
+                ListadoUsuarios.Add(user);
+            }
+
+            Console.WriteLine("Importación de JSON completada con éxito.");
+            Console.WriteLine($"Datos importados desde {rutaArchivo}");
+        }
+
+        public static void exportUsers()
+        {
+            GenerarListaUsuarios();
+            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+
+            JArray listUsers = (JArray)JToken.FromObject(ListadoUsuarios);
+
+            File.WriteAllText(rutaCompletaArchivo, listUsers.ToString());
+            Console.WriteLine("Exportación a JSON completada con éxito.");
+            Console.WriteLine($"Datos exportados a {rutaArchivo}");
+        }
+
+        //metodos carga proyectos
+        public static void exportProjects()
+        {
+            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
+
+            var proyectosList = ListadoDatosClasses.ListadoProyectos;
+            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
+
+            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
+            Console.WriteLine("Exportación a JSON completada con éxito.");
+            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
+        }
+        public static void importProjects()
+        {
+            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
+            Directory.CreateDirectory(rutaArchivo);
+            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "data_tasky.json");
+
+            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
+            List<Proyecto>? importData = proyectosImport.ToObject<List<Proyecto>>();
+
+            foreach (var proyecto in importData)
+            {
+                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+            }
+
+            Console.WriteLine("Importacion de JSON completada con éxito.");
+            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
+        }
+
 
         static ListadoDatosClasses()
         {
@@ -19,7 +98,6 @@ namespace DAM2_Project_Desktop
             GenerarListaTareas();
             GenerarListaProyectos();
         }
-
         public static void GenerarListaUsuarios()
         {
             // Usuarios DAM2

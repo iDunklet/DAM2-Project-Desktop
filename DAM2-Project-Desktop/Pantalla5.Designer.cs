@@ -206,6 +206,7 @@ namespace DAM2_Project_Desktop
             buttonUsuarios.TabIndex = 13;
             buttonUsuarios.Text = "Usuarios";
             buttonUsuarios.UseVisualStyleBackColor = false;
+            buttonUsuarios.Click += buttonUsuarios_Click;
             // 
             // buttonProyectosPrivados
             // 
