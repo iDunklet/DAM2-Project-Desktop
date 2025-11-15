@@ -13,7 +13,6 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla8 : Form
     {
-        private readonly InterfaceMetodos _jsonService = new JsonFileService();
 
         private Size originalSize;
 
@@ -150,7 +149,8 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla8_Load(object sender, EventArgs e)
         {
-            dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
+            RefrescarListado();
+            //dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
 
             ConfigurarColumnaIconoDelete();
             ConfigurarColumnaIconoEditar();
@@ -201,6 +201,7 @@ namespace DAM2_Project_Desktop
             if (columnName == "iconoEdit")
             {
                 Pantalla7 p = new Pantalla7(clickedRow.DataBoundItem as Usuarios);
+                p.FormClosed += (s, args) => RefrescarListado();
                 p.Show();
             }
         }
@@ -253,64 +254,35 @@ namespace DAM2_Project_Desktop
 
         private void buttonExportarJSON_Click(object sender, EventArgs e)
         {
-            // Llamamos al método a través del servicio (_jsonService)
-            bool exito = _jsonService.ExportarTodoAJson();
+            ListadoDatosClasses.exportProjects();
+            RefrescarListado();
 
-            if (exito)
-            {
-                // Opcional: Lógica para abrir la carpeta después de exportar
-                DialogResult result = MessageBox.Show(
-                    "¿Desea abrir la carpeta de exportación ahora?",
-                    "Abrir Carpeta",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    _jsonService.AbrirCarpetaExports();
-                }
-            }
         }
 
-        // --- Manejo del Botón de Importación ---
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {
-            // Lógica de confirmación antes de importar...
-            DialogResult confirmacion = MessageBox.Show(
-                "¿Desea importar datos? Esto reemplazará todos los datos actuales.",
-                "Confirmar Importación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (confirmacion == DialogResult.Yes)
-            {
-                // Llamamos al método a través del servicio
-                bool exito = _jsonService.ImportarTodoDesdeJson();
-
-                if (exito)
-                {
-                    // Lógica para refrescar la vista después de una importación exitosa
-                    dataGridViewListadoUsuarios.DataSource = null;
-                    dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
-
-                    ActualizarAlturaDataGridView();
-                    ConfigurarColumnaIconoDelete();
-                    ConfigurarColumnaIconoEditar();
-                }
-            }
+            ListadoDatosClasses.importProjects();
+            RefrescarListado();
         }
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
 
         }
 
+        public void RefrescarListado()
+        {
+            dataGridViewListadoUsuarios.DataSource = null;
+            dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
+        }
         private void buttonCrearUser_Click(object sender, EventArgs e)
         {
-            /*
+            
             Pantalla5 pantalla5 = new Pantalla5();
             pantalla5.Show();
-            */
+           
         }
     }
 }

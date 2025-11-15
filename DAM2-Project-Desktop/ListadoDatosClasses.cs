@@ -38,10 +38,11 @@ namespace DAM2_Project_Desktop
 
             foreach (var user in importData)
             {
+                user.InitializeComputedFields();
                 ListadoUsuarios.Add(user);
             }
 
-            Console.WriteLine("Importación de JSON completada con éxito.");
+                Console.WriteLine("Importación de JSON completada con éxito.");
             Console.WriteLine($"Datos importados desde {rutaArchivo}");
         }
 

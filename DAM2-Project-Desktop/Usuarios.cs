@@ -17,16 +17,22 @@ namespace DAM2_Project_Desktop
         public string email { get; set;}
         public string password { get; set; }
 
-        public string userName { get; }
-        [JsonIgnore]
-        public Bitmap imgPerfil { get; set; }
+        public string userName { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
+        public Bitmap? imgPerfil { get; set; }
 
         //artivutos ocultos
-        [JsonIgnore]
-        public Bitmap miniImgPerfil { get; set; }
-
-        public string apellidoCompleto { get; }
-
+        [Newtonsoft.Json.JsonIgnore]
+        public Bitmap? miniImgPerfil { get; set; }
+        
+        [Newtonsoft.Json.JsonIgnore]
+        public string apellidoCompleto
+        {
+            get
+            {
+                return (apellido1 + " " + (apellido2 ?? "")).Trim();
+            }
+        }
 
 
 
@@ -50,9 +56,7 @@ namespace DAM2_Project_Desktop
             this.imgPerfil = GenerarImagenIniciales(200);
             this.miniImgPerfil = GenerarImagenIniciales(20);
 
-            this.apellidoCompleto = setApellidoCompleto();
-
-           
+            //this.apellidoCompleto = setApellidoCompleto();
         }
 
         public Usuarios(string nombre, string apellido1, DateTime fechaNacimiento,
@@ -71,7 +75,8 @@ namespace DAM2_Project_Desktop
 
             this.imgPerfil = GenerarImagenIniciales(200);
             this.miniImgPerfil = GenerarImagenIniciales(25);
-            this.apellidoCompleto = setApellidoCompleto();
+
+            //this.apellidoCompleto = setApellidoCompleto();
         }
 
         //constructor de test para proyecto Hugo
@@ -180,5 +185,19 @@ namespace DAM2_Project_Desktop
 
             return bitmap;
         }
+        public void InitializeComputedFields(int miniSize = 25, int fullSize = 200)
+        {
+            // userName (solo si viene vacío)
+            if (string.IsNullOrWhiteSpace(this.userName))
+                this.userName = UserNameGenerator();
+
+            // imágenes ignoradas en JSON
+            if (this.imgPerfil == null)
+                this.imgPerfil = GenerarImagenIniciales(fullSize);
+
+            if (this.miniImgPerfil == null)
+                this.miniImgPerfil = new Bitmap(this.imgPerfil, new Size(miniSize, miniSize));
+        }
     }
 }
+

@@ -7,10 +7,7 @@
     "classe": "DAM2",
     "email": "juan.garcia@ies.es",
     "password": "pass123",
-    "userName": "JGARCÍA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "García "
+    "userName": "JGARCÍA"
   },
   {
     "nombre": "Carlos",
@@ -20,10 +17,7 @@
     "classe": "DAM2",
     "email": "carlos.ruiz@ies.es",
     "password": "pass456",
-    "userName": "CRUIZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ruiz De la Fuente"
+    "userName": "CRUIZ"
   },
   {
     "nombre": "María",
@@ -33,10 +27,7 @@
     "classe": "DAM2",
     "email": "maria.fernandez@ies.es",
     "password": "pass789",
-    "userName": "MFERNÁNDEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Fernández "
+    "userName": "MFERNÁNDEZ"
   },
   {
     "nombre": "David",
@@ -46,10 +37,7 @@
     "classe": "DAM2",
     "email": "david.martin@ies.es",
     "password": "pass101",
-    "userName": "DMARTÍN",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Martín "
+    "userName": "DMARTÍN"
   },
   {
     "nombre": "Laura",
@@ -59,10 +47,7 @@
     "classe": "DAM2",
     "email": "laura.gomez@ies.es",
     "password": "pass202",
-    "userName": "LGÓMEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Gómez "
+    "userName": "LGÓMEZ"
   },
   {
     "nombre": "Ana",
@@ -72,10 +57,7 @@
     "classe": "DAW1",
     "email": "ana.lopez@ies.es",
     "password": "pass303",
-    "userName": "ALÓPEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "López "
+    "userName": "ALÓPEZ"
   },
   {
     "nombre": "Pedro",
@@ -85,10 +67,7 @@
     "classe": "DAW2",
     "email": "pedro.sanchez@ies.es",
     "password": "pass404",
-    "userName": "PSÁNCHEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sánchez "
+    "userName": "PSÁNCHEZ"
   },
   {
     "nombre": "Sofia",
@@ -98,10 +77,7 @@
     "classe": "DAW1",
     "email": "sofia.ramirez@ies.es",
     "password": "pass505",
-    "userName": "SRAMÍREZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ramírez "
+    "userName": "SRAMÍREZ"
   },
   {
     "nombre": "Javier",
@@ -111,10 +87,7 @@
     "classe": "DAW2",
     "email": "javier.ortega@ies.es",
     "password": "pass606",
-    "userName": "JORTEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ortega "
+    "userName": "JORTEGA"
   },
   {
     "nombre": "Eva",
@@ -124,10 +97,7 @@
     "classe": "ASIX1",
     "email": "eva.sanz@ies.es",
     "password": "pass707",
-    "userName": "ESANZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sanz "
+    "userName": "ESANZ"
   },
   {
     "nombre": "Miguel",
@@ -137,10 +107,7 @@
     "classe": "ASIX2",
     "email": "miguel.diaz@ies.es",
     "password": "pass808",
-    "userName": "MDÍAZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Díaz "
+    "userName": "MDÍAZ"
   },
   {
     "nombre": "Carmen",
@@ -150,10 +117,7 @@
     "classe": "ASIX1",
     "email": "carmen.vega@ies.es",
     "password": "pass909",
-    "userName": "CVEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Vega "
+    "userName": "CVEGA"
   },
   {
     "nombre": "Raúl",
@@ -163,10 +127,7 @@
     "classe": "ASIX2",
     "email": "raul.castro@ies.es",
     "password": "pass010",
-    "userName": "RCASTRO",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Castro "
+    "userName": "RCASTRO"
   },
   {
     "nombre": "Profesor",
@@ -176,10 +137,7 @@
     "classe": "PROF",
     "email": "prof.informatica@ies.es",
     "password": "prof123",
-    "userName": "PINFORMÁTICA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Informática "
+    "userName": "PINFORMÁTICA"
   },
   {
     "nombre": "Tutor",
@@ -189,399 +147,6 @@
     "classe": "PROF",
     "email": "tutor.dam2@ies.es",
     "password": "tutor456",
-    "userName": "TDAM2",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "DAM2 "
-  },
-  {
-    "nombre": "Juan",
-    "apellido1": "García",
-    "apellido2": null,
-    "fechaNacimiento": "2000-05-15T00:00:00",
-    "classe": "DAM2",
-    "email": "juan.garcia@ies.es",
-    "password": "pass123",
-    "userName": "JGARCÍA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "García "
-  },
-  {
-    "nombre": "Carlos",
-    "apellido1": "Ruiz",
-    "apellido2": "De la Fuente",
-    "fechaNacimiento": "2003-03-01T00:00:00",
-    "classe": "DAM2",
-    "email": "carlos.ruiz@ies.es",
-    "password": "pass456",
-    "userName": "CRUIZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ruiz De la Fuente"
-  },
-  {
-    "nombre": "María",
-    "apellido1": "Fernández",
-    "apellido2": null,
-    "fechaNacimiento": "2001-08-12T00:00:00",
-    "classe": "DAM2",
-    "email": "maria.fernandez@ies.es",
-    "password": "pass789",
-    "userName": "MFERNÁNDEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Fernández "
-  },
-  {
-    "nombre": "David",
-    "apellido1": "Martín",
-    "apellido2": null,
-    "fechaNacimiento": "2002-11-05T00:00:00",
-    "classe": "DAM2",
-    "email": "david.martin@ies.es",
-    "password": "pass101",
-    "userName": "DMARTÍN",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Martín "
-  },
-  {
-    "nombre": "Laura",
-    "apellido1": "Gómez",
-    "apellido2": null,
-    "fechaNacimiento": "2000-12-25T00:00:00",
-    "classe": "DAM2",
-    "email": "laura.gomez@ies.es",
-    "password": "pass202",
-    "userName": "LGÓMEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Gómez "
-  },
-  {
-    "nombre": "Ana",
-    "apellido1": "López",
-    "apellido2": null,
-    "fechaNacimiento": "1998-11-22T00:00:00",
-    "classe": "DAW1",
-    "email": "ana.lopez@ies.es",
-    "password": "pass303",
-    "userName": "ALÓPEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "López "
-  },
-  {
-    "nombre": "Pedro",
-    "apellido1": "Sánchez",
-    "apellido2": null,
-    "fechaNacimiento": "1999-04-18T00:00:00",
-    "classe": "DAW2",
-    "email": "pedro.sanchez@ies.es",
-    "password": "pass404",
-    "userName": "PSÁNCHEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sánchez "
-  },
-  {
-    "nombre": "Sofia",
-    "apellido1": "Ramírez",
-    "apellido2": null,
-    "fechaNacimiento": "2001-07-30T00:00:00",
-    "classe": "DAW1",
-    "email": "sofia.ramirez@ies.es",
-    "password": "pass505",
-    "userName": "SRAMÍREZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ramírez "
-  },
-  {
-    "nombre": "Javier",
-    "apellido1": "Ortega",
-    "apellido2": null,
-    "fechaNacimiento": "2000-02-14T00:00:00",
-    "classe": "DAW2",
-    "email": "javier.ortega@ies.es",
-    "password": "pass606",
-    "userName": "JORTEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ortega "
-  },
-  {
-    "nombre": "Eva",
-    "apellido1": "Sanz",
-    "apellido2": null,
-    "fechaNacimiento": "2001-07-07T00:00:00",
-    "classe": "ASIX1",
-    "email": "eva.sanz@ies.es",
-    "password": "pass707",
-    "userName": "ESANZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sanz "
-  },
-  {
-    "nombre": "Miguel",
-    "apellido1": "Díaz",
-    "apellido2": null,
-    "fechaNacimiento": "2002-09-09T00:00:00",
-    "classe": "ASIX2",
-    "email": "miguel.diaz@ies.es",
-    "password": "pass808",
-    "userName": "MDÍAZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Díaz "
-  },
-  {
-    "nombre": "Carmen",
-    "apellido1": "Vega",
-    "apellido2": null,
-    "fechaNacimiento": "2001-01-19T00:00:00",
-    "classe": "ASIX1",
-    "email": "carmen.vega@ies.es",
-    "password": "pass909",
-    "userName": "CVEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Vega "
-  },
-  {
-    "nombre": "Raúl",
-    "apellido1": "Castro",
-    "apellido2": null,
-    "fechaNacimiento": "2003-06-11T00:00:00",
-    "classe": "ASIX2",
-    "email": "raul.castro@ies.es",
-    "password": "pass010",
-    "userName": "RCASTRO",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Castro "
-  },
-  {
-    "nombre": "Profesor",
-    "apellido1": "Informática",
-    "apellido2": null,
-    "fechaNacimiento": "1980-03-10T00:00:00",
-    "classe": "PROF",
-    "email": "prof.informatica@ies.es",
-    "password": "prof123",
-    "userName": "PINFORMÁTICA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Informática "
-  },
-  {
-    "nombre": "Tutor",
-    "apellido1": "DAM2",
-    "apellido2": null,
-    "fechaNacimiento": "1975-08-22T00:00:00",
-    "classe": "PROF",
-    "email": "tutor.dam2@ies.es",
-    "password": "tutor456",
-    "userName": "TDAM2",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "DAM2 "
-  },
-  {
-    "nombre": "Juan",
-    "apellido1": "García",
-    "apellido2": null,
-    "fechaNacimiento": "2000-05-15T00:00:00",
-    "classe": "DAM2",
-    "email": "juan.garcia@ies.es",
-    "password": "pass123",
-    "userName": "JGARCÍA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "García "
-  },
-  {
-    "nombre": "Carlos",
-    "apellido1": "Ruiz",
-    "apellido2": "De la Fuente",
-    "fechaNacimiento": "2003-03-01T00:00:00",
-    "classe": "DAM2",
-    "email": "carlos.ruiz@ies.es",
-    "password": "pass456",
-    "userName": "CRUIZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ruiz De la Fuente"
-  },
-  {
-    "nombre": "María",
-    "apellido1": "Fernández",
-    "apellido2": null,
-    "fechaNacimiento": "2001-08-12T00:00:00",
-    "classe": "DAM2",
-    "email": "maria.fernandez@ies.es",
-    "password": "pass789",
-    "userName": "MFERNÁNDEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Fernández "
-  },
-  {
-    "nombre": "David",
-    "apellido1": "Martín",
-    "apellido2": null,
-    "fechaNacimiento": "2002-11-05T00:00:00",
-    "classe": "DAM2",
-    "email": "david.martin@ies.es",
-    "password": "pass101",
-    "userName": "DMARTÍN",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Martín "
-  },
-  {
-    "nombre": "Laura",
-    "apellido1": "Gómez",
-    "apellido2": null,
-    "fechaNacimiento": "2000-12-25T00:00:00",
-    "classe": "DAM2",
-    "email": "laura.gomez@ies.es",
-    "password": "pass202",
-    "userName": "LGÓMEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Gómez "
-  },
-  {
-    "nombre": "Ana",
-    "apellido1": "López",
-    "apellido2": null,
-    "fechaNacimiento": "1998-11-22T00:00:00",
-    "classe": "DAW1",
-    "email": "ana.lopez@ies.es",
-    "password": "pass303",
-    "userName": "ALÓPEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "López "
-  },
-  {
-    "nombre": "Pedro",
-    "apellido1": "Sánchez",
-    "apellido2": null,
-    "fechaNacimiento": "1999-04-18T00:00:00",
-    "classe": "DAW2",
-    "email": "pedro.sanchez@ies.es",
-    "password": "pass404",
-    "userName": "PSÁNCHEZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sánchez "
-  },
-  {
-    "nombre": "Sofia",
-    "apellido1": "Ramírez",
-    "apellido2": null,
-    "fechaNacimiento": "2001-07-30T00:00:00",
-    "classe": "DAW1",
-    "email": "sofia.ramirez@ies.es",
-    "password": "pass505",
-    "userName": "SRAMÍREZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ramírez "
-  },
-  {
-    "nombre": "Javier",
-    "apellido1": "Ortega",
-    "apellido2": null,
-    "fechaNacimiento": "2000-02-14T00:00:00",
-    "classe": "DAW2",
-    "email": "javier.ortega@ies.es",
-    "password": "pass606",
-    "userName": "JORTEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Ortega "
-  },
-  {
-    "nombre": "Eva",
-    "apellido1": "Sanz",
-    "apellido2": null,
-    "fechaNacimiento": "2001-07-07T00:00:00",
-    "classe": "ASIX1",
-    "email": "eva.sanz@ies.es",
-    "password": "pass707",
-    "userName": "ESANZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Sanz "
-  },
-  {
-    "nombre": "Miguel",
-    "apellido1": "Díaz",
-    "apellido2": null,
-    "fechaNacimiento": "2002-09-09T00:00:00",
-    "classe": "ASIX2",
-    "email": "miguel.diaz@ies.es",
-    "password": "pass808",
-    "userName": "MDÍAZ",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Díaz "
-  },
-  {
-    "nombre": "Carmen",
-    "apellido1": "Vega",
-    "apellido2": null,
-    "fechaNacimiento": "2001-01-19T00:00:00",
-    "classe": "ASIX1",
-    "email": "carmen.vega@ies.es",
-    "password": "pass909",
-    "userName": "CVEGA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Vega "
-  },
-  {
-    "nombre": "Raúl",
-    "apellido1": "Castro",
-    "apellido2": null,
-    "fechaNacimiento": "2003-06-11T00:00:00",
-    "classe": "ASIX2",
-    "email": "raul.castro@ies.es",
-    "password": "pass010",
-    "userName": "RCASTRO",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Castro "
-  },
-  {
-    "nombre": "Profesor",
-    "apellido1": "Informática",
-    "apellido2": null,
-    "fechaNacimiento": "1980-03-10T00:00:00",
-    "classe": "PROF",
-    "email": "prof.informatica@ies.es",
-    "password": "prof123",
-    "userName": "PINFORMÁTICA",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "Informática "
-  },
-  {
-    "nombre": "Tutor",
-    "apellido1": "DAM2",
-    "apellido2": null,
-    "fechaNacimiento": "1975-08-22T00:00:00",
-    "classe": "PROF",
-    "email": "tutor.dam2@ies.es",
-    "password": "tutor456",
-    "userName": "TDAM2",
-    "imgPerfil": "System.Drawing.Bitmap",
-    "miniImgPerfil": "System.Drawing.Bitmap",
-    "apellidoCompleto": "DAM2 "
+    "userName": "TDAM2"
   }
 ]
