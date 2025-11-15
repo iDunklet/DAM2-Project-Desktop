@@ -62,13 +62,9 @@ namespace DAM2_Project_Desktop
             Dimencions.ResizeControl(dataGridViewListadoUsuarios, RectangledataGridViewListadoUsuarios, this, formOriginalSize);
 
             // --- CÁLCULO Y ASIGNACIÓN DE ANCHURA DE COLUMNAS (CLAVE) ---
-
-            // 1. Calcular el factor de escala X (usando 1440 como ancho base de diseño)
             float scaleX = (float)this.ClientSize.Width / 1440;
 
-            // 2. Calcular las nuevas anchuras escaladas y asignarlas
-            // Se recomienda usar una lista de las anchuras base para mayor claridad y mantenibilidad.
-            int[] baseWidths = { 30, 150, 175, 285, 250, 125, 40, 40 }; // Base total: 1095 o 1295
+            int[] baseWidths = { 30, 150, 175, 285, 250, 125, 40, 40 }; 
             int totalScaledWidth = 0;
 
             ImgPerfil.Width = (int)(baseWidths[0] * scaleX);
@@ -95,7 +91,6 @@ namespace DAM2_Project_Desktop
             IconoDelete.Width = (int)(baseWidths[7] * scaleX);
             totalScaledWidth += IconoDelete.Width;
 
-            // 3. Establecer la anchura total de la Grid (sobrescribe la anchura de ResizeControl)
             dataGridViewListadoUsuarios.Width = totalScaledWidth + 2;
 
             // --- LÓGICA DE ESCALADO DE FILAS (Mantenida) ---
@@ -119,8 +114,7 @@ namespace DAM2_Project_Desktop
             Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, buttonCrearUser, button7 };
             Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, RectangelbuttonCrearUser, Rectanglebutton7 };
 
-            // Obtener el ancho actual del panel lateral (asumiendo que está en splitContainer2)
-            // Si Pantalla8 usa splitContainer2 como Pantalla7:
+            // Obtener el ancho actual del panel lateral
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
 
             // Delega la lógica de centrado y escalado Y a la clase estática.
@@ -167,6 +161,7 @@ namespace DAM2_Project_Desktop
             Bitmap icon = Properties.Resources.icon_delete;
             Bitmap resizedIcon = new Bitmap(icon, new Size(15, 15));
             return resizedIcon;
+
         }
 
         public Bitmap GetImgIconEdit()
@@ -188,9 +183,18 @@ namespace DAM2_Project_Desktop
 
                 if (usuarioAEliminar != null)
                 {
+                    var confirm = MessageBox.Show(
+                          "¿Seguro que deseas eliminar este usuario?",
+                          "Confirmación",
+                          MessageBoxButtons.YesNo,
+                          MessageBoxIcon.Warning);
 
-                    ListadoDatosClasses.ListadoUsuarios.Remove(usuarioAEliminar);
-                    ActualizarAlturaDataGridView();
+                    if (confirm == DialogResult.Yes)
+                        {
+
+                        ListadoDatosClasses.ListadoUsuarios.Remove(usuarioAEliminar);
+                        ActualizarAlturaDataGridView();
+                    }
                 }
 
             }
@@ -217,6 +221,7 @@ namespace DAM2_Project_Desktop
         {
             if (dataGridViewListadoUsuarios.Columns.Contains("IconoDelete"))
             {
+
                 DataGridViewImageColumn deleteCol = (DataGridViewImageColumn)dataGridViewListadoUsuarios.Columns["IconoDelete"];
                 deleteCol.Image = GetImgIconDelete();
             }

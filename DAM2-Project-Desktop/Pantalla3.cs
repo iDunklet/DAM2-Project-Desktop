@@ -53,13 +53,15 @@ namespace DAM2_Project_Desktop
             var fila = dataGridView1.Rows[rowIndex];
             var tareaActual = (Tarea)fila.Tag;
 
-            DateTime fechaActual = (columnIndex == 3) ? tareaActual.fechaInicioTarea : tareaActual.fechaFinTarea;
+            DateTime? fechaActual = (columnIndex == 3)
+                ? tareaActual.fechaInicioTarea
+                : tareaActual.fechaFinTarea;
 
             DateTimePicker dtp = new DateTimePicker
             {
                 Format = DateTimePickerFormat.Custom,
                 CustomFormat = "dd/MM/yyyy",
-                Value = fechaActual,
+                Value = fechaActual ?? DateTime.Now,
                 Visible = true
             };
 
@@ -365,7 +367,7 @@ namespace DAM2_Project_Desktop
 
                 // Fechas (solo mostrar)
                 fila.Cells[3].Value = tarea.fechaInicioTarea.ToShortDateString();
-                fila.Cells[4].Value = tarea.fechaFinTarea.ToShortDateString();
+                fila.Cells[4].Value = tarea.fechaFinTarea?.ToShortDateString() ?? "";
 
                 // Estado
                 fila.Cells[5].Value = tarea.statusTarea;
