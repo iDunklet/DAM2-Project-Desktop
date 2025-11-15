@@ -47,7 +47,6 @@ namespace DAM2_Project_Desktop
 
         public static void exportUsers()
         {
-            GenerarListaUsuarios();
             string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
             Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
