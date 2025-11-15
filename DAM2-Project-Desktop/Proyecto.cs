@@ -21,10 +21,11 @@ namespace DAM2_Project_Desktop
         public List<Usuarios> miembrosProyecto { get; set; }
         public List<Tarea> tareasProyecto { get; set; }
 
-        [JsonIgnore]
-        private Bitmap imgProyecto;
-        [JsonIgnore]
-        public Bitmap ImgProyecto
+        [Newtonsoft.Json.JsonIgnore]
+        private Bitmap? imgProyecto;
+
+        [Newtonsoft.Json.JsonIgnore]
+        public Bitmap? ImgProyecto
         {
             get { return imgProyecto; }
             set { imgProyecto = value ?? GenerarImagenIniciales(titulo); }
@@ -49,9 +50,9 @@ namespace DAM2_Project_Desktop
 
             // Colores posibles
             Color[] coloresAvatar = {
-        Color.SteelBlue, Color.DarkCyan, Color.IndianRed,
-        Color.DarkOliveGreen, Color.MediumVioletRed,
-        Color.SlateBlue, Color.DarkOrange
+                Color.SteelBlue, Color.DarkCyan, Color.IndianRed,
+                Color.DarkOliveGreen, Color.MediumVioletRed,
+                Color.SlateBlue, Color.DarkOrange
     };
             Random random = new Random();
             Color fondoColor = coloresAvatar[random.Next(coloresAvatar.Length)];

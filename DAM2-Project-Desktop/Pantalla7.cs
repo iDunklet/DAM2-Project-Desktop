@@ -227,16 +227,42 @@ namespace DAM2_Project_Desktop
 
         private void buttonConfigurarUsuarioGuardar_Click(object sender, EventArgs e)
         {
+            // Validar contraseñas
             string nuevaContrasena = textBoxConfigurarUsuarioNuevaContrasena.Text;
             string confirmarContrasena = textBoxConfigurarUsuarioConfirmarContrasena.Text;
-            if (nuevaContrasena.Equals(confirmarContrasena))
-            {
-                usuarioEncontrado.password = nuevaContrasena;
 
-                textBoxConfigurarUsuarioNuevaContrasena.Clear();
-                textBoxConfigurarUsuarioConfirmarContrasena.Clear();
-                textBoxConfigurarUsuarioNuevaContrasena.Focus();
+            if (!string.IsNullOrWhiteSpace(nuevaContrasena) ||
+                !string.IsNullOrWhiteSpace(confirmarContrasena))
+            {
+                if (!nuevaContrasena.Equals(confirmarContrasena))
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.");
+                    return;
+                }
+
+                usuarioEncontrado.password = nuevaContrasena;
             }
+
+            // Actualizar campos del usuario
+            usuarioEncontrado.nombre = textBoxConfigurarUsuarioName.Text;
+            usuarioEncontrado.apellido1 = textBoxConfigurarUsuarioApellido1.Text;
+            usuarioEncontrado.apellido2 = textBoxConfigurarUsuarioApellido2.Text;
+            usuarioEncontrado.email = textBoxConfigurarUsuarioEmail.Text;
+            usuarioEncontrado.classe = textBoxConfigurarUsuarioClase.Text;
+            usuarioEncontrado.fechaNacimiento = dateTimePickerConfigurarUsuarioFechaNacimiento.Value;
+
+
+            // Limpiar campos de contraseña
+            textBoxConfigurarUsuarioNuevaContrasena.Clear();
+            textBoxConfigurarUsuarioConfirmarContrasena.Clear();
+
+            //guardado en JSON
+            ListadoDatosClasses.exportUsers();
+
+            MessageBox.Show("Cambios guardados correctamente.");
+
+            // Cerrar la pantalla de edición
+            this.Close();
         }
 
         private void buttonConfigurarUsuarioNuevaIMG_Click(object sender, EventArgs e)

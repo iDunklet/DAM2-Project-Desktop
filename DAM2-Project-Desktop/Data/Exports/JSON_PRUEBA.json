@@ -12,10 +12,7 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "García "
+        "userName": "JGARCÍA"
       },
       {
         "nombre": "María",
@@ -25,10 +22,7 @@
         "classe": "DAM2",
         "email": "maria.fernandez@ies.es",
         "password": "pass789",
-        "userName": "MFERNÁNDEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Fernández "
+        "userName": "MFERNÁNDEZ"
       },
       {
         "nombre": "David",
@@ -38,10 +32,7 @@
         "classe": "DAM2",
         "email": "david.martin@ies.es",
         "password": "pass101",
-        "userName": "DMARTÍN",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Martín "
+        "userName": "DMARTÍN"
       }
     ],
     "tareasProyecto": [
@@ -49,7 +40,7 @@
         "nombreTarea": "Diseño UI/UX",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-15T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Juan",
           "apellido1": "García",
@@ -58,10 +49,7 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "García "
+          "userName": "JGARCÍA"
         },
         "statusTarea": "En progreso"
       },
@@ -69,7 +57,7 @@
         "nombreTarea": "Desarrollo Backend",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-20T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "María",
           "apellido1": "Fernández",
@@ -78,10 +66,7 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Fernández "
+          "userName": "MFERNÁNDEZ"
         },
         "statusTarea": "Pendiente"
       },
@@ -89,7 +74,7 @@
         "nombreTarea": "Documentación API",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-05T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Carlos",
           "apellido1": "Ruiz",
@@ -98,10 +83,7 @@
           "classe": "DAM2",
           "email": "carlos.ruiz@ies.es",
           "password": "pass456",
-          "userName": "CRUIZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Ruiz De la Fuente"
+          "userName": "CRUIZ"
         },
         "statusTarea": "Completada"
       },
@@ -109,7 +91,7 @@
         "nombreTarea": "Diseño Logo",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-20T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Pedro",
           "apellido1": "Sánchez",
@@ -118,15 +100,11 @@
           "classe": "DAW2",
           "email": "pedro.sanchez@ies.es",
           "password": "pass404",
-          "userName": "PSÁNCHEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Sánchez "
+          "userName": "PSÁNCHEZ"
         },
         "statusTarea": "Completada"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 2,
@@ -141,10 +119,7 @@
         "classe": "DAM2",
         "email": "carlos.ruiz@ies.es",
         "password": "pass456",
-        "userName": "CRUIZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ruiz De la Fuente"
+        "userName": "CRUIZ"
       },
       {
         "nombre": "Ana",
@@ -154,10 +129,7 @@
         "classe": "DAW1",
         "email": "ana.lopez@ies.es",
         "password": "pass303",
-        "userName": "ALÓPEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "López "
+        "userName": "ALÓPEZ"
       },
       {
         "nombre": "Pedro",
@@ -167,10 +139,7 @@
         "classe": "DAW2",
         "email": "pedro.sanchez@ies.es",
         "password": "pass404",
-        "userName": "PSÁNCHEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Sánchez "
+        "userName": "PSÁNCHEZ"
       },
       {
         "nombre": "Sofia",
@@ -180,10 +149,7 @@
         "classe": "DAW1",
         "email": "sofia.ramirez@ies.es",
         "password": "pass505",
-        "userName": "SRAMÍREZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ramírez "
+        "userName": "SRAMÍREZ"
       }
     ],
     "tareasProyecto": [
@@ -191,7 +157,7 @@
         "nombreTarea": "Maquetación HTML/CSS",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-02-01T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Ana",
           "apellido1": "López",
@@ -200,10 +166,7 @@
           "classe": "DAW1",
           "email": "ana.lopez@ies.es",
           "password": "pass303",
-          "userName": "ALÓPEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "López "
+          "userName": "ALÓPEZ"
         },
         "statusTarea": "Completada"
       },
@@ -211,7 +174,7 @@
         "nombreTarea": "Base de Datos SQL",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-02-10T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Eva",
           "apellido1": "Sanz",
@@ -220,10 +183,7 @@
           "classe": "ASIX1",
           "email": "eva.sanz@ies.es",
           "password": "pass707",
-          "userName": "ESANZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Sanz "
+          "userName": "ESANZ"
         },
         "statusTarea": "En progreso"
       },
@@ -231,7 +191,7 @@
         "nombreTarea": "Configuración Servidor",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-10T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Miguel",
           "apellido1": "Díaz",
@@ -240,10 +200,7 @@
           "classe": "ASIX2",
           "email": "miguel.diaz@ies.es",
           "password": "pass808",
-          "userName": "MDÍAZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Díaz "
+          "userName": "MDÍAZ"
         },
         "statusTarea": "En progreso"
       },
@@ -251,7 +208,7 @@
         "nombreTarea": "Implementación Seguridad",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-04-01T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Sofia",
           "apellido1": "Ramírez",
@@ -260,15 +217,11 @@
           "classe": "DAW1",
           "email": "sofia.ramirez@ies.es",
           "password": "pass505",
-          "userName": "SRAMÍREZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Ramírez "
+          "userName": "SRAMÍREZ"
         },
         "statusTarea": "En progreso"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 3,
@@ -283,10 +236,7 @@
         "classe": "DAW2",
         "email": "javier.ortega@ies.es",
         "password": "pass606",
-        "userName": "JORTEGA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ortega "
+        "userName": "JORTEGA"
       },
       {
         "nombre": "Eva",
@@ -296,10 +246,7 @@
         "classe": "ASIX1",
         "email": "eva.sanz@ies.es",
         "password": "pass707",
-        "userName": "ESANZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Sanz "
+        "userName": "ESANZ"
       },
       {
         "nombre": "Miguel",
@@ -309,10 +256,7 @@
         "classe": "ASIX2",
         "email": "miguel.diaz@ies.es",
         "password": "pass808",
-        "userName": "MDÍAZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Díaz "
+        "userName": "MDÍAZ"
       },
       {
         "nombre": "Raúl",
@@ -322,10 +266,7 @@
         "classe": "ASIX2",
         "email": "raul.castro@ies.es",
         "password": "pass010",
-        "userName": "RCASTRO",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Castro "
+        "userName": "RCASTRO"
       }
     ],
     "tareasProyecto": [
@@ -333,7 +274,7 @@
         "nombreTarea": "Análisis Requisitos",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-10T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Javier",
           "apellido1": "Ortega",
@@ -342,10 +283,7 @@
           "classe": "DAW2",
           "email": "javier.ortega@ies.es",
           "password": "pass606",
-          "userName": "JORTEGA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Ortega "
+          "userName": "JORTEGA"
         },
         "statusTarea": "Completada"
       },
@@ -353,7 +291,7 @@
         "nombreTarea": "Diagramas UML",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-25T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Carmen",
           "apellido1": "Vega",
@@ -362,10 +300,7 @@
           "classe": "ASIX1",
           "email": "carmen.vega@ies.es",
           "password": "pass909",
-          "userName": "CVEGA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Vega "
+          "userName": "CVEGA"
         },
         "statusTarea": "Completada"
       },
@@ -373,7 +308,7 @@
         "nombreTarea": "Planificación Proyecto",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-02-05T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Raúl",
           "apellido1": "Castro",
@@ -382,10 +317,7 @@
           "classe": "ASIX2",
           "email": "raul.castro@ies.es",
           "password": "pass010",
-          "userName": "RCASTRO",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Castro "
+          "userName": "RCASTRO"
         },
         "statusTarea": "En progreso"
       },
@@ -393,7 +325,7 @@
         "nombreTarea": "Estudio Viabilidad",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-02-15T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Profesor",
           "apellido1": "Informática",
@@ -402,15 +334,11 @@
           "classe": "PROF",
           "email": "prof.informatica@ies.es",
           "password": "prof123",
-          "userName": "PINFORMÁTICA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Informática "
+          "userName": "PINFORMÁTICA"
         },
         "statusTarea": "Pendiente"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 4,
@@ -425,10 +353,7 @@
         "classe": "DAM2",
         "email": "laura.gomez@ies.es",
         "password": "pass202",
-        "userName": "LGÓMEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Gómez "
+        "userName": "LGÓMEZ"
       },
       {
         "nombre": "Carmen",
@@ -438,10 +363,7 @@
         "classe": "ASIX1",
         "email": "carmen.vega@ies.es",
         "password": "pass909",
-        "userName": "CVEGA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Vega "
+        "userName": "CVEGA"
       },
       {
         "nombre": "Profesor",
@@ -451,10 +373,7 @@
         "classe": "PROF",
         "email": "prof.informatica@ies.es",
         "password": "prof123",
-        "userName": "PINFORMÁTICA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Informática "
+        "userName": "PINFORMÁTICA"
       }
     ],
     "tareasProyecto": [
@@ -462,7 +381,7 @@
         "nombreTarea": "Testing Unitario",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-01T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "David",
           "apellido1": "Martín",
@@ -471,10 +390,7 @@
           "classe": "DAM2",
           "email": "david.martin@ies.es",
           "password": "pass101",
-          "userName": "DMARTÍN",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Martín "
+          "userName": "DMARTÍN"
         },
         "statusTarea": "Pendiente"
       },
@@ -482,7 +398,7 @@
         "nombreTarea": "Optimización Código",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-15T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Laura",
           "apellido1": "Gómez",
@@ -491,10 +407,7 @@
           "classe": "DAM2",
           "email": "laura.gomez@ies.es",
           "password": "pass202",
-          "userName": "LGÓMEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Gómez "
+          "userName": "LGÓMEZ"
         },
         "statusTarea": "Pendiente"
       },
@@ -502,7 +415,7 @@
         "nombreTarea": "Revisión Código",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-04-10T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Juan",
           "apellido1": "García",
@@ -511,15 +424,11 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "García "
+          "userName": "JGARCÍA"
         },
         "statusTarea": "Pendiente"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 5,
@@ -534,10 +443,7 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "García "
+        "userName": "JGARCÍA"
       },
       {
         "nombre": "Carlos",
@@ -547,10 +453,7 @@
         "classe": "DAM2",
         "email": "carlos.ruiz@ies.es",
         "password": "pass456",
-        "userName": "CRUIZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ruiz De la Fuente"
+        "userName": "CRUIZ"
       },
       {
         "nombre": "Ana",
@@ -560,10 +463,7 @@
         "classe": "DAW1",
         "email": "ana.lopez@ies.es",
         "password": "pass303",
-        "userName": "ALÓPEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "López "
+        "userName": "ALÓPEZ"
       },
       {
         "nombre": "Javier",
@@ -573,10 +473,7 @@
         "classe": "DAW2",
         "email": "javier.ortega@ies.es",
         "password": "pass606",
-        "userName": "JORTEGA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ortega "
+        "userName": "JORTEGA"
       }
     ],
     "tareasProyecto": [
@@ -584,7 +481,7 @@
         "nombreTarea": "Actualización Dependencias",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-04-15T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "María",
           "apellido1": "Fernández",
@@ -593,10 +490,7 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Fernández "
+          "userName": "MFERNÁNDEZ"
         },
         "statusTarea": "Pendiente"
       },
@@ -604,7 +498,7 @@
         "nombreTarea": "Backup Base de Datos",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-04-20T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Eva",
           "apellido1": "Sanz",
@@ -613,15 +507,11 @@
           "classe": "ASIX1",
           "email": "eva.sanz@ies.es",
           "password": "pass707",
-          "userName": "ESANZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Sanz "
+          "userName": "ESANZ"
         },
         "statusTarea": "Pendiente"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 6,
@@ -636,10 +526,7 @@
         "classe": "DAM2",
         "email": "maria.fernandez@ies.es",
         "password": "pass789",
-        "userName": "MFERNÁNDEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Fernández "
+        "userName": "MFERNÁNDEZ"
       },
       {
         "nombre": "Pedro",
@@ -649,10 +536,7 @@
         "classe": "DAW2",
         "email": "pedro.sanchez@ies.es",
         "password": "pass404",
-        "userName": "PSÁNCHEZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Sánchez "
+        "userName": "PSÁNCHEZ"
       }
     ],
     "tareasProyecto": [
@@ -660,7 +544,7 @@
         "nombreTarea": "Diseño UI/UX",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-15T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Juan",
           "apellido1": "García",
@@ -669,10 +553,7 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "García "
+          "userName": "JGARCÍA"
         },
         "statusTarea": "En progreso"
       },
@@ -680,7 +561,7 @@
         "nombreTarea": "Desarrollo Backend",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-01-20T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "María",
           "apellido1": "Fernández",
@@ -689,15 +570,11 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Fernández "
+          "userName": "MFERNÁNDEZ"
         },
         "statusTarea": "Pendiente"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 7,
@@ -712,10 +589,7 @@
         "classe": "DAM2",
         "email": "david.martin@ies.es",
         "password": "pass101",
-        "userName": "DMARTÍN",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Martín "
+        "userName": "DMARTÍN"
       },
       {
         "nombre": "Sofia",
@@ -725,10 +599,7 @@
         "classe": "DAW1",
         "email": "sofia.ramirez@ies.es",
         "password": "pass505",
-        "userName": "SRAMÍREZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Ramírez "
+        "userName": "SRAMÍREZ"
       },
       {
         "nombre": "Miguel",
@@ -738,10 +609,7 @@
         "classe": "ASIX2",
         "email": "miguel.diaz@ies.es",
         "password": "pass808",
-        "userName": "MDÍAZ",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "Díaz "
+        "userName": "MDÍAZ"
       }
     ],
     "tareasProyecto": [
@@ -749,7 +617,7 @@
         "nombreTarea": "Diseño Logo",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-03-20T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Pedro",
           "apellido1": "Sánchez",
@@ -758,10 +626,7 @@
           "classe": "DAW2",
           "email": "pedro.sanchez@ies.es",
           "password": "pass404",
-          "userName": "PSÁNCHEZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Sánchez "
+          "userName": "PSÁNCHEZ"
         },
         "statusTarea": "Completada"
       },
@@ -769,7 +634,7 @@
         "nombreTarea": "Implementación Seguridad",
         "descripcionTarea": null,
         "fechaInicioTarea": "2024-04-01T00:00:00",
-        "fechaFinTarea": "0001-01-01T00:00:00",
+        "fechaFinTarea": null,
         "responsableAsignado": {
           "nombre": "Sofia",
           "apellido1": "Ramírez",
@@ -778,15 +643,11 @@
           "classe": "DAW1",
           "email": "sofia.ramirez@ies.es",
           "password": "pass505",
-          "userName": "SRAMÍREZ",
-          "imgPerfil": "System.Drawing.Bitmap",
-          "miniImgPerfil": "System.Drawing.Bitmap",
-          "apellidoCompleto": "Ramírez "
+          "userName": "SRAMÍREZ"
         },
         "statusTarea": "En progreso"
       }
-    ],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    ]
   },
   {
     "ID": 8,
@@ -801,13 +662,9 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA",
-        "imgPerfil": "System.Drawing.Bitmap",
-        "miniImgPerfil": "System.Drawing.Bitmap",
-        "apellidoCompleto": "García "
+        "userName": "JGARCÍA"
       }
     ],
-    "tareasProyecto": [],
-    "ImgProyecto": "System.Drawing.Bitmap"
+    "tareasProyecto": []
   }
 ]
