@@ -129,16 +129,11 @@ namespace DAM2_Project_Desktop
 
         private void buttonExportarJson_Click(object sender, EventArgs e)
         {
-            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
+   
+            ListadoDatosClasses.exportProjects();
 
-            var proyectosList = ListadoDatosClasses.ListadoProyectos;
-            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
-
-            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
+            ListadoDatosClasses.GenerarListaUsuarios();
+            ListadoDatosClasses.exportUsers();
         }
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {

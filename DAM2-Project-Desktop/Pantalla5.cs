@@ -46,62 +46,6 @@ namespace DAM2_Project_Desktop
             string userName = inicialNombre + apellido + claseParte;
             return userName.ToUpper();
         }
-        /*
-        private void ButtonCrearUsuario2_Click(object sender, EventArgs e)
-        {
-            // 1️⃣ Leer los datos de los campos
-            string nombre = textBoxNombre.Text.Trim();
-            string apellido1 = textBoxApellido1.Text.Trim();
-            string apellido2 = textBoxApellido2.Text.Trim();
-            string clase = textBoxCurso.Text.Trim();
-            string email = textBoxEmail.Text.Trim();
-            string password = textBoxContrasenya.Text.Trim();
-            string repPassword = textBoxRepContrasenya.Text.Trim();
-            DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
-            string userName = textBoxUsuario.Text.Trim();
-
-            // 2️⃣ Validaciones básicas
-            if (string.IsNullOrWhiteSpace(nombre) ||
-                string.IsNullOrWhiteSpace(apellido1) ||
-                string.IsNullOrWhiteSpace(apellido2) ||
-                string.IsNullOrWhiteSpace(clase) ||
-                string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(password) ||
-                string.IsNullOrWhiteSpace(repPassword))
-            {
-                MessageBox.Show("Por favor, completa todos los campos obligatorios.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (password != repPassword)
-            {
-                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // 3️⃣ Crear el usuario
-            Usuarios nuevoUsuario = new Usuarios(
-                nombre,
-                apellido1,
-                apellido2,
-                fechaNacimiento,
-                clase,
-                email,
-                password,
-                userName
-            );
-       
-            // 4️⃣ Añadirlo a la lista de usuarios
-            ListadoDatosClasses.ListadoUsuarios.Add(nuevoUsuario);
-
-            MessageBox.Show($"Usuario '{nuevoUsuario.userName}' creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // 5️⃣ Limpiar campos para un nuevo registro
-            LimpiarCamposUsuario();
-        }
-
-        */
-
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
@@ -162,8 +106,10 @@ namespace DAM2_Project_Desktop
             LimpiarCamposUsuario();
         }
 
-
-
-
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            Pantalla8 pantalla8 = new Pantalla8();
+            pantalla8.Show();
+        }
     }
 }
