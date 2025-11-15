@@ -50,31 +50,35 @@ namespace DAM2_Project_Desktop
 
         private void ShowDatePicker(int rowIndex, int columnIndex)
         {
-            // Crear el control DateTimePicker
-            DateTimePicker dtp = new DateTimePicker();
-            dtp.Format = DateTimePickerFormat.Custom;
-            dtp.CustomFormat = "dd/MM/yyyy";
-            dtp.Visible = true;
+            var fila = dataGridView1.Rows[rowIndex];
+            var tareaActual = (Tarea)fila.Tag;
 
-            // Colocarlo encima de la celda seleccionada
+            DateTime fechaActual = (columnIndex == 3) ? tareaActual.fechaInicioTarea : tareaActual.fechaFinTarea;
+
+            DateTimePicker dtp = new DateTimePicker
+            {
+                Format = DateTimePickerFormat.Custom,
+                CustomFormat = "dd/MM/yyyy",
+                Value = fechaActual,
+                Visible = true
+            };
+
             Rectangle cellRectangle = dataGridView1.GetCellDisplayRectangle(columnIndex, rowIndex, true);
             dtp.Location = new Point(cellRectangle.X, cellRectangle.Y);
             dtp.Size = new Size(cellRectangle.Width, cellRectangle.Height);
 
-            // Añadir el control al DataGridView
             dataGridView1.Controls.Add(dtp);
 
-            // Cuando el usuario elija la fecha y cierre el calendario
             dtp.CloseUp += (s, e) =>
             {
-                dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = dtp.Text;
-                dataGridView1.Controls.Remove(dtp);
-            };
+                // Actualizar la celda y la tarea
+                fila.Cells[columnIndex].Value = dtp.Value.ToShortDateString();
+                if (columnIndex == 3)
+                    tareaActual.fechaInicioTarea = dtp.Value;
+                else
+                    tareaActual.fechaFinTarea = dtp.Value;
 
-            // Actualizar el valor al cambiar la fecha
-            dtp.TextChanged += (s, e) =>
-            {
-                dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = dtp.Text;
+                dataGridView1.Controls.Remove(dtp);
             };
         }
 
@@ -87,6 +91,16 @@ namespace DAM2_Project_Desktop
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
             //MostrarProyecto();
+            dataGridView1.CellBeginEdit += DataGridView1_CellBeginEdit;
+        }
+        private void DataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            // Solo para columnas de fecha
+            if (e.ColumnIndex == 3 || e.ColumnIndex == 4)
+            {
+                e.Cancel = true; // Evita edición directa
+                ShowDatePicker(e.RowIndex, e.ColumnIndex);
+            }
         }
 
         private void splitContainer6_Panel2_Paint(object sender, PaintEventArgs e)
@@ -323,49 +337,42 @@ namespace DAM2_Project_Desktop
 
         private void CargarTareasProyecto()
         {
-            // Limpiamos el DataGridView antes de agregar nuevas tareas
-            
             dataGridView1.Rows.Clear();
-
-            if (proyectoActual.tareasProyecto == null || proyectoActual.tareasProyecto.Count == 0)
-                return; // Si no hay tareas, salimos
 
             foreach (var tarea in proyectoActual.tareasProyecto)
             {
-                int rowIndex = dataGridView1.Rows.Add(); // Añadimos nueva fila
-                DataGridViewRow fila = dataGridView1.Rows[rowIndex];
+                int rowIndex = dataGridView1.Rows.Add();
+                var fila = dataGridView1.Rows[rowIndex];
 
-                // 0 - Nombre de la tarea
+                // Guardamos la tarea en Tag
+                fila.Tag = tarea;
+
+                // Nombre
                 fila.Cells[0].Value = tarea.nombreTarea;
-
-                // 1 - Descripción breve
+                // Descripción
                 fila.Cells[1].Value = tarea.descripcionTarea;
 
-                // 2 - ComboBox con usuarios del proyecto
-                var comboCell = fila.Cells[2] as DataGridViewComboBoxCell;
-                comboCell.Items.Clear(); // Empezamos vacío
+                // ComboBox responsables
+                var comboCell = (DataGridViewComboBoxCell)fila.Cells[2];
+                comboCell.Items.Clear();
                 foreach (var usuario in proyectoActual.miembrosProyecto)
                 {
-                    comboCell.Items.Add(usuario.nombre); // O usuario.apellidoCompleto si quieres nombre completo
+                    comboCell.Items.Add(usuario.nombre);
                 }
+                if (tarea.responsableAsignado != null && !comboCell.Items.Contains(tarea.responsableAsignado.nombre))
+                    comboCell.Items.Add(tarea.responsableAsignado.nombre);
+                comboCell.Value = tarea.responsableAsignado?.nombre;
 
-                // Asegurarnos de que el valor de la celda sea alguno de los Items para evitar errores
-                if (tarea.responsableAsignado != null && proyectoActual.miembrosProyecto.Contains(tarea.responsableAsignado))
-                {
-                    comboCell.Value = tarea.responsableAsignado.nombre;
-                }
-
-                // 3 - Fecha inicio
+                // Fechas (solo mostrar)
                 fila.Cells[3].Value = tarea.fechaInicioTarea.ToShortDateString();
-
-                // 4 - Fecha fin
                 fila.Cells[4].Value = tarea.fechaFinTarea.ToShortDateString();
 
-                // 5 - Estado (ya configurado desde diseño)
+                // Estado
                 fila.Cells[5].Value = tarea.statusTarea;
-
-                // 6 - CheckBox (no se asigna nada, queda vacío)
             }
+
+            // Capturar errores de ComboBox
+            dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
         }
 
         private void labelNombreProyecto_Click(object sender, EventArgs e)

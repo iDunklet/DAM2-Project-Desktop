@@ -6,7 +6,7 @@
         public string nombreTarea { get; set; }
         public string descripcionTarea { get; set; }
         public DateTime fechaInicioTarea { get; set; }
-        public DateTime fechaFinTarea { get; set; }
+        public DateTime? fechaFinTarea { get; set; }
         public Usuarios responsableAsignado { get; set; }
         public string statusTarea { get; set; }
 
