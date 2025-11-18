@@ -19,7 +19,7 @@ namespace DAM2_Project_Desktop
         //metodos carga usuarios
         public static void importUsers()
         {
-            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
+            string rutaArchivo = @"\Data\Users";
             Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
 
@@ -48,7 +48,7 @@ namespace DAM2_Project_Desktop
 
         public static void exportUsers()
         {
-            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
+            string rutaArchivo = @"\Data\Users";
             Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
 
@@ -62,7 +62,7 @@ namespace DAM2_Project_Desktop
         //metodos carga proyectos
         public static void exportProjects()
         {
-            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
+            string rutaArchivo = @"\Data\Exports";
             Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
 
@@ -75,7 +75,7 @@ namespace DAM2_Project_Desktop
         }
         public static void importProjects()
         {
-            string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
+            string rutaArchivo = @"\Data\Imports";
             Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "data_tasky.json");
 
