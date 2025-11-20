@@ -208,9 +208,9 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.Anchor = AnchorStyles.None;
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13F);
+            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 14F);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(35, 22);
+            buttonCrearNuevoUsuario.Location = new Point(31, 15);
             buttonCrearNuevoUsuario.Margin = new Padding(4, 3, 4, 3);
             buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
             buttonCrearNuevoUsuario.Size = new Size(175, 69);
@@ -304,6 +304,7 @@ namespace DAM2_Project_Desktop
             pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // label6
             // 
@@ -347,7 +348,7 @@ namespace DAM2_Project_Desktop
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft Sans Serif", 14F);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(35, 201);
+            button4.Location = new Point(31, 203);
             button4.Margin = new Padding(4, 3, 4, 3);
             button4.Name = "button4";
             button4.Size = new Size(175, 45);
@@ -361,7 +362,7 @@ namespace DAM2_Project_Desktop
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 14F);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(35, 139);
+            button3.Location = new Point(31, 143);
             button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
             button3.Size = new Size(175, 45);
@@ -375,13 +376,14 @@ namespace DAM2_Project_Desktop
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 14F);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(35, 79);
+            button2.Location = new Point(31, 79);
             button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
             button2.Size = new Size(175, 45);
             button2.TabIndex = 1;
             button2.Text = "Cuadricula";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -389,7 +391,7 @@ namespace DAM2_Project_Desktop
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 14F);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(35, 18);
+            button1.Location = new Point(31, 18);
             button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new Size(175, 45);

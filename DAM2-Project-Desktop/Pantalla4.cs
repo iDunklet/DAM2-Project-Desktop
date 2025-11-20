@@ -13,7 +13,7 @@ using LiveCharts.Wpf; // Algunas clases vienen de aquí, necesario para Series y
 
 namespace DAM2_Project_Desktop
 {
-    
+
     public partial class Pantalla4 : Form
     {
         private ComboBox comboUsuariosDAM2;
@@ -25,7 +25,7 @@ namespace DAM2_Project_Desktop
             proyectoActual = project;
             CargarInfoProyecto();
             CargarUsuariosProyecto();
-            
+
         }
 
         private void Pantalla4_Load(object sender, EventArgs e)
@@ -127,71 +127,137 @@ namespace DAM2_Project_Desktop
 
         private void CrearGraficoEnSplitPanel()
         {
-            var chart = new LiveCharts.WinForms.CartesianChart
+            // 1️⃣ Crear un panel contenedor
+            Panel contenedor = new Panel
             {
-                Dock = DockStyle.Fill,
-                BackColor = Color.White
+                Dock = DockStyle.Fill,              // Ocupa todo el Panel2 del SplitContainer
+                Padding = new Padding(50, 30, 50, 100), // Márgenes: izquierda 20, arriba 0, derecha 20, abajo 20
+                BackColor = Color.FromArgb(247, 250, 252) // Fondo opcional del contenedor
             };
 
-            // Valores como en la imagen (puedes ajustarlos)
-            var valores = new LiveCharts.ChartValues<double>
-    {
-        2.7, // Lunes
-        3.5, // Martes
-        1.6, // Miércoles
-        2.8, // Jueves
-        2.2, // Viernes
-        0.8, // Sábado
-        3.0  // Domingo
-    };
+            // 2️⃣ Crear el gráfico
+            var chart = new LiveCharts.WinForms.CartesianChart
+            {
+                Dock = DockStyle.Fill,              // Ocupa todo el espacio del panel contenedor
+                BackColor = Color.FromArgb(247, 250, 252) // Color de fondo del gráfico
+            };
 
+            // 3️⃣ Configurar los valores de ejemplo
+            var valores = new LiveCharts.ChartValues<double> { 2.7, 3.5, 1.6, 2.8, 2.2, 0.8, 3.0 };
+
+            // 4️⃣ Configurar la serie de columnas
             chart.Series = new LiveCharts.SeriesCollection
-    {
-        new LiveCharts.Wpf.ColumnSeries
-        {
-            Values = valores,
-            Fill = new System.Windows.Media.SolidColorBrush(
-                System.Windows.Media.Color.FromRgb(210, 210, 210) // gris claro
-            ),
-            StrokeThickness = 0,
-            MaxColumnWidth = 45
-        }
-    };
+            {
+                new LiveCharts.Wpf.ColumnSeries
+                {
+                    Values = valores,
+                    Fill = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(79, 209, 197)),
+                    StrokeThickness = 0,
+                    MaxColumnWidth = 45
+            }
+            };
 
-            // EJE X — Días de la semana
+            // 5️⃣ Configurar eje X
             chart.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Labels = new[]
-                {
-            "LUNES", "MARTES", "MIÉRCOLES", "JUEVES",
-            "VIERNES", "SÁBADO", "DOMINGO"
-        },
-                Separator = new LiveCharts.Wpf.Separator
-                {
-                    Step = 1,
-                    IsEnabled = false
-                }
+                Labels = new[] { "TAREA 1", "TAREA 2", "TAREA 3", "TAREA 4", "TAREA 5", "TAREA 6", "TAREA 7" },
+                Separator = new LiveCharts.Wpf.Separator { Step = 1, IsEnabled = false }
             });
 
-            // EJE Y — Horas (1H–5H)
+            // 6️⃣ Configurar eje Y
             chart.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 MinValue = 0,
-                MaxValue = 5,
+                MaxValue = 4.9,
+                Labels = new[] { "1 H", "2 H", "3 H", "4 H", "5 H" },
                 Separator = new LiveCharts.Wpf.Separator
                 {
-                    Stroke = new System.Windows.Media.SolidColorBrush(
-                        System.Windows.Media.Color.FromRgb(0, 0, 0)
-                    ),
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0)),
                     StrokeThickness = 1
-                },
-                Labels = new[] { "1 H", "2 H", "3 H", "4 H", "5 H" }
+                }
             });
 
-            // Agregar al SplitContainer
+            // 7️⃣ Agregar el gráfico al panel contenedor
+            contenedor.Controls.Add(chart);
+
+            // 8️⃣ Limpiar el Panel2 del SplitContainer y agregar el contenedor
             splitContainer6.Panel2.Controls.Clear();
-            splitContainer6.Panel2.Controls.Add(chart);
+            splitContainer6.Panel2.Controls.Add(contenedor);
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            // Si ya existe un combo, lo eliminamos
+            if (comboUsuariosDAM2 != null)
+            {
+                splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
+                comboUsuariosDAM2.Dispose();
+                comboUsuariosDAM2 = null;
+            }
+
+            comboUsuariosDAM2 = new ComboBox();
+            comboUsuariosDAM2.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            // Tomar solo los usuarios del proyecto actual
+            var usuariosProyecto = proyectoActual.miembrosProyecto;
+
+            comboUsuariosDAM2.DataSource = usuariosProyecto;
+            comboUsuariosDAM2.DisplayMember = "nombre";
+
+            // Añadir el combo al panel correspondiente
+            splitContainer4.Panel2.Controls.Add(comboUsuariosDAM2);
+
+            // Colocarlo al lado del pictureBox4
+            comboUsuariosDAM2.Location = new Point(
+                splitContainer4.Panel2.Left,
+                pictureBox4.Top - 12
+            );
+
+            comboUsuariosDAM2.Width = 160;
+            comboUsuariosDAM2.BringToFront();
+
+            // Cuando se selecciona un usuario
+            comboUsuariosDAM2.SelectedIndexChanged += (s, ev) =>
+            {
+                var usuarioSeleccionado = (Usuarios)comboUsuariosDAM2.SelectedItem;
+
+                // Comprobar si ya existe en el FlowLayoutPanel
+                bool existe = false;
+                foreach (Panel panel in flowPanelMiembros.Controls)
+                {
+                    foreach (Control control in panel.Controls)
+                    {
+                        if (control is Label lbl && lbl.Text == usuarioSeleccionado.nombre)
+                        {
+                            existe = true;
+                            break;
+                        }
+                    }
+                    if (existe) break;
+                }
+
+                if (existe)
+                {
+                    MessageBox.Show("El usuario ya se encuentra en el panel.", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    AgregarUsuarioAlPanel(usuarioSeleccionado);
+                }
+
+                // Limpiar el ComboBox
+                splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
+                comboUsuariosDAM2.Dispose();
+                comboUsuariosDAM2 = null;
+            };
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Pantalla3 pantalla3 = new Pantalla3(proyectoActual);
+            pantalla3.Show();
+            this.Close();
+        }
     }
 }

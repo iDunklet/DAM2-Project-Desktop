@@ -205,17 +205,16 @@ namespace DAM2_Project_Desktop
             comboUsuariosDAM2 = new ComboBox();
             comboUsuariosDAM2.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            var usuariosDAM2 = ListadoDatosClasses.ListadoUsuarios
-                .Where(u => u.classe == "DAM2")
-                .ToList();
+            // Tomar solo los usuarios del proyecto actual
+            var usuariosProyecto = proyectoActual.miembrosProyecto;
 
-            comboUsuariosDAM2.DataSource = usuariosDAM2;
+            comboUsuariosDAM2.DataSource = usuariosProyecto;
             comboUsuariosDAM2.DisplayMember = "nombre";
 
-            // 💥 Importante: añadir el combo en el mismo contenedor que el PictureBox
+            // Añadir el combo al panel correspondiente
             splitContainer4.Panel2.Controls.Add(comboUsuariosDAM2);
 
-            // 🟩 Colocarlo al lado del pictureBox4, en coordenadas del mismo Panel
+            // Colocarlo al lado del pictureBox4
             comboUsuariosDAM2.Location = new Point(
                 splitContainer4.Panel2.Left,
                 pictureBox4.Top - 12
@@ -224,11 +223,37 @@ namespace DAM2_Project_Desktop
             comboUsuariosDAM2.Width = 160;
             comboUsuariosDAM2.BringToFront();
 
+            // Cuando se selecciona un usuario
             comboUsuariosDAM2.SelectedIndexChanged += (s, ev) =>
             {
-                var u = (Usuarios)comboUsuariosDAM2.SelectedItem;
-                AgregarUsuarioAlPanel(u);
+                var usuarioSeleccionado = (Usuarios)comboUsuariosDAM2.SelectedItem;
 
+                // Comprobar si ya existe en el FlowLayoutPanel
+                bool existe = false;
+                foreach (Panel panel in flowPanelMiembros.Controls)
+                {
+                    foreach (Control control in panel.Controls)
+                    {
+                        if (control is Label lbl && lbl.Text == usuarioSeleccionado.nombre)
+                        {
+                            existe = true;
+                            break;
+                        }
+                    }
+                    if (existe) break;
+                }
+
+                if (existe)
+                {
+                    MessageBox.Show("El usuario ya se encuentra en el panel.", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    AgregarUsuarioAlPanel(usuarioSeleccionado);
+                }
+
+                // Limpiar el ComboBox
                 splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
                 comboUsuariosDAM2.Dispose();
                 comboUsuariosDAM2 = null;
@@ -400,6 +425,15 @@ namespace DAM2_Project_Desktop
         private void buttonCrearNuevoUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pantalla4 pantalla4 = new Pantalla4(proyectoActual);
+
+            pantalla4.Show();
+
+            this.Close();
         }
     }
 }
