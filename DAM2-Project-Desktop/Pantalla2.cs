@@ -131,26 +131,11 @@ namespace DAM2_Project_Desktop
         {
    
             ListadoDatosClasses.exportProjects();
-
-            ListadoDatosClasses.GenerarListaUsuarios();
             ListadoDatosClasses.exportUsers();
         }
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {
-            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_Import.json");
-
-            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
-            var importData = proyectosImport.ToObject<List<Proyecto>>();
-
-            foreach (var proyecto in importData)
-            {
-                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
-            }
-
-            Console.WriteLine("Importacion de JSON completada con éxito.");
-            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
+            ListadoDatosClasses.importJSONFromNewDirectory();
         }
 
         private void buttonUsuarios_Click(object sender, EventArgs e)

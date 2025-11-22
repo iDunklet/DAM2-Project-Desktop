@@ -14,7 +14,7 @@ namespace DAM2_Project_Desktop
     public class Proyecto
     {
         //atributos
-        private static int _nextID = 1;
+        public static int _nextID = 1;
         public int ID { get; private set; }
         public string titulo { get; set; }
         public DateTime fechaEntrega { get; set; }
@@ -122,21 +122,6 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = usuarios;
             this.tareasProyecto = tareas;
             this.ImgProyecto = imgProyecto;
-        }
-
-
-        public void exportarTodosLosProyectos()
-        {
-            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
-
-            var proyectosList = ListadoDatosClasses.ListadoProyectos;
-            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
-
-            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
         }
 
     }

@@ -187,11 +187,9 @@ namespace DAM2_Project_Desktop
         }
         public void InitializeComputedFields(int miniSize = 25, int fullSize = 200)
         {
-            // userName (solo si viene vacío)
             if (string.IsNullOrWhiteSpace(this.userName))
                 this.userName = UserNameGenerator();
 
-            // imágenes ignoradas en JSON
             if (this.imgPerfil == null)
                 this.imgPerfil = GenerarImagenIniciales(fullSize);
 
