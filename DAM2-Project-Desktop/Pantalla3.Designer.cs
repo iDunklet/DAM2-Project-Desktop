@@ -109,7 +109,6 @@ namespace DAM2_Project_Desktop
             splitContainer1.Size = new Size(1424, 985);
             splitContainer1.SplitterDistance = 243;
             splitContainer1.TabIndex = 0;
-            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // splitContainer2
             // 
@@ -125,7 +124,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer2.Panel1.ForeColor = SystemColors.MenuText;
-            splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
@@ -182,7 +180,6 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer7.Panel1.Controls.Add(labelId);
             splitContainer7.Panel1.Controls.Add(label1);
-            splitContainer7.Panel1.Paint += splitContainer7_Panel1_Paint;
             // 
             // splitContainer7.Panel2
             // 
@@ -192,7 +189,6 @@ namespace DAM2_Project_Desktop
             splitContainer7.SplitterDistance = 51;
             splitContainer7.SplitterWidth = 1;
             splitContainer7.TabIndex = 0;
-            splitContainer7.SplitterMoved += splitContainer7_SplitterMoved;
             // 
             // labelId
             // 
@@ -250,12 +246,10 @@ namespace DAM2_Project_Desktop
             splitContainer4.Panel2.Controls.Add(flowPanelMiembros);
             splitContainer4.Panel2.Controls.Add(label6);
             splitContainer4.Panel2.Controls.Add(pictureBox4);
-            splitContainer4.Panel2.Paint += splitContainer4_Panel2_Paint;
             splitContainer4.Size = new Size(1180, 148);
             splitContainer4.SplitterDistance = 51;
             splitContainer4.SplitterWidth = 2;
             splitContainer4.TabIndex = 0;
-            splitContainer4.SplitterMoved += splitContainer4_SplitterMoved;
             // 
             // splitContainer5
             // 
@@ -269,13 +263,12 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer5.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer5.Panel1.Controls.Add(labelNombreProyecto);
-            splitContainer5.Panel1.Paint += splitContainer5_Panel1_Paint;
+
             // 
             // splitContainer5.Panel2
             // 
             splitContainer5.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer5.Panel2.Controls.Add(labelFechaProyecto);
-            splitContainer5.Panel2.Paint += splitContainer5_Panel2_Paint;
             splitContainer5.Size = new Size(1180, 51);
             splitContainer5.SplitterDistance = 868;
             splitContainer5.SplitterWidth = 2;
@@ -290,7 +283,6 @@ namespace DAM2_Project_Desktop
             labelNombreProyecto.Size = new Size(226, 37);
             labelNombreProyecto.TabIndex = 0;
             labelNombreProyecto.Text = "Nombre Proyecto";
-            labelNombreProyecto.Click += labelNombreProyecto_Click_1;
             // 
             // labelFechaProyecto
             // 
@@ -301,7 +293,6 @@ namespace DAM2_Project_Desktop
             labelFechaProyecto.Size = new Size(85, 37);
             labelFechaProyecto.TabIndex = 0;
             labelFechaProyecto.Text = "Fecha";
-            labelFechaProyecto.Click += labelFechaProyecto_Click;
             // 
             // flowPanelMiembros
             // 
@@ -311,7 +302,6 @@ namespace DAM2_Project_Desktop
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
             flowPanelMiembros.Size = new Size(1033, 80);
             flowPanelMiembros.TabIndex = 8;
-            flowPanelMiembros.Paint += flowPanelMiembros_Paint;
             // 
             // label6
             // 
@@ -323,7 +313,6 @@ namespace DAM2_Project_Desktop
             label6.Size = new Size(59, 17);
             label6.TabIndex = 7;
             label6.Text = "Agregar";
-            label6.Click += label6_Click;
             // 
             // pictureBox4
             // 
@@ -357,7 +346,6 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer6.Panel2.Controls.Add(dataGridView1);
             splitContainer6.Panel2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            splitContainer6.Panel2.Paint += splitContainer6_Panel2_Paint;
             splitContainer6.Size = new Size(1424, 738);
             splitContainer6.SplitterDistance = 242;
             splitContainer6.SplitterWidth = 2;
@@ -418,7 +406,6 @@ namespace DAM2_Project_Desktop
             button1.TabIndex = 0;
             button1.Text = "Crear nueva tarea";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 

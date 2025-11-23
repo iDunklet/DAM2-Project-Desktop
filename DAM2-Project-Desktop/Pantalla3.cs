@@ -84,11 +84,7 @@ namespace DAM2_Project_Desktop
             };
         }
 
-        private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+  
         private void Pantalla3_Load(object sender, EventArgs e)
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
@@ -105,51 +101,6 @@ namespace DAM2_Project_Desktop
             }
         }
 
-        private void splitContainer6_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer7_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewComboBoxColumn colOpciones = new DataGridViewComboBoxColumn();
@@ -162,79 +113,24 @@ namespace DAM2_Project_Desktop
             dataGridView1.Columns.Add(colCheck);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void splitContainer4_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void splitContainer7_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            // Si ya existe un combo, lo eliminamos
-            if (comboUsuariosDAM2 != null)
-            {
-                splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
-                comboUsuariosDAM2.Dispose();
-                comboUsuariosDAM2 = null;
-            }
-
-            comboUsuariosDAM2 = new ComboBox();
-            comboUsuariosDAM2.DropDownStyle = ComboBoxStyle.DropDownList;
-
             var usuariosDAM2 = ListadoDatosClasses.ListadoUsuarios
-                .Where(u => u.classe == "DAM2")
-                .ToList();
+                                .Where(u => u.classe == "DAM2")
+                                .ToList();
 
-            comboUsuariosDAM2.DataSource = usuariosDAM2;
-            comboUsuariosDAM2.DisplayMember = "nombre";
+            var selector = new SelectorUsuariosForm(usuariosDAM2);
 
-            // 💥 Importante: añadir el combo en el mismo contenedor que el PictureBox
-            splitContainer4.Panel2.Controls.Add(comboUsuariosDAM2);
+            // Posición al lado del PictureBox
+            var location = pictureBox4.PointToScreen(new Point(pictureBox4.Width, 0));
+            selector.Location = location;
 
-            // 🟩 Colocarlo al lado del pictureBox4, en coordenadas del mismo Panel
-            comboUsuariosDAM2.Location = new Point(
-                splitContainer4.Panel2.Left,
-                pictureBox4.Top - 12
-            );
-
-            comboUsuariosDAM2.Width = 160;
-            comboUsuariosDAM2.BringToFront();
-
-            comboUsuariosDAM2.SelectedIndexChanged += (s, ev) =>
+            if (selector.ShowDialog() == DialogResult.OK)
             {
-                var u = (Usuario)comboUsuariosDAM2.SelectedItem;
-                AgregarUsuarioAlPanel(u);
-
-                splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
-                comboUsuariosDAM2.Dispose();
-                comboUsuariosDAM2 = null;
-            };
+                var usuarioSeleccionado = selector.UsuarioSeleccionado;
+                AgregarUsuarioAlPanel(usuarioSeleccionado);
+            }
         }
-
         private void AgregarUsuarioAlPanel(Usuario usuario)
         {
             // Crear contenedor visual para cada usuario
@@ -267,21 +163,6 @@ namespace DAM2_Project_Desktop
 
             // Agregar al FlowLayoutPanel del formulario
             flowPanelMiembros.Controls.Add(panelUsuario);
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer4_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer5_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void CargarInfoProyecto()
@@ -379,31 +260,6 @@ namespace DAM2_Project_Desktop
 
             // Capturar errores de ComboBox
             dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
-        }
-
-        private void labelNombreProyecto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFechaProyecto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNombreProyecto_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowPanelMiembros_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void buttonCrearNuevoUsuario_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
