@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
 namespace DAM2_Project_Desktop
 {
-    public class Usuarios
+    public class Usuario
     {
         //atributos
         public string nombre {  get; set; }
@@ -38,8 +38,8 @@ namespace DAM2_Project_Desktop
 
 
         //constructores
-        public Usuarios() { }
-        public Usuarios(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
+        public Usuario() { }
+        public Usuario(string nombre, string apellido1, string apellido2, DateTime fechaNacimiento,
             string classe, string email, string password, string userName)
         {
             this.nombre = nombre;
@@ -59,7 +59,7 @@ namespace DAM2_Project_Desktop
             //this.apellidoCompleto = setApellidoCompleto();
         }
 
-        public Usuarios(string nombre, string apellido1, DateTime fechaNacimiento,
+        public Usuario(string nombre, string apellido1, DateTime fechaNacimiento,
     string classe, string email, string password, string userName)
         {
             this.nombre = nombre;
@@ -80,7 +80,7 @@ namespace DAM2_Project_Desktop
         }
 
         //constructor de test para proyecto Hugo
-        public Usuarios(string nombre)
+        public Usuario(string nombre)
         {
             this.nombre = nombre;
         }

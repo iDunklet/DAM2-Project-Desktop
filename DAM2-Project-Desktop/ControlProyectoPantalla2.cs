@@ -88,7 +88,23 @@ namespace DAM2_Project_Desktop
         {
             RedondearEsquinas(15);
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
 
+            int grosor = 3; 
+            Color colorBorde = Color.DarkOliveGreen; 
+
+            using (Pen pen = new Pen(colorBorde, grosor))
+            {
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+
+                e.Graphics.DrawRectangle(
+                    pen,
+                    new Rectangle(0, 0, this.Width - 1, this.Height - 1)
+                );
+            }
+        }
         private void RedondearEsquinas(int borderRadius)
         {
             this.Region = Region.FromHrgn(CreateRoundRectRgn(-1, -1, this.Width, this.Height, borderRadius, borderRadius));
@@ -110,6 +126,11 @@ namespace DAM2_Project_Desktop
         }
 
         private void labelTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxImagen_Click(object sender, EventArgs e)
         {
 
         }

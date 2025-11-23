@@ -179,7 +179,7 @@ namespace DAM2_Project_Desktop
 
             if (columnName == "IconoDelete")
             {
-                Usuarios usuarioAEliminar = clickedRow.DataBoundItem as Usuarios;
+                Usuario usuarioAEliminar = clickedRow.DataBoundItem as Usuario;
 
                 if (usuarioAEliminar != null)
                 {
@@ -200,7 +200,7 @@ namespace DAM2_Project_Desktop
             }
             if (columnName == "iconoEdit")
             {
-                Pantalla7 p = new Pantalla7(clickedRow.DataBoundItem as Usuarios);
+                Pantalla7 p = new Pantalla7(clickedRow.DataBoundItem as Usuario);
                 p.FormClosed += (s, args) => RefrescarListado();
                 p.Show();
             }

@@ -24,7 +24,7 @@ namespace DAM2_Project_Desktop
 
             // Usamos List<T> para la deserialización desde JSON
             public List<Proyecto> Proyectos { get; set; }
-            public List<Usuarios> Usuarios { get; set; }
+            public List<Usuario> Usuarios { get; set; }
             public List<Tarea> Tareas { get; set; }
         }
 

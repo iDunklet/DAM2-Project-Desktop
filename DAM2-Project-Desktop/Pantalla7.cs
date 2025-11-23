@@ -18,7 +18,7 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla7 : Form
     {
-        private Usuarios usuarioEncontrado;
+        private Usuario usuarioEncontrado;
         private Size originalSize;
 
         // Rectángulos de la Barra Lateral (Botones)
@@ -52,7 +52,7 @@ namespace DAM2_Project_Desktop
         private Rectangle RectanglebuttonConfigurarUsuarioGuardar;
         private Rectangle RectanglepictureBoxTasky;
 
-        public Pantalla7(Usuarios usuarioEncontrado)
+        public Pantalla7(Usuario usuarioEncontrado)
         {
             InitializeComponent();
             this.usuarioEncontrado = usuarioEncontrado;
@@ -203,28 +203,6 @@ namespace DAM2_Project_Desktop
                 textBox.BorderStyle = BorderStyle.FixedSingle;
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void textBoxConfigurarUsuarioName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonConfigurarUsuarioGuardar_Click(object sender, EventArgs e)
         {
             // Validar contraseñas
@@ -263,21 +241,6 @@ namespace DAM2_Project_Desktop
 
             // Cerrar la pantalla de edición
             this.Close();
-        }
-
-        private void buttonConfigurarUsuarioNuevaIMG_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonInicio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAceptar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

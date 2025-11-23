@@ -226,7 +226,7 @@ namespace DAM2_Project_Desktop
 
             comboUsuariosDAM2.SelectedIndexChanged += (s, ev) =>
             {
-                var u = (Usuarios)comboUsuariosDAM2.SelectedItem;
+                var u = (Usuario)comboUsuariosDAM2.SelectedItem;
                 AgregarUsuarioAlPanel(u);
 
                 splitContainer4.Panel2.Controls.Remove(comboUsuariosDAM2);
@@ -235,7 +235,7 @@ namespace DAM2_Project_Desktop
             };
         }
 
-        private void AgregarUsuarioAlPanel(Usuarios usuario)
+        private void AgregarUsuarioAlPanel(Usuario usuario)
         {
             // Crear contenedor visual para cada usuario
             Panel panelUsuario = new Panel();
@@ -366,8 +366,12 @@ namespace DAM2_Project_Desktop
                 comboCell.Value = tarea.responsableAsignado?.nombre;
 
                 // Fechas (solo mostrar)
-                fila.Cells[3].Value = tarea.fechaInicioTarea.ToShortDateString();
-                fila.Cells[4].Value = tarea.fechaFinTarea?.ToShortDateString() ?? "";
+                fila.Cells[3].Value = tarea.fechaInicioTarea.HasValue
+    ? tarea.fechaInicioTarea.Value.ToShortDateString()
+    : "";
+                fila.Cells[4].Value = tarea.fechaFinTarea.HasValue
+                    ? tarea.fechaFinTarea.Value.ToShortDateString()
+                    : "";
 
                 // Estado
                 fila.Cells[5].Value = tarea.statusTarea;

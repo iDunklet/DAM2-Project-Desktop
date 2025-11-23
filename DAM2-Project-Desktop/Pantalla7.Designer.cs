@@ -221,7 +221,6 @@ namespace DAM2_Project_Desktop
             buttonInicio.TabIndex = 3;
             buttonInicio.Text = "Inicio";
             buttonInicio.UseVisualStyleBackColor = false;
-            buttonInicio.Click += buttonInicio_Click;
             // 
             // pictureBoxImgPerfil
             // 
@@ -254,7 +253,6 @@ namespace DAM2_Project_Desktop
             label10.Size = new Size(229, 46);
             label10.TabIndex = 22;
             label10.Text = "Datos Usuario";
-            label10.Click += label10_Click;
             // 
             // label8
             // 
@@ -394,7 +392,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido2.ReadOnly = true;
             textBoxConfigurarUsuarioApellido2.Size = new Size(343, 41);
             textBoxConfigurarUsuarioApellido2.TabIndex = 8;
-            textBoxConfigurarUsuarioApellido2.TextChanged += textBox1_TextChanged;
             textBoxConfigurarUsuarioApellido2.DoubleClick += TextBox_DoubleClick;
             // 
             // label2
@@ -406,7 +403,6 @@ namespace DAM2_Project_Desktop
             label2.Size = new Size(171, 46);
             label2.TabIndex = 7;
             label2.Text = "Apellido 1";
-            label2.Click += label2_Click;
             // 
             // textBoxConfigurarUsuarioApellido1
             // 
@@ -442,7 +438,6 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioName.ReadOnly = true;
             textBoxConfigurarUsuarioName.Size = new Size(343, 41);
             textBoxConfigurarUsuarioName.TabIndex = 0;
-            textBoxConfigurarUsuarioName.TextChanged += textBoxConfigurarUsuarioName_TextChanged;
             textBoxConfigurarUsuarioName.DoubleClick += TextBox_DoubleClick;
             // 
             // Pantalla7

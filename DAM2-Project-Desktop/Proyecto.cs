@@ -18,7 +18,7 @@ namespace DAM2_Project_Desktop
         public int ID { get; private set; }
         public string titulo { get; set; }
         public DateTime fechaEntrega { get; set; }
-        public List<Usuarios> miembrosProyecto { get; set; }
+        public List<Usuario> miembrosProyecto { get; set; }
         public List<Tarea> tareasProyecto { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]
@@ -105,7 +105,7 @@ namespace DAM2_Project_Desktop
             this.fechaEntrega = fechaEntrega;
 
         }
-        public Proyecto(string titulo, DateTime fechaEntrega, List<Usuarios> miembros)
+        public Proyecto(string titulo, DateTime fechaEntrega, List<Usuario> miembros)
         {
             this.ID = _nextID;
             _nextID++;
@@ -114,7 +114,7 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = miembros;
 
         }
-        public Proyecto(string titulo, List<Usuarios> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
+        public Proyecto(string titulo, List<Usuario> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
         {
             this.ID = _nextID;
             _nextID++;
