@@ -1,99 +1,128 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DAM2_Project_Desktop
 {
     public partial class Pantalla6 : Form
     {
+        // Lista interna para los usuarios del proyecto
+        private BindingList<Usuarios> usuariosProyecto = new BindingList<Usuarios>();
+
         public Pantalla6()
         {
             InitializeComponent();
 
-            // Eliminar métodos que lanzan excepción por defecto
-            splitContainer2.Panel2.Paint -= splitContainer2_Panel2_Paint;
-            labelFechaNacimiento.Click -= label4_Click;
+            // Cargar usuarios al iniciar
+            CargarUsuariosDisponibles();
 
-            // Asociamos el evento del botón Guardar
-            buttonGuardar.Click += ButtonGuardar_Click;
+            // Conectar eventos
+            textBoxNombreUsuario.TextChanged += TextBoxNombreUsuario_TextChanged;
+            buttonAgregar.Click += buttonAgregar_Click;
+            buttonBorrar.Click += buttonBorrar_Click;
+            buttonCrear.Click += buttonCrear_Click;
+
+            // Cargar la lista de usuarios del proyecto
+            listBoxUsuariosProyecto.DataSource = usuariosProyecto;
+            listBoxUsuariosProyecto.DisplayMember = "NombreCompleto";
         }
 
-        private void ButtonGuardar_Click(object sender, EventArgs e)
+        // Cargar todos los usuarios disponibles
+        private void CargarUsuariosDisponibles()
         {
-            // 1️⃣ Leer los datos de los campos
-            string nombre = textBoxNombre.Text.Trim();
-            string apellido = textBoxApellido.Text.Trim();
-            string correo = textBoxCorreo.Text.Trim();
-            string contrasenyaActual = textBoxContrasenya.Text.Trim();
-            string nuevaContrasenya = textBoxNuevaContrasenya.Text.Trim();
-            string confirmarContrasenya = textBoxConfirmarContrasenya.Text.Trim();
-
-            //21️⃣ Validar los datos de los campos
-
-            var campos = new[] { nombre, apellido, correo, contrasenyaActual, nuevaContrasenya, confirmarContrasenya };
-
-            if (campos.Any(string.IsNullOrWhiteSpace))
-            {
-                MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!nuevaContrasenya.Equals(confirmarContrasenya))
-            {
-                MessageBox.Show("Las contraseñas nuevas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // 3️⃣ Buscar usuario
-            var usuario = ListadoDatosClasses.ListadoUsuarios
-                .FirstOrDefault(u =>
-                    u.nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
-                    u.apellido1.Equals(apellido, StringComparison.OrdinalIgnoreCase) &&
-                    u.email.Equals(correo, StringComparison.OrdinalIgnoreCase));
-
-            if (usuario == null)
-            {
-                MessageBox.Show("No se encontró ningún usuario con esos datos.", "Usuario no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // 4️⃣ Verificar contraseña actual
-            if (usuario.password != contrasenyaActual)
-            {
-                MessageBox.Show("La contraseña actual es incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // 5️⃣ Actualizar contraseña
-            usuario.password = nuevaContrasenya;
-
-            MessageBox.Show("Contraseña actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // 6️⃣ Limpiar los campos
-            LimpiarCampos();
+            listBoxUsuarios.DataSource = null;
+            listBoxUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
+            listBoxUsuarios.DisplayMember = "NombreCompleto";
         }
 
-        private void LimpiarCampos()
+        // Filtrar según texto escrito
+        private void TextBoxNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            textBoxNombre.Clear();
-            textBoxApellido.Clear();
-            textBoxCorreo.Clear();
-            textBoxContrasenya.Clear();
-            textBoxNuevaContrasenya.Clear();
-            textBoxConfirmarContrasenya.Clear();
-            textBoxClase.Clear();
+            string filtro = textBoxNombreUsuario.Text.ToLower();
+
+            var usuariosFiltrados = ListadoDatosClasses.ListadoUsuarios
+                .Where(u => u.nombre.ToLower().Contains(filtro))
+                .ToList();
+
+            listBoxUsuarios.DataSource = null;
+            listBoxUsuarios.DataSource = usuariosFiltrados;
+            listBoxUsuarios.DisplayMember = "NombreCompleto";
         }
 
-        private void buttonGuardar_Click_1(object sender, EventArgs e)
+        // BOTÓN AGREGAR
+        private void buttonAgregar_Click(object sender, EventArgs e)
         {
+            if (listBoxUsuarios.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un usuario para agregar.");
+                return;
+            }
+
+            Usuarios seleccionado = (Usuarios)listBoxUsuarios.SelectedItem;
+
+            // Evitar duplicados
+            if (usuariosProyecto.Contains(seleccionado))
+            {
+                MessageBox.Show("Ese usuario ya está agregado.");
+                return;
+            }
+
+            usuariosProyecto.Add(seleccionado);
+        }
+
+        // BOTÓN BORRAR
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsuariosProyecto.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un usuario para borrar.");
+                return;
+            }
+
+            usuariosProyecto.Remove((Usuarios)listBoxUsuariosProyecto.SelectedItem);
+        }
+
+        // BOTÓN CREAR PROYECTO (GUARDAR)
+        private void buttonCrear_Click(object sender, EventArgs e)
+        {
+            string nombreProyecto = textBoxNombreProyecto.Text.Trim();
+            DateTime fechaEntrega = dateTimePickerFechaNacimiento.Value;
+
+            // Validaciones básicas
+            if (string.IsNullOrWhiteSpace(nombreProyecto))
+            {
+                MessageBox.Show("Debe introducir un nombre de proyecto.");
+                return;
+            }
+
+            if (usuariosProyecto.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un usuario.");
+                return;
+            }
+
+            List<Usuarios> miembros = usuariosProyecto.ToList();
+            Proyecto nuevoProyecto = new Proyecto(nombreProyecto, fechaEntrega, miembros);
+
+            ListadoDatosClasses.ListadoProyectos.Add(nuevoProyecto);
+
+            // Limpiar campos para crear un nuevo proyecto
+            textBoxNombreProyecto.Clear();
+            dateTimePickerFechaNacimiento.Value = DateTime.Now;
+            usuariosProyecto.Clear();
+
+            MessageBox.Show($"Proyecto '{nombreProyecto}' creado correctamente.");
+
+            string proyectos = string.Join("\n", ListadoDatosClasses.ListadoProyectos
+                                        .Select(p => $"[{p.ID}] {p.titulo}"));
+
+            MessageBox.Show("Proyectos actuales:\n" + proyectos);
+
+
 
         }
+
+
     }
 }
-
