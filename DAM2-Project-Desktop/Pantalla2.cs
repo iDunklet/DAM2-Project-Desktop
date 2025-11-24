@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -20,6 +20,7 @@ namespace DAM2_Project_Desktop
         private Rectangle RectanglebuttonImportarJSON;
         private Rectangle RectanglebuttonExportarJSON;
         private Rectangle Rectanglebutton7;
+        private Rectangle RectanglebuttonCrearProyecto;
 
         private Rectangle Rectanglelabel1;
         private Rectangle Rectanglelabel2;
@@ -28,7 +29,7 @@ namespace DAM2_Project_Desktop
         private Rectangle RectanglepictureBoxTasky;
 
 
-        List<Usuarios> listaUsuarios;
+        List<Usuario> listaUsuarios;
         List<Tarea> listaTareas;
         Proyecto proyectoDemo;
 
@@ -55,7 +56,7 @@ namespace DAM2_Project_Desktop
             {
                 ControlProyectoPantalla2 controlProyecto = new ControlProyectoPantalla2();
                 controlProyecto.Proyecto = proyecto;
-                controlProyecto.Margin = new Padding(10);
+                controlProyecto.Margin = new Padding(5);
                 controlProyecto.ProyectoClicado += ControlProyecto_ProyectoClicado;
                 flowLayoutPanel1.Controls.Add(controlProyecto);
             }
@@ -73,6 +74,8 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla2_Resize(object sender, EventArgs e)
         {
+            RectanglepictureBoxTasky = new Rectangle(pictureBoxTasky.Location, pictureBoxTasky.Size);
+
             Size formOriginalSize = this.originalSize;
 
             const int ORIGINAL_SPLITTER_DISTANCE = 93;
@@ -96,8 +99,8 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
-            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
+            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 ,buttonCrearProyecto };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7, RectanglebuttonCrearProyecto };
 
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
 
@@ -116,6 +119,7 @@ namespace DAM2_Project_Desktop
             RectanglebuttonUsuarios = new Rectangle(new Point(21, 144), baseSize);
             RectanglebuttonImportarJSON = new Rectangle(new Point(21, 210), baseSize);
             RectanglebuttonExportarJSON = new Rectangle(new Point(21, 276), baseSize);
+            RectanglebuttonCrearProyecto = new Rectangle(new Point(21, 796), baseSize);
             // button7 está en una posición Y alta.
             Rectanglebutton7 = new Rectangle(new Point(24, 1072), baseSize);
 
@@ -131,26 +135,11 @@ namespace DAM2_Project_Desktop
         {
    
             ListadoDatosClasses.exportProjects();
-
-            ListadoDatosClasses.GenerarListaUsuarios();
             ListadoDatosClasses.exportUsers();
         }
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {
-            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_Import.json");
-
-            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
-            var importData = proyectosImport.ToObject<List<Proyecto>>();
-
-            foreach (var proyecto in importData)
-            {
-                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
-            }
-
-            Console.WriteLine("Importacion de JSON completada con éxito.");
-            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
+            ListadoDatosClasses.importJSONFromNewDirectory();
         }
 
         private void buttonUsuarios_Click(object sender, EventArgs e)

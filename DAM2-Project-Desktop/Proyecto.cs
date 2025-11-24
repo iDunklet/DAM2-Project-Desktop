@@ -14,11 +14,11 @@ namespace DAM2_Project_Desktop
     public class Proyecto
     {
         //atributos
-        private static int _nextID = 1;
+        public static int _nextID = 1;
         public int ID { get; private set; }
         public string titulo { get; set; }
         public DateTime fechaEntrega { get; set; }
-        public List<Usuarios> miembrosProyecto { get; set; }
+        public List<Usuario> miembrosProyecto { get; set; }
         public List<Tarea> tareasProyecto { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]
@@ -105,7 +105,7 @@ namespace DAM2_Project_Desktop
             this.fechaEntrega = fechaEntrega;
 
         }
-        public Proyecto(string titulo, DateTime fechaEntrega, List<Usuarios> miembros)
+        public Proyecto(string titulo, DateTime fechaEntrega, List<Usuario> miembros)
         {
             this.ID = _nextID;
             _nextID++;
@@ -114,7 +114,7 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = miembros;
 
         }
-        public Proyecto(string titulo, List<Usuarios> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
+        public Proyecto(string titulo, List<Usuario> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
         {
             this.ID = _nextID;
             _nextID++;
@@ -122,21 +122,6 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = usuarios;
             this.tareasProyecto = tareas;
             this.ImgProyecto = imgProyecto;
-        }
-
-
-        public void exportarTodosLosProyectos()
-        {
-            string rutaArchivo = @"D:\Tasky_Desktop\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Exports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
-
-            var proyectosList = ListadoDatosClasses.ListadoProyectos;
-            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
-
-            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
         }
 
     }

@@ -80,7 +80,7 @@ namespace DAM2_Project_Desktop
             }
 
             // 4️⃣ Crear el usuario
-            Usuarios nuevoUsuario = new Usuarios(
+            Usuario nuevoUsuario = new Usuario(
                 nombre, apellido1, fechaNacimiento,
                 clase, email, password, userName
             );

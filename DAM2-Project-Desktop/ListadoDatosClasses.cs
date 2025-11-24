@@ -1,10 +1,11 @@
-﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 
 namespace DAM2_Project_Desktop
 {
@@ -12,116 +13,163 @@ namespace DAM2_Project_Desktop
     {
         //Listas de datos
         public static BindingList<Proyecto> ListadoProyectos = new BindingList<Proyecto>();
-        public static BindingList<Usuarios> ListadoUsuarios = new BindingList<Usuarios>();
+        public static BindingList<Usuario> ListadoUsuarios = new BindingList<Usuario>();
         public static BindingList<Tarea> ListaTareas = new BindingList<Tarea>();
 
+        private static string baseDataPath = Path.Combine(AppContext.BaseDirectory, "Data");
 
         //metodos carga usuarios
         public static void importUsers()
         {
-            string rutaArchivo = @"\Data\Users";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Users");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "Usuarios.json");
 
-            if (!File.Exists(rutaCompletaArchivo))
+            if (!File.Exists(rutaArchivo))
             {
-                Console.WriteLine("Archivo JSON de usuarios no existe.");
+                MessageBox.Show($"Archivo JSON de usuarios no existe en:\n{rutaArchivo}", "Error");
                 return;
             }
 
-            string jsonText = File.ReadAllText(rutaCompletaArchivo, Encoding.Default);
+            string jsonText = File.ReadAllText(rutaArchivo, Encoding.Default);
+            var usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsonText);
 
-            JArray usersImport = JArray.Parse(jsonText);
-            var importData = usersImport.ToObject<List<Usuarios>>();
+            if (usuarios == null) return;
 
             ListadoUsuarios.Clear();
-
-            foreach (var user in importData)
+            foreach (var user in usuarios)
             {
                 user.InitializeComputedFields();
                 ListadoUsuarios.Add(user);
             }
 
-                Console.WriteLine("Importación de JSON completada con éxito.");
-            Console.WriteLine($"Datos importados desde {rutaArchivo}");
+            MessageBox.Show("Importación de usuarios completada.", "Éxito");
         }
 
         public static void exportUsers()
         {
-            string rutaArchivo = @"\Data\Users";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Users");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "Usuarios.json");
 
-            JArray listUsers = (JArray)JToken.FromObject(ListadoUsuarios);
+            string jsonText = JsonConvert.SerializeObject(ListadoUsuarios, Formatting.Indented);
+            File.WriteAllText(rutaArchivo, jsonText);
 
-            File.WriteAllText(rutaCompletaArchivo, listUsers.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados a {rutaArchivo}");
+            MessageBox.Show("Exportación de usuarios completada.", "Éxito");
         }
 
         //metodos carga proyectos
-        public static void exportProjects()
-        {
-            string rutaArchivo = @"\Data\Exports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "JSON_PRUEBA.json");
-
-            var proyectosList = ListadoDatosClasses.ListadoProyectos;
-            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
-
-            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
-        }
         public static void importProjects()
         {
-            string rutaArchivo = @"\Data\Imports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "data_tasky.json");
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "data_tasky.json");
 
-            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
-            List<Proyecto>? importData = proyectosImport.ToObject<List<Proyecto>>();
-
-            foreach (var proyecto in importData)
+            if (!File.Exists(rutaArchivo))
             {
-                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+                MessageBox.Show($"Archivo JSON de proyectos no existe en:\n{rutaArchivo}", "Error");
+                return;
             }
 
-            Console.WriteLine("Importacion de JSON completada con éxito.");
-            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
+            string jsonText = File.ReadAllText(rutaArchivo, Encoding.Default);
+            var proyectos = JsonConvert.DeserializeObject<List<Proyecto>>(jsonText);
+
+            if (proyectos == null) return;
+
+            ListadoProyectos.Clear();
+
+            foreach (var proyecto in proyectos)
+            {
+                proyecto.ImgProyecto = null; // genera imagen con iniciales
+                if (proyecto.miembrosProyecto != null)
+                {
+                    foreach (var usuario in proyecto.miembrosProyecto)
+                    {
+                        usuario.InitializeComputedFields();
+                    }
+                }
+                ListadoProyectos.Add(proyecto);
+            }
+
+            if (ListadoProyectos.Count > 0)
+                Proyecto._nextID = ListadoProyectos.Max(p => p.ID) + 1;
+
+            MessageBox.Show("Importación de proyectos completada.", "Éxito");
         }
 
+        public static void exportProjects()
+        {
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
 
-        static ListadoDatosClasses()
+            string jsonText = JsonConvert.SerializeObject(ListadoProyectos, Formatting.Indented);
+            File.WriteAllText(rutaArchivo, jsonText);
+
+            MessageBox.Show("Exportación de proyectos completada.", "Éxito");
+        }
+
+        public static void importJSONFromNewDirectory()
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Title = "Selecciona un archivo JSON";
+                dialog.Filter = "Archivos JSON (*.json)|*.json";
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string rutaSeleccionada = dialog.FileName;
+
+                    string carpetaDestino = Path.Combine(baseDataPath, "Imports");
+                    Directory.CreateDirectory(carpetaDestino);
+
+                    string rutaDestino = Path.Combine(carpetaDestino, "data_tasky.json");
+
+                    File.Copy(rutaSeleccionada, rutaDestino, true);
+
+                    MessageBox.Show("Archivo JSON importado correctamente.", "Importación exitosa");
+
+                    importProjects();
+                }
+            }
+        }
+
+        public static void inicioDatosClasses()
         {
             GenerarListaUsuarios();
             GenerarListaTareas();
             GenerarListaProyectos();
         }
+
+        
         public static void GenerarListaUsuarios()
         {
             // Usuarios DAM2
-            ListadoUsuarios.Add(new Usuarios("Juan", "García", new DateTime(2000, 5, 15), "DAM2", "juan.garcia@ies.es", "pass123", "juangarc"));
-            ListadoUsuarios.Add(new Usuarios("Carlos", "Ruiz", "De la Fuente", new DateTime(2003, 3, 1), "DAM2", "carlos.ruiz@ies.es", "pass456", "carlosruiz"));
-            ListadoUsuarios.Add(new Usuarios("María", "Fernández", new DateTime(2001, 8, 12), "DAM2", "maria.fernandez@ies.es", "pass789", "mariafer"));
-            ListadoUsuarios.Add(new Usuarios("David", "Martín", new DateTime(2002, 11, 5), "DAM2", "david.martin@ies.es", "pass101", "davidmar"));
-            ListadoUsuarios.Add(new Usuarios("Laura", "Gómez", new DateTime(2000, 12, 25), "DAM2", "laura.gomez@ies.es", "pass202", "lauragom"));
+            ListadoUsuarios.Add(new Usuario("Juan", "García", new DateTime(2000, 5, 15), "DAM2", "juan.garcia@ies.es", "pass123", "juangarc"));
+            ListadoUsuarios.Add(new Usuario("Carlos", "Ruiz", "De la Fuente", new DateTime(2003, 3, 1), "DAM2", "carlos.ruiz@ies.es", "pass456", "carlosruiz"));
+            ListadoUsuarios.Add(new Usuario("María", "Fernández", new DateTime(2001, 8, 12), "DAM2", "maria.fernandez@ies.es", "pass789", "mariafer"));
+            ListadoUsuarios.Add(new Usuario("David", "Martín", new DateTime(2002, 11, 5), "DAM2", "david.martin@ies.es", "pass101", "davidmar"));
+            ListadoUsuarios.Add(new Usuario("Laura", "Gómez", new DateTime(2000, 12, 25), "DAM2", "laura.gomez@ies.es", "pass202", "lauragom"));
 
             // Usuarios DAW
-            ListadoUsuarios.Add(new Usuarios("Ana", "López", new DateTime(1998, 11, 22), "DAW1", "ana.lopez@ies.es", "pass303", "analopez"));
-            ListadoUsuarios.Add(new Usuarios("Pedro", "Sánchez", new DateTime(1999, 4, 18), "DAW2", "pedro.sanchez@ies.es", "pass404", "pedrosan"));
-            ListadoUsuarios.Add(new Usuarios("Sofia", "Ramírez", new DateTime(2001, 7, 30), "DAW1", "sofia.ramirez@ies.es", "pass505", "sofiram"));
-            ListadoUsuarios.Add(new Usuarios("Javier", "Ortega", new DateTime(2000, 2, 14), "DAW2", "javier.ortega@ies.es", "pass606", "javiort"));
+            ListadoUsuarios.Add(new Usuario("Ana", "López", new DateTime(1998, 11, 22), "DAW1", "ana.lopez@ies.es", "pass303", "analopez"));
+            ListadoUsuarios.Add(new Usuario("Pedro", "Sánchez", new DateTime(1999, 4, 18), "DAW2", "pedro.sanchez@ies.es", "pass404", "pedrosan"));
+            ListadoUsuarios.Add(new Usuario("Sofia", "Ramírez", new DateTime(2001, 7, 30), "DAW1", "sofia.ramirez@ies.es", "pass505", "sofiram"));
+            ListadoUsuarios.Add(new Usuario("Javier", "Ortega", new DateTime(2000, 2, 14), "DAW2", "javier.ortega@ies.es", "pass606", "javiort"));
 
             // Usuarios ASIX
-            ListadoUsuarios.Add(new Usuarios("Eva", "Sanz", new DateTime(2001, 7, 7), "ASIX1", "eva.sanz@ies.es", "pass707", "evasanz"));
-            ListadoUsuarios.Add(new Usuarios("Miguel", "Díaz", new DateTime(2002, 9, 9), "ASIX2", "miguel.diaz@ies.es", "pass808", "migudiaz"));
-            ListadoUsuarios.Add(new Usuarios("Carmen", "Vega", new DateTime(2001, 1, 19), "ASIX1", "carmen.vega@ies.es", "pass909", "carvega"));
-            ListadoUsuarios.Add(new Usuarios("Raúl", "Castro", new DateTime(2003, 6, 11), "ASIX2", "raul.castro@ies.es", "pass010", "raulcas"));
+            ListadoUsuarios.Add(new Usuario("Eva", "Sanz", new DateTime(2001, 7, 7), "ASIX1", "eva.sanz@ies.es", "pass707", "evasanz"));
+            ListadoUsuarios.Add(new Usuario("Miguel", "Díaz", new DateTime(2002, 9, 9), "ASIX2", "miguel.diaz@ies.es", "pass808", "migudiaz"));
+            ListadoUsuarios.Add(new Usuario("Carmen", "Vega", new DateTime(2001, 1, 19), "ASIX1", "carmen.vega@ies.es", "pass909", "carvega"));
+            ListadoUsuarios.Add(new Usuario("Raúl", "Castro", new DateTime(2003, 6, 11), "ASIX2", "raul.castro@ies.es", "pass010", "raulcas"));
 
             // Profesores
-            ListadoUsuarios.Add(new Usuarios("Profesor", "Informática", new DateTime(1980, 3, 10), "PROF", "prof.informatica@ies.es", "prof123", "profinfo"));
-            ListadoUsuarios.Add(new Usuarios("Tutor", "DAM2", new DateTime(1975, 8, 22), "PROF", "tutor.dam2@ies.es", "tutor456", "tutordam"));
+            ListadoUsuarios.Add(new Usuario("Profesor", "Informática", new DateTime(1980, 3, 10), "PROF", "prof.informatica@ies.es", "prof123", "profinfo"));
+            ListadoUsuarios.Add(new Usuario("Tutor", "DAM2", new DateTime(1975, 8, 22), "PROF", "tutor.dam2@ies.es", "tutor456", "tutordam"));
         }
 
         public static void GenerarListaTareas()
@@ -154,51 +202,54 @@ namespace DAM2_Project_Desktop
         {
             // Proyecto 1 - Aplicación Móvil
             var proyecto1 = new Proyecto("App Móvil DAM2", new DateTime(2024, 6, 15));
-            proyecto1.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[0], ListadoUsuarios[2], ListadoUsuarios[3] };
+            proyecto1.miembrosProyecto = new List<Usuario> { ListadoUsuarios[0], ListadoUsuarios[2], ListadoUsuarios[3] };
             proyecto1.tareasProyecto = new List<Tarea> { ListaTareas[0], ListaTareas[1], ListaTareas[5], ListaTareas[8] };
             ListadoProyectos.Add(proyecto1);
 
             // Proyecto 2 - Portal Web Institucional
             var proyecto2 = new Proyecto("Portal Web Institucional", new DateTime(2024, 7, 1));
-            proyecto2.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[1], ListadoUsuarios[5], ListadoUsuarios[6], ListadoUsuarios[7] };
+            proyecto2.miembrosProyecto = new List<Usuario> { ListadoUsuarios[1], ListadoUsuarios[5], ListadoUsuarios[6], ListadoUsuarios[7] };
             proyecto2.tareasProyecto = new List<Tarea> { ListaTareas[2], ListaTareas[3], ListaTareas[6], ListaTareas[9] };
             ListadoProyectos.Add(proyecto2);
 
             // Proyecto 3 - Sistema de Gestión Escolar
             var proyecto3 = new Proyecto("Sistema Gestión Escolar", new DateTime(2024, 8, 20));
-            proyecto3.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[8], ListadoUsuarios[9], ListadoUsuarios[10], ListadoUsuarios[12] };
+            proyecto3.miembrosProyecto = new List<Usuario> { ListadoUsuarios[8], ListadoUsuarios[9], ListadoUsuarios[10], ListadoUsuarios[12] };
             proyecto3.tareasProyecto = new List<Tarea> { ListaTareas[10], ListaTareas[11], ListaTareas[12], ListaTareas[13] };
             ListadoProyectos.Add(proyecto3);
 
             // Proyecto 4 - E-commerce
             var proyecto4 = new Proyecto("Tienda Online ASIX", new DateTime(2024, 9, 10));
-            proyecto4.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[4], ListadoUsuarios[11], ListadoUsuarios[13] };
+            proyecto4.miembrosProyecto = new List<Usuario> { ListadoUsuarios[4], ListadoUsuarios[11], ListadoUsuarios[13] };
             proyecto4.tareasProyecto = new List<Tarea> { ListaTareas[4], ListaTareas[7], ListaTareas[14] };
             ListadoProyectos.Add(proyecto4);
 
             // Proyecto 5 - Red Social Educativa
             var proyecto5 = new Proyecto("Red Social Educativa", new DateTime(2024, 10, 5));
-            proyecto5.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[0], ListadoUsuarios[1], ListadoUsuarios[5], ListadoUsuarios[8] };
+            proyecto5.miembrosProyecto = new List<Usuario> { ListadoUsuarios[0], ListadoUsuarios[1], ListadoUsuarios[5], ListadoUsuarios[8] };
             proyecto5.tareasProyecto = new List<Tarea> { ListaTareas[15], ListaTareas[16] };
             ListadoProyectos.Add(proyecto5);
 
             // Proyecto 6 - App Clima
             var proyecto6 = new Proyecto("Aplicación del Clima", new DateTime(2024, 5, 30));
-            proyecto6.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[2], ListadoUsuarios[6] };
+            proyecto6.miembrosProyecto = new List<Usuario> { ListadoUsuarios[2], ListadoUsuarios[6] };
             proyecto6.tareasProyecto = new List<Tarea> { ListaTareas[0], ListaTareas[1] };
             ListadoProyectos.Add(proyecto6);
 
             // Proyecto 7 - Juego Educativo
             var proyecto7 = new Proyecto("Juego Educativo Infantil", new DateTime(2024, 11, 15));
-            proyecto7.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[3], ListadoUsuarios[7], ListadoUsuarios[10] };
+            proyecto7.miembrosProyecto = new List<Usuario> { ListadoUsuarios[3], ListadoUsuarios[7], ListadoUsuarios[10] };
             proyecto7.tareasProyecto = new List<Tarea> { ListaTareas[8], ListaTareas[9] };
             ListadoProyectos.Add(proyecto7);
 
             // Proyecto 8 - Sin tareas (para pruebas)
             var proyecto8 = new Proyecto("Proyecto de Prueba", new DateTime(2024, 12, 1));
-            proyecto8.miembrosProyecto = new List<Usuarios> { ListadoUsuarios[0] };
+            proyecto8.miembrosProyecto = new List<Usuario> { ListadoUsuarios[0] };
             proyecto8.tareasProyecto = new List<Tarea>();
             ListadoProyectos.Add(proyecto8);
         }
+
+        
+
     }
 }

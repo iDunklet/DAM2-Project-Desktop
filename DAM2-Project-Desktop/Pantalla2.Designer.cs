@@ -39,7 +39,6 @@
             buttonProyectosPrivados = new Button();
             buttonInicio = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            label3 = new Label();
             controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
             label1 = new Label();
@@ -121,7 +120,7 @@
             // buttonCrearProyecto
             // 
             buttonCrearProyecto.BackColor = Color.FromArgb(35, 78, 82);
-            buttonCrearProyecto.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            buttonCrearProyecto.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonCrearProyecto.ForeColor = Color.White;
             buttonCrearProyecto.Location = new Point(21, 796);
             buttonCrearProyecto.Name = "buttonCrearProyecto";
@@ -206,7 +205,6 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(controlProyectoPantalla21);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, -1);
@@ -215,22 +213,13 @@
             flowLayoutPanel1.Size = new Size(1178, 887);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
-            // 
             // controlProyectoPantalla21
             // 
             controlProyectoPantalla21.Anchor = AnchorStyles.Left;
             controlProyectoPantalla21.BackColor = Color.White;
             controlProyectoPantalla21.BorderStyle = BorderStyle.FixedSingle;
             controlProyectoPantalla21.Imagen = null;
-            controlProyectoPantalla21.Location = new Point(44, 0);
+            controlProyectoPantalla21.Location = new Point(0, 0);
             controlProyectoPantalla21.Margin = new Padding(0);
             controlProyectoPantalla21.Name = "controlProyectoPantalla21";
             controlProyectoPantalla21.Proyecto = null;
@@ -244,7 +233,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(96, 28);
+            label2.Size = new Size(121, 35);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -255,7 +244,7 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(125, 54);
+            label1.Size = new Size(158, 67);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
@@ -279,7 +268,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -298,7 +286,6 @@
         private ControlProyectoPantalla2 controlProyectoPantalla21;
         private Button buttonExportarJSON;
         private PictureBox pictureBoxTasky;
-        private Label label3;
         private Button buttonProyectosPrivados;
         private Button buttonCrearProyecto;
     }
