@@ -20,7 +20,7 @@ namespace DAM2_Project_Desktop
         public static void importUsers()
         {
             string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Users";
-            Directory.CreateDirectory(rutaArchivo);
+           // Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
 
             if (!File.Exists(rutaCompletaArchivo))
@@ -76,7 +76,7 @@ namespace DAM2_Project_Desktop
         public static void importProjects()
         {
             string rutaArchivo = @"E:\Proyectos\Tasky\DAM2-Project-Desktop\DAM2-Project-Desktop\Data\Imports";
-            Directory.CreateDirectory(rutaArchivo);
+            //Directory.CreateDirectory(rutaArchivo);
             string rutaCompletaArchivo = Path.Combine(rutaArchivo, "data_tasky.json");
 
             JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
