@@ -218,7 +218,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
             buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13F);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(35, 17);
+            buttonCrearNuevoUsuario.Location = new Point(35, 19);
             buttonCrearNuevoUsuario.Margin = new Padding(4, 3, 4, 3);
             buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
             buttonCrearNuevoUsuario.Size = new Size(175, 69);
@@ -378,6 +378,7 @@ namespace DAM2_Project_Desktop
             button3.TabIndex = 2;
             button3.Text = "Diagrama";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
