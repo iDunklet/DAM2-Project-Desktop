@@ -426,7 +426,7 @@ namespace DAM2_Project_Desktop
             label1.Size = new Size(115, 37);
             label1.TabIndex = 5;
             label1.Text = "Nombre";
-            label1.Click += label1_Click;
+            
             // 
             // textBoxConfigurarUsuarioName
             // 

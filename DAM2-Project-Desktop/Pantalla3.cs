@@ -84,7 +84,7 @@ namespace DAM2_Project_Desktop
             };
         }
 
-  
+
         private void Pantalla3_Load(object sender, EventArgs e)
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
@@ -260,6 +260,13 @@ namespace DAM2_Project_Desktop
 
             // Capturar errores de ComboBox
             dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pantalla4 pantalla4 = new Pantalla4(proyectoActual);
+            pantalla4.Show();
+            this.Close();
         }
     }
 }

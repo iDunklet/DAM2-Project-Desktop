@@ -336,7 +336,6 @@ namespace DAM2_Project_Desktop
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            splitContainer6.Panel2.Paint += splitContainer6_Panel2_Paint;
             splitContainer6.Size = new Size(1424, 738);
             splitContainer6.SplitterDistance = 242;
             splitContainer6.SplitterWidth = 2;
