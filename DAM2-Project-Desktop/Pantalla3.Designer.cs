@@ -55,6 +55,7 @@ namespace DAM2_Project_Desktop
             FechaInicio = new DataGridViewTextBoxColumn();
             FechaFin = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewComboBoxColumn();
+            Horas = new DataGridViewTextBoxColumn();
             colCheck = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -218,7 +219,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
             buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13F);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(35, 19);
+            buttonCrearNuevoUsuario.Location = new Point(35, 21);
             buttonCrearNuevoUsuario.Margin = new Padding(4, 3, 4, 3);
             buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
             buttonCrearNuevoUsuario.Size = new Size(175, 69);
@@ -263,7 +264,6 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer5.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer5.Panel1.Controls.Add(labelNombreProyecto);
-
             // 
             // splitContainer5.Panel2
             // 
@@ -378,7 +378,6 @@ namespace DAM2_Project_Desktop
             button3.TabIndex = 2;
             button3.Text = "Diagrama";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -411,7 +410,7 @@ namespace DAM2_Project_Desktop
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, colCheck });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, Horas, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
@@ -468,6 +467,11 @@ namespace DAM2_Project_Desktop
             Estado.Resizable = DataGridViewTriState.True;
             Estado.SortMode = DataGridViewColumnSortMode.Automatic;
             Estado.Width = 164;
+            // 
+            // Horas
+            // 
+            Horas.HeaderText = "Horas";
+            Horas.Name = "Horas";
             // 
             // colCheck
             // 
@@ -556,6 +560,7 @@ namespace DAM2_Project_Desktop
         private DataGridViewTextBoxColumn FechaInicio;
         private DataGridViewTextBoxColumn FechaFin;
         private DataGridViewComboBoxColumn Estado;
+        private DataGridViewTextBoxColumn Horas;
         private DataGridViewCheckBoxColumn colCheck;
     }
 }
