@@ -38,7 +38,7 @@ namespace DAM2_Project_Desktop
 
         }
 
-        private void AgregarUsuarioAlPanel(Usuarios usuario)
+        private void AgregarUsuarioAlPanel(Usuario usuario)
         {
             // Crear contenedor visual para cada usuario
             Panel panelUsuario = new Panel();
@@ -219,7 +219,7 @@ namespace DAM2_Project_Desktop
             // Cuando se selecciona un usuario
             comboUsuariosDAM2.SelectedIndexChanged += (s, ev) =>
             {
-                var usuarioSeleccionado = (Usuarios)comboUsuariosDAM2.SelectedItem;
+                var usuarioSeleccionado = (Usuario)comboUsuariosDAM2.SelectedItem;
 
                 // Comprobar si ya existe en el FlowLayoutPanel
                 bool existe = false;

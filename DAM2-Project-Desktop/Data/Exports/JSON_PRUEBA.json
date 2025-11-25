@@ -51,7 +51,8 @@
           "password": "pass123",
           "userName": "JGARCÍA"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 2
       },
       {
         "nombreTarea": "Desarrollo Backend",
@@ -68,7 +69,8 @@
           "password": "pass789",
           "userName": "MFERNÁNDEZ"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       },
       {
         "nombreTarea": "Documentación API",
@@ -85,7 +87,8 @@
           "password": "pass456",
           "userName": "CRUIZ"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 3
       },
       {
         "nombreTarea": "Diseño Logo",
@@ -102,7 +105,8 @@
           "password": "pass404",
           "userName": "PSÁNCHEZ"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 8
       }
     ]
   },
@@ -168,7 +172,8 @@
           "password": "pass303",
           "userName": "ALÓPEZ"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 5
       },
       {
         "nombreTarea": "Base de Datos SQL",
@@ -185,7 +190,8 @@
           "password": "pass707",
           "userName": "ESANZ"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 1
       },
       {
         "nombreTarea": "Configuración Servidor",
@@ -202,7 +208,8 @@
           "password": "pass808",
           "userName": "MDÍAZ"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 1
       },
       {
         "nombreTarea": "Implementación Seguridad",
@@ -219,7 +226,8 @@
           "password": "pass505",
           "userName": "SRAMÍREZ"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 2
       }
     ]
   },
@@ -285,7 +293,8 @@
           "password": "pass606",
           "userName": "JORTEGA"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 5
       },
       {
         "nombreTarea": "Diagramas UML",
@@ -302,7 +311,8 @@
           "password": "pass909",
           "userName": "CVEGA"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 1
       },
       {
         "nombreTarea": "Planificación Proyecto",
@@ -319,7 +329,8 @@
           "password": "pass010",
           "userName": "RCASTRO"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 1
       },
       {
         "nombreTarea": "Estudio Viabilidad",
@@ -336,7 +347,8 @@
           "password": "prof123",
           "userName": "PINFORMÁTICA"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       }
     ]
   },
@@ -392,7 +404,8 @@
           "password": "pass101",
           "userName": "DMARTÍN"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       },
       {
         "nombreTarea": "Optimización Código",
@@ -409,7 +422,8 @@
           "password": "pass202",
           "userName": "LGÓMEZ"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       },
       {
         "nombreTarea": "Revisión Código",
@@ -426,7 +440,8 @@
           "password": "pass123",
           "userName": "JGARCÍA"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       }
     ]
   },
@@ -492,7 +507,8 @@
           "password": "pass789",
           "userName": "MFERNÁNDEZ"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       },
       {
         "nombreTarea": "Backup Base de Datos",
@@ -509,7 +525,8 @@
           "password": "pass707",
           "userName": "ESANZ"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       }
     ]
   },
@@ -555,7 +572,8 @@
           "password": "pass123",
           "userName": "JGARCÍA"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 2
       },
       {
         "nombreTarea": "Desarrollo Backend",
@@ -572,7 +590,8 @@
           "password": "pass789",
           "userName": "MFERNÁNDEZ"
         },
-        "statusTarea": "Pendiente"
+        "statusTarea": "Pendiente",
+        "horas": 0
       }
     ]
   },
@@ -628,7 +647,8 @@
           "password": "pass404",
           "userName": "PSÁNCHEZ"
         },
-        "statusTarea": "Completada"
+        "statusTarea": "Completada",
+        "horas": 8
       },
       {
         "nombreTarea": "Implementación Seguridad",
@@ -645,7 +665,8 @@
           "password": "pass505",
           "userName": "SRAMÍREZ"
         },
-        "statusTarea": "En progreso"
+        "statusTarea": "En progreso",
+        "horas": 2
       }
     ]
   },

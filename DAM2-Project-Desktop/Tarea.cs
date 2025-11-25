@@ -9,6 +9,7 @@
         public DateTime? fechaFinTarea { get; set; }
         public Usuario? responsableAsignado { get; set; }
         public string? statusTarea { get; set; }
+        public int? horas { get; set; }
 
         //test
         //constructores
@@ -30,12 +31,13 @@
             this.responsableAsignado = responsableAsignado;
             this.fechaInicioTarea = fechaInicio;
         }
-        public Tarea(string nombreTarea, Usuario responsableAsignado, DateTime fechaInicio, string status)
+        public Tarea(string nombreTarea, Usuario responsableAsignado, DateTime fechaInicio, string status, int horas)
         {
             this.nombreTarea = nombreTarea;
             this.responsableAsignado = responsableAsignado;
             this.fechaInicioTarea = fechaInicio;
             this.statusTarea = status;
+            this.horas = horas;
         }
 
     }
