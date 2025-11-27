@@ -19,6 +19,7 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.importUsers();
 
             Application.Run(new Pantalla2());
+            //chenhan la ha liado 
 
         }
     }
