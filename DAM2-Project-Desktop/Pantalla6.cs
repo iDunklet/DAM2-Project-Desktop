@@ -8,7 +8,7 @@ namespace DAM2_Project_Desktop
     public partial class Pantalla6 : Form
     {
         // Lista interna para los usuarios del proyecto
-        private BindingList<Usuarios> usuariosProyecto = new BindingList<Usuarios>();
+        private BindingList<Usuario> usuariosProyecto = new BindingList<Usuario>();
 
         public Pantalla6()
         {
@@ -59,7 +59,7 @@ namespace DAM2_Project_Desktop
                 return;
             }
 
-            Usuarios seleccionado = (Usuarios)listBoxUsuarios.SelectedItem;
+            Usuario seleccionado = (Usuario)listBoxUsuarios.SelectedItem;
 
             // Evitar duplicados
             if (usuariosProyecto.Contains(seleccionado))
@@ -80,7 +80,7 @@ namespace DAM2_Project_Desktop
                 return;
             }
 
-            usuariosProyecto.Remove((Usuarios)listBoxUsuariosProyecto.SelectedItem);
+            usuariosProyecto.Remove((Usuario)listBoxUsuariosProyecto.SelectedItem);
         }
 
         // BOTÓN CREAR PROYECTO (GUARDAR)
@@ -102,7 +102,7 @@ namespace DAM2_Project_Desktop
                 return;
             }
 
-            List<Usuarios> miembros = usuariosProyecto.ToList();
+            List<Usuario> miembros = usuariosProyecto.ToList();
             Proyecto nuevoProyecto = new Proyecto(nombreProyecto, fechaEntrega, miembros);
 
             ListadoDatosClasses.ListadoProyectos.Add(nuevoProyecto);

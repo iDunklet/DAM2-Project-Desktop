@@ -84,7 +84,7 @@ namespace DAM2_Project_Desktop
             };
         }
 
-  
+
         private void Pantalla3_Load(object sender, EventArgs e)
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
