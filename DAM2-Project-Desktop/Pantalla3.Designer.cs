@@ -28,6 +28,7 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
@@ -236,12 +237,12 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
             buttonCrearNuevoUsuario.Dock = DockStyle.Fill;
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13F);
+            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 15F);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(20, 20);
-            buttonCrearNuevoUsuario.Margin = new Padding(20);
+            buttonCrearNuevoUsuario.Location = new Point(15, 15);
+            buttonCrearNuevoUsuario.Margin = new Padding(15);
             buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
-            buttonCrearNuevoUsuario.Size = new Size(202, 56);
+            buttonCrearNuevoUsuario.Size = new Size(212, 66);
             buttonCrearNuevoUsuario.TabIndex = 4;
             buttonCrearNuevoUsuario.Text = "Crear nuevo usuario";
             buttonCrearNuevoUsuario.UseVisualStyleBackColor = false;
@@ -315,12 +316,12 @@ namespace DAM2_Project_Desktop
             // 
             // flowPanelMiembros
             // 
-            flowPanelMiembros.AutoScroll = true;
             flowPanelMiembros.Location = new Point(135, 8);
             flowPanelMiembros.Name = "flowPanelMiembros";
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
             flowPanelMiembros.Size = new Size(1033, 80);
             flowPanelMiembros.TabIndex = 8;
+            flowPanelMiembros.WrapContents = false;
             // 
             // label6
             // 
@@ -371,19 +372,20 @@ namespace DAM2_Project_Desktop
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(button4, 0, 3);
-            tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button2, 0, 1);
-            tableLayoutPanel1.Controls.Add(button3, 0, 2);
+            tableLayoutPanel1.Controls.Add(button4, 0, 4);
+            tableLayoutPanel1.Controls.Add(button1, 0, 1);
+            tableLayoutPanel1.Controls.Add(button2, 0, 2);
+            tableLayoutPanel1.Controls.Add(button3, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.51967049F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.357998F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.183619F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.000112F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 66.9386F));
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.98102975F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.1626015F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.620596F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.807588F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0271006F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 58.94309F));
             tableLayoutPanel1.Size = new Size(242, 738);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -392,12 +394,12 @@ namespace DAM2_Project_Desktop
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 14F);
+            button4.Font = new Font("Microsoft Sans Serif", 15F);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(15, 187);
+            button4.Location = new Point(15, 233);
             button4.Margin = new Padding(15, 4, 15, 4);
             button4.Name = "button4";
-            button4.Size = new Size(212, 51);
+            button4.Size = new Size(212, 65);
             button4.TabIndex = 3;
             button4.Text = "Exportar";
             button4.UseVisualStyleBackColor = false;
@@ -407,12 +409,12 @@ namespace DAM2_Project_Desktop
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.Dock = DockStyle.Fill;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 14F);
+            button1.Font = new Font("Microsoft Sans Serif", 15F);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(15, 4);
+            button1.Location = new Point(15, 25);
             button1.Margin = new Padding(15, 4, 15, 4);
             button1.Name = "button1";
-            button1.Size = new Size(212, 54);
+            button1.Size = new Size(212, 66);
             button1.TabIndex = 0;
             button1.Text = "Crear nueva tarea";
             button1.UseVisualStyleBackColor = false;
@@ -422,12 +424,12 @@ namespace DAM2_Project_Desktop
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.Dock = DockStyle.Fill;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 14F);
+            button2.Font = new Font("Microsoft Sans Serif", 15F);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(15, 66);
+            button2.Location = new Point(15, 99);
             button2.Margin = new Padding(15, 4, 15, 4);
             button2.Name = "button2";
-            button2.Size = new Size(212, 53);
+            button2.Size = new Size(212, 62);
             button2.TabIndex = 1;
             button2.Text = "Cuadricula";
             button2.UseVisualStyleBackColor = false;
@@ -437,19 +439,27 @@ namespace DAM2_Project_Desktop
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.Dock = DockStyle.Fill;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 14F);
+            button3.Font = new Font("Microsoft Sans Serif", 15F);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(15, 127);
+            button3.Location = new Point(15, 169);
             button3.Margin = new Padding(15, 4, 15, 4);
             button3.Name = "button3";
-            button3.Size = new Size(212, 52);
+            button3.Size = new Size(212, 56);
             button3.TabIndex = 2;
             button3.Text = "Diagrama";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += button3_Click_1;
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, Horas, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
@@ -459,7 +469,6 @@ namespace DAM2_Project_Desktop
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1180, 738);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Nombre
             // 
@@ -511,7 +520,7 @@ namespace DAM2_Project_Desktop
             Estado.Name = "Estado";
             Estado.Resizable = DataGridViewTriState.True;
             Estado.SortMode = DataGridViewColumnSortMode.Automatic;
-            Estado.Width = 102;
+            Estado.Width = 164;
             // 
             // Horas
             // 

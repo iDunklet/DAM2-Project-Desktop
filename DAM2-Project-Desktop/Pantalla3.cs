@@ -101,18 +101,6 @@ namespace DAM2_Project_Desktop
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewComboBoxColumn colOpciones = new DataGridViewComboBoxColumn();
-            colOpciones.HeaderText = "Opciones";
-            colOpciones.Items.AddRange("Opción 1", "Opción 2", "Opción 3");
-            dataGridView1.Columns.Add(colOpciones);
-
-            DataGridViewCheckBoxColumn colCheck = new DataGridViewCheckBoxColumn();
-            colCheck.HeaderText = "Activo";
-            dataGridView1.Columns.Add(colCheck);
-        }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             var usuariosDAM2 = ListadoDatosClasses.ListadoUsuarios
@@ -258,15 +246,32 @@ namespace DAM2_Project_Desktop
                 fila.Cells[5].Value = tarea.statusTarea;
 
                 //horas
-                if (tarea.horas == null) {
+                if (tarea.horas == null)
+                {
                     fila.Cells[6].Value = 0;
-                } else {
+                }
+                else
+                {
                     fila.Cells[6].Value = tarea.horas;
-                        }
+                }
             }
 
             // Capturar errores de ComboBox
             dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Pantalla4 pantalla4 = new Pantalla4(proyectoActual);
+            pantalla4.Show();
+            this.Close();
         }
     }
 }
