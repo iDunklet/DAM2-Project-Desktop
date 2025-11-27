@@ -57,6 +57,7 @@ namespace DAM2_Project_Desktop
             FechaInicio = new DataGridViewTextBoxColumn();
             FechaFin = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewComboBoxColumn();
+            Horas = new DataGridViewTextBoxColumn();
             colCheck = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -450,7 +451,7 @@ namespace DAM2_Project_Desktop
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, colCheck });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, Horas, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
@@ -511,6 +512,11 @@ namespace DAM2_Project_Desktop
             Estado.Resizable = DataGridViewTriState.True;
             Estado.SortMode = DataGridViewColumnSortMode.Automatic;
             Estado.Width = 102;
+            // 
+            // Horas
+            // 
+            Horas.HeaderText = "Horas";
+            Horas.Name = "Horas";
             // 
             // colCheck
             // 
@@ -604,6 +610,7 @@ namespace DAM2_Project_Desktop
         private DataGridViewTextBoxColumn FechaInicio;
         private DataGridViewTextBoxColumn FechaFin;
         private DataGridViewComboBoxColumn Estado;
+        private DataGridViewTextBoxColumn Horas;
         private DataGridViewCheckBoxColumn colCheck;
     }
 }

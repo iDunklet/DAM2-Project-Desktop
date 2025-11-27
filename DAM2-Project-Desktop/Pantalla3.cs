@@ -256,17 +256,17 @@ namespace DAM2_Project_Desktop
 
                 // Estado
                 fila.Cells[5].Value = tarea.statusTarea;
+
+                //horas
+                if (tarea.horas == null) {
+                    fila.Cells[6].Value = 0;
+                } else {
+                    fila.Cells[6].Value = tarea.horas;
+                        }
             }
 
             // Capturar errores de ComboBox
             dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Pantalla4 pantalla4 = new Pantalla4(proyectoActual);
-            pantalla4.Show();
-            this.Close();
         }
     }
 }
