@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,11 +31,6 @@ namespace DAM2_Project_Desktop
         private void Pantalla4_Load(object sender, EventArgs e)
         {
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0];
-        }
-
-        private void splitContainer6_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void AgregarUsuarioAlPanel(Usuario usuario)

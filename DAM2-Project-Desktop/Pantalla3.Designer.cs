@@ -28,6 +28,7 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
@@ -35,6 +36,7 @@ namespace DAM2_Project_Desktop
             splitContainer7 = new SplitContainer();
             labelId = new Label();
             label1 = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
             buttonCrearNuevoUsuario = new Button();
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
@@ -44,10 +46,11 @@ namespace DAM2_Project_Desktop
             label6 = new Label();
             pictureBox4 = new PictureBox();
             splitContainer6 = new SplitContainer();
+            tableLayoutPanel1 = new TableLayoutPanel();
             button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
             button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             dataGridView1 = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
@@ -74,6 +77,7 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.Panel2.SuspendLayout();
             splitContainer7.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();
@@ -87,6 +91,7 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.Panel2.SuspendLayout();
             splitContainer6.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -185,7 +190,7 @@ namespace DAM2_Project_Desktop
             // splitContainer7.Panel2
             // 
             splitContainer7.Panel2.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer7.Panel2.Controls.Add(buttonCrearNuevoUsuario);
+            splitContainer7.Panel2.Controls.Add(tableLayoutPanel2);
             splitContainer7.Size = new Size(242, 148);
             splitContainer7.SplitterDistance = 51;
             splitContainer7.SplitterWidth = 1;
@@ -212,17 +217,32 @@ namespace DAM2_Project_Desktop
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Controls.Add(buttonCrearNuevoUsuario, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(242, 96);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
             // buttonCrearNuevoUsuario
             // 
-            buttonCrearNuevoUsuario.Anchor = AnchorStyles.None;
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
+            buttonCrearNuevoUsuario.Dock = DockStyle.Fill;
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13F);
+            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 15F);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(35, 21);
-            buttonCrearNuevoUsuario.Margin = new Padding(4, 3, 4, 3);
+            buttonCrearNuevoUsuario.Location = new Point(15, 15);
+            buttonCrearNuevoUsuario.Margin = new Padding(15);
             buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
-            buttonCrearNuevoUsuario.Size = new Size(175, 69);
+            buttonCrearNuevoUsuario.Size = new Size(212, 66);
             buttonCrearNuevoUsuario.TabIndex = 4;
             buttonCrearNuevoUsuario.Text = "Crear nuevo usuario";
             buttonCrearNuevoUsuario.UseVisualStyleBackColor = false;
@@ -296,12 +316,12 @@ namespace DAM2_Project_Desktop
             // 
             // flowPanelMiembros
             // 
-            flowPanelMiembros.AutoScroll = true;
             flowPanelMiembros.Location = new Point(135, 8);
             flowPanelMiembros.Name = "flowPanelMiembros";
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
             flowPanelMiembros.Size = new Size(1033, 80);
             flowPanelMiembros.TabIndex = 8;
+            flowPanelMiembros.WrapContents = false;
             // 
             // label6
             // 
@@ -337,10 +357,7 @@ namespace DAM2_Project_Desktop
             // splitContainer6.Panel1
             // 
             splitContainer6.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer6.Panel1.Controls.Add(button4);
-            splitContainer6.Panel1.Controls.Add(button3);
-            splitContainer6.Panel1.Controls.Add(button2);
-            splitContainer6.Panel1.Controls.Add(button1);
+            splitContainer6.Panel1.Controls.Add(tableLayoutPanel1);
             // 
             // splitContainer6.Panel2
             // 
@@ -351,64 +368,98 @@ namespace DAM2_Project_Desktop
             splitContainer6.SplitterWidth = 2;
             splitContainer6.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(button4, 0, 4);
+            tableLayoutPanel1.Controls.Add(button1, 0, 1);
+            tableLayoutPanel1.Controls.Add(button2, 0, 2);
+            tableLayoutPanel1.Controls.Add(button3, 0, 3);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.98102975F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.1626015F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.620596F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.807588F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0271006F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 58.94309F));
+            tableLayoutPanel1.Size = new Size(242, 738);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(79, 209, 197);
+            button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 14F);
+            button4.Font = new Font("Microsoft Sans Serif", 15F);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(35, 201);
-            button4.Margin = new Padding(4, 3, 4, 3);
+            button4.Location = new Point(15, 233);
+            button4.Margin = new Padding(15, 4, 15, 4);
             button4.Name = "button4";
-            button4.Size = new Size(175, 45);
+            button4.Size = new Size(212, 65);
             button4.TabIndex = 3;
             button4.Text = "Exportar";
             button4.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(79, 209, 197);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 14F);
-            button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(35, 139);
-            button3.Margin = new Padding(4, 3, 4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(175, 45);
-            button3.TabIndex = 2;
-            button3.Text = "Diagrama";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(79, 209, 197);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 14F);
-            button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(35, 79);
-            button2.Margin = new Padding(4, 3, 4, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 45);
-            button2.TabIndex = 1;
-            button2.Text = "Cuadricula";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(79, 209, 197);
+            button1.Dock = DockStyle.Fill;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 14F);
+            button1.Font = new Font("Microsoft Sans Serif", 15F);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(35, 18);
-            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Location = new Point(15, 25);
+            button1.Margin = new Padding(15, 4, 15, 4);
             button1.Name = "button1";
-            button1.Size = new Size(175, 45);
+            button1.Size = new Size(212, 66);
             button1.TabIndex = 0;
             button1.Text = "Crear nueva tarea";
             button1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(79, 209, 197);
+            button2.Dock = DockStyle.Fill;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Microsoft Sans Serif", 15F);
+            button2.ForeColor = Color.FromArgb(35, 78, 82);
+            button2.Location = new Point(15, 99);
+            button2.Margin = new Padding(15, 4, 15, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(212, 62);
+            button2.TabIndex = 1;
+            button2.Text = "Cuadricula";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(79, 209, 197);
+            button3.Dock = DockStyle.Fill;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Microsoft Sans Serif", 15F);
+            button3.ForeColor = Color.FromArgb(35, 78, 82);
+            button3.Location = new Point(15, 169);
+            button3.Margin = new Padding(15, 4, 15, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(212, 56);
+            button3.TabIndex = 2;
+            button3.Text = "Diagrama";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
+            // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, Horas, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
@@ -418,48 +469,51 @@ namespace DAM2_Project_Desktop
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1180, 738);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Nombre
             // 
+            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Nombre.HeaderText = "Nombre";
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
             Nombre.Resizable = DataGridViewTriState.True;
-            Nombre.Width = 164;
             // 
             // Descripcion
             // 
+            Descripcion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Descripcion.HeaderText = "Descripcion";
             Descripcion.MinimumWidth = 6;
             Descripcion.Name = "Descripcion";
-            Descripcion.Width = 164;
             // 
             // Responsable
             // 
+            Responsable.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             Responsable.HeaderText = "Asignar";
             Responsable.MinimumWidth = 6;
             Responsable.Name = "Responsable";
             Responsable.Resizable = DataGridViewTriState.True;
             Responsable.SortMode = DataGridViewColumnSortMode.Automatic;
-            Responsable.Width = 164;
+            Responsable.Width = 88;
             // 
             // FechaInicio
             // 
+            FechaInicio.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             FechaInicio.HeaderText = "Fecha inicio";
             FechaInicio.MinimumWidth = 6;
             FechaInicio.Name = "FechaInicio";
-            FechaInicio.Width = 164;
+            FechaInicio.Width = 118;
             // 
             // FechaFin
             // 
+            FechaFin.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             FechaFin.HeaderText = "Fecha final";
             FechaFin.MinimumWidth = 6;
             FechaFin.Name = "FechaFin";
-            FechaFin.Width = 164;
+            FechaFin.Width = 112;
             // 
             // Estado
             // 
+            Estado.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             Estado.HeaderText = "Estado de la tarea";
             Estado.Items.AddRange(new object[] { "In progress", "Done", "In review", "Blocked", "To do" });
             Estado.MinimumWidth = 6;
@@ -475,12 +529,13 @@ namespace DAM2_Project_Desktop
             // 
             // colCheck
             // 
+            colCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             colCheck.HeaderText = "Check";
             colCheck.MinimumWidth = 6;
             colCheck.Name = "colCheck";
             colCheck.Resizable = DataGridViewTriState.True;
             colCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            colCheck.Width = 164;
+            colCheck.Width = 79;
             // 
             // Pantalla3
             // 
@@ -510,6 +565,7 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
             splitContainer7.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
             splitContainer4.Panel2.PerformLayout();
@@ -526,6 +582,7 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
 
@@ -554,6 +611,8 @@ namespace DAM2_Project_Desktop
         private Label labelNombreProyecto;
         private Label labelFechaProyecto;
         private Label labelId;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewComboBoxColumn Responsable;
