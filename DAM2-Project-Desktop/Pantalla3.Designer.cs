@@ -487,7 +487,7 @@ namespace DAM2_Project_Desktop
             // 
             // Responsable
             // 
-            Responsable.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            Responsable.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             Responsable.HeaderText = "Asignar";
             Responsable.MinimumWidth = 6;
             Responsable.Name = "Responsable";
