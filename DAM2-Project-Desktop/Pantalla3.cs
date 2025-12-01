@@ -29,6 +29,19 @@ namespace DAM2_Project_Desktop
             CargarTareasProyecto();
 
         }
+        public Pantalla3(Proyecto project, Point p)
+        {
+
+
+            InitializeComponent();
+            //dataGridView1_CellContentClick();
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            proyectoActual = project;
+            CargarInfoProyecto();
+            CargarUsuariosProyecto();
+            CargarTareasProyecto();
+
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

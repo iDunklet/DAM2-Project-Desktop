@@ -15,7 +15,6 @@ namespace DAM2_Project_Desktop
 
         // Rectángulos de la Barra Lateral (Botones)
         private Rectangle RectanglebuttonInicio;
-        private Rectangle RectanglebuttonProyectosPrivados;
         private Rectangle RectanglebuttonUsuarios;
         private Rectangle RectanglebuttonImportarJSON;
         private Rectangle RectanglebuttonExportarJSON;
@@ -33,6 +32,18 @@ namespace DAM2_Project_Desktop
         List<Tarea> listaTareas;
         Proyecto proyectoDemo;
 
+        public Pantalla2(Point p)
+        {
+            InitializeComponent();
+
+            Dimencions.ApplyMinimum(this);
+            this.Resize += Pantalla2_Resize;
+
+            originalSize = this.Size;
+            InitializeOriginalRectangles();
+            Pantalla2_Resize(null, null);
+
+        }
         public Pantalla2()
         {
             InitializeComponent();
@@ -45,7 +56,6 @@ namespace DAM2_Project_Desktop
             Pantalla2_Resize(null, null);
 
         }
-
 
 
         private void Pantalla2_Load(object sender, EventArgs e)
@@ -64,8 +74,8 @@ namespace DAM2_Project_Desktop
         private void ControlProyecto_ProyectoClicado(object sender, Proyecto proyectoClicado)
         {
             if (proyectoClicado == null) return;
-
-            Pantalla3 pantalla3 = new Pantalla3(proyectoClicado);
+            Point location = Dimencions.FormInicialLocation(this);
+            Pantalla3 pantalla3 = new Pantalla3(proyectoClicado, location);
             pantalla3.Show();
 
         }
@@ -99,8 +109,8 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 ,buttonCrearProyecto };
-            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7, RectanglebuttonCrearProyecto };
+            Control[] sidebarButtons = { buttonInicio, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 ,buttonCrearProyecto };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7, RectanglebuttonCrearProyecto };
 
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
 
@@ -115,7 +125,6 @@ namespace DAM2_Project_Desktop
             Size baseSize = new Size(200, 60);
 
             RectanglebuttonInicio = new Rectangle(new Point(21, 12), baseSize);
-            RectanglebuttonProyectosPrivados = new Rectangle(new Point(21, 78), baseSize);
             RectanglebuttonUsuarios = new Rectangle(new Point(21, 144), baseSize);
             RectanglebuttonImportarJSON = new Rectangle(new Point(21, 210), baseSize);
             RectanglebuttonExportarJSON = new Rectangle(new Point(21, 276), baseSize);
@@ -150,8 +159,11 @@ namespace DAM2_Project_Desktop
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
-            Pantalla2 pantalla2 = new Pantalla2();
+            Point location = Dimencions.FormInicialLocation(this);
+            Pantalla2 pantalla2 = new Pantalla2(location);
             pantalla2.Show();
+        
+
         }
 
         private void buttonCrearProyecto_Click(object sender, EventArgs e)
