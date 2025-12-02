@@ -106,7 +106,9 @@ namespace DAM2_Project_Desktop
 
             if (username == correctUsername && password == correctPassword)
             {
-                Pantalla2 pantalla2 = new Pantalla2();
+                Point location = Navegacion.FormInicialLocation(this);
+                Size size = Navegacion.FormInicialSize(this);
+                Pantalla2 pantalla2 = new Pantalla2(location, size);
                 pantalla2.Show();
                 this.Hide();
             }
@@ -122,6 +124,11 @@ namespace DAM2_Project_Desktop
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Pantalla1_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
         //jajajaj
     }

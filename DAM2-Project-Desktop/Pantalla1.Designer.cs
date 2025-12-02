@@ -144,6 +144,7 @@
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla1";
             Text = "Tasky";
+            Load += Pantalla1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

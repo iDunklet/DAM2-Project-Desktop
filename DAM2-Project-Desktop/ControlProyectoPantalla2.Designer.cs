@@ -46,7 +46,6 @@
             pictureBoxImagen.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBoxImagen.TabIndex = 0;
             pictureBoxImagen.TabStop = false;
-            pictureBoxImagen.Click += pictureBoxImagen_Click;
             // 
             // labelTitulo
             // 
@@ -59,7 +58,6 @@
             labelTitulo.Size = new Size(207, 89);
             labelTitulo.TabIndex = 1;
             labelTitulo.Text = "Título Proyecto";
-            labelTitulo.Click += labelTitulo_Click;
             // 
             // labelMiembros
             // 

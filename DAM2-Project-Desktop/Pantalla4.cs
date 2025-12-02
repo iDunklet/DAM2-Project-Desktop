@@ -21,6 +21,7 @@ namespace DAM2_Project_Desktop
         public Pantalla4(Proyecto project)
         {
             InitializeComponent();
+            ListadoDatosClasses.cargarDatos();
             CrearGraficoEnSplitPanel();
             proyectoActual = project;
             CargarInfoProyecto();
@@ -30,6 +31,7 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla4_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0];
         }
 
@@ -250,9 +252,29 @@ namespace DAM2_Project_Desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ListadoDatosClasses.guardarDatos();
             Pantalla3 pantalla3 = new Pantalla3(proyectoActual);
             pantalla3.Show();
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            //vista actual
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
+
+        private void buttonCrearNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            Pantalla5 pantalla5 = new Pantalla5();
+            pantalla5.Show();
         }
     }
 }

@@ -10,6 +10,25 @@ namespace DAM2_Project_Desktop
         // Lista interna para los usuarios del proyecto
         private BindingList<Usuario> usuariosProyecto = new BindingList<Usuario>();
 
+
+        public Pantalla6(Point p, Size s)
+        {
+            InitializeComponent();
+
+            // Cargar usuarios al iniciar
+            CargarUsuariosDisponibles();
+
+            // Conectar eventos
+            textBoxNombreUsuario.TextChanged += TextBoxNombreUsuario_TextChanged;
+            buttonAgregar.Click += buttonAgregar_Click;
+            buttonBorrar.Click += buttonBorrar_Click;
+            buttonCrear.Click += buttonCrear_Click;
+
+            // Cargar la lista de usuarios del proyecto
+            listBoxUsuariosProyecto.DataSource = usuariosProyecto;
+            listBoxUsuariosProyecto.DisplayMember = "NombreCompleto";
+        }
+
         public Pantalla6()
         {
             InitializeComponent();
@@ -119,10 +138,40 @@ namespace DAM2_Project_Desktop
 
             MessageBox.Show("Proyectos actuales:\n" + proyectos);
 
-
+            this.Close();
 
         }
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            Point location = Navegacion.FormInicialLocation(this);
+            Size size = Navegacion.FormInicialSize(this);
+            ListadoDatosClasses.exportProjects();
+            Pantalla8 pantalla8 = new Pantalla8(location, size);
+            pantalla8.Show();
+            this.Close();
+        }
+        private void buttonInicio_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Close();
+        }
 
+        private void buttonImportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.importJSONFromNewDirectory();
+        }
 
+        private void buttonExportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+        }
+
+        private void Pantalla6_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
     }
 }

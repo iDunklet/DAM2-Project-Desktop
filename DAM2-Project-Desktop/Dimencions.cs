@@ -6,16 +6,7 @@ public static class Dimencions
 {
     public class Dimencion
     {
-        public Point Location { get; set; }
-        public Size Size { get; set; }
     }
-    public static Point FormInicialLocation(Form frm)
-    {
-        return frm.Location;
-    }
-
-
-
 
 
     // Dimensiones de diseño base (Formulario completo)

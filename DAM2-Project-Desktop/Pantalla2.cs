@@ -27,23 +27,15 @@ namespace DAM2_Project_Desktop
 
         private Rectangle RectanglepictureBoxTasky;
 
+        public Point location;
+        public Size size;
+
 
         List<Usuario> listaUsuarios;
         List<Tarea> listaTareas;
         Proyecto proyectoDemo;
 
-        public Pantalla2(Point p)
-        {
-            InitializeComponent();
-
-            Dimencions.ApplyMinimum(this);
-            this.Resize += Pantalla2_Resize;
-
-            originalSize = this.Size;
-            InitializeOriginalRectangles();
-            Pantalla2_Resize(null, null);
-
-        }
+ 
         public Pantalla2()
         {
             InitializeComponent();
@@ -60,6 +52,8 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla2_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            ListadoDatosClasses.cargarDatos();
             flowLayoutPanel1.Controls.Clear();
             var proyectos = ListadoDatosClasses.ListadoProyectos;
             foreach (var proyecto in proyectos)
@@ -74,7 +68,7 @@ namespace DAM2_Project_Desktop
         private void ControlProyecto_ProyectoClicado(object sender, Proyecto proyectoClicado)
         {
             if (proyectoClicado == null) return;
-            Point location = Dimencions.FormInicialLocation(this);
+            Point location = Navegacion.FormInicialLocation(this);
             Pantalla3 pantalla3 = new Pantalla3(proyectoClicado, location);
             pantalla3.Show();
 
@@ -85,6 +79,10 @@ namespace DAM2_Project_Desktop
         private void Pantalla2_Resize(object sender, EventArgs e)
         {
             RectanglepictureBoxTasky = new Rectangle(pictureBoxTasky.Location, pictureBoxTasky.Size);
+            
+            location =  Navegacion.FormInicialLocation(this);
+            size = Navegacion.FormInicialSize(this);
+
 
             Size formOriginalSize = this.originalSize;
 
@@ -138,13 +136,24 @@ namespace DAM2_Project_Desktop
 
             RectanglebuttonInicio = new Rectangle(new Point(21, 12), baseSize);
         }
-
+        public void RefrescarListado()
+        {
+            ListadoDatosClasses.cargarDatos();
+            flowLayoutPanel1.Controls.Clear();
+            var proyectos = ListadoDatosClasses.ListadoProyectos;
+            foreach (var proyecto in proyectos)
+            {
+                ControlProyectoPantalla2 controlProyecto = new ControlProyectoPantalla2();
+                controlProyecto.Proyecto = proyecto;
+                controlProyecto.Margin = new Padding(5);
+                controlProyecto.ProyectoClicado += ControlProyecto_ProyectoClicado;
+                flowLayoutPanel1.Controls.Add(controlProyecto);
+            }
+        }
 
         private void buttonExportarJson_Click(object sender, EventArgs e)
         {
-   
-            ListadoDatosClasses.exportProjects();
-            ListadoDatosClasses.exportUsers();
+            ListadoDatosClasses.guardarDatos();
         }
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {
@@ -153,25 +162,25 @@ namespace DAM2_Project_Desktop
 
         private void buttonUsuarios_Click(object sender, EventArgs e)
         {
+            ListadoDatosClasses.guardarDatos();
             Pantalla8 pantalla8 = new Pantalla8();
             pantalla8.Show();
+            this.Close();
         }
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
-            Point location = Dimencions.FormInicialLocation(this);
-            Pantalla2 pantalla2 = new Pantalla2(location);
+            ListadoDatosClasses.guardarDatos();
+            Pantalla2 pantalla2 = new Pantalla2();
             pantalla2.Show();
-        
-
+            this.Hide();
         }
 
         private void buttonCrearProyecto_Click(object sender, EventArgs e)
         {
-            /*
+            ListadoDatosClasses.guardarDatos();
             Pantalla6 pantalla6 = new Pantalla6();
             pantalla6.Show();
-            */
         }
     }
 }

@@ -6,6 +6,20 @@ namespace DAM2_Project_Desktop
 {
     public partial class Pantalla5 : Form
     {
+
+        public Pantalla5(Point p, Size s)
+        {
+            InitializeComponent();
+            ClientSize = s;
+            // 🔹 Eventos para generar el username automáticamente
+            textBoxNombre.TextChanged += CamposUsuario_TextChanged;
+            textBoxApellido1.TextChanged += CamposUsuario_TextChanged;
+            textBoxCurso.TextChanged += CamposUsuario_TextChanged;
+
+            // 🔹 Evento del botón Crear Usuario
+            buttonCrearUsuario.Click += ButtonCrearUsuario_Click;
+        }
+
         public Pantalla5()
         {
             InitializeComponent();
@@ -108,8 +122,33 @@ namespace DAM2_Project_Desktop
 
         private void buttonUsuarios_Click(object sender, EventArgs e)
         {
+            ListadoDatosClasses.exportProjects();
             Pantalla8 pantalla8 = new Pantalla8();
             pantalla8.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.importJSONFromNewDirectory();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+        }
+
+        private void Pantalla5_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

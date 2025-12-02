@@ -138,7 +138,17 @@ namespace DAM2_Project_Desktop
             }
         }
 
-       
+        public static void cargarDatos() {
+            importProjects();
+            importUsers();
+        }
+
+        public static void guardarDatos() { 
+            exportProjects();
+            exportUsers();
+        }
+
+
         public static void inicioDatosClasses()
         {
             GenerarListaUsuarios();

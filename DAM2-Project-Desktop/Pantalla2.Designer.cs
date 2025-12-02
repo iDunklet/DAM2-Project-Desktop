@@ -190,9 +190,9 @@
             buttonCrearProyecto.BackColor = Color.FromArgb(35, 78, 82);
             buttonCrearProyecto.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonCrearProyecto.ForeColor = Color.White;
-            buttonCrearProyecto.Location = new Point(21, 796);
+            buttonCrearProyecto.Location = new Point(0, 818);
             buttonCrearProyecto.Name = "buttonCrearProyecto";
-            buttonCrearProyecto.Size = new Size(200, 68);
+            buttonCrearProyecto.Size = new Size(240, 68);
             buttonCrearProyecto.TabIndex = 11;
             buttonCrearProyecto.Text = "Nuevo Proyecto";
             buttonCrearProyecto.UseVisualStyleBackColor = false;

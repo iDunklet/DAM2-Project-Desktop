@@ -21,6 +21,7 @@ namespace DAM2_Project_Desktop
 
 
             InitializeComponent();
+            ListadoDatosClasses.cargarDatos();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
             proyectoActual = project;
@@ -34,6 +35,7 @@ namespace DAM2_Project_Desktop
 
 
             InitializeComponent();
+            ListadoDatosClasses.cargarDatos();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
             proyectoActual = project;
@@ -100,6 +102,7 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla3_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             Proyecto proyecto = ListadoDatosClasses.ListadoProyectos[0]; // <-- viene de la clase estática
             //MostrarProyecto();
             dataGridView1.CellBeginEdit += DataGridView1_CellBeginEdit;
@@ -278,13 +281,39 @@ namespace DAM2_Project_Desktop
 
         }
 
-        
+
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            ListadoDatosClasses.guardarDatos();
             Pantalla4 pantalla4 = new Pantalla4(proyectoActual);
             pantalla4.Show();
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            //vista actual
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            //falta crear formulario
+        }
+
+        private void buttonCrearNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            Pantalla5 pantalla5 = new Pantalla5();
+            pantalla5.Show();
         }
     }
 }

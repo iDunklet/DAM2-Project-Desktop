@@ -246,6 +246,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.TabIndex = 4;
             buttonCrearNuevoUsuario.Text = "Crear nuevo usuario";
             buttonCrearNuevoUsuario.UseVisualStyleBackColor = false;
+            buttonCrearNuevoUsuario.Click += buttonCrearNuevoUsuario_Click;
             // 
             // splitContainer4
             // 
@@ -401,8 +402,9 @@ namespace DAM2_Project_Desktop
             button4.Name = "button4";
             button4.Size = new Size(212, 65);
             button4.TabIndex = 3;
-            button4.Text = "Exportar";
+            button4.Text = "Salir";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button1
             // 
@@ -418,6 +420,7 @@ namespace DAM2_Project_Desktop
             button1.TabIndex = 0;
             button1.Text = "Crear nueva tarea";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -433,6 +436,7 @@ namespace DAM2_Project_Desktop
             button2.TabIndex = 1;
             button2.Text = "Cuadricula";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -585,7 +589,6 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion

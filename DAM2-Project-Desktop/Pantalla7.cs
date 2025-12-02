@@ -120,8 +120,8 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
-            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
+            Control[] sidebarButtons = { buttonInicio, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7 };
 
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
 
@@ -214,7 +214,7 @@ namespace DAM2_Project_Desktop
             {
                 if (!nuevaContrasena.Equals(confirmarContrasena))
                 {
-                    MessageBox.Show("Las contraseñas no coinciden.");
+                    System.Windows.MessageBox.Show("Las contraseñas no coinciden.");
                     return;
                 }
 
@@ -237,7 +237,7 @@ namespace DAM2_Project_Desktop
             //guardado en JSON
             ListadoDatosClasses.exportUsers();
 
-            MessageBox.Show("Cambios guardados correctamente.");
+            System.Windows.MessageBox.Show("Cambios guardados correctamente.");
 
             // Cerrar la pantalla de edición
             this.Close();
@@ -246,6 +246,38 @@ namespace DAM2_Project_Desktop
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Close();
+        }
+
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+
+            ListadoDatosClasses.guardarDatos();
+            Pantalla8 pantalla8 = new Pantalla8();
+            pantalla8.Show();
+            this.Hide();
+        }
+
+        private void buttonImportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.importJSONFromNewDirectory();
+        }
+
+        private void buttonExportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+        }
+
+        private void Pantalla7_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
