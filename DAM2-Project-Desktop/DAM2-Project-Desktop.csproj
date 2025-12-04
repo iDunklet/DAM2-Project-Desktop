@@ -30,9 +30,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Exports\" />
-    <Folder Include="Data\Imports\" />
-  </ItemGroup>
-
 </Project>
