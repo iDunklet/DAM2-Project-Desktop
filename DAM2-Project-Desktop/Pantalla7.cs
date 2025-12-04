@@ -242,5 +242,10 @@ namespace DAM2_Project_Desktop
             // Cerrar la pantalla de edición
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
