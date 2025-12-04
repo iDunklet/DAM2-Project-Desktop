@@ -18,8 +18,7 @@ namespace DAM2_Project_Desktop
             MessageBox.Show("Proyectos cargados: " + ListadoDatosClasses.ListadoProyectos.Count);
             ListadoDatosClasses.importUsers();
 
-            Application.Run(new Pantalla2());
-            //chenhan la ha liado 
+            Application.Run(new Pantalla6());
 
         }
     }
