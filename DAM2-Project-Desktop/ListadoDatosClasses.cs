@@ -15,6 +15,7 @@ namespace DAM2_Project_Desktop
         public static BindingList<Usuario> ListadoUsuarios = new BindingList<Usuario>();
         public static BindingList<Tarea> ListaTareas = new BindingList<Tarea>();
         private static object proyectosImport;
+        private static string rutaCompletaArchivo;
 
 
         //metodos carga usuarios
@@ -201,6 +202,11 @@ namespace DAM2_Project_Desktop
             proyecto8.miembrosProyecto = new List<Usuario> { ListadoUsuarios[0] };
             proyecto8.tareasProyecto = new List<Tarea>();
             ListadoProyectos.Add(proyecto8);
-        } 
+        }
+
+        internal static void importJSONFromNewDirectory()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

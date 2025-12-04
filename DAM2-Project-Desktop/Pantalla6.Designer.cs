@@ -203,10 +203,12 @@ namespace DAM2_Project_Desktop
             // dateTimePickerFechaNacimiento
             // 
             dateTimePickerFechaNacimiento.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePickerFechaNacimiento.Font = new Font("Segoe UI", 15F);
+            dateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Custom;
             dateTimePickerFechaNacimiento.Location = new Point(743, 111);
             dateTimePickerFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
-            dateTimePickerFechaNacimiento.Size = new Size(275, 23);
+            dateTimePickerFechaNacimiento.Size = new Size(343, 34);
             dateTimePickerFechaNacimiento.TabIndex = 22;
             dateTimePickerFechaNacimiento.ValueChanged += dateTimePickerFechaNacimiento_ValueChanged;
             // 
@@ -294,11 +296,12 @@ namespace DAM2_Project_Desktop
             // 
             textBoxNombreUsuario.BackColor = SystemColors.Control;
             textBoxNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNombreUsuario.Font = new Font("Segoe UI", 15F);
             textBoxNombreUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxNombreUsuario.Location = new Point(385, 615);
+            textBoxNombreUsuario.Location = new Point(385, 606);
             textBoxNombreUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreUsuario.Name = "textBoxNombreUsuario";
-            textBoxNombreUsuario.Size = new Size(275, 23);
+            textBoxNombreUsuario.Size = new Size(343, 34);
             textBoxNombreUsuario.TabIndex = 10;
             textBoxNombreUsuario.TextChanged += textBoxNombreUsuario_TextChanged_1;
             // 
@@ -306,11 +309,12 @@ namespace DAM2_Project_Desktop
             // 
             textBoxNombreProyecto.BackColor = SystemColors.Control;
             textBoxNombreProyecto.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNombreProyecto.Font = new Font("Segoe UI", 15F);
             textBoxNombreProyecto.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxNombreProyecto.Location = new Point(118, 111);
             textBoxNombreProyecto.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreProyecto.Name = "textBoxNombreProyecto";
-            textBoxNombreProyecto.Size = new Size(275, 23);
+            textBoxNombreProyecto.Size = new Size(343, 34);
             textBoxNombreProyecto.TabIndex = 8;
             textBoxNombreProyecto.TextChanged += textBoxNombreProyecto_TextChanged;
             // 

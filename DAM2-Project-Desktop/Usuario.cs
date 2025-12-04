@@ -88,8 +88,11 @@ namespace DAM2_Project_Desktop
         //metodos 
 
         public string setApellidoCompleto() 
-        { return this.apellido1 + " " + this.apellido2; } 
-        
+        { return this.apellido1 + " " + this.apellido2; }
+
+        public string nombreCompleto => $"{nombre} {apellido1}".Trim();
+
+
 
         private string UserNameGenerator()
         {

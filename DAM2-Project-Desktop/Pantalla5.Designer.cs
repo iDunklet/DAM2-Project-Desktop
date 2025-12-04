@@ -206,7 +206,6 @@ namespace DAM2_Project_Desktop
             buttonUsuarios.TabIndex = 13;
             buttonUsuarios.Text = "Usuarios";
             buttonUsuarios.UseVisualStyleBackColor = false;
-            buttonUsuarios.Click += buttonUsuarios_Click;
             // 
             // buttonProyectosPrivados
             // 
@@ -236,11 +235,12 @@ namespace DAM2_Project_Desktop
             // 
             textBoxRepetirContrasenya.BackColor = SystemColors.Control;
             textBoxRepetirContrasenya.BorderStyle = BorderStyle.FixedSingle;
+            textBoxRepetirContrasenya.Font = new Font("Segoe UI", 15F);
             textBoxRepetirContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxRepetirContrasenya.Location = new Point(825, 615);
             textBoxRepetirContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxRepetirContrasenya.Name = "textBoxRepetirContrasenya";
-            textBoxRepetirContrasenya.Size = new Size(275, 23);
+            textBoxRepetirContrasenya.Size = new Size(343, 34);
             textBoxRepetirContrasenya.TabIndex = 24;
             // 
             // labelDatosCuenta
@@ -276,26 +276,30 @@ namespace DAM2_Project_Desktop
             buttonCrearUsuario.TabIndex = 9;
             buttonCrearUsuario.Text = "Crear usuario";
             buttonCrearUsuario.UseVisualStyleBackColor = true;
-            buttonCrearUsuario.Click += btnCrearUsuario_Click;
+            buttonCrearUsuario.Click += ButtonCrearUsuario_Click;
             // 
             // dateTimePickerFechaNacimiento
             // 
             dateTimePickerFechaNacimiento.CalendarFont = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePickerFechaNacimiento.CustomFormat = "dd/MM/yyyy";
+            dateTimePickerFechaNacimiento.Font = new Font("Segoe UI", 15F);
+            dateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Custom;
             dateTimePickerFechaNacimiento.Location = new Point(825, 276);
             dateTimePickerFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
-            dateTimePickerFechaNacimiento.Size = new Size(275, 23);
+            dateTimePickerFechaNacimiento.Size = new Size(343, 34);
             dateTimePickerFechaNacimiento.TabIndex = 21;
             // 
             // textBoxApellido1
             // 
             textBoxApellido1.BackColor = SystemColors.Control;
             textBoxApellido1.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido1.Font = new Font("Segoe UI", 15F);
             textBoxApellido1.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxApellido1.Location = new Point(825, 208);
+            textBoxApellido1.Location = new Point(825, 203);
             textBoxApellido1.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido1.Name = "textBoxApellido1";
-            textBoxApellido1.Size = new Size(275, 23);
+            textBoxApellido1.Size = new Size(343, 34);
             textBoxApellido1.TabIndex = 20;
             // 
             // labelRepContrasenya
@@ -314,11 +318,12 @@ namespace DAM2_Project_Desktop
             // 
             textBoxContrasenya.BackColor = SystemColors.Control;
             textBoxContrasenya.BorderStyle = BorderStyle.FixedSingle;
+            textBoxContrasenya.Font = new Font("Segoe UI", 15F);
             textBoxContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxContrasenya.Location = new Point(267, 643);
             textBoxContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxContrasenya.Name = "textBoxContrasenya";
-            textBoxContrasenya.Size = new Size(275, 23);
+            textBoxContrasenya.Size = new Size(343, 34);
             textBoxContrasenya.TabIndex = 18;
             // 
             // textBoxRepContrasenya
@@ -367,55 +372,60 @@ namespace DAM2_Project_Desktop
             // 
             textBoxEmail.BackColor = SystemColors.Control;
             textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
+            textBoxEmail.Font = new Font("Segoe UI", 15F);
             textBoxEmail.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxEmail.Location = new Point(267, 418);
+            textBoxEmail.Location = new Point(267, 409);
             textBoxEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(275, 23);
+            textBoxEmail.Size = new Size(343, 34);
             textBoxEmail.TabIndex = 10;
             // 
             // textBoxUsuario
             // 
             textBoxUsuario.BackColor = SystemColors.Control;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUsuario.Font = new Font("Segoe UI", 15F);
             textBoxUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxUsuario.Location = new Point(267, 566);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(275, 23);
+            textBoxUsuario.Size = new Size(343, 34);
             textBoxUsuario.TabIndex = 9;
             // 
             // textBoxApellido2
             // 
             textBoxApellido2.BackColor = SystemColors.Control;
             textBoxApellido2.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido2.Font = new Font("Segoe UI", 15F);
             textBoxApellido2.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxApellido2.Location = new Point(267, 276);
             textBoxApellido2.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido2.Name = "textBoxApellido2";
-            textBoxApellido2.Size = new Size(275, 23);
+            textBoxApellido2.Size = new Size(343, 34);
             textBoxApellido2.TabIndex = 8;
             // 
             // textBoxCurso
             // 
             textBoxCurso.BackColor = SystemColors.Control;
             textBoxCurso.BorderStyle = BorderStyle.FixedSingle;
+            textBoxCurso.Font = new Font("Segoe UI", 15F);
             textBoxCurso.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxCurso.Location = new Point(267, 346);
+            textBoxCurso.Location = new Point(267, 337);
             textBoxCurso.Margin = new Padding(3, 4, 3, 4);
             textBoxCurso.Name = "textBoxCurso";
-            textBoxCurso.Size = new Size(275, 23);
+            textBoxCurso.Size = new Size(343, 34);
             textBoxCurso.TabIndex = 7;
             // 
             // textBoxNombre
             // 
             textBoxNombre.BackColor = SystemColors.Control;
             textBoxNombre.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNombre.Font = new Font("Segoe UI", 15F);
             textBoxNombre.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxNombre.Location = new Point(267, 208);
             textBoxNombre.Margin = new Padding(3, 4, 3, 4);
             textBoxNombre.Name = "textBoxNombre";
-            textBoxNombre.Size = new Size(275, 23);
+            textBoxNombre.Size = new Size(343, 34);
             textBoxNombre.TabIndex = 6;
             // 
             // labelEmail
@@ -457,7 +467,7 @@ namespace DAM2_Project_Desktop
             labelApellido2.AutoSize = true;
             labelApellido2.Font = new Font("Segoe UI", 20F);
             labelApellido2.ForeColor = Color.FromArgb(35, 78, 82);
-            labelApellido2.Location = new Point(106, 262);
+            labelApellido2.Location = new Point(106, 273);
             labelApellido2.Name = "labelApellido2";
             labelApellido2.Size = new Size(145, 37);
             labelApellido2.TabIndex = 2;
@@ -553,7 +563,7 @@ namespace DAM2_Project_Desktop
             textBoxCurso.Text = "";
             textBoxEmail.Text = "";
             textBoxContrasenya.Text = "";
-            textBoxRepContrasenya.Text = "";
+            textBoxRepetirContrasenya.Text = "";
             textBoxUsuario.Text = ""; // Se generará automáticamente cuando el usuario escriba nombre/apellido/clase
             dateTimePickerFechaNacimiento.Value = DateTime.Today; 
         }

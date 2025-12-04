@@ -201,6 +201,14 @@ namespace DAM2_Project_Desktop
                 return;
             }
 
+            bool existeProyecto = ListadoDatosClasses.ListadoProyectos.Any(p => p.titulo.Equals(nombreProyecto, StringComparison.OrdinalIgnoreCase));
+
+            if (existeProyecto)
+            {
+                MessageBox.Show("Ya existe un proyecto con ese nombre. Elige otro.");
+                return;
+            }
+
             List<Usuario> miembros = usuariosProyecto.ToList();
             Proyecto nuevoProyecto = new Proyecto(nombreProyecto, fechaEntrega, miembros);
 
