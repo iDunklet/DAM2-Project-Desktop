@@ -180,7 +180,14 @@ namespace DAM2_Project_Desktop
         {
             ListadoDatosClasses.guardarDatos();
             Pantalla6 pantalla6 = new Pantalla6();
+            pantalla6.FormClosed += Pantalla6_FormClosed;
             pantalla6.Show();
         }
+
+        private void Pantalla6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefrescarListado();
+        }
+
     }
 }

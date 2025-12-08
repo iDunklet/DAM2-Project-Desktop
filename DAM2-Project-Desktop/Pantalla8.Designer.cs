@@ -191,7 +191,6 @@ namespace DAM2_Project_Desktop
             buttonExportarJSON.TabIndex = 7;
             buttonExportarJSON.Text = "ExportarJSON";
             buttonExportarJSON.UseVisualStyleBackColor = false;
-            buttonExportarJSON.Click += buttonExportarJSON_Click_1;
             // 
             // buttonCrearUser
             // 

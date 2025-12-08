@@ -106,9 +106,7 @@ namespace DAM2_Project_Desktop
 
             if (username == correctUsername && password == correctPassword)
             {
-                Point location = Navegacion.FormInicialLocation(this);
-                Size size = Navegacion.FormInicialSize(this);
-                Pantalla2 pantalla2 = new Pantalla2(location, size);
+                Pantalla2 pantalla2 = new Pantalla2();
                 pantalla2.Show();
                 this.Hide();
             }

@@ -44,7 +44,7 @@ namespace DAM2_Project_Desktop
                 ListadoUsuarios.Add(user);
             }
 
-            MessageBox.Show("Importación de usuarios completada.", "Éxito");
+            //MessageBox.Show("Importación de usuarios completada.", "Éxito");
         }
 
         public static void exportUsers()
@@ -57,7 +57,7 @@ namespace DAM2_Project_Desktop
             string jsonText = JsonConvert.SerializeObject(ListadoUsuarios, Formatting.Indented);
             File.WriteAllText(rutaArchivo, jsonText);
 
-            MessageBox.Show("Exportación de usuarios completada.", "Éxito");
+            //MessageBox.Show("Exportación de usuarios completada.", "Éxito");
         }
 
         //metodos carga proyectos
@@ -66,7 +66,7 @@ namespace DAM2_Project_Desktop
             string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
             string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
             Directory.CreateDirectory(carpetaUsuarios);
-            string rutaArchivo = Path.Combine(carpetaUsuarios, "data_tasky.json");
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
 
             if (!File.Exists(rutaArchivo))
             {
@@ -97,19 +97,19 @@ namespace DAM2_Project_Desktop
             if (ListadoProyectos.Count > 0)
                 Proyecto._nextID = ListadoProyectos.Max(p => p.ID) + 1;
 
-            MessageBox.Show("Importación de proyectos completada.", "Éxito");
+            //MessageBox.Show("Importación de proyectos completada.", "Éxito");
         }
 
         public static void exportProjects()
         {
             string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
-            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Exports");
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
             string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
 
             string jsonText = JsonConvert.SerializeObject(ListadoProyectos, Formatting.Indented);
             File.WriteAllText(rutaArchivo, jsonText);
 
-            MessageBox.Show("Exportación de proyectos completada.", "Éxito");
+            //MessageBox.Show("Exportación de proyectos completada.", "Éxito");
         }
 
         public static void importJSONFromNewDirectory()

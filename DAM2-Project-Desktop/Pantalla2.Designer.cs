@@ -28,7 +28,6 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla2));
             splitContainer1 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
@@ -43,15 +42,6 @@ namespace DAM2_Project_Desktop
             controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
             label1 = new Label();
-            buttonExportarJson = new Button();
-            buttonImportarJson = new Button();
-            buttonUsuarios = new Button();
-            buttonProyectosPrivados = new Button();
-            buttonFavoritos = new Button();
-            buttonInicio = new Button();
-            pictureBox1 = new PictureBox();
-            pictureBoxLogo = new PictureBox();
-            pictureBoxMenu = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -63,9 +53,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMenu).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -265,115 +252,6 @@ namespace DAM2_Project_Desktop
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
-            // buttonExportarJson
-            // 
-            buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
-            buttonExportarJson.FlatStyle = FlatStyle.Flat;
-            buttonExportarJson.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonExportarJson.Location = new Point(18, 436);
-            buttonExportarJson.Name = "buttonExportarJson";
-            buttonExportarJson.Size = new Size(200, 70);
-            buttonExportarJson.TabIndex = 15;
-            buttonExportarJson.Text = "Exportar JSON";
-            buttonExportarJson.UseVisualStyleBackColor = false;
-            // 
-            // buttonImportarJson
-            // 
-            buttonImportarJson.BackColor = Color.FromArgb(79, 209, 197);
-            buttonImportarJson.FlatStyle = FlatStyle.Flat;
-            buttonImportarJson.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonImportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonImportarJson.Location = new Point(18, 346);
-            buttonImportarJson.Name = "buttonImportarJson";
-            buttonImportarJson.Size = new Size(200, 67);
-            buttonImportarJson.TabIndex = 14;
-            buttonImportarJson.Text = "Importar JSON";
-            buttonImportarJson.UseVisualStyleBackColor = false;
-            buttonImportarJson.Click += buttonImportarJson_Click;
-            // 
-            // buttonUsuarios
-            // 
-            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
-            buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonUsuarios.Location = new Point(18, 262);
-            buttonUsuarios.Name = "buttonUsuarios";
-            buttonUsuarios.Size = new Size(200, 68);
-            buttonUsuarios.TabIndex = 16;
-            buttonUsuarios.Text = "Usuarios";
-            buttonUsuarios.UseVisualStyleBackColor = false;
-            // 
-            // buttonProyectosPrivados
-            // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(18, 177);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 70);
-            buttonProyectosPrivados.TabIndex = 13;
-            buttonProyectosPrivados.Text = "Proyectos \r\nprivados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
-            // 
-            // buttonFavoritos
-            // 
-            buttonFavoritos.BackColor = Color.FromArgb(79, 209, 197);
-            buttonFavoritos.FlatStyle = FlatStyle.Flat;
-            buttonFavoritos.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
-            buttonFavoritos.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonFavoritos.Location = new Point(18, 97);
-            buttonFavoritos.Name = "buttonFavoritos";
-            buttonFavoritos.Size = new Size(200, 64);
-            buttonFavoritos.TabIndex = 12;
-            buttonFavoritos.Text = "Favoritos";
-            buttonFavoritos.UseVisualStyleBackColor = false;
-            // 
-            // buttonInicio
-            // 
-            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
-            buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonInicio.Location = new Point(18, 19);
-            buttonInicio.Name = "buttonInicio";
-            buttonInicio.Size = new Size(200, 66);
-            buttonInicio.TabIndex = 11;
-            buttonInicio.Text = "Inicio";
-            buttonInicio.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1315, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(96, 76);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBoxLogo
-            // 
-            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(183, 6);
-            pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(241, 84);
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxLogo.TabIndex = 5;
-            pictureBoxLogo.TabStop = false;
-            // 
-            // pictureBoxMenu
-            // 
-            pictureBoxMenu.Image = (Image)resources.GetObject("pictureBoxMenu.Image");
-            pictureBoxMenu.Location = new Point(11, 6);
-            pictureBoxMenu.Name = "pictureBoxMenu";
-            pictureBoxMenu.Size = new Size(137, 84);
-            pictureBoxMenu.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMenu.TabIndex = 6;
-            pictureBoxMenu.TabStop = false;
-            // 
             // Pantalla2
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -396,11 +274,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMenu).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
