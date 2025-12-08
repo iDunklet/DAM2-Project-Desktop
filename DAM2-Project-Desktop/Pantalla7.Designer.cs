@@ -1,3 +1,4 @@
+
 namespace DAM2_Project_Desktop
 {
     partial class Pantalla7
@@ -471,6 +472,11 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxImgPerfil).EndInit();
             ResumeLayout(false);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
