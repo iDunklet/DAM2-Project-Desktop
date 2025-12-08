@@ -216,7 +216,7 @@ namespace DAM2_Project_Desktop
             dateTimePickerFechaNacimiento.Location = new Point(743, 111);
             dateTimePickerFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
-            dateTimePickerFechaNacimiento.Size = new Size(275, 27);
+            dateTimePickerFechaNacimiento.Size = new Size(275, 41);
             dateTimePickerFechaNacimiento.TabIndex = 22;
             dateTimePickerFechaNacimiento.ValueChanged += dateTimePickerFechaNacimiento_ValueChanged;
             // 
@@ -307,7 +307,7 @@ namespace DAM2_Project_Desktop
             textBoxNombreUsuario.Location = new Point(385, 606);
             textBoxNombreUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreUsuario.Name = "textBoxNombreUsuario";
-            textBoxNombreUsuario.Size = new Size(275, 27);
+            textBoxNombreUsuario.Size = new Size(275, 41);
             textBoxNombreUsuario.TabIndex = 10;
             textBoxNombreUsuario.TextChanged += textBoxNombreUsuario_TextChanged_1;
             // 
@@ -320,7 +320,7 @@ namespace DAM2_Project_Desktop
             textBoxNombreProyecto.Location = new Point(118, 111);
             textBoxNombreProyecto.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreProyecto.Name = "textBoxNombreProyecto";
-            textBoxNombreProyecto.Size = new Size(275, 27);
+            textBoxNombreProyecto.Size = new Size(275, 41);
             textBoxNombreProyecto.TabIndex = 8;
             textBoxNombreProyecto.TextChanged += textBoxNombreProyecto_TextChanged;
             // 

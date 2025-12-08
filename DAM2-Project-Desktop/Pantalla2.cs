@@ -165,7 +165,7 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.guardarDatos();
             Pantalla8 pantalla8 = new Pantalla8();
             pantalla8.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonInicio_Click(object sender, EventArgs e)

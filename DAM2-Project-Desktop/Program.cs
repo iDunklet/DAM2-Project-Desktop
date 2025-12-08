@@ -15,9 +15,9 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.cargarDatos();
 
             //ListadoDatosClasses.importProjects();
-            MessageBox.Show("Proyectos cargados: " + ListadoDatosClasses.ListadoProyectos.Count);
+            //MessageBox.Show("Proyectos cargados: " + ListadoDatosClasses.ListadoProyectos.Count);
 
-            Application.Run(new Pantalla6());
+            Application.Run(new Pantalla2());
 
         }
     }

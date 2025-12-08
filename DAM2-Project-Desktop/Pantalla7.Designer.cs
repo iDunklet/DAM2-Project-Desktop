@@ -474,11 +474,6 @@ namespace DAM2_Project_Desktop
             ResumeLayout(false);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private SplitContainer splitContainer1;

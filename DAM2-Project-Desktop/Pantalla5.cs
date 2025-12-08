@@ -58,6 +58,7 @@ namespace DAM2_Project_Desktop
         {
             originalSize = this.Size;
             SaveOriginalRectangles();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void SaveOriginalRectangles()
@@ -84,13 +85,6 @@ namespace DAM2_Project_Desktop
             rLabelUsuario = new Rectangle(labelUsuario.Location, labelUsuario.Size);
             rLabelPassword = new Rectangle(labelContrasenya.Location, labelContrasenya.Size);
             rLabelRepPassword = new Rectangle(labelRepContrasenya.Location, labelRepContrasenya.Size);
-
-            // Botones laterales
-            rButtonInicio = new Rectangle(buttonInicio.Location, buttonInicio.Size);
-            rButtonProyectos = new Rectangle(buttonProyectosPrivados.Location, buttonProyectosPrivados.Size);
-            rButtonUsuarios = new Rectangle(buttonUsuarios.Location, buttonUsuarios.Size);
-            rButtonImportar = new Rectangle(buttonImportarJson.Location, buttonImportarJson.Size);
-            rButtonExportar = new Rectangle(buttonExportarJson.Location, buttonExportarJson.Size);
         }
 
         private void Pantalla5_Resize(object sender, EventArgs e)
@@ -121,12 +115,6 @@ namespace DAM2_Project_Desktop
             ResizeControl(labelContrasenya, rLabelPassword, scaleX, scaleY);
             ResizeControl(labelRepContrasenya, rLabelRepPassword, scaleX, scaleY);
 
-            // Botones laterales
-            ResizeSidebarButton(buttonInicio, rButtonInicio, scaleX, scaleY);
-            ResizeSidebarButton(buttonProyectosPrivados, rButtonProyectos, scaleX, scaleY);
-            ResizeSidebarButton(buttonUsuarios, rButtonUsuarios, scaleX, scaleY);
-            ResizeSidebarButton(buttonImportarJson, rButtonImportar, scaleX, scaleY);
-            ResizeSidebarButton(buttonExportarJson, rButtonExportar, scaleX, scaleY);
         }
 
         private void ResizeControl(Control c, Rectangle r, float scaleX, float scaleY)
@@ -226,6 +214,9 @@ namespace DAM2_Project_Desktop
 
             // Limpiar
             LimpiarCamposUsuario();
+
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
         }
 
         private void buttonUsuarios_Click(object sender, EventArgs e)
@@ -254,9 +245,5 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.guardarDatos();
         }
 
-        private void Pantalla5_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
     }
 }

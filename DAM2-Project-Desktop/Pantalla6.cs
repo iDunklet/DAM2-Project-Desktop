@@ -71,13 +71,6 @@ namespace DAM2_Project_Desktop
 
             // NUEVO → Línea horizontal
             rectLinea = new Rectangle(linea.Location, linea.Size);
-
-            // Botones laterales
-            rectButtonInicio = new Rectangle(buttonInicio.Location, buttonInicio.Size);
-            rectButtonProyectos = new Rectangle(buttonProyectosPrivados.Location, buttonProyectosPrivados.Size);
-            rectButtonUsuarios = new Rectangle(buttonUsuarios.Location, buttonUsuarios.Size);
-            rectButtonImportar = new Rectangle(buttonImportarJson.Location, buttonImportarJson.Size);
-            rectButtonExportar = new Rectangle(buttonExportarJson.Location, buttonExportarJson.Size);
         }
 
         private void Pantalla6_Resize(object sender, EventArgs e)
@@ -97,13 +90,6 @@ namespace DAM2_Project_Desktop
 
             // --- NUEVO: Redimensionar la línea para que ocupe todo el ancho ---
             linea.Width = this.ClientSize.Width;
-
-            // --- Botones laterales como Pantalla8 ---
-            ResizeSidebarButton(buttonInicio, rectButtonInicio, scaleX, scaleY);
-            ResizeSidebarButton(buttonProyectosPrivados, rectButtonProyectos, scaleX, scaleY);
-            ResizeSidebarButton(buttonUsuarios, rectButtonUsuarios, scaleX, scaleY);
-            ResizeSidebarButton(buttonImportarJson, rectButtonImportar, scaleX, scaleY);
-            ResizeSidebarButton(buttonExportarJson, rectButtonExportar, scaleX, scaleY);
 
         }
 
@@ -226,6 +212,7 @@ namespace DAM2_Project_Desktop
 
             MessageBox.Show("Proyectos actuales:\n" + proyectos);
 
+            ListadoDatosClasses.guardarDatos();
             this.Close();
 
         }
@@ -251,7 +238,10 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.importJSONFromNewDirectory();
         }
 
-
+        private void buttonExportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+        }
     }
 }
 

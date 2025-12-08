@@ -24,6 +24,9 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.cargarDatos();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.RowValidated += dataGridView1_RowValidated;
+            dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
+            dataGridView1.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
             proyectoActual = project;
             CargarInfoProyecto();
             CargarUsuariosProyecto();
@@ -38,6 +41,9 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.cargarDatos();
             //dataGridView1_CellContentClick();
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.RowValidated += dataGridView1_RowValidated;
+            dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
+            dataGridView1.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
             proyectoActual = project;
             CargarInfoProyecto();
             CargarUsuariosProyecto();
@@ -47,57 +53,68 @@ namespace DAM2_Project_Desktop
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Evita errores si se hace clic en el encabezado
-            try
+            if (e.RowIndex < 0 || e.RowIndex == dataGridView1.NewRowIndex) return;
+
+            string nombreColumna = dataGridView1.Columns[e.ColumnIndex].Name;
+
+            if (nombreColumna == "FechaInicio" || nombreColumna == "FechaFin")
             {
-                if (e.RowIndex < 0) return;
-
-                // Comprueba en qué columna se ha hecho clic (usa los nombres que pusiste en el diseñador)
-                string nombreColumna = dataGridView1.Columns[e.ColumnIndex].Name;
-
-                if (nombreColumna == "FechaInicioColumn" || nombreColumna == "FechaFinalColumn")
-                {
-                    ShowDatePicker(e.RowIndex, e.ColumnIndex);
-                }
+                ShowDatePicker(e.RowIndex, e.ColumnIndex);
             }
-            catch { }
         }
-
         private void ShowDatePicker(int rowIndex, int columnIndex)
         {
             var fila = dataGridView1.Rows[rowIndex];
+
+            // Crear tarea nueva solo si fila válida y lista inicializada
+            if (fila.Tag == null)
+            {
+                fila.Tag = new Tarea();
+                if (proyectoActual.tareasProyecto == null)
+                    proyectoActual.tareasProyecto = new List<Tarea>();
+
+                proyectoActual.tareasProyecto.Add((Tarea)fila.Tag);
+            }
+
             var tareaActual = (Tarea)fila.Tag;
 
-            DateTime? fechaActual = (columnIndex == 3)
-                ? tareaActual.fechaInicioTarea
-                : tareaActual.fechaFinTarea;
+            DateTime fechaActual = (columnIndex == dataGridView1.Columns["FechaInicio"].Index)
+                ? tareaActual.fechaInicioTarea ?? DateTime.Now
+                : tareaActual.fechaFinTarea ?? DateTime.Now;
 
             DateTimePicker dtp = new DateTimePicker
             {
                 Format = DateTimePickerFormat.Custom,
                 CustomFormat = "dd/MM/yyyy",
-                Value = fechaActual ?? DateTime.Now,
-                Visible = true
+                Value = fechaActual
             };
 
-            Rectangle cellRectangle = dataGridView1.GetCellDisplayRectangle(columnIndex, rowIndex, true);
-            dtp.Location = new Point(cellRectangle.X, cellRectangle.Y);
-            dtp.Size = new Size(cellRectangle.Width, cellRectangle.Height);
+            // Posicionar el DateTimePicker encima de la celda
+            Rectangle cellRect = dataGridView1.GetCellDisplayRectangle(columnIndex, rowIndex, true);
+            dtp.Location = new Point(cellRect.X, cellRect.Y);
+            dtp.Size = new Size(cellRect.Width, cellRect.Height);
+            dtp.Visible = true;
 
             dataGridView1.Controls.Add(dtp);
+            dtp.BringToFront();
 
             dtp.CloseUp += (s, e) =>
             {
                 // Actualizar la celda y la tarea
                 fila.Cells[columnIndex].Value = dtp.Value.ToShortDateString();
-                if (columnIndex == 3)
+
+                if (columnIndex == dataGridView1.Columns["FechaInicio"].Index)
                     tareaActual.fechaInicioTarea = dtp.Value;
                 else
                     tareaActual.fechaFinTarea = dtp.Value;
 
                 dataGridView1.Controls.Remove(dtp);
+                dtp.Dispose();
             };
+
+            dtp.Focus();
         }
+
 
 
         private void Pantalla3_Load(object sender, EventArgs e)
@@ -226,61 +243,78 @@ namespace DAM2_Project_Desktop
         {
             dataGridView1.Rows.Clear();
 
+            if (proyectoActual == null || proyectoActual.tareasProyecto == null)
+                return;
+
             foreach (var tarea in proyectoActual.tareasProyecto)
             {
                 int rowIndex = dataGridView1.Rows.Add();
                 var fila = dataGridView1.Rows[rowIndex];
 
-                // Guardamos la tarea en Tag
                 fila.Tag = tarea;
 
-                // Nombre
-                fila.Cells[0].Value = tarea.nombreTarea;
-                // Descripción
-                fila.Cells[1].Value = tarea.descripcionTarea;
+                fila.Cells["Nombre"].Value = tarea?.nombreTarea ?? "";
+                fila.Cells["Descripcion"].Value = tarea?.descripcionTarea ?? "";
 
-                // ComboBox responsables
-                var comboCell = (DataGridViewComboBoxCell)fila.Cells[2];
+                // ComboBox responsable
+                var comboCell = (DataGridViewComboBoxCell)fila.Cells["Asignar"];
                 comboCell.Items.Clear();
-                foreach (var usuario in proyectoActual.miembrosProyecto)
+
+                if (proyectoActual.miembrosProyecto != null)
                 {
-                    comboCell.Items.Add(usuario.nombre);
+                    foreach (var usuario in proyectoActual.miembrosProyecto)
+                        comboCell.Items.Add(usuario.nombre);
                 }
-                if (tarea.responsableAsignado != null && !comboCell.Items.Contains(tarea.responsableAsignado.nombre))
+
+                if (tarea?.responsableAsignado != null &&
+                    !comboCell.Items.Contains(tarea.responsableAsignado.nombre))
                     comboCell.Items.Add(tarea.responsableAsignado.nombre);
-                comboCell.Value = tarea.responsableAsignado?.nombre;
 
-                // Fechas (solo mostrar)
-                fila.Cells[3].Value = tarea.fechaInicioTarea.HasValue
-    ? tarea.fechaInicioTarea.Value.ToShortDateString()
-    : "";
-                fila.Cells[4].Value = tarea.fechaFinTarea.HasValue
-                    ? tarea.fechaFinTarea.Value.ToShortDateString()
-                    : "";
+                comboCell.Value = tarea?.responsableAsignado?.nombre ?? null;
 
-                // Estado
-                fila.Cells[5].Value = tarea.statusTarea;
+                // Fechas
+                fila.Cells["Fecha inicio"].Value = tarea?.fechaInicioTarea?.ToShortDateString() ?? "";
+                fila.Cells["Fecha final"].Value = tarea?.fechaFinTarea?.ToShortDateString() ?? "";
 
-                //horas
-                if (tarea.horas == null)
-                {
-                    fila.Cells[6].Value = 0;
-                }
-                else
-                {
-                    fila.Cells[6].Value = tarea.horas;
-                }
+                // Estado y horas
+                fila.Cells["Estado de la Tarea"].Value = tarea?.statusTarea ?? "";
+                fila.Cells["Horas"].Value = tarea?.horas ?? 0;
             }
 
-            // Capturar errores de ComboBox
             dataGridView1.DataError += (s, e) => { e.ThrowException = false; };
         }
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        private void dataGridView1_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.RowIndex == dataGridView1.NewRowIndex) return;
 
+            var fila = dataGridView1.Rows[e.RowIndex];
+
+            if (fila.Tag == null)
+            {
+                Tarea nueva = new Tarea
+                {
+                    nombreTarea = fila.Cells["Nombre"].Value?.ToString() ?? "",
+                    descripcionTarea = fila.Cells["Descripcion"].Value?.ToString() ?? ""
+                };
+
+                fila.Tag = nueva;
+                proyectoActual.tareasProyecto.Add(nueva);
+            }
+        }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            ListadoDatosClasses.guardarDatos();
         }
 
+        private void DataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
 
 
         private void button3_Click_1(object sender, EventArgs e)
