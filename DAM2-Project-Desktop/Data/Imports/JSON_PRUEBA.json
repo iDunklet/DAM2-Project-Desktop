@@ -12,7 +12,8 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA"
+        "userName": "JGARCÍA",
+        "nombreCompleto": "Juan García"
       },
       {
         "nombre": "María",
@@ -22,7 +23,8 @@
         "classe": "DAM2",
         "email": "maria.fernandez@ies.es",
         "password": "pass789",
-        "userName": "MFERNÁNDEZ"
+        "userName": "MFERNÁNDEZ",
+        "nombreCompleto": "María Fernández"
       },
       {
         "nombre": "David",
@@ -32,7 +34,8 @@
         "classe": "DAM2",
         "email": "david.martin@ies.es",
         "password": "pass101",
-        "userName": "DMARTÍN"
+        "userName": "DMARTÍN",
+        "nombreCompleto": "David Martín"
       }
     ],
     "tareasProyecto": [
@@ -49,7 +52,8 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA"
+          "userName": "JGARCÍA",
+          "nombreCompleto": "Juan García"
         },
         "statusTarea": "En progreso",
         "horas": 2
@@ -67,7 +71,8 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ"
+          "userName": "MFERNÁNDEZ",
+          "nombreCompleto": "María Fernández"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -85,7 +90,8 @@
           "classe": "DAM2",
           "email": "carlos.ruiz@ies.es",
           "password": "pass456",
-          "userName": "CRUIZ"
+          "userName": "CRUIZ",
+          "nombreCompleto": "Carlos Ruiz"
         },
         "statusTarea": "Completada",
         "horas": 3
@@ -103,7 +109,8 @@
           "classe": "DAW2",
           "email": "pedro.sanchez@ies.es",
           "password": "pass404",
-          "userName": "PSÁNCHEZ"
+          "userName": "PSÁNCHEZ",
+          "nombreCompleto": "Pedro Sánchez"
         },
         "statusTarea": "Completada",
         "horas": 8
@@ -123,7 +130,8 @@
         "classe": "DAM2",
         "email": "carlos.ruiz@ies.es",
         "password": "pass456",
-        "userName": "CRUIZ"
+        "userName": "CRUIZ",
+        "nombreCompleto": "Carlos Ruiz"
       },
       {
         "nombre": "Ana",
@@ -133,7 +141,8 @@
         "classe": "DAW1",
         "email": "ana.lopez@ies.es",
         "password": "pass303",
-        "userName": "ALÓPEZ"
+        "userName": "ALÓPEZ",
+        "nombreCompleto": "Ana López"
       },
       {
         "nombre": "Pedro",
@@ -143,7 +152,8 @@
         "classe": "DAW2",
         "email": "pedro.sanchez@ies.es",
         "password": "pass404",
-        "userName": "PSÁNCHEZ"
+        "userName": "PSÁNCHEZ",
+        "nombreCompleto": "Pedro Sánchez"
       },
       {
         "nombre": "Sofia",
@@ -153,7 +163,19 @@
         "classe": "DAW1",
         "email": "sofia.ramirez@ies.es",
         "password": "pass505",
-        "userName": "SRAMÍREZ"
+        "userName": "SRAMÍREZ",
+        "nombreCompleto": "Sofia Ramírez"
+      },
+      {
+        "nombre": "David",
+        "apellido1": "Martín",
+        "apellido2": null,
+        "fechaNacimiento": "2002-11-05T00:00:00",
+        "classe": "DAM2",
+        "email": "david.martin@ies.es",
+        "password": "pass101",
+        "userName": "DMARTÍN",
+        "nombreCompleto": "David Martín"
       }
     ],
     "tareasProyecto": [
@@ -170,7 +192,8 @@
           "classe": "DAW1",
           "email": "ana.lopez@ies.es",
           "password": "pass303",
-          "userName": "ALÓPEZ"
+          "userName": "ALÓPEZ",
+          "nombreCompleto": "Ana López"
         },
         "statusTarea": "Completada",
         "horas": 5
@@ -188,7 +211,8 @@
           "classe": "ASIX1",
           "email": "eva.sanz@ies.es",
           "password": "pass707",
-          "userName": "ESANZ"
+          "userName": "ESANZ",
+          "nombreCompleto": "Eva Sanz"
         },
         "statusTarea": "En progreso",
         "horas": 1
@@ -206,14 +230,15 @@
           "classe": "ASIX2",
           "email": "miguel.diaz@ies.es",
           "password": "pass808",
-          "userName": "MDÍAZ"
+          "userName": "MDÍAZ",
+          "nombreCompleto": "Miguel Díaz"
         },
         "statusTarea": "En progreso",
         "horas": 1
       },
       {
-        "nombreTarea": "Implementación Seguridad",
-        "descripcionTarea": null,
+        "nombreTarea": "Implementación Seguridaddqwdqwdqwdqw",
+        "descripcionTarea": "dqwdqwdqw",
         "fechaInicioTarea": "2024-04-01T00:00:00",
         "fechaFinTarea": null,
         "responsableAsignado": {
@@ -224,7 +249,8 @@
           "classe": "DAW1",
           "email": "sofia.ramirez@ies.es",
           "password": "pass505",
-          "userName": "SRAMÍREZ"
+          "userName": "SRAMÍREZ",
+          "nombreCompleto": "Sofia Ramírez"
         },
         "statusTarea": "En progreso",
         "horas": 2
@@ -244,7 +270,8 @@
         "classe": "DAW2",
         "email": "javier.ortega@ies.es",
         "password": "pass606",
-        "userName": "JORTEGA"
+        "userName": "JORTEGA",
+        "nombreCompleto": "Javier Ortega"
       },
       {
         "nombre": "Eva",
@@ -254,7 +281,8 @@
         "classe": "ASIX1",
         "email": "eva.sanz@ies.es",
         "password": "pass707",
-        "userName": "ESANZ"
+        "userName": "ESANZ",
+        "nombreCompleto": "Eva Sanz"
       },
       {
         "nombre": "Miguel",
@@ -264,7 +292,8 @@
         "classe": "ASIX2",
         "email": "miguel.diaz@ies.es",
         "password": "pass808",
-        "userName": "MDÍAZ"
+        "userName": "MDÍAZ",
+        "nombreCompleto": "Miguel Díaz"
       },
       {
         "nombre": "Raúl",
@@ -274,7 +303,8 @@
         "classe": "ASIX2",
         "email": "raul.castro@ies.es",
         "password": "pass010",
-        "userName": "RCASTRO"
+        "userName": "RCASTRO",
+        "nombreCompleto": "Raúl Castro"
       }
     ],
     "tareasProyecto": [
@@ -291,7 +321,8 @@
           "classe": "DAW2",
           "email": "javier.ortega@ies.es",
           "password": "pass606",
-          "userName": "JORTEGA"
+          "userName": "JORTEGA",
+          "nombreCompleto": "Javier Ortega"
         },
         "statusTarea": "Completada",
         "horas": 5
@@ -309,7 +340,8 @@
           "classe": "ASIX1",
           "email": "carmen.vega@ies.es",
           "password": "pass909",
-          "userName": "CVEGA"
+          "userName": "CVEGA",
+          "nombreCompleto": "Carmen Vega"
         },
         "statusTarea": "Completada",
         "horas": 1
@@ -327,7 +359,8 @@
           "classe": "ASIX2",
           "email": "raul.castro@ies.es",
           "password": "pass010",
-          "userName": "RCASTRO"
+          "userName": "RCASTRO",
+          "nombreCompleto": "Raúl Castro"
         },
         "statusTarea": "En progreso",
         "horas": 1
@@ -345,7 +378,8 @@
           "classe": "PROF",
           "email": "prof.informatica@ies.es",
           "password": "prof123",
-          "userName": "PINFORMÁTICA"
+          "userName": "PINFORMÁTICA",
+          "nombreCompleto": "Profesor Informática"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -365,7 +399,8 @@
         "classe": "DAM2",
         "email": "laura.gomez@ies.es",
         "password": "pass202",
-        "userName": "LGÓMEZ"
+        "userName": "LGÓMEZ",
+        "nombreCompleto": "Laura Gómez"
       },
       {
         "nombre": "Carmen",
@@ -375,7 +410,8 @@
         "classe": "ASIX1",
         "email": "carmen.vega@ies.es",
         "password": "pass909",
-        "userName": "CVEGA"
+        "userName": "CVEGA",
+        "nombreCompleto": "Carmen Vega"
       },
       {
         "nombre": "Profesor",
@@ -385,7 +421,8 @@
         "classe": "PROF",
         "email": "prof.informatica@ies.es",
         "password": "prof123",
-        "userName": "PINFORMÁTICA"
+        "userName": "PINFORMÁTICA",
+        "nombreCompleto": "Profesor Informática"
       }
     ],
     "tareasProyecto": [
@@ -402,7 +439,8 @@
           "classe": "DAM2",
           "email": "david.martin@ies.es",
           "password": "pass101",
-          "userName": "DMARTÍN"
+          "userName": "DMARTÍN",
+          "nombreCompleto": "David Martín"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -420,7 +458,8 @@
           "classe": "DAM2",
           "email": "laura.gomez@ies.es",
           "password": "pass202",
-          "userName": "LGÓMEZ"
+          "userName": "LGÓMEZ",
+          "nombreCompleto": "Laura Gómez"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -438,7 +477,8 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA"
+          "userName": "JGARCÍA",
+          "nombreCompleto": "Juan García"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -458,7 +498,8 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA"
+        "userName": "JGARCÍA",
+        "nombreCompleto": "Juan García"
       },
       {
         "nombre": "Carlos",
@@ -468,7 +509,8 @@
         "classe": "DAM2",
         "email": "carlos.ruiz@ies.es",
         "password": "pass456",
-        "userName": "CRUIZ"
+        "userName": "CRUIZ",
+        "nombreCompleto": "Carlos Ruiz"
       },
       {
         "nombre": "Ana",
@@ -478,7 +520,8 @@
         "classe": "DAW1",
         "email": "ana.lopez@ies.es",
         "password": "pass303",
-        "userName": "ALÓPEZ"
+        "userName": "ALÓPEZ",
+        "nombreCompleto": "Ana López"
       },
       {
         "nombre": "Javier",
@@ -488,7 +531,8 @@
         "classe": "DAW2",
         "email": "javier.ortega@ies.es",
         "password": "pass606",
-        "userName": "JORTEGA"
+        "userName": "JORTEGA",
+        "nombreCompleto": "Javier Ortega"
       }
     ],
     "tareasProyecto": [
@@ -505,7 +549,8 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ"
+          "userName": "MFERNÁNDEZ",
+          "nombreCompleto": "María Fernández"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -523,7 +568,8 @@
           "classe": "ASIX1",
           "email": "eva.sanz@ies.es",
           "password": "pass707",
-          "userName": "ESANZ"
+          "userName": "ESANZ",
+          "nombreCompleto": "Eva Sanz"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -543,7 +589,8 @@
         "classe": "DAM2",
         "email": "maria.fernandez@ies.es",
         "password": "pass789",
-        "userName": "MFERNÁNDEZ"
+        "userName": "MFERNÁNDEZ",
+        "nombreCompleto": "María Fernández"
       },
       {
         "nombre": "Pedro",
@@ -553,7 +600,8 @@
         "classe": "DAW2",
         "email": "pedro.sanchez@ies.es",
         "password": "pass404",
-        "userName": "PSÁNCHEZ"
+        "userName": "PSÁNCHEZ",
+        "nombreCompleto": "Pedro Sánchez"
       }
     ],
     "tareasProyecto": [
@@ -570,7 +618,8 @@
           "classe": "DAM2",
           "email": "juan.garcia@ies.es",
           "password": "pass123",
-          "userName": "JGARCÍA"
+          "userName": "JGARCÍA",
+          "nombreCompleto": "Juan García"
         },
         "statusTarea": "En progreso",
         "horas": 2
@@ -588,7 +637,8 @@
           "classe": "DAM2",
           "email": "maria.fernandez@ies.es",
           "password": "pass789",
-          "userName": "MFERNÁNDEZ"
+          "userName": "MFERNÁNDEZ",
+          "nombreCompleto": "María Fernández"
         },
         "statusTarea": "Pendiente",
         "horas": 0
@@ -608,7 +658,8 @@
         "classe": "DAM2",
         "email": "david.martin@ies.es",
         "password": "pass101",
-        "userName": "DMARTÍN"
+        "userName": "DMARTÍN",
+        "nombreCompleto": "David Martín"
       },
       {
         "nombre": "Sofia",
@@ -618,7 +669,8 @@
         "classe": "DAW1",
         "email": "sofia.ramirez@ies.es",
         "password": "pass505",
-        "userName": "SRAMÍREZ"
+        "userName": "SRAMÍREZ",
+        "nombreCompleto": "Sofia Ramírez"
       },
       {
         "nombre": "Miguel",
@@ -628,7 +680,8 @@
         "classe": "ASIX2",
         "email": "miguel.diaz@ies.es",
         "password": "pass808",
-        "userName": "MDÍAZ"
+        "userName": "MDÍAZ",
+        "nombreCompleto": "Miguel Díaz"
       }
     ],
     "tareasProyecto": [
@@ -645,7 +698,8 @@
           "classe": "DAW2",
           "email": "pedro.sanchez@ies.es",
           "password": "pass404",
-          "userName": "PSÁNCHEZ"
+          "userName": "PSÁNCHEZ",
+          "nombreCompleto": "Pedro Sánchez"
         },
         "statusTarea": "Completada",
         "horas": 8
@@ -663,7 +717,8 @@
           "classe": "DAW1",
           "email": "sofia.ramirez@ies.es",
           "password": "pass505",
-          "userName": "SRAMÍREZ"
+          "userName": "SRAMÍREZ",
+          "nombreCompleto": "Sofia Ramírez"
         },
         "statusTarea": "En progreso",
         "horas": 2
@@ -683,9 +738,58 @@
         "classe": "DAM2",
         "email": "juan.garcia@ies.es",
         "password": "pass123",
-        "userName": "JGARCÍA"
+        "userName": "JGARCÍA",
+        "nombreCompleto": "Juan García"
       }
     ],
     "tareasProyecto": []
+  },
+  {
+    "ID": 0,
+    "titulo": "test1",
+    "fechaEntrega": "2025-12-08T12:22:03.8755776+01:00",
+    "miembrosProyecto": [
+      {
+        "nombre": "María",
+        "apellido1": "Fernández",
+        "apellido2": null,
+        "fechaNacimiento": "2001-08-12T00:00:00",
+        "classe": "DAM2",
+        "email": "maria.fernandez@ies.es",
+        "password": "pass789",
+        "userName": "MFERNÁNDEZ",
+        "nombreCompleto": "María Fernández"
+      }
+    ],
+    "tareasProyecto": null
+  },
+  {
+    "ID": 0,
+    "titulo": "jhkhj",
+    "fechaEntrega": "2025-12-08T12:52:55.2447388+01:00",
+    "miembrosProyecto": [
+      {
+        "nombre": "Carlos",
+        "apellido1": "Ruiz",
+        "apellido2": "De la Fuente",
+        "fechaNacimiento": "2003-03-01T00:00:00",
+        "classe": "DAM2",
+        "email": "carlos.ruiz@ies.es",
+        "password": "pass456",
+        "userName": "CRUIZ",
+        "nombreCompleto": "Carlos Ruiz"
+      }
+    ],
+    "tareasProyecto": [
+      {
+        "nombreTarea": "puta",
+        "descripcionTarea": "",
+        "fechaInicioTarea": null,
+        "fechaFinTarea": null,
+        "responsableAsignado": null,
+        "statusTarea": "",
+        "horas": 9
+      }
+    ]
   }
 ]

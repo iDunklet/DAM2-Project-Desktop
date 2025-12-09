@@ -123,6 +123,11 @@ namespace DAM2_Project_Desktop
         {
 
         }
+
+        private void Pantalla1_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
         //jajajaj
     }
 }

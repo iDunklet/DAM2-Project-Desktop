@@ -1,10 +1,11 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 
 namespace DAM2_Project_Desktop
 {
@@ -14,93 +15,150 @@ namespace DAM2_Project_Desktop
         public static BindingList<Proyecto> ListadoProyectos = new BindingList<Proyecto>();
         public static BindingList<Usuario> ListadoUsuarios = new BindingList<Usuario>();
         public static BindingList<Tarea> ListaTareas = new BindingList<Tarea>();
-        private static object proyectosImport;
-        private static string rutaCompletaArchivo;
 
+        private static string baseDataPath = Path.Combine(AppContext.BaseDirectory, "Data");
 
         //metodos carga usuarios
         public static void importUsers()
         {
-            string rutaArchivo = @"\Data\Users";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Users");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "Usuarios.json");
 
-            if (!File.Exists(rutaCompletaArchivo))
+            if (!File.Exists(rutaArchivo))
             {
-                Console.WriteLine("Archivo JSON de usuarios no existe.");
+                MessageBox.Show($"Archivo JSON de usuarios no existe en:\n{rutaArchivo}", "Error");
                 return;
             }
 
-            string jsonText = File.ReadAllText(rutaCompletaArchivo, Encoding.Default);
+            string jsonText = File.ReadAllText(rutaArchivo, Encoding.Default);
+            var usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsonText);
 
-            JArray usersImport = JArray.Parse(jsonText);
-            var importData = usersImport.ToObject<List<Usuario>>();
+            if (usuarios == null) return;
 
             ListadoUsuarios.Clear();
-
-            foreach (var user in importData)
+            foreach (var user in usuarios)
             {
                 user.InitializeComputedFields();
                 ListadoUsuarios.Add(user);
             }
 
-                Console.WriteLine("Importación de JSON completada con éxito.");
-            Console.WriteLine($"Datos importados desde {rutaArchivo}");
+            //MessageBox.Show("Importación de usuarios completada.", "Éxito");
         }
 
         public static void exportUsers()
         {
-            string rutaArchivo = @"\Data\Users";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "Usuarios.json");
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Users");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "Usuarios.json");
 
-            JArray listUsers = (JArray)JToken.FromObject(ListadoUsuarios);
+            string jsonText = JsonConvert.SerializeObject(ListadoUsuarios, Formatting.Indented);
+            File.WriteAllText(rutaArchivo, jsonText);
 
-            File.WriteAllText(rutaCompletaArchivo, listUsers.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados a {rutaArchivo}");
+            //MessageBox.Show("Exportación de usuarios completada.", "Éxito");
         }
 
         //metodos carga proyectos
+        public static void importProjects()
+        {
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
+            Directory.CreateDirectory(carpetaUsuarios);
+            string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
+
+            if (!File.Exists(rutaArchivo))
+            {
+                MessageBox.Show($"Archivo JSON de proyectos no existe en:\n{rutaArchivo}", "Error");
+                return;
+            }
+
+            string jsonText = File.ReadAllText(rutaArchivo, Encoding.Default);
+            var proyectos = JsonConvert.DeserializeObject<List<Proyecto>>(jsonText);
+
+            if (proyectos == null) return;
+
+            ListadoProyectos.Clear();
+
+            foreach (var proyecto in proyectos)
+            {
+                proyecto.ImgProyecto = null; // genera imagen con iniciales
+                if (proyecto.miembrosProyecto != null)
+                {
+                    foreach (var usuario in proyecto.miembrosProyecto)
+                    {
+                        usuario.InitializeComputedFields();
+                    }
+                }
+                ListadoProyectos.Add(proyecto);
+            }
+
+            if (ListadoProyectos.Count > 0)
+                Proyecto._nextID = ListadoProyectos.Max(p => p.ID) + 1;
+
+            //MessageBox.Show("Importación de proyectos completada.", "Éxito");
+        }
+
         public static void exportProjects()
         {
             string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
-            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Exports");
+            string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
             string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
 
-            var proyectosList = ListadoDatosClasses.ListadoProyectos;
-            JArray Proyectos = (JArray)JToken.FromObject(proyectosList);
+            string jsonText = JsonConvert.SerializeObject(ListadoProyectos, Formatting.Indented);
+            File.WriteAllText(rutaArchivo, jsonText);
 
-            File.WriteAllText(rutaCompletaArchivo, Proyectos.ToString());
-            Console.WriteLine("Exportación a JSON completada con éxito.");
-            Console.WriteLine($"Datos exportados con éxito a {rutaArchivo}");
+            //MessageBox.Show("Exportación de proyectos completada.", "Éxito");
         }
-        public static void importProjects()
+
+        public static void importJSONFromNewDirectory()
         {
-            string rutaArchivo = @"\Data\Imports";
-            Directory.CreateDirectory(rutaArchivo);
-            string rutaCompletaArchivo = Path.Combine(rutaArchivo, "data_tasky.json");
-
-            JArray proyectosImport = JArray.Parse(File.ReadAllText(rutaCompletaArchivo, Encoding.Default));
-            List<Proyecto>? importData = proyectosImport.ToObject<List<Proyecto>>();
-
-            foreach (var proyecto in importData)
+            using (OpenFileDialog dialog = new OpenFileDialog())
             {
-                ListadoDatosClasses.ListadoProyectos.Add(proyecto);
+                dialog.Title = "Selecciona un archivo JSON";
+                dialog.Filter = "Archivos JSON (*.json)|*.json";
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string rutaSeleccionada = dialog.FileName;
+
+                    string carpetaDestino = Path.Combine(baseDataPath, "Imports");
+                    Directory.CreateDirectory(carpetaDestino);
+
+                    string rutaDestino = Path.Combine(carpetaDestino, "data_tasky.json");
+
+                    File.Copy(rutaSeleccionada, rutaDestino, true);
+
+                    MessageBox.Show("Archivo JSON importado correctamente.", "Importación exitosa");
+
+                    importProjects();
+                }
             }
-
-            Console.WriteLine("Importacion de JSON completada con éxito.");
-            Console.WriteLine($"Datos Importados con éxito a {rutaArchivo}");
         }
-        
 
-       
+        public static void cargarDatos()
+        {
+            importProjects();
+            importUsers();
+        }
+
+        public static void guardarDatos()
+        {
+            exportProjects();
+            exportUsers();
+        }
+
+
         public static void inicioDatosClasses()
         {
             GenerarListaUsuarios();
             GenerarListaTareas();
             GenerarListaProyectos();
         }
+
+
         public static void GenerarListaUsuarios()
         {
             // Usuarios DAM2
@@ -136,7 +194,7 @@ namespace DAM2_Project_Desktop
             ListaTareas.Add(new Tarea("Base de Datos SQL", ListadoUsuarios[9], new DateTime(2024, 2, 10), "En progreso", 1));
             ListaTareas.Add(new Tarea("Testing Unitario", ListadoUsuarios[3], new DateTime(2024, 3, 1), "Pendiente", 0));
             ListaTareas.Add(new Tarea("Documentación API", ListadoUsuarios[1], new DateTime(2024, 3, 5), "Completada", 3));
-            ListaTareas.Add(new Tarea("Configuración Servidor", ListadoUsuarios[10], new DateTime(2024, 3, 10), "En progreso",1));
+            ListaTareas.Add(new Tarea("Configuración Servidor", ListadoUsuarios[10], new DateTime(2024, 3, 10), "En progreso", 1));
             ListaTareas.Add(new Tarea("Optimización Código", ListadoUsuarios[4], new DateTime(2024, 3, 15), "Pendiente", 0));
             ListaTareas.Add(new Tarea("Diseño Logo", ListadoUsuarios[6], new DateTime(2024, 3, 20), "Completada", 8));
             ListaTareas.Add(new Tarea("Implementación Seguridad", ListadoUsuarios[7], new DateTime(2024, 4, 1), "En progreso", 2));
@@ -202,11 +260,6 @@ namespace DAM2_Project_Desktop
             proyecto8.miembrosProyecto = new List<Usuario> { ListadoUsuarios[0] };
             proyecto8.tareasProyecto = new List<Tarea>();
             ListadoProyectos.Add(proyecto8);
-        }
-
-        internal static void importJSONFromNewDirectory()
-        {
-            throw new NotImplementedException();
         }
     }
 }

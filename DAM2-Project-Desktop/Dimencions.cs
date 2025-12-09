@@ -4,6 +4,11 @@ using System.Windows.Forms;
 
 public static class Dimencions
 {
+    public class Dimencion
+    {
+    }
+
+
     // Dimensiones de diseño base (Formulario completo)
     private const int DESIGN_WIDTH_BASE = 1422;
     private const int DESIGN_HEIGHT_BASE = 1100;
@@ -105,6 +110,5 @@ public static class Dimencions
             controlToCenter.Top = newY;
         }
     }
-
 
 }

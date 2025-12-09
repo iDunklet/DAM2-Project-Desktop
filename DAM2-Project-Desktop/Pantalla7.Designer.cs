@@ -32,12 +32,12 @@ namespace DAM2_Project_Desktop
             splitContainer1 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
-            button7 = new Button();
-            buttonExportarJSON = new Button();
-            buttonImportarJSON = new Button();
-            buttonUsuarios = new Button();
-            buttonProyectosPrivados = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             buttonInicio = new Button();
+            buttonUsuarios = new Button();
+            buttonImportarJSON = new Button();
+            buttonExportarJSON = new Button();
+            button7 = new Button();
             pictureBoxImgPerfil = new PictureBox();
             buttonConfigurarUsuarioGuardar = new Button();
             label10 = new Label();
@@ -67,6 +67,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImgPerfil).BeginInit();
             SuspendLayout();
             // 
@@ -116,12 +117,8 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel1.Controls.Add(button7);
-            splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
-            splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
-            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
-            splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
-            splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
             // splitContainer2.Panel2
             // 
@@ -153,6 +150,77 @@ namespace DAM2_Project_Desktop
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(buttonInicio, 0, 0);
+            tableLayoutPanel1.Controls.Add(buttonUsuarios, 0, 1);
+            tableLayoutPanel1.Controls.Add(buttonImportarJSON, 0, 2);
+            tableLayoutPanel1.Controls.Add(buttonExportarJSON, 0, 3);
+            tableLayoutPanel1.Location = new Point(21, 14);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(200, 260);
+            tableLayoutPanel1.TabIndex = 13;
+            // 
+            // buttonInicio
+            // 
+            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
+            buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonInicio.Location = new Point(3, 3);
+            buttonInicio.Name = "buttonInicio";
+            buttonInicio.Size = new Size(194, 59);
+            buttonInicio.TabIndex = 3;
+            buttonInicio.Text = "Inicio";
+            buttonInicio.UseVisualStyleBackColor = false;
+            buttonInicio.Click += buttonInicio_Click;
+            // 
+            // buttonUsuarios
+            // 
+            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
+            buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonUsuarios.Location = new Point(3, 68);
+            buttonUsuarios.Name = "buttonUsuarios";
+            buttonUsuarios.Size = new Size(194, 59);
+            buttonUsuarios.TabIndex = 5;
+            buttonUsuarios.Text = "Usuarios";
+            buttonUsuarios.UseVisualStyleBackColor = false;
+            buttonUsuarios.Click += buttonUsuarios_Click;
+            // 
+            // buttonImportarJSON
+            // 
+            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonImportarJSON.Location = new Point(3, 133);
+            buttonImportarJSON.Name = "buttonImportarJSON";
+            buttonImportarJSON.Size = new Size(194, 59);
+            buttonImportarJSON.TabIndex = 10;
+            buttonImportarJSON.Text = "Importar JSON";
+            buttonImportarJSON.UseVisualStyleBackColor = false;
+            buttonImportarJSON.Click += buttonImportarJSON_Click;
+            // 
+            // buttonExportarJSON
+            // 
+            buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJSON.Location = new Point(3, 198);
+            buttonExportarJSON.Name = "buttonExportarJSON";
+            buttonExportarJSON.Size = new Size(194, 59);
+            buttonExportarJSON.TabIndex = 7;
+            buttonExportarJSON.Text = "ExportarJSON";
+            buttonExportarJSON.UseVisualStyleBackColor = false;
+            buttonExportarJSON.Click += buttonExportarJSON_Click;
+            // 
             // button7
             // 
             button7.Location = new Point(24, 1072);
@@ -162,66 +230,6 @@ namespace DAM2_Project_Desktop
             button7.TabIndex = 9;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
-            // 
-            // buttonExportarJSON
-            // 
-            buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
-            buttonExportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonExportarJSON.Location = new Point(21, 276);
-            buttonExportarJSON.Name = "buttonExportarJSON";
-            buttonExportarJSON.Size = new Size(200, 60);
-            buttonExportarJSON.TabIndex = 7;
-            buttonExportarJSON.Text = "ExportarJSON";
-            buttonExportarJSON.UseVisualStyleBackColor = false;
-            // 
-            // buttonImportarJSON
-            // 
-            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
-            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonImportarJSON.Location = new Point(21, 210);
-            buttonImportarJSON.Name = "buttonImportarJSON";
-            buttonImportarJSON.Size = new Size(200, 60);
-            buttonImportarJSON.TabIndex = 10;
-            buttonImportarJSON.Text = "Importar JSON";
-            buttonImportarJSON.UseVisualStyleBackColor = false;
-            // 
-            // buttonUsuarios
-            // 
-            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
-            buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonUsuarios.Location = new Point(21, 144);
-            buttonUsuarios.Name = "buttonUsuarios";
-            buttonUsuarios.Size = new Size(200, 60);
-            buttonUsuarios.TabIndex = 5;
-            buttonUsuarios.Text = "Usuarios";
-            buttonUsuarios.UseVisualStyleBackColor = false;
-            // 
-            // buttonProyectosPrivados
-            // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(21, 78);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 60);
-            buttonProyectosPrivados.TabIndex = 4;
-            buttonProyectosPrivados.Text = "Proyectos Privados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
-            // 
-            // buttonInicio
-            // 
-            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
-            buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonInicio.Location = new Point(21, 12);
-            buttonInicio.Name = "buttonInicio";
-            buttonInicio.Size = new Size(200, 60);
-            buttonInicio.TabIndex = 3;
-            buttonInicio.Text = "Inicio";
-            buttonInicio.UseVisualStyleBackColor = false;
             // 
             // pictureBoxImgPerfil
             // 
@@ -450,23 +458,21 @@ namespace DAM2_Project_Desktop
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla7";
             Text = "Pantalla7";
+            Load += Pantalla7_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel1.PerformLayout();
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxImgPerfil).EndInit();
             ResumeLayout(false);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion
@@ -475,11 +481,6 @@ namespace DAM2_Project_Desktop
         private SplitContainer splitContainer2;
         private Button button7;
         private Button button6;
-        private Button buttonExportarJSON;
-        private Button buttonImportarJSON;
-        private Button buttonUsuarios;
-        private Button buttonProyectosPrivados;
-        private Button buttonInicio;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
@@ -504,5 +505,10 @@ namespace DAM2_Project_Desktop
         private Button buttonConfigurarUsuarioGuardar;
         private PictureBox pictureBoxImgPerfil;
         private PictureBox pictureBoxTasky;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button buttonInicio;
+        private Button buttonUsuarios;
+        private Button buttonImportarJSON;
+        private Button buttonExportarJSON;
     }
 }

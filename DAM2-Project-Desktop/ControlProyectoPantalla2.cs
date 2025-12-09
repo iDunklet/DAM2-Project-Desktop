@@ -124,15 +124,5 @@ namespace DAM2_Project_Desktop
             if (_proyecto != null)
                 ProyectoClicado?.Invoke(this, _proyecto);
         }
-
-        private void labelTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxImagen_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

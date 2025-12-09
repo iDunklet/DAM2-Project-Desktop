@@ -28,7 +28,19 @@ namespace DAM2_Project_Desktop
         // --- Rectángulos del Contenido Principal ---
         private Rectangle RectanglepictureBoxTasky;
         private Rectangle RectangledataGridViewListadoUsuarios;
+
         public Pantalla8()
+        {
+            InitializeComponent();
+            dataGridViewListadoUsuarios.AutoGenerateColumns = false;
+            this.Load += new EventHandler(Pantalla8_Load);
+            Dimencions.ApplyMinimum(this);
+            this.Resize += Pantalla8_Resize;
+            originalSize = this.Size;
+            InitializeOriginalRectangles();
+            Pantalla8_Resize(null, null);
+        }
+        public Pantalla8(Point p, Size s)
         {
             InitializeComponent();
             dataGridViewListadoUsuarios.AutoGenerateColumns = false;
@@ -63,7 +75,7 @@ namespace DAM2_Project_Desktop
             // --- CÁLCULO Y ASIGNACIÓN DE ANCHURA DE COLUMNAS (CLAVE) ---
             float scaleX = (float)this.ClientSize.Width / 1440;
 
-            int[] baseWidths = { 30, 150, 175, 285, 250, 125, 40, 40 }; 
+            int[] baseWidths = { 30, 150, 175, 285, 250, 125, 40, 40 };
             int totalScaledWidth = 0;
 
             ImgPerfil.Width = (int)(baseWidths[0] * scaleX);
@@ -110,8 +122,8 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonProyectosPrivados, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, buttonCrearUser, button7 };
-            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonProyectosPrivados, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, RectangelbuttonCrearUser, Rectanglebutton7 };
+            Control[] sidebarButtons = { buttonInicio, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, buttonCrearUser, button7 };
+            Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, RectangelbuttonCrearUser, Rectanglebutton7 };
 
             // Obtener el ancho actual del panel lateral
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
@@ -149,6 +161,7 @@ namespace DAM2_Project_Desktop
 
         private void Pantalla8_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             RefrescarListado();
             //dataGridViewListadoUsuarios.DataSource = ListadoDatosClasses.ListadoUsuarios;
 
@@ -190,7 +203,7 @@ namespace DAM2_Project_Desktop
                           MessageBoxIcon.Warning);
 
                     if (confirm == DialogResult.Yes)
-                        {
+                    {
 
                         ListadoDatosClasses.ListadoUsuarios.Remove(usuarioAEliminar);
                         ActualizarAlturaDataGridView();
@@ -254,14 +267,14 @@ namespace DAM2_Project_Desktop
 
         private void buttonExportarJSON_Click(object sender, EventArgs e)
         {
-            ListadoDatosClasses.exportProjects();
+            ListadoDatosClasses.guardarDatos();
             RefrescarListado();
 
         }
 
         private void buttonImportarJSON_Click(object sender, EventArgs e)
         {
-            ListadoDatosClasses.importProjects();
+            ListadoDatosClasses.importJSONFromNewDirectory();
             RefrescarListado();
         }
 
@@ -279,10 +292,27 @@ namespace DAM2_Project_Desktop
         }
         private void buttonCrearUser_Click(object sender, EventArgs e)
         {
-            
+
             Pantalla5 pantalla5 = new Pantalla5();
             pantalla5.Show();
-           
+
+        }
+
+
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            Pantalla8 pantalla8 = new Pantalla8();
+            pantalla8.Show();
+            this.Hide();
+        }
+
+        private void buttonInicio_Click_1(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Close();
         }
     }
 }

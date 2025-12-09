@@ -1,4 +1,4 @@
-﻿namespace DAM2_Project_Desktop
+namespace DAM2_Project_Desktop
 {
     partial class Pantalla2
     {
@@ -31,13 +31,13 @@
             splitContainer1 = new SplitContainer();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            buttonInicio = new Button();
+            buttonUsuarios = new Button();
+            buttonImportarJSON = new Button();
+            buttonExportarJSON = new Button();
             buttonCrearProyecto = new Button();
             button7 = new Button();
-            buttonExportarJSON = new Button();
-            buttonImportarJSON = new Button();
-            buttonUsuarios = new Button();
-            buttonProyectosPrivados = new Button();
-            buttonInicio = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             controlProyectoPantalla21 = new ControlProyectoPantalla2();
             label2 = new Label();
@@ -51,6 +51,7 @@
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -98,13 +99,9 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel1.Controls.Add(buttonCrearProyecto);
             splitContainer2.Panel1.Controls.Add(button7);
-            splitContainer2.Panel1.Controls.Add(buttonExportarJSON);
-            splitContainer2.Panel1.Controls.Add(buttonImportarJSON);
-            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
-            splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
-            splitContainer2.Panel1.Controls.Add(buttonInicio);
             // 
             // splitContainer2.Panel2
             // 
@@ -117,14 +114,85 @@
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(buttonInicio, 0, 0);
+            tableLayoutPanel1.Controls.Add(buttonUsuarios, 0, 1);
+            tableLayoutPanel1.Controls.Add(buttonImportarJSON, 0, 2);
+            tableLayoutPanel1.Controls.Add(buttonExportarJSON, 0, 3);
+            tableLayoutPanel1.Location = new Point(21, 17);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(200, 260);
+            tableLayoutPanel1.TabIndex = 12;
+            // 
+            // buttonInicio
+            // 
+            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
+            buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonInicio.Location = new Point(3, 3);
+            buttonInicio.Name = "buttonInicio";
+            buttonInicio.Size = new Size(194, 59);
+            buttonInicio.TabIndex = 3;
+            buttonInicio.Text = "Inicio";
+            buttonInicio.UseVisualStyleBackColor = false;
+            buttonInicio.Click += buttonInicio_Click;
+            // 
+            // buttonUsuarios
+            // 
+            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
+            buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonUsuarios.Location = new Point(3, 68);
+            buttonUsuarios.Name = "buttonUsuarios";
+            buttonUsuarios.Size = new Size(194, 59);
+            buttonUsuarios.TabIndex = 5;
+            buttonUsuarios.Text = "Usuarios";
+            buttonUsuarios.UseVisualStyleBackColor = false;
+            buttonUsuarios.Click += buttonUsuarios_Click;
+            // 
+            // buttonImportarJSON
+            // 
+            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonImportarJSON.Location = new Point(3, 133);
+            buttonImportarJSON.Name = "buttonImportarJSON";
+            buttonImportarJSON.Size = new Size(194, 59);
+            buttonImportarJSON.TabIndex = 10;
+            buttonImportarJSON.Text = "Importar JSON";
+            buttonImportarJSON.UseVisualStyleBackColor = false;
+            buttonImportarJSON.Click += buttonImportarJSON_Click;
+            // 
+            // buttonExportarJSON
+            // 
+            buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
+            buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
+            buttonExportarJSON.Location = new Point(3, 198);
+            buttonExportarJSON.Name = "buttonExportarJSON";
+            buttonExportarJSON.Size = new Size(194, 59);
+            buttonExportarJSON.TabIndex = 7;
+            buttonExportarJSON.Text = "ExportarJSON";
+            buttonExportarJSON.UseVisualStyleBackColor = false;
+            buttonExportarJSON.Click += buttonExportarJson_Click;
+            // 
             // buttonCrearProyecto
             // 
             buttonCrearProyecto.BackColor = Color.FromArgb(35, 78, 82);
             buttonCrearProyecto.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonCrearProyecto.ForeColor = Color.White;
-            buttonCrearProyecto.Location = new Point(21, 796);
+            buttonCrearProyecto.Location = new Point(0, 818);
             buttonCrearProyecto.Name = "buttonCrearProyecto";
-            buttonCrearProyecto.Size = new Size(200, 68);
+            buttonCrearProyecto.Size = new Size(240, 68);
             buttonCrearProyecto.TabIndex = 11;
             buttonCrearProyecto.Text = "Nuevo Proyecto";
             buttonCrearProyecto.UseVisualStyleBackColor = false;
@@ -138,70 +206,6 @@
             button7.TabIndex = 9;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
-            // 
-            // buttonExportarJSON
-            // 
-            buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
-            buttonExportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonExportarJSON.Location = new Point(21, 276);
-            buttonExportarJSON.Name = "buttonExportarJSON";
-            buttonExportarJSON.Size = new Size(200, 60);
-            buttonExportarJSON.TabIndex = 7;
-            buttonExportarJSON.Text = "ExportarJSON";
-            buttonExportarJSON.UseVisualStyleBackColor = false;
-            buttonExportarJSON.Click += buttonExportarJson_Click;
-            // 
-            // buttonImportarJSON
-            // 
-            buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
-            buttonImportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonImportarJSON.Location = new Point(21, 210);
-            buttonImportarJSON.Name = "buttonImportarJSON";
-            buttonImportarJSON.Size = new Size(200, 60);
-            buttonImportarJSON.TabIndex = 10;
-            buttonImportarJSON.Text = "Importar JSON";
-            buttonImportarJSON.UseVisualStyleBackColor = false;
-            buttonImportarJSON.Click += buttonImportarJSON_Click;
-            // 
-            // buttonUsuarios
-            // 
-            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
-            buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonUsuarios.Location = new Point(21, 144);
-            buttonUsuarios.Name = "buttonUsuarios";
-            buttonUsuarios.Size = new Size(200, 60);
-            buttonUsuarios.TabIndex = 5;
-            buttonUsuarios.Text = "Usuarios";
-            buttonUsuarios.UseVisualStyleBackColor = false;
-            buttonUsuarios.Click += buttonUsuarios_Click;
-            // 
-            // buttonProyectosPrivados
-            // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(21, 78);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 60);
-            buttonProyectosPrivados.TabIndex = 4;
-            buttonProyectosPrivados.Text = "Proyectos Privados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
-            // 
-            // buttonInicio
-            // 
-            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
-            buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonInicio.Location = new Point(21, 12);
-            buttonInicio.Name = "buttonInicio";
-            buttonInicio.Size = new Size(200, 60);
-            buttonInicio.TabIndex = 3;
-            buttonInicio.Text = "Inicio";
-            buttonInicio.UseVisualStyleBackColor = false;
-            buttonInicio.Click += buttonInicio_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -233,7 +237,7 @@
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(121, 35);
+            label2.Size = new Size(96, 28);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -244,7 +248,7 @@
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(158, 67);
+            label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
@@ -263,10 +267,12 @@
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel1.PerformLayout();
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -286,7 +292,7 @@
         private ControlProyectoPantalla2 controlProyectoPantalla21;
         private Button buttonExportarJSON;
         private PictureBox pictureBoxTasky;
-        private Button buttonProyectosPrivados;
         private Button buttonCrearProyecto;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

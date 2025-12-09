@@ -6,6 +6,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -19,7 +20,7 @@ namespace DAM2_Project_Desktop
         public string titulo { get; set; }
         public DateTime fechaEntrega { get; set; }
         public List<Usuario> miembrosProyecto { get; set; }
-        public List<Tarea> tareasProyecto { get; set; }
+        public List<Tarea>? tareasProyecto { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]
         private Bitmap? imgProyecto;
@@ -104,6 +105,7 @@ namespace DAM2_Project_Desktop
             this.titulo = titulo;
             this.fechaEntrega = fechaEntrega;
 
+
         }
         public Proyecto(string titulo, DateTime fechaEntrega, List<Usuario> miembros)
         {
@@ -111,8 +113,7 @@ namespace DAM2_Project_Desktop
             _nextID++;
             this.titulo = titulo;
             this.fechaEntrega = fechaEntrega;
-            this.miembrosProyecto = miembros;
-
+            this.miembrosProyecto = miembros ?? new List<Usuario>();
         }
         public Proyecto(string titulo, List<Usuario> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
         {
@@ -122,6 +123,7 @@ namespace DAM2_Project_Desktop
             this.miembrosProyecto = usuarios;
             this.tareasProyecto = tareas;
             this.ImgProyecto = imgProyecto;
+            this.tareasProyecto = tareas ?? new List<Tarea>();
         }
 
     }

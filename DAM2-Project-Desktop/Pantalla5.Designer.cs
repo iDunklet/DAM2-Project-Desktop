@@ -35,11 +35,11 @@ namespace DAM2_Project_Desktop
             pictureBoxTasky = new PictureBox();
             pictureBoxUsuario = new PictureBox();
             splitContainer2 = new SplitContainer();
-            buttonExportarJson = new Button();
-            buttonImportarJson = new Button();
-            buttonUsuarios = new Button();
-            buttonProyectosPrivados = new Button();
-            buttonInicio = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            button3 = new Button();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             textBoxRepetirContrasenya = new TextBox();
             labelDatosCuenta = new Label();
             labelDatosPersonales = new Label();
@@ -73,6 +73,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -133,11 +134,7 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer2.Panel1.Controls.Add(buttonExportarJson);
-            splitContainer2.Panel1.Controls.Add(buttonImportarJson);
-            splitContainer2.Panel1.Controls.Add(buttonUsuarios);
-            splitContainer2.Panel1.Controls.Add(buttonProyectosPrivados);
-            splitContainer2.Panel1.Controls.Add(buttonInicio);
+            splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             // 
             // splitContainer2.Panel2
             // 
@@ -171,65 +168,75 @@ namespace DAM2_Project_Desktop
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
             // 
-            // buttonExportarJson
+            // tableLayoutPanel1
             // 
-            buttonExportarJson.BackColor = Color.FromArgb(79, 209, 197);
-            buttonExportarJson.FlatStyle = FlatStyle.Flat;
-            buttonExportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonExportarJson.Location = new Point(24, 283);
-            buttonExportarJson.Name = "buttonExportarJson";
-            buttonExportarJson.Size = new Size(200, 60);
-            buttonExportarJson.TabIndex = 15;
-            buttonExportarJson.Text = "ExportarJSON";
-            buttonExportarJson.UseVisualStyleBackColor = false;
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(button3, 0, 2);
+            tableLayoutPanel1.Controls.Add(button4, 0, 3);
+            tableLayoutPanel1.Controls.Add(button2, 0, 1);
+            tableLayoutPanel1.Controls.Add(button1, 0, 0);
+            tableLayoutPanel1.Location = new Point(20, 13);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(200, 260);
+            tableLayoutPanel1.TabIndex = 16;
             // 
-            // buttonImportarJson
+            // button3
             // 
-            buttonImportarJson.BackColor = Color.FromArgb(79, 209, 197);
-            buttonImportarJson.FlatStyle = FlatStyle.Flat;
-            buttonImportarJson.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonImportarJson.Location = new Point(24, 217);
-            buttonImportarJson.Name = "buttonImportarJson";
-            buttonImportarJson.Size = new Size(200, 60);
-            buttonImportarJson.TabIndex = 14;
-            buttonImportarJson.Text = "Importar JSON";
-            buttonImportarJson.UseVisualStyleBackColor = false;
+            button3.BackColor = Color.FromArgb(79, 209, 197);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = Color.FromArgb(35, 78, 82);
+            button3.Location = new Point(3, 133);
+            button3.Name = "button3";
+            button3.Size = new Size(194, 59);
+            button3.TabIndex = 10;
+            button3.Text = "Importar JSON";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // buttonUsuarios
+            // button4
             // 
-            buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
-            buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonUsuarios.Location = new Point(24, 151);
-            buttonUsuarios.Name = "buttonUsuarios";
-            buttonUsuarios.Size = new Size(200, 60);
-            buttonUsuarios.TabIndex = 13;
-            buttonUsuarios.Text = "Usuarios";
-            buttonUsuarios.UseVisualStyleBackColor = false;
+            button4.BackColor = Color.FromArgb(79, 209, 197);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = Color.FromArgb(35, 78, 82);
+            button4.Location = new Point(3, 198);
+            button4.Name = "button4";
+            button4.Size = new Size(194, 59);
+            button4.TabIndex = 7;
+            button4.Text = "ExportarJSON";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
-            // buttonProyectosPrivados
+            // button2
             // 
-            buttonProyectosPrivados.BackColor = Color.FromArgb(79, 209, 197);
-            buttonProyectosPrivados.FlatStyle = FlatStyle.Flat;
-            buttonProyectosPrivados.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonProyectosPrivados.Location = new Point(24, 85);
-            buttonProyectosPrivados.Name = "buttonProyectosPrivados";
-            buttonProyectosPrivados.Size = new Size(200, 60);
-            buttonProyectosPrivados.TabIndex = 12;
-            buttonProyectosPrivados.Text = "Proyectos Privados";
-            buttonProyectosPrivados.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.FromArgb(79, 209, 197);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.FromArgb(35, 78, 82);
+            button2.Location = new Point(3, 68);
+            button2.Name = "button2";
+            button2.Size = new Size(194, 59);
+            button2.TabIndex = 5;
+            button2.Text = "Usuarios";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // buttonInicio
+            // button1
             // 
-            buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
-            buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonInicio.Location = new Point(24, 19);
-            buttonInicio.Name = "buttonInicio";
-            buttonInicio.Size = new Size(200, 60);
-            buttonInicio.TabIndex = 11;
-            buttonInicio.Text = "Inicio";
-            buttonInicio.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.FromArgb(79, 209, 197);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(35, 78, 82);
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(194, 59);
+            button1.TabIndex = 3;
+            button1.Text = "Inicio";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBoxRepetirContrasenya
             // 
@@ -504,6 +511,7 @@ namespace DAM2_Project_Desktop
             MinimumSize = new Size(1440, 1024);
             Name = "Pantalla5";
             Text = "Pantalla5";
+            Load += Pantalla5_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -511,49 +519,14 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel1.PerformLayout();
             splitContainer2.Panel2.ResumeLayout(false);
             splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
-
-        /*
-                private void btnCrearUsuario_Click(object sender, EventArgs e)
-                {
-                    string nombre = textBoxNombre.Text;
-                    string apellido1 = textBoxApellido1.Text;
-                    string clase = textBoxCurso.Text;
-                    DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
-                    string email = textBoxEmail.Text;
-                    string password = textBoxContrasenya.Text;
-                    string userName = textBoxUsuario.Text; // Ya se genera automáticamente antes
-
-                    Usuarios nuevoUsuario = new Usuarios(
-                        nombre, apellido1, fechaNacimiento,
-                        clase, email, password, userName
-                    );
-
-                    ListadoDatosClasses.ListadoUsuarios.Add(nuevoUsuario);
-
-                    MessageBox.Show($"Usuario creado correctamente ✅\n\n" +
-                                    $"Nombre: {nuevoUsuario.nombre}\n" +
-                                    $"UserName: {nuevoUsuario.userName}\n" +
-                                    $"Usuarios totales: {ListadoDatosClasses.ListadoUsuarios.Count}");
-
-                    string lista = "";
-                    foreach (var usuario in ListadoDatosClasses.ListadoUsuarios)
-                    {
-                        lista += $"• {usuario.userName} ({usuario.nombre} {usuario.apellido1}) {usuario.classe}\n";
-                    }
-
-                    MessageBox.Show(lista, "Lista de Usuarios");
-
-                    LimpiarCamposUsuario();
-
-
-                }
-                */
 
         private void LimpiarCamposUsuario()
         {
@@ -593,10 +566,6 @@ namespace DAM2_Project_Desktop
         private Label labelApellido1;
         private Label labelNombre;
         private Button buttonCrearUsuario;
-        private Button buttonProyectosPrivados;
-        private Button buttonUsuarios;
-        private Button buttonImportarJson;
-        private Button buttonExportarJson;
         private SplitContainer splitContainer2;
         private TextBox textBoxNombre;
         private DateTimePicker dateTimePickerFechaNacimiento;
@@ -612,9 +581,13 @@ namespace DAM2_Project_Desktop
         #endregion
 
         private PictureBox pictureBoxTasky;
-        private Button buttonInicio;
         private TextBox textBoxRepetirContrasenya;
         private Label labelApellido2;
         private TextBox textBoxApellido1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button button3;
+        private Button button4;
+        private Button button2;
+        private Button button1;
     }
 }

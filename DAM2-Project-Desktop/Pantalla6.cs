@@ -71,13 +71,6 @@ namespace DAM2_Project_Desktop
 
             // NUEVO → Línea horizontal
             rectLinea = new Rectangle(linea.Location, linea.Size);
-
-            // Botones laterales
-            rectButtonInicio = new Rectangle(buttonInicio.Location, buttonInicio.Size);
-            rectButtonProyectos = new Rectangle(buttonProyectosPrivados.Location, buttonProyectosPrivados.Size);
-            rectButtonUsuarios = new Rectangle(buttonUsuarios.Location, buttonUsuarios.Size);
-            rectButtonImportar = new Rectangle(buttonImportarJson.Location, buttonImportarJson.Size);
-            rectButtonExportar = new Rectangle(buttonExportarJson.Location, buttonExportarJson.Size);
         }
 
         private void Pantalla6_Resize(object sender, EventArgs e)
@@ -97,13 +90,6 @@ namespace DAM2_Project_Desktop
 
             // --- NUEVO: Redimensionar la línea para que ocupe todo el ancho ---
             linea.Width = this.ClientSize.Width;
-
-            // --- Botones laterales como Pantalla8 ---
-            ResizeSidebarButton(buttonInicio, rectButtonInicio, scaleX, scaleY);
-            ResizeSidebarButton(buttonProyectosPrivados, rectButtonProyectos, scaleX, scaleY);
-            ResizeSidebarButton(buttonUsuarios, rectButtonUsuarios, scaleX, scaleY);
-            ResizeSidebarButton(buttonImportarJson, rectButtonImportar, scaleX, scaleY);
-            ResizeSidebarButton(buttonExportarJson, rectButtonExportar, scaleX, scaleY);
 
         }
 
@@ -225,6 +211,36 @@ namespace DAM2_Project_Desktop
                                         .Select(p => $"[{p.ID}] {p.titulo}"));
 
             MessageBox.Show("Proyectos actuales:\n" + proyectos);
+
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+
+        }
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            Point location = Navegacion.FormInicialLocation(this);
+            Size size = Navegacion.FormInicialSize(this);
+            ListadoDatosClasses.exportProjects();
+            Pantalla8 pantalla8 = new Pantalla8(location, size);
+            pantalla8.Show();
+            this.Close();
+        }
+        private void buttonInicio_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Close();
+        }
+
+        private void buttonImportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.importJSONFromNewDirectory();
+        }
+
+        private void buttonExportarJSON_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
         }
     }
 }

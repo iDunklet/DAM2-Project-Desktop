@@ -37,6 +37,7 @@ namespace DAM2_Project_Desktop
             splitContainer7 = new SplitContainer();
             labelId = new Label();
             label1 = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
             buttonCrearNuevoUsuario = new Button();
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
@@ -46,12 +47,11 @@ namespace DAM2_Project_Desktop
             pictureBox4 = new PictureBox();
             label6 = new Label();
             splitContainer6 = new SplitContainer();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
+            button4 = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -69,6 +69,7 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.Panel2.SuspendLayout();
             splitContainer7.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();
@@ -82,7 +83,6 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -207,6 +207,21 @@ namespace DAM2_Project_Desktop
             label1.TabIndex = 0;
             label1.Text = "ID: ";
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Controls.Add(buttonCrearNuevoUsuario, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(242, 96);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
             // buttonCrearNuevoUsuario
             // 
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
@@ -221,6 +236,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.TabIndex = 4;
             buttonCrearNuevoUsuario.Text = "Crear nuevo usuario";
             buttonCrearNuevoUsuario.UseVisualStyleBackColor = false;
+            buttonCrearNuevoUsuario.Click += buttonCrearNuevoUsuario_Click;
             // 
             // splitContainer4
             // 
@@ -342,67 +358,6 @@ namespace DAM2_Project_Desktop
             splitContainer6.SplitterWidth = 2;
             splitContainer6.TabIndex = 0;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(79, 209, 197);
-            button4.Dock = DockStyle.Fill;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 15F);
-            button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(15, 257);
-            button4.Margin = new Padding(15, 4, 15, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(212, 70);
-            button4.TabIndex = 3;
-            button4.Text = "Exportar";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(79, 209, 197);
-            button3.Dock = DockStyle.Fill;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 15F);
-            button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(15, 185);
-            button3.Margin = new Padding(15, 4, 15, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(212, 64);
-            button3.TabIndex = 2;
-            button3.Text = "Diagrama";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(79, 209, 197);
-            button2.Dock = DockStyle.Fill;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 15F);
-            button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(15, 108);
-            button2.Margin = new Padding(15, 4, 15, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(212, 69);
-            button2.TabIndex = 1;
-            button2.Text = "Cuadricula";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(79, 209, 197);
-            button1.Dock = DockStyle.Fill;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 15F);
-            button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(15, 28);
-            button1.Margin = new Padding(15, 4, 15, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(212, 72);
-            button1.TabIndex = 0;
-            button1.Text = "Crear nueva tarea";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
@@ -425,20 +380,68 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.Size = new Size(242, 738);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // button4
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(buttonCrearNuevoUsuario, 0, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(242, 96);
-            tableLayoutPanel2.TabIndex = 0;
+            button4.BackColor = Color.FromArgb(79, 209, 197);
+            button4.Dock = DockStyle.Fill;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Microsoft Sans Serif", 15F);
+            button4.ForeColor = Color.FromArgb(35, 78, 82);
+            button4.Location = new Point(15, 257);
+            button4.Margin = new Padding(15, 4, 15, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(212, 70);
+            button4.TabIndex = 3;
+            button4.Text = "Salir";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(79, 209, 197);
+            button1.Dock = DockStyle.Fill;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 15F);
+            button1.ForeColor = Color.FromArgb(35, 78, 82);
+            button1.Location = new Point(15, 28);
+            button1.Margin = new Padding(15, 4, 15, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(212, 72);
+            button1.TabIndex = 0;
+            button1.Text = "Crear nueva tarea";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(79, 209, 197);
+            button2.Dock = DockStyle.Fill;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Microsoft Sans Serif", 15F);
+            button2.ForeColor = Color.FromArgb(35, 78, 82);
+            button2.Location = new Point(15, 108);
+            button2.Margin = new Padding(15, 4, 15, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(212, 69);
+            button2.TabIndex = 1;
+            button2.Text = "Cuadricula";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(79, 209, 197);
+            button3.Dock = DockStyle.Fill;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Microsoft Sans Serif", 15F);
+            button3.ForeColor = Color.FromArgb(35, 78, 82);
+            button3.Location = new Point(15, 185);
+            button3.Margin = new Padding(15, 4, 15, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(212, 64);
+            button3.TabIndex = 2;
+            button3.Text = "Diagrama";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // Pantalla4
             // 
@@ -467,6 +470,7 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
             splitContainer7.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
             splitContainer4.Panel2.PerformLayout();
@@ -483,7 +487,6 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
