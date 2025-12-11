@@ -40,14 +40,11 @@ namespace DAM2_Project_Desktop
             labelId = new Label();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            buttonCrearNuevoUsuario = new Button();
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
             labelNombreProyecto = new Label();
             labelFechaProyecto = new Label();
             flowPanelMiembros = new FlowLayoutPanel();
-            pictureBox4 = new PictureBox();
-            label6 = new Label();
             splitContainer6 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
             button4 = new Button();
@@ -71,7 +68,6 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.Panel2.SuspendLayout();
             splitContainer7.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();
@@ -80,7 +76,6 @@ namespace DAM2_Project_Desktop
             splitContainer5.Panel1.SuspendLayout();
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer6).BeginInit();
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.SuspendLayout();
@@ -231,7 +226,6 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(buttonCrearNuevoUsuario, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -240,22 +234,6 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(242, 96);
             tableLayoutPanel2.TabIndex = 0;
-            // 
-            // buttonCrearNuevoUsuario
-            // 
-            buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
-            buttonCrearNuevoUsuario.Dock = DockStyle.Fill;
-            buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 15F);
-            buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            buttonCrearNuevoUsuario.Location = new Point(15, 15);
-            buttonCrearNuevoUsuario.Margin = new Padding(15);
-            buttonCrearNuevoUsuario.Name = "buttonCrearNuevoUsuario";
-            buttonCrearNuevoUsuario.Size = new Size(212, 66);
-            buttonCrearNuevoUsuario.TabIndex = 4;
-            buttonCrearNuevoUsuario.Text = "Crear nuevo usuario";
-            buttonCrearNuevoUsuario.UseVisualStyleBackColor = false;
-            buttonCrearNuevoUsuario.Click += buttonCrearNuevoUsuario_Click;
             // 
             // splitContainer4
             // 
@@ -275,8 +253,6 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer4.Panel2.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer4.Panel2.Controls.Add(flowPanelMiembros);
-            splitContainer4.Panel2.Controls.Add(pictureBox4);
-            splitContainer4.Panel2.Controls.Add(label6);
             splitContainer4.Size = new Size(1180, 148);
             splitContainer4.SplitterDistance = 51;
             splitContainer4.SplitterWidth = 2;
@@ -326,35 +302,12 @@ namespace DAM2_Project_Desktop
             // 
             // flowPanelMiembros
             // 
-            flowPanelMiembros.Location = new Point(135, 8);
+            flowPanelMiembros.Location = new Point(23, 8);
             flowPanelMiembros.Name = "flowPanelMiembros";
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
-            flowPanelMiembros.Size = new Size(1033, 80);
+            flowPanelMiembros.Size = new Size(1145, 80);
             flowPanelMiembros.TabIndex = 9;
             flowPanelMiembros.WrapContents = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.mas2;
-            pictureBox4.Location = new Point(34, 8);
-            pictureBox4.Margin = new Padding(4, 3, 4, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(55, 55);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 10F);
-            label6.Location = new Point(34, 67);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 20);
-            label6.TabIndex = 7;
-            label6.Text = "Agregar";
             // 
             // splitContainer6
             // 
@@ -489,10 +442,8 @@ namespace DAM2_Project_Desktop
             splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
             splitContainer7.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
             splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
-            splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
             splitContainer5.Panel1.ResumeLayout(false);
@@ -501,7 +452,6 @@ namespace DAM2_Project_Desktop
             splitContainer5.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
             splitContainer5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             splitContainer6.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
@@ -524,13 +474,10 @@ namespace DAM2_Project_Desktop
         private SplitContainer splitContainer7;
         private SplitContainer splitContainer3;
         private Label labelFechaProyecto;
-        private Label label6;
         private Label label1;
-        private Button buttonCrearNuevoUsuario;
         private PictureBox pictureBox6;
         private Label labelNombreProyecto;
         private Label labelId;
-        private PictureBox pictureBox4;
         private FlowLayoutPanel flowPanelMiembros;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;

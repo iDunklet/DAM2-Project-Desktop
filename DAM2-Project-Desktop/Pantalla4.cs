@@ -20,6 +20,7 @@ namespace DAM2_Project_Desktop
         private Usuario usuarioFiltrado = null; // Usuario actualmente seleccionado para filtrar
         private Panel panelUsuarioSeleccionado = null; // Panel del usuario seleccionado
 
+
         public Pantalla4(Proyecto project)
         {
             InitializeComponent();
@@ -313,8 +314,10 @@ namespace DAM2_Project_Desktop
             {
                 Title = "Tareas",
                 Labels = nombresTareas,
-                Separator = new LiveCharts.Wpf.Separator { Step = 1, IsEnabled = false },
-                LabelsRotation = 45 // Rotar etiquetas si son largas
+                FontSize = 14,
+                FontFamily = new System.Windows.Media.FontFamily("Segoe UI"),
+                FontWeight = System.Windows.FontWeights.Bold,
+                Separator = new LiveCharts.Wpf.Separator { Step = 1, IsEnabled = false }
             });
 
             // Configurar eje Y (horas)
@@ -400,8 +403,7 @@ namespace DAM2_Project_Desktop
             splitContainer4.Panel2.Controls.Add(comboUsuariosDAM2);
 
             comboUsuariosDAM2.Location = new Point(
-                splitContainer4.Panel2.Left,
-                pictureBox4.Top - 12
+                splitContainer4.Panel2.Left
             );
 
             comboUsuariosDAM2.Width = 160;

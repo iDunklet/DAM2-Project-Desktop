@@ -117,17 +117,11 @@ namespace DAM2_Project_Desktop
                 textBoxUser.Clear();
                 textBoxUser.Focus();
             }
-        }//hahahhaa
-
-        private void textBoxPass_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Pantalla1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
-        //jajajaj
     }
 }
