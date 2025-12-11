@@ -63,6 +63,7 @@ namespace DAM2_Project_Desktop
             labelApellido2 = new Label();
             labelApellido1 = new Label();
             labelNombre = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -74,6 +75,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -89,6 +91,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer1.Panel1.Controls.Add(pictureBoxUsuario);
             // 
@@ -247,7 +250,7 @@ namespace DAM2_Project_Desktop
             textBoxRepetirContrasenya.Location = new Point(825, 615);
             textBoxRepetirContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxRepetirContrasenya.Name = "textBoxRepetirContrasenya";
-            textBoxRepetirContrasenya.Size = new Size(343, 34);
+            textBoxRepetirContrasenya.Size = new Size(343, 41);
             textBoxRepetirContrasenya.TabIndex = 24;
             // 
             // labelDatosCuenta
@@ -257,7 +260,7 @@ namespace DAM2_Project_Desktop
             labelDatosCuenta.ForeColor = Color.FromArgb(35, 78, 82);
             labelDatosCuenta.Location = new Point(93, 489);
             labelDatosCuenta.Name = "labelDatosCuenta";
-            labelDatosCuenta.Size = new Size(233, 39);
+            labelDatosCuenta.Size = new Size(290, 52);
             labelDatosCuenta.TabIndex = 23;
             labelDatosCuenta.Text = "Datos cuenta";
             // 
@@ -268,7 +271,7 @@ namespace DAM2_Project_Desktop
             labelDatosPersonales.ForeColor = Color.FromArgb(35, 78, 82);
             labelDatosPersonales.Location = new Point(93, 130);
             labelDatosPersonales.Name = "labelDatosPersonales";
-            labelDatosPersonales.Size = new Size(303, 39);
+            labelDatosPersonales.Size = new Size(377, 52);
             labelDatosPersonales.TabIndex = 22;
             labelDatosPersonales.Text = "Datos personales";
             // 
@@ -294,7 +297,7 @@ namespace DAM2_Project_Desktop
             dateTimePickerFechaNacimiento.Location = new Point(825, 276);
             dateTimePickerFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
-            dateTimePickerFechaNacimiento.Size = new Size(343, 34);
+            dateTimePickerFechaNacimiento.Size = new Size(343, 41);
             dateTimePickerFechaNacimiento.TabIndex = 21;
             // 
             // textBoxApellido1
@@ -306,7 +309,7 @@ namespace DAM2_Project_Desktop
             textBoxApellido1.Location = new Point(825, 203);
             textBoxApellido1.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido1.Name = "textBoxApellido1";
-            textBoxApellido1.Size = new Size(343, 34);
+            textBoxApellido1.Size = new Size(343, 41);
             textBoxApellido1.TabIndex = 20;
             // 
             // labelRepContrasenya
@@ -316,7 +319,7 @@ namespace DAM2_Project_Desktop
             labelRepContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
             labelRepContrasenya.Location = new Point(642, 599);
             labelRepContrasenya.Name = "labelRepContrasenya";
-            labelRepContrasenya.Size = new Size(153, 74);
+            labelRepContrasenya.Size = new Size(193, 92);
             labelRepContrasenya.TabIndex = 19;
             labelRepContrasenya.Text = "Repetir\r\n contraseña";
             labelRepContrasenya.TextAlign = ContentAlignment.TopCenter;
@@ -330,7 +333,7 @@ namespace DAM2_Project_Desktop
             textBoxContrasenya.Location = new Point(267, 643);
             textBoxContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxContrasenya.Name = "textBoxContrasenya";
-            textBoxContrasenya.Size = new Size(343, 34);
+            textBoxContrasenya.Size = new Size(343, 41);
             textBoxContrasenya.TabIndex = 18;
             // 
             // textBoxRepContrasenya
@@ -338,7 +341,7 @@ namespace DAM2_Project_Desktop
             textBoxRepContrasenya.Location = new Point(909, 911);
             textBoxRepContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxRepContrasenya.Name = "textBoxRepContrasenya";
-            textBoxRepContrasenya.Size = new Size(206, 23);
+            textBoxRepContrasenya.Size = new Size(206, 27);
             textBoxRepContrasenya.TabIndex = 17;
             // 
             // labelContrasenya
@@ -348,7 +351,7 @@ namespace DAM2_Project_Desktop
             labelContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
             labelContrasenya.Location = new Point(106, 629);
             labelContrasenya.Name = "labelContrasenya";
-            labelContrasenya.Size = new Size(151, 37);
+            labelContrasenya.Size = new Size(189, 46);
             labelContrasenya.TabIndex = 16;
             labelContrasenya.Text = "Contraseña";
             // 
@@ -359,7 +362,7 @@ namespace DAM2_Project_Desktop
             labelUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             labelUsuario.Location = new Point(106, 552);
             labelUsuario.Name = "labelUsuario";
-            labelUsuario.Size = new Size(108, 37);
+            labelUsuario.Size = new Size(133, 46);
             labelUsuario.TabIndex = 15;
             labelUsuario.Text = "Usuario";
             // 
@@ -370,7 +373,7 @@ namespace DAM2_Project_Desktop
             labelNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             labelNuevoUsuario.Location = new Point(386, 36);
             labelNuevoUsuario.Name = "labelNuevoUsuario";
-            labelNuevoUsuario.Size = new Size(440, 55);
+            labelNuevoUsuario.Size = new Size(545, 69);
             labelNuevoUsuario.TabIndex = 13;
             labelNuevoUsuario.Text = "NUEVO USUARIO";
             labelNuevoUsuario.TextAlign = ContentAlignment.TopCenter;
@@ -384,7 +387,7 @@ namespace DAM2_Project_Desktop
             textBoxEmail.Location = new Point(267, 409);
             textBoxEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(343, 34);
+            textBoxEmail.Size = new Size(343, 41);
             textBoxEmail.TabIndex = 10;
             // 
             // textBoxUsuario
@@ -396,7 +399,7 @@ namespace DAM2_Project_Desktop
             textBoxUsuario.Location = new Point(267, 566);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(343, 34);
+            textBoxUsuario.Size = new Size(343, 41);
             textBoxUsuario.TabIndex = 9;
             // 
             // textBoxApellido2
@@ -408,7 +411,7 @@ namespace DAM2_Project_Desktop
             textBoxApellido2.Location = new Point(267, 276);
             textBoxApellido2.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido2.Name = "textBoxApellido2";
-            textBoxApellido2.Size = new Size(343, 34);
+            textBoxApellido2.Size = new Size(343, 41);
             textBoxApellido2.TabIndex = 8;
             // 
             // textBoxCurso
@@ -420,7 +423,7 @@ namespace DAM2_Project_Desktop
             textBoxCurso.Location = new Point(267, 337);
             textBoxCurso.Margin = new Padding(3, 4, 3, 4);
             textBoxCurso.Name = "textBoxCurso";
-            textBoxCurso.Size = new Size(343, 34);
+            textBoxCurso.Size = new Size(343, 41);
             textBoxCurso.TabIndex = 7;
             // 
             // textBoxNombre
@@ -432,7 +435,7 @@ namespace DAM2_Project_Desktop
             textBoxNombre.Location = new Point(267, 208);
             textBoxNombre.Margin = new Padding(3, 4, 3, 4);
             textBoxNombre.Name = "textBoxNombre";
-            textBoxNombre.Size = new Size(343, 34);
+            textBoxNombre.Size = new Size(343, 41);
             textBoxNombre.TabIndex = 6;
             // 
             // labelEmail
@@ -442,7 +445,7 @@ namespace DAM2_Project_Desktop
             labelEmail.ForeColor = Color.FromArgb(35, 78, 82);
             labelEmail.Location = new Point(106, 404);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(82, 37);
+            labelEmail.Size = new Size(99, 46);
             labelEmail.TabIndex = 5;
             labelEmail.Text = "Email";
             // 
@@ -453,7 +456,7 @@ namespace DAM2_Project_Desktop
             labelCurso.ForeColor = Color.FromArgb(35, 78, 82);
             labelCurso.Location = new Point(106, 332);
             labelCurso.Name = "labelCurso";
-            labelCurso.Size = new Size(85, 37);
+            labelCurso.Size = new Size(106, 46);
             labelCurso.TabIndex = 4;
             labelCurso.Text = "Curso";
             // 
@@ -464,7 +467,7 @@ namespace DAM2_Project_Desktop
             labelFechaNacimiento.ForeColor = Color.FromArgb(35, 78, 82);
             labelFechaNacimiento.Location = new Point(642, 262);
             labelFechaNacimiento.Name = "labelFechaNacimiento";
-            labelFechaNacimiento.Size = new Size(149, 74);
+            labelFechaNacimiento.Size = new Size(186, 92);
             labelFechaNacimiento.TabIndex = 3;
             labelFechaNacimiento.Text = "Fecha \r\nnacimiento";
             labelFechaNacimiento.TextAlign = ContentAlignment.TopCenter;
@@ -476,7 +479,7 @@ namespace DAM2_Project_Desktop
             labelApellido2.ForeColor = Color.FromArgb(35, 78, 82);
             labelApellido2.Location = new Point(106, 273);
             labelApellido2.Name = "labelApellido2";
-            labelApellido2.Size = new Size(145, 37);
+            labelApellido2.Size = new Size(178, 46);
             labelApellido2.TabIndex = 2;
             labelApellido2.Text = "2r apellido";
             // 
@@ -487,7 +490,7 @@ namespace DAM2_Project_Desktop
             labelApellido1.ForeColor = Color.FromArgb(35, 78, 82);
             labelApellido1.Location = new Point(642, 200);
             labelApellido1.Name = "labelApellido1";
-            labelApellido1.Size = new Size(145, 37);
+            labelApellido1.Size = new Size(178, 46);
             labelApellido1.TabIndex = 1;
             labelApellido1.Text = "1r apellido";
             // 
@@ -498,9 +501,19 @@ namespace DAM2_Project_Desktop
             labelNombre.ForeColor = Color.FromArgb(35, 78, 82);
             labelNombre.Location = new Point(106, 200);
             labelNombre.Name = "labelNombre";
-            labelNombre.Size = new Size(115, 37);
+            labelNombre.Size = new Size(144, 46);
             labelNombre.TabIndex = 0;
             labelNombre.Text = "Nombre";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._out;
+            pictureBox1.Location = new Point(1261, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // Pantalla5
             // 
@@ -508,7 +521,7 @@ namespace DAM2_Project_Desktop
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla5";
             Text = "Pantalla5";
             Load += Pantalla5_Load;
@@ -525,6 +538,7 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -589,5 +603,6 @@ namespace DAM2_Project_Desktop
         private Button button4;
         private Button button2;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

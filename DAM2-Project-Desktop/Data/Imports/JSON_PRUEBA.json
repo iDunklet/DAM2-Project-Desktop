@@ -36,24 +36,46 @@
         "password": "pass101",
         "userName": "DMARTÍN",
         "nombreCompleto": "David Martín"
+      },
+      {
+        "nombre": "Carlos",
+        "apellido1": "Ruiz",
+        "apellido2": "De la Fuente",
+        "fechaNacimiento": "2003-03-01T00:00:00",
+        "classe": "DAM2",
+        "email": "carlos.ruiz@ies.es",
+        "password": "pass456",
+        "userName": "CRUIZ",
+        "nombreCompleto": "Carlos Ruiz"
+      },
+      {
+        "nombre": "Laura",
+        "apellido1": "Gómez",
+        "apellido2": null,
+        "fechaNacimiento": "2000-12-25T00:00:00",
+        "classe": "DAM2",
+        "email": "laura.gomez@ies.es",
+        "password": "pass202",
+        "userName": "LGÓMEZ",
+        "nombreCompleto": "Laura Gómez"
       }
     ],
     "tareasProyecto": [
       {
         "nombreTarea": "Diseño UI/UX",
-        "descripcionTarea": null,
+        "descripcionTarea": "",
         "fechaInicioTarea": "2024-01-15T00:00:00",
         "fechaFinTarea": null,
         "responsableAsignado": {
-          "nombre": "Juan",
-          "apellido1": "García",
-          "apellido2": null,
-          "fechaNacimiento": "2000-05-15T00:00:00",
+          "nombre": "Carlos",
+          "apellido1": "Ruiz",
+          "apellido2": "De la Fuente",
+          "fechaNacimiento": "2003-03-01T00:00:00",
           "classe": "DAM2",
-          "email": "juan.garcia@ies.es",
-          "password": "pass123",
-          "userName": "JGARCÍA",
-          "nombreCompleto": "Juan García"
+          "email": "carlos.ruiz@ies.es",
+          "password": "pass456",
+          "userName": "CRUIZ",
+          "nombreCompleto": "Carlos Ruiz"
         },
         "statusTarea": "In Progress",
         "horas": 2

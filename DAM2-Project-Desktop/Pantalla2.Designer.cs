@@ -48,6 +48,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
@@ -254,7 +255,7 @@ namespace DAM2_Project_Desktop
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(96, 28);
+            label2.Size = new Size(121, 35);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -265,7 +266,7 @@ namespace DAM2_Project_Desktop
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(125, 54);
+            label1.Size = new Size(158, 67);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
@@ -274,7 +275,7 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla2";
             Text = "Form1";
             Load += Pantalla2_Load;
@@ -282,6 +283,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel1.PerformLayout();
