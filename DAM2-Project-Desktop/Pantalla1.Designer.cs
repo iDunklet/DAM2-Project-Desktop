@@ -115,7 +115,6 @@
             textBoxPass.Size = new Size(273, 23);
             textBoxPass.TabIndex = 5;
             textBoxPass.UseSystemPasswordChar = true;
-            textBoxPass.TextChanged += textBoxPass_TextChanged;
             // 
             // pictureBox3
             // 

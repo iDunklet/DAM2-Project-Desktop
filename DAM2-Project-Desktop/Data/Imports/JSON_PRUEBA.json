@@ -146,14 +146,25 @@
         "password": "pass505",
         "userName": "SRAMÍREZ",
         "nombreCompleto": "Sofia Ramírez"
+      },
+      {
+        "nombre": "David",
+        "apellido1": "Martín",
+        "apellido2": null,
+        "fechaNacimiento": "2002-11-05T00:00:00",
+        "classe": "DAM2",
+        "email": "david.martin@ies.es",
+        "password": "pass101",
+        "userName": "DMARTÍN",
+        "nombreCompleto": "David Martín"
       }
     ],
     "tareasProyecto": [
       {
         "nombreTarea": "Maquetación HTML/CSS",
-        "descripcionTarea": null,
+        "descripcionTarea": "",
         "fechaInicioTarea": "2024-02-01T00:00:00",
-        "fechaFinTarea": null,
+        "fechaFinTarea": "2025-12-10T00:00:00",
         "responsableAsignado": {
           "nombre": "Ana",
           "apellido1": "López",
@@ -170,9 +181,9 @@
       },
       {
         "nombreTarea": "Configuración Servidor",
-        "descripcionTarea": null,
+        "descripcionTarea": "",
         "fechaInicioTarea": "2024-03-10T00:00:00",
-        "fechaFinTarea": null,
+        "fechaFinTarea": "2025-12-08T00:00:00",
         "responsableAsignado": {
           "nombre": "Carlos",
           "apellido1": "Ruiz",
@@ -188,10 +199,10 @@
         "horas": 4
       },
       {
-        "nombreTarea": "Implementación Seguridad",
-        "descripcionTarea": null,
+        "nombreTarea": "Implementación Seguridaddqwdqwdqwdqw",
+        "descripcionTarea": "dqwdqwdqw",
         "fechaInicioTarea": "2024-04-01T00:00:00",
-        "fechaFinTarea": null,
+        "fechaFinTarea": "2025-12-03T00:00:00",
         "responsableAsignado": {
           "nombre": "Sofia",
           "apellido1": "Ramírez",
