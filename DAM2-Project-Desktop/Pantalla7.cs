@@ -279,5 +279,11 @@ namespace DAM2_Project_Desktop
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 }

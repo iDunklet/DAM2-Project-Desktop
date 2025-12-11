@@ -30,8 +30,10 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla4));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
+            button5 = new Button();
             pictureBoxTasky = new PictureBox();
             splitContainer3 = new SplitContainer();
             splitContainer7 = new SplitContainer();
@@ -52,7 +54,6 @@ namespace DAM2_Project_Desktop
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -84,7 +85,6 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -120,7 +120,7 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer2.Panel1.Controls.Add(pictureBox1);
+            splitContainer2.Panel1.Controls.Add(button5);
             splitContainer2.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer2.Panel1.ForeColor = SystemColors.MenuText;
             // 
@@ -132,6 +132,22 @@ namespace DAM2_Project_Desktop
             splitContainer2.SplitterDistance = 93;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
+            // 
+            // button5
+            // 
+            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
+            button5.BackgroundImageLayout = ImageLayout.Zoom;
+            button5.Dock = DockStyle.Right;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = Color.Transparent;
+            button5.Location = new Point(1251, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(173, 93);
+            button5.TabIndex = 3;
+            button5.UseCompatibleTextRendering = true;
+            button5.UseVisualStyleBackColor = true;
+            button5.Visible = false;
+            button5.Click += buttonOut_Click;
             // 
             // pictureBoxTasky
             // 
@@ -446,16 +462,6 @@ namespace DAM2_Project_Desktop
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources._out;
-            pictureBox1.Location = new Point(1262, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // Pantalla4
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -500,7 +506,6 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -529,6 +534,6 @@ namespace DAM2_Project_Desktop
         private FlowLayoutPanel flowPanelMiembros;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox pictureBox1;
+        private Button button5;
     }
 }

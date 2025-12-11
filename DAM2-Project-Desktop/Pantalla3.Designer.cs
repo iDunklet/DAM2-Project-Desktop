@@ -28,10 +28,11 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla3));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
+            buttonOut = new Button();
             pictureBoxTasky = new PictureBox();
             splitContainer3 = new SplitContainer();
             splitContainer7 = new SplitContainer();
@@ -61,7 +62,6 @@ namespace DAM2_Project_Desktop
             Estado = new DataGridViewComboBoxColumn();
             Horas = new DataGridViewTextBoxColumn();
             colCheck = new DataGridViewCheckBoxColumn();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -95,7 +95,6 @@ namespace DAM2_Project_Desktop
             splitContainer6.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -131,7 +130,7 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer2.Panel1.Controls.Add(pictureBox1);
+            splitContainer2.Panel1.Controls.Add(buttonOut);
             splitContainer2.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer2.Panel1.ForeColor = SystemColors.MenuText;
             // 
@@ -143,6 +142,20 @@ namespace DAM2_Project_Desktop
             splitContainer2.SplitterDistance = 93;
             splitContainer2.SplitterWidth = 2;
             splitContainer2.TabIndex = 0;
+            // 
+            // buttonOut
+            // 
+            buttonOut.BackgroundImage = (Image)resources.GetObject("buttonOut.BackgroundImage");
+            buttonOut.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonOut.Dock = DockStyle.Right;
+            buttonOut.FlatStyle = FlatStyle.Flat;
+            buttonOut.ForeColor = Color.Transparent;
+            buttonOut.Location = new Point(1330, 0);
+            buttonOut.Name = "buttonOut";
+            buttonOut.Size = new Size(94, 93);
+            buttonOut.TabIndex = 3;
+            buttonOut.UseVisualStyleBackColor = true;
+            buttonOut.Click += buttonOut_Click;
             // 
             // pictureBoxTasky
             // 
@@ -546,16 +559,6 @@ namespace DAM2_Project_Desktop
             colCheck.SortMode = DataGridViewColumnSortMode.Automatic;
             colCheck.Width = 98;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1260, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // Pantalla3
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -603,7 +606,6 @@ namespace DAM2_Project_Desktop
             splitContainer6.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -640,6 +642,6 @@ namespace DAM2_Project_Desktop
         private DataGridViewComboBoxColumn Estado;
         private DataGridViewTextBoxColumn Horas;
         private DataGridViewCheckBoxColumn colCheck;
-        private PictureBox pictureBox1;
+        private Button buttonOut;
     }
 }

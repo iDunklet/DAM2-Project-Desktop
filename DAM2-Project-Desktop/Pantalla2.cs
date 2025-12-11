@@ -188,7 +188,8 @@ namespace DAM2_Project_Desktop
             RefrescarListado();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonOut_Click(object sender, EventArgs e)
         {
             ListadoDatosClasses.guardarDatos();
             this.Close();

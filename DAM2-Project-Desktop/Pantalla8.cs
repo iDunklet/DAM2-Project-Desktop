@@ -314,5 +314,11 @@ namespace DAM2_Project_Desktop
             pantalla2.Show();
             this.Close();
         }
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 }

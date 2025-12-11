@@ -240,10 +240,15 @@ namespace DAM2_Project_Desktop
             ListadoDatosClasses.importJSONFromNewDirectory();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonOut_Click(object sender, EventArgs e)
         {
             ListadoDatosClasses.guardarDatos();
+            this.Close();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.exportProjects();
+        }
     }
 }

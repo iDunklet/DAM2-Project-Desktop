@@ -28,11 +28,12 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
+            buttonOut = new Button();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -51,7 +52,6 @@ namespace DAM2_Project_Desktop
             Curso = new DataGridViewTextBoxColumn();
             iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -63,7 +63,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -79,7 +78,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
-            splitContainer1.Panel1.Controls.Add(pictureBox1);
+            splitContainer1.Panel1.Controls.Add(buttonOut);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
@@ -90,6 +89,20 @@ namespace DAM2_Project_Desktop
             splitContainer1.SplitterDistance = 93;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // buttonOut
+            // 
+            buttonOut.BackgroundImage = (Image)resources.GetObject("buttonOut.BackgroundImage");
+            buttonOut.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonOut.Dock = DockStyle.Right;
+            buttonOut.FlatStyle = FlatStyle.Flat;
+            buttonOut.ForeColor = Color.Transparent;
+            buttonOut.Location = new Point(1328, 0);
+            buttonOut.Name = "buttonOut";
+            buttonOut.Size = new Size(94, 91);
+            buttonOut.TabIndex = 3;
+            buttonOut.UseVisualStyleBackColor = true;
+            buttonOut.Click += buttonOut_Click;
             // 
             // pictureBoxTasky
             // 
@@ -320,16 +333,6 @@ namespace DAM2_Project_Desktop
             IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources._out;
-            pictureBox1.Location = new Point(1263, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // Pantalla8
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -351,7 +354,6 @@ namespace DAM2_Project_Desktop
             splitContainer2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -376,6 +378,6 @@ namespace DAM2_Project_Desktop
         private Button buttonUsuarios;
         private Button buttonImportarJSON;
         private Button buttonExportarJSON;
-        private PictureBox pictureBox1;
+        private Button buttonOut;
     }
 }

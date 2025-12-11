@@ -738,6 +738,13 @@ namespace DAM2_Project_Desktop
             // MessageBox.Show($"Error en {nombreColumna}: {mensajeError}", "Advertencia", 
             //     MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 
 }

@@ -48,7 +48,6 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
@@ -89,12 +88,12 @@ namespace DAM2_Project_Desktop
             button1.Dock = DockStyle.Right;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(1344, 0);
+            button1.Location = new Point(1335, 0);
             button1.Name = "button1";
-            button1.Size = new Size(78, 92);
+            button1.Size = new Size(87, 92);
             button1.TabIndex = 3;
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += buttonOut_Click;
             // 
             // pictureBoxTasky
             // 
@@ -283,7 +282,6 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel1.PerformLayout();

@@ -481,5 +481,13 @@ namespace DAM2_Project_Desktop
         }
 
         #endregion
+
+
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 }

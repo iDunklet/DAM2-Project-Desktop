@@ -242,6 +242,12 @@ namespace DAM2_Project_Desktop
         {
             ListadoDatosClasses.guardarDatos();
         }
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 }
 
