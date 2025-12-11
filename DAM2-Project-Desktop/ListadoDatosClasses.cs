@@ -49,7 +49,7 @@ namespace DAM2_Project_Desktop
 
         public static void exportUsers()
         {
-            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.FullName;
+            string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
             string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Users");
             Directory.CreateDirectory(carpetaUsuarios);
             string rutaArchivo = Path.Combine(carpetaUsuarios, "Usuarios.json");
@@ -104,6 +104,7 @@ namespace DAM2_Project_Desktop
         {
             string proyectoPath = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
             string carpetaUsuarios = Path.Combine(proyectoPath, "Data", "Imports");
+            Directory.CreateDirectory(carpetaUsuarios);
             string rutaArchivo = Path.Combine(carpetaUsuarios, "JSON_PRUEBA.json");
 
             string jsonText = JsonConvert.SerializeObject(ListadoProyectos, Formatting.Indented);
@@ -188,27 +189,27 @@ namespace DAM2_Project_Desktop
         public static void GenerarListaTareas()
         {
             // Tareas de Desarrollo
-            ListaTareas.Add(new Tarea("Diseño UI/UX", ListadoUsuarios[0], new DateTime(2024, 1, 15), "En progreso", 2));
-            ListaTareas.Add(new Tarea("Desarrollo Backend", ListadoUsuarios[2], new DateTime(2024, 1, 20), "Pendiente", 0));
-            ListaTareas.Add(new Tarea("Maquetación HTML/CSS", ListadoUsuarios[5], new DateTime(2024, 2, 1), "Completada", 5));
-            ListaTareas.Add(new Tarea("Base de Datos SQL", ListadoUsuarios[9], new DateTime(2024, 2, 10), "En progreso", 1));
-            ListaTareas.Add(new Tarea("Testing Unitario", ListadoUsuarios[3], new DateTime(2024, 3, 1), "Pendiente", 0));
-            ListaTareas.Add(new Tarea("Documentación API", ListadoUsuarios[1], new DateTime(2024, 3, 5), "Completada", 3));
-            ListaTareas.Add(new Tarea("Configuración Servidor", ListadoUsuarios[10], new DateTime(2024, 3, 10), "En progreso", 1));
-            ListaTareas.Add(new Tarea("Optimización Código", ListadoUsuarios[4], new DateTime(2024, 3, 15), "Pendiente", 0));
-            ListaTareas.Add(new Tarea("Diseño Logo", ListadoUsuarios[6], new DateTime(2024, 3, 20), "Completada", 8));
-            ListaTareas.Add(new Tarea("Implementación Seguridad", ListadoUsuarios[7], new DateTime(2024, 4, 1), "En progreso", 2));
+            ListaTareas.Add(new Tarea("Diseño UI/UX", ListadoUsuarios[0], new DateTime(2024, 1, 15), "In Progress", 2));
+            ListaTareas.Add(new Tarea("Desarrollo Backend", ListadoUsuarios[2], new DateTime(2024, 1, 20), "Pending", 0));
+            ListaTareas.Add(new Tarea("Maquetación HTML/CSS", ListadoUsuarios[5], new DateTime(2024, 2, 1), "Done", 5));
+            ListaTareas.Add(new Tarea("Base de Datos SQL", ListadoUsuarios[9], new DateTime(2024, 2, 10), "In Progress", 1));
+            ListaTareas.Add(new Tarea("Testing Unitario", ListadoUsuarios[3], new DateTime(2024, 3, 1), "Pending", 0));
+            ListaTareas.Add(new Tarea("Documentación API", ListadoUsuarios[1], new DateTime(2024, 3, 5), "Done", 3));
+            ListaTareas.Add(new Tarea("Configuración Servidor", ListadoUsuarios[10], new DateTime(2024, 3, 10), "In Progress", 1));
+            ListaTareas.Add(new Tarea("Optimización Código", ListadoUsuarios[4], new DateTime(2024, 3, 15), "Pending", 0));
+            ListaTareas.Add(new Tarea("Diseño Logo", ListadoUsuarios[6], new DateTime(2024, 3, 20), "Done", 8));
+            ListaTareas.Add(new Tarea("Implementación Seguridad", ListadoUsuarios[7], new DateTime(2024, 4, 1), "In Progress", 2));
 
             // Tareas de Análisis
-            ListaTareas.Add(new Tarea("Análisis Requisitos", ListadoUsuarios[8], new DateTime(2024, 1, 10), "Completada", 5));
-            ListaTareas.Add(new Tarea("Diagramas UML", ListadoUsuarios[11], new DateTime(2024, 1, 25), "Completada", 1));
-            ListaTareas.Add(new Tarea("Planificación Proyecto", ListadoUsuarios[12], new DateTime(2024, 2, 5), "En progreso", 1));
-            ListaTareas.Add(new Tarea("Estudio Viabilidad", ListadoUsuarios[13], new DateTime(2024, 2, 15), "Pendiente", 0));
+            ListaTareas.Add(new Tarea("Análisis Requisitos", ListadoUsuarios[8], new DateTime(2024, 1, 10), "Done", 5));
+            ListaTareas.Add(new Tarea("Diagramas UML", ListadoUsuarios[11], new DateTime(2024, 1, 25), "Done", 1));
+            ListaTareas.Add(new Tarea("Planificación Proyecto", ListadoUsuarios[12], new DateTime(2024, 2, 5), "In Progress", 1));
+            ListaTareas.Add(new Tarea("Estudio Viabilidad", ListadoUsuarios[13], new DateTime(2024, 2, 15), "Pending", 0));
 
             // Tareas de Mantenimiento
-            ListaTareas.Add(new Tarea("Revisión Código", ListadoUsuarios[0], new DateTime(2024, 4, 10), "Pendiente", 0));
-            ListaTareas.Add(new Tarea("Actualización Dependencias", ListadoUsuarios[2], new DateTime(2024, 4, 15), "Pendiente", 0));
-            ListaTareas.Add(new Tarea("Backup Base de Datos", ListadoUsuarios[9], new DateTime(2024, 4, 20), "Pendiente", 0));
+            ListaTareas.Add(new Tarea("Revisión Código", ListadoUsuarios[0], new DateTime(2024, 4, 10), "Pending", 0));
+            ListaTareas.Add(new Tarea("Actualización Dependencias", ListadoUsuarios[2], new DateTime(2024, 4, 15), "Pending", 0));
+            ListaTareas.Add(new Tarea("Backup Base de Datos", ListadoUsuarios[9], new DateTime(2024, 4, 20), "Pending", 0));
         }
 
         public static void GenerarListaProyectos()
@@ -261,5 +262,7 @@ namespace DAM2_Project_Desktop
             proyecto8.tareasProyecto = new List<Tarea>();
             ListadoProyectos.Add(proyecto8);
         }
+
     }
+
 }

@@ -202,7 +202,7 @@ namespace DAM2_Project_Desktop
             labelId.Font = new Font("Segoe UI", 20F);
             labelId.Location = new Point(69, 7);
             labelId.Name = "labelId";
-            labelId.Size = new Size(92, 37);
+            labelId.Size = new Size(110, 46);
             labelId.TabIndex = 1;
             labelId.Text = "00000";
             // 
@@ -213,7 +213,7 @@ namespace DAM2_Project_Desktop
             label1.Location = new Point(8, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(50, 31);
+            label1.Size = new Size(61, 39);
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
@@ -301,7 +301,7 @@ namespace DAM2_Project_Desktop
             labelNombreProyecto.Font = new Font("Segoe UI", 20F);
             labelNombreProyecto.Location = new Point(23, 7);
             labelNombreProyecto.Name = "labelNombreProyecto";
-            labelNombreProyecto.Size = new Size(226, 37);
+            labelNombreProyecto.Size = new Size(286, 46);
             labelNombreProyecto.TabIndex = 0;
             labelNombreProyecto.Text = "Nombre Proyecto";
             // 
@@ -311,12 +311,13 @@ namespace DAM2_Project_Desktop
             labelFechaProyecto.Font = new Font("Segoe UI", 20F);
             labelFechaProyecto.Location = new Point(11, 7);
             labelFechaProyecto.Name = "labelFechaProyecto";
-            labelFechaProyecto.Size = new Size(85, 37);
+            labelFechaProyecto.Size = new Size(107, 46);
             labelFechaProyecto.TabIndex = 0;
             labelFechaProyecto.Text = "Fecha";
             // 
             // flowPanelMiembros
             // 
+            flowPanelMiembros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flowPanelMiembros.Location = new Point(135, 8);
             flowPanelMiembros.Name = "flowPanelMiembros";
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
@@ -331,7 +332,7 @@ namespace DAM2_Project_Desktop
             label6.Location = new Point(34, 67);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(59, 17);
+            label6.Size = new Size(68, 20);
             label6.TabIndex = 7;
             label6.Text = "Agregar";
             // 
@@ -345,7 +346,6 @@ namespace DAM2_Project_Desktop
             pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // splitContainer6
             // 
@@ -497,7 +497,7 @@ namespace DAM2_Project_Desktop
             Responsable.Name = "Responsable";
             Responsable.Resizable = DataGridViewTriState.True;
             Responsable.SortMode = DataGridViewColumnSortMode.Automatic;
-            Responsable.Width = 88;
+            Responsable.Width = 108;
             // 
             // FechaInicio
             // 
@@ -505,7 +505,7 @@ namespace DAM2_Project_Desktop
             FechaInicio.HeaderText = "Fecha inicio";
             FechaInicio.MinimumWidth = 6;
             FechaInicio.Name = "FechaInicio";
-            FechaInicio.Width = 118;
+            FechaInicio.Width = 145;
             // 
             // FechaFin
             // 
@@ -513,23 +513,24 @@ namespace DAM2_Project_Desktop
             FechaFin.HeaderText = "Fecha final";
             FechaFin.MinimumWidth = 6;
             FechaFin.Name = "FechaFin";
-            FechaFin.Width = 112;
+            FechaFin.Width = 136;
             // 
             // Estado
             // 
             Estado.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             Estado.HeaderText = "Estado de la tarea";
-            Estado.Items.AddRange(new object[] { "In progress", "Done", "In review", "Blocked", "To do" });
             Estado.MinimumWidth = 6;
             Estado.Name = "Estado";
             Estado.Resizable = DataGridViewTriState.True;
             Estado.SortMode = DataGridViewColumnSortMode.Automatic;
-            Estado.Width = 164;
+            Estado.Width = 198;
             // 
             // Horas
             // 
             Horas.HeaderText = "Horas";
+            Horas.MinimumWidth = 6;
             Horas.Name = "Horas";
+            Horas.Width = 125;
             // 
             // colCheck
             // 
@@ -539,7 +540,7 @@ namespace DAM2_Project_Desktop
             colCheck.Name = "colCheck";
             colCheck.Resizable = DataGridViewTriState.True;
             colCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            colCheck.Width = 79;
+            colCheck.Width = 98;
             // 
             // Pantalla3
             // 

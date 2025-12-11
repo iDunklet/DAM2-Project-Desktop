@@ -28,7 +28,9 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla2));
             splitContainer1 = new SplitContainer();
+            button1 = new Button();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -67,6 +69,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
@@ -77,6 +80,20 @@ namespace DAM2_Project_Desktop
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(1344, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(78, 92);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBoxTasky
             // 
@@ -294,5 +311,6 @@ namespace DAM2_Project_Desktop
         private PictureBox pictureBoxTasky;
         private Button buttonCrearProyecto;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button button1;
     }
 }
