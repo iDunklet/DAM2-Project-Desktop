@@ -9,7 +9,7 @@ namespace DAM2_Project_Desktop
     public partial class Pantalla3 : Form
     {
         private Proyecto proyectoActual;
-        private DateTimePicker dtpActivo; // Control del DateTimePicker activo
+        private DateTimePicker dtpActivo;
 
         public Pantalla3(Proyecto project)
         {
@@ -44,8 +44,6 @@ namespace DAM2_Project_Desktop
             this.WindowState = FormWindowState.Maximized;
         }
 
-        #region Eventos DataGridView
-
         private void DataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dataGridView1.IsCurrentCellDirty)
@@ -68,10 +66,8 @@ namespace DAM2_Project_Desktop
                 fila.Tag = nuevaTarea;
                 proyectoActual.tareasProyecto.Add(nuevaTarea);
 
-                // Inicializar ComboBox de Responsable SOLO UNA VEZ
                 InicializarComboBoxResponsable(fila);
 
-                // Inicializar ComboBox de Estado SOLO UNA VEZ
                 InicializarComboBoxEstado(fila);
             }
 
@@ -106,14 +102,9 @@ namespace DAM2_Project_Desktop
 
             if (nombreColumna == "FechaInicio" || nombreColumna == "FechaFin")
             {
-                e.Cancel = true; // Evita edición directa
                 ShowDatePicker(e.RowIndex, e.ColumnIndex);
             }
         }
-
-        #endregion
-
-        #region DateTimePicker
 
         private void ShowDatePicker(int rowIndex, int columnIndex)
         {
@@ -232,9 +223,6 @@ namespace DAM2_Project_Desktop
                 }
             }
         }
-        #endregion
-
-        #region Gestión de Usuarios
 
         private void PictureBox4_Click(object sender, EventArgs e)
         {
@@ -341,10 +329,6 @@ namespace DAM2_Project_Desktop
                 }
             }
         }
-
-        #endregion
-
-        #region Guardar y Cargar Datos
 
         private void InicializarComboBoxResponsable(DataGridViewRow fila)
         {
@@ -632,11 +616,6 @@ namespace DAM2_Project_Desktop
                 dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
             }
         }
-
-        #endregion
-
-        #region Botones
-
         private void button1_Click(object sender, EventArgs e)
         {
             ListadoDatosClasses.guardarDatos();
@@ -682,8 +661,6 @@ namespace DAM2_Project_Desktop
             if (proyectoActualizado != null)
                 proyectoActual = proyectoActualizado;
         }
-
-        #endregion
         private void DataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // Prevenir que se muestre el diálogo de error
@@ -724,7 +701,6 @@ namespace DAM2_Project_Desktop
                     }
                     else if (columna.Name == "Estado")
                     {
-                        // Asegurar que tiene los valores correctos
                         if (comboCell.Items.Count == 0)
                         {
                             comboCell.Items.AddRange(new string[] { "Pending", "In Progress", "Done" });
@@ -733,11 +709,6 @@ namespace DAM2_Project_Desktop
                     }
                 }
             }
-
-            // Opcional: Mostrar mensaje solo en casos críticos
-            // MessageBox.Show($"Error en {nombreColumna}: {mensajeError}", "Advertencia", 
-            //     MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
-
 }
