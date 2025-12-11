@@ -51,6 +51,7 @@ namespace DAM2_Project_Desktop
             Curso = new DataGridViewTextBoxColumn();
             iconoEdit = new DataGridViewImageColumn();
             IconoDelete = new DataGridViewImageColumn();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +63,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -77,6 +79,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
@@ -317,13 +320,23 @@ namespace DAM2_Project_Desktop
             IconoDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             IconoDelete.Width = 40;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._out;
+            pictureBox1.Location = new Point(1263, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // Pantalla8
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla8";
             Text = "Tasky";
             splitContainer1.Panel1.ResumeLayout(false);
@@ -338,6 +351,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewListadoUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -362,5 +376,6 @@ namespace DAM2_Project_Desktop
         private Button buttonUsuarios;
         private Button buttonImportarJSON;
         private Button buttonExportarJSON;
+        private PictureBox pictureBox1;
     }
 }

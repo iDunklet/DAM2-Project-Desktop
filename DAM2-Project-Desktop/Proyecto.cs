@@ -105,6 +105,9 @@ namespace DAM2_Project_Desktop
             this.titulo = titulo;
             this.fechaEntrega = fechaEntrega;
 
+            miembrosProyecto = new List<Usuario>();
+            tareasProyecto = new List<Tarea>();
+
 
         }
         public Proyecto(string titulo, DateTime fechaEntrega, List<Usuario> miembros)
@@ -113,17 +116,19 @@ namespace DAM2_Project_Desktop
             _nextID++;
             this.titulo = titulo;
             this.fechaEntrega = fechaEntrega;
-            this.miembrosProyecto = miembros ?? new List<Usuario>();
+
+            miembrosProyecto = miembros ?? new List<Usuario>();
+            tareasProyecto = new List<Tarea>();
         }
         public Proyecto(string titulo, List<Usuario> usuarios, List<Tarea> tareas, Bitmap imgProyecto)
         {
             this.ID = _nextID;
             _nextID++;
             this.titulo = titulo;
-            this.miembrosProyecto = usuarios;
-            this.tareasProyecto = tareas;
             this.ImgProyecto = imgProyecto;
-            this.tareasProyecto = tareas ?? new List<Tarea>();
+
+            miembrosProyecto = usuarios ?? new List<Usuario>();
+            tareasProyecto = tareas ?? new List<Tarea>();
         }
 
     }

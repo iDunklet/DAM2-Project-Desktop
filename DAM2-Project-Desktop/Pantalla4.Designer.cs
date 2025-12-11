@@ -52,6 +52,7 @@ namespace DAM2_Project_Desktop
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -83,6 +84,7 @@ namespace DAM2_Project_Desktop
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -118,6 +120,7 @@ namespace DAM2_Project_Desktop
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer2.Panel1.Controls.Add(pictureBox1);
             splitContainer2.Panel1.Controls.Add(pictureBoxTasky);
             splitContainer2.Panel1.ForeColor = SystemColors.MenuText;
             // 
@@ -192,7 +195,7 @@ namespace DAM2_Project_Desktop
             labelId.Font = new Font("Segoe UI", 20F);
             labelId.Location = new Point(69, 7);
             labelId.Name = "labelId";
-            labelId.Size = new Size(92, 37);
+            labelId.Size = new Size(110, 46);
             labelId.TabIndex = 1;
             labelId.Text = "00000";
             // 
@@ -203,7 +206,7 @@ namespace DAM2_Project_Desktop
             label1.Location = new Point(8, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(57, 31);
+            label1.Size = new Size(70, 39);
             label1.TabIndex = 0;
             label1.Text = "ID: ";
             // 
@@ -291,7 +294,7 @@ namespace DAM2_Project_Desktop
             labelNombreProyecto.Font = new Font("Segoe UI", 20F);
             labelNombreProyecto.Location = new Point(23, 7);
             labelNombreProyecto.Name = "labelNombreProyecto";
-            labelNombreProyecto.Size = new Size(226, 37);
+            labelNombreProyecto.Size = new Size(286, 46);
             labelNombreProyecto.TabIndex = 0;
             labelNombreProyecto.Text = "Nombre Proyecto";
             // 
@@ -301,7 +304,7 @@ namespace DAM2_Project_Desktop
             labelFechaProyecto.Font = new Font("Segoe UI", 20F);
             labelFechaProyecto.Location = new Point(11, 7);
             labelFechaProyecto.Name = "labelFechaProyecto";
-            labelFechaProyecto.Size = new Size(85, 37);
+            labelFechaProyecto.Size = new Size(107, 46);
             labelFechaProyecto.TabIndex = 0;
             labelFechaProyecto.Text = "Fecha";
             // 
@@ -333,7 +336,7 @@ namespace DAM2_Project_Desktop
             label6.Location = new Point(34, 67);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(59, 17);
+            label6.Size = new Size(68, 20);
             label6.TabIndex = 7;
             label6.Text = "Agregar";
             // 
@@ -443,12 +446,22 @@ namespace DAM2_Project_Desktop
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._out;
+            pictureBox1.Location = new Point(1262, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // Pantalla4
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla4";
             Text = "Pantalla4";
             Load += Pantalla4_Load;
@@ -487,6 +500,7 @@ namespace DAM2_Project_Desktop
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -515,5 +529,6 @@ namespace DAM2_Project_Desktop
         private FlowLayoutPanel flowPanelMiembros;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
+        private PictureBox pictureBox1;
     }
 }

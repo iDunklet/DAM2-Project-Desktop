@@ -35,7 +35,7 @@ namespace DAM2_Project_Desktop
         List<Tarea> listaTareas;
         Proyecto proyectoDemo;
 
- 
+
         public Pantalla2()
         {
             InitializeComponent();
@@ -68,7 +68,6 @@ namespace DAM2_Project_Desktop
         private void ControlProyecto_ProyectoClicado(object sender, Proyecto proyectoClicado)
         {
             if (proyectoClicado == null) return;
-            Point location = Navegacion.FormInicialLocation(this);
             Pantalla3 pantalla3 = new Pantalla3(proyectoClicado, location);
             pantalla3.Show();
 
@@ -79,8 +78,8 @@ namespace DAM2_Project_Desktop
         private void Pantalla2_Resize(object sender, EventArgs e)
         {
             RectanglepictureBoxTasky = new Rectangle(pictureBoxTasky.Location, pictureBoxTasky.Size);
-            
-            location =  Navegacion.FormInicialLocation(this);
+
+            location = Navegacion.FormInicialLocation(this);
             size = Navegacion.FormInicialSize(this);
 
 
@@ -107,7 +106,7 @@ namespace DAM2_Project_Desktop
 
         private void ResizeBotonesLaterales()
         {
-            Control[] sidebarButtons = { buttonInicio, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7 ,buttonCrearProyecto };
+            Control[] sidebarButtons = { buttonInicio, buttonUsuarios, buttonImportarJSON, buttonExportarJSON, button7, buttonCrearProyecto };
             Rectangle[] originalRects = { RectanglebuttonInicio, RectanglebuttonUsuarios, RectanglebuttonImportarJSON, RectanglebuttonExportarJSON, Rectanglebutton7, RectanglebuttonCrearProyecto };
 
             int sidebarPanelWidth = splitContainer2.Panel1.ClientSize.Width;
@@ -189,5 +188,10 @@ namespace DAM2_Project_Desktop
             RefrescarListado();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListadoDatosClasses.guardarDatos();
+            this.Close();
+        }
     }
 }

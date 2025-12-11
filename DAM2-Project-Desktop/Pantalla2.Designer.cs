@@ -28,7 +28,9 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla2));
             splitContainer1 = new SplitContainer();
+            button1 = new Button();
             pictureBoxTasky = new PictureBox();
             splitContainer2 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -46,6 +48,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
@@ -67,6 +70,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
@@ -77,6 +81,20 @@ namespace DAM2_Project_Desktop
             splitContainer1.SplitterDistance = 94;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(1344, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(78, 92);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBoxTasky
             // 
@@ -237,7 +255,7 @@ namespace DAM2_Project_Desktop
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(96, 28);
+            label2.Size = new Size(121, 35);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -248,7 +266,7 @@ namespace DAM2_Project_Desktop
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(125, 54);
+            label1.Size = new Size(158, 67);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
@@ -257,7 +275,7 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla2";
             Text = "Form1";
             Load += Pantalla2_Load;
@@ -265,6 +283,7 @@ namespace DAM2_Project_Desktop
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTasky).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel1.PerformLayout();
@@ -294,5 +313,6 @@ namespace DAM2_Project_Desktop
         private PictureBox pictureBoxTasky;
         private Button buttonCrearProyecto;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button button1;
     }
 }

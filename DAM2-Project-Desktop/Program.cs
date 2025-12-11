@@ -12,8 +12,11 @@ namespace DAM2_Project_Desktop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            ListadoDatosClasses.cargarDatos();
 
+            //ListadoDatosClasses.inicioDatosClasses();
+            //ListadoDatosClasses.guardarDatos();
+
+            ListadoDatosClasses.cargarDatos();
             //ListadoDatosClasses.importProjects();
             //MessageBox.Show("Proyectos cargados: " + ListadoDatosClasses.ListadoProyectos.Count);
 

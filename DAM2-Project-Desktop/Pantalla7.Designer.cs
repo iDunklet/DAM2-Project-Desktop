@@ -58,6 +58,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido1 = new TextBox();
             label1 = new Label();
             textBoxConfigurarUsuarioName = new TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -69,6 +70,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImgPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -84,6 +86,7 @@ namespace DAM2_Project_Desktop
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.FromArgb(247, 250, 252);
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(pictureBoxTasky);
             // 
             // splitContainer1.Panel2
@@ -259,7 +262,7 @@ namespace DAM2_Project_Desktop
             label10.Font = new Font("Segoe UI", 20F);
             label10.Location = new Point(60, 64);
             label10.Name = "label10";
-            label10.Size = new Size(184, 37);
+            label10.Size = new Size(229, 46);
             label10.TabIndex = 22;
             label10.Text = "Datos Usuario";
             // 
@@ -269,7 +272,7 @@ namespace DAM2_Project_Desktop
             label8.Font = new Font("Segoe UI", 20F);
             label8.Location = new Point(547, 627);
             label8.Name = "label8";
-            label8.Size = new Size(349, 37);
+            label8.Size = new Size(440, 46);
             label8.TabIndex = 21;
             label8.Text = "Confirmar nueva contraseña";
             // 
@@ -280,7 +283,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioConfirmarContrasena.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioConfirmarContrasena.Location = new Point(557, 686);
             textBoxConfigurarUsuarioConfirmarContrasena.Name = "textBoxConfigurarUsuarioConfirmarContrasena";
-            textBoxConfigurarUsuarioConfirmarContrasena.Size = new Size(300, 34);
+            textBoxConfigurarUsuarioConfirmarContrasena.Size = new Size(300, 41);
             textBoxConfigurarUsuarioConfirmarContrasena.TabIndex = 20;
             // 
             // label9
@@ -289,7 +292,7 @@ namespace DAM2_Project_Desktop
             label9.Font = new Font("Segoe UI", 20F);
             label9.Location = new Point(106, 627);
             label9.Name = "label9";
-            label9.Size = new Size(229, 37);
+            label9.Size = new Size(288, 46);
             label9.TabIndex = 19;
             label9.Text = "Nueva contraseña";
             // 
@@ -300,7 +303,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioNuevaContrasena.ForeColor = Color.FromArgb(35, 78, 82);
             textBoxConfigurarUsuarioNuevaContrasena.Location = new Point(107, 686);
             textBoxConfigurarUsuarioNuevaContrasena.Name = "textBoxConfigurarUsuarioNuevaContrasena";
-            textBoxConfigurarUsuarioNuevaContrasena.Size = new Size(300, 34);
+            textBoxConfigurarUsuarioNuevaContrasena.Size = new Size(300, 41);
             textBoxConfigurarUsuarioNuevaContrasena.TabIndex = 18;
             // 
             // label7
@@ -309,7 +312,7 @@ namespace DAM2_Project_Desktop
             label7.Font = new Font("Segoe UI", 20F);
             label7.Location = new Point(60, 553);
             label7.Name = "label7";
-            label7.Size = new Size(246, 37);
+            label7.Size = new Size(308, 46);
             label7.TabIndex = 17;
             label7.Text = "Cambio contraseña";
             // 
@@ -319,7 +322,7 @@ namespace DAM2_Project_Desktop
             label6.Font = new Font("Segoe UI", 20F);
             label6.Location = new Point(790, 407);
             label6.Name = "label6";
-            label6.Size = new Size(80, 37);
+            label6.Size = new Size(98, 46);
             label6.TabIndex = 16;
             label6.Text = "Clase";
             // 
@@ -332,7 +335,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioClase.Margin = new Padding(3, 4, 3, 4);
             textBoxConfigurarUsuarioClase.Name = "textBoxConfigurarUsuarioClase";
             textBoxConfigurarUsuarioClase.ReadOnly = true;
-            textBoxConfigurarUsuarioClase.Size = new Size(343, 34);
+            textBoxConfigurarUsuarioClase.Size = new Size(343, 41);
             textBoxConfigurarUsuarioClase.TabIndex = 15;
             textBoxConfigurarUsuarioClase.DoubleClick += TextBox_DoubleClick;
             // 
@@ -342,7 +345,7 @@ namespace DAM2_Project_Desktop
             label5.Font = new Font("Segoe UI", 20F);
             label5.Location = new Point(359, 407);
             label5.Name = "label5";
-            label5.Size = new Size(236, 37);
+            label5.Size = new Size(298, 46);
             label5.TabIndex = 14;
             label5.Text = "Correo Electronico";
             // 
@@ -355,7 +358,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxConfigurarUsuarioEmail.Name = "textBoxConfigurarUsuarioEmail";
             textBoxConfigurarUsuarioEmail.ReadOnly = true;
-            textBoxConfigurarUsuarioEmail.Size = new Size(343, 34);
+            textBoxConfigurarUsuarioEmail.Size = new Size(343, 41);
             textBoxConfigurarUsuarioEmail.TabIndex = 13;
             textBoxConfigurarUsuarioEmail.DoubleClick += TextBox_DoubleClick;
             // 
@@ -367,7 +370,7 @@ namespace DAM2_Project_Desktop
             dateTimePickerConfigurarUsuarioFechaNacimiento.Location = new Point(790, 317);
             dateTimePickerConfigurarUsuarioFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerConfigurarUsuarioFechaNacimiento.Name = "dateTimePickerConfigurarUsuarioFechaNacimiento";
-            dateTimePickerConfigurarUsuarioFechaNacimiento.Size = new Size(342, 34);
+            dateTimePickerConfigurarUsuarioFechaNacimiento.Size = new Size(342, 41);
             dateTimePickerConfigurarUsuarioFechaNacimiento.TabIndex = 12;
             // 
             // label4
@@ -376,7 +379,7 @@ namespace DAM2_Project_Desktop
             label4.Font = new Font("Segoe UI", 20F);
             label4.Location = new Point(790, 263);
             label4.Name = "label4";
-            label4.Size = new Size(266, 37);
+            label4.Size = new Size(335, 46);
             label4.TabIndex = 11;
             label4.Text = "Fecha de Nacimiento";
             // 
@@ -386,7 +389,7 @@ namespace DAM2_Project_Desktop
             label3.Font = new Font("Segoe UI", 20F);
             label3.Location = new Point(359, 263);
             label3.Name = "label3";
-            label3.Size = new Size(139, 37);
+            label3.Size = new Size(171, 46);
             label3.TabIndex = 9;
             label3.Text = "Apellido 2";
             // 
@@ -399,7 +402,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido2.Margin = new Padding(3, 4, 3, 4);
             textBoxConfigurarUsuarioApellido2.Name = "textBoxConfigurarUsuarioApellido2";
             textBoxConfigurarUsuarioApellido2.ReadOnly = true;
-            textBoxConfigurarUsuarioApellido2.Size = new Size(343, 34);
+            textBoxConfigurarUsuarioApellido2.Size = new Size(343, 41);
             textBoxConfigurarUsuarioApellido2.TabIndex = 8;
             textBoxConfigurarUsuarioApellido2.DoubleClick += TextBox_DoubleClick;
             // 
@@ -409,7 +412,7 @@ namespace DAM2_Project_Desktop
             label2.Font = new Font("Segoe UI", 20F);
             label2.Location = new Point(790, 130);
             label2.Name = "label2";
-            label2.Size = new Size(139, 37);
+            label2.Size = new Size(171, 46);
             label2.TabIndex = 7;
             label2.Text = "Apellido 1";
             // 
@@ -422,7 +425,7 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioApellido1.Margin = new Padding(3, 4, 3, 4);
             textBoxConfigurarUsuarioApellido1.Name = "textBoxConfigurarUsuarioApellido1";
             textBoxConfigurarUsuarioApellido1.ReadOnly = true;
-            textBoxConfigurarUsuarioApellido1.Size = new Size(343, 34);
+            textBoxConfigurarUsuarioApellido1.Size = new Size(343, 41);
             textBoxConfigurarUsuarioApellido1.TabIndex = 6;
             textBoxConfigurarUsuarioApellido1.DoubleClick += TextBox_DoubleClick;
             // 
@@ -432,7 +435,7 @@ namespace DAM2_Project_Desktop
             label1.Font = new Font("Segoe UI", 20F);
             label1.Location = new Point(349, 130);
             label1.Name = "label1";
-            label1.Size = new Size(115, 37);
+            label1.Size = new Size(144, 46);
             label1.TabIndex = 5;
             label1.Text = "Nombre";
             
@@ -446,16 +449,26 @@ namespace DAM2_Project_Desktop
             textBoxConfigurarUsuarioName.Margin = new Padding(3, 4, 3, 4);
             textBoxConfigurarUsuarioName.Name = "textBoxConfigurarUsuarioName";
             textBoxConfigurarUsuarioName.ReadOnly = true;
-            textBoxConfigurarUsuarioName.Size = new Size(343, 34);
+            textBoxConfigurarUsuarioName.Size = new Size(343, 41);
             textBoxConfigurarUsuarioName.TabIndex = 0;
             textBoxConfigurarUsuarioName.DoubleClick += TextBox_DoubleClick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._out;
+            pictureBox1.Location = new Point(1255, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // Pantalla7
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            MinimumSize = new Size(1440, 1024);
+            MinimumSize = new Size(1440, 1018);
             Name = "Pantalla7";
             Text = "Pantalla7";
             Load += Pantalla7_Load;
@@ -472,6 +485,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxImgPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -510,5 +524,6 @@ namespace DAM2_Project_Desktop
         private Button buttonUsuarios;
         private Button buttonImportarJSON;
         private Button buttonExportarJSON;
+        private PictureBox pictureBox1;
     }
 }
