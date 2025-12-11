@@ -146,6 +146,17 @@
         "password": "pass505",
         "userName": "SRAMÍREZ",
         "nombreCompleto": "Sofia Ramírez"
+      },
+      {
+        "nombre": "David",
+        "apellido1": "Martín",
+        "apellido2": null,
+        "fechaNacimiento": "2002-11-05T00:00:00",
+        "classe": "DAM2",
+        "email": "david.martin@ies.es",
+        "password": "pass101",
+        "userName": "DMARTÍN",
+        "nombreCompleto": "David Martín"
       }
     ],
     "tareasProyecto": [
@@ -188,8 +199,8 @@
         "horas": 4
       },
       {
-        "nombreTarea": "Implementación Seguridad",
-        "descripcionTarea": null,
+        "nombreTarea": "Implementación Seguridaddqwdqwdqwdqw",
+        "descripcionTarea": "dqwdqwdqw",
         "fechaInicioTarea": "2024-04-01T00:00:00",
         "fechaFinTarea": null,
         "responsableAsignado": {

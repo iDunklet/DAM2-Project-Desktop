@@ -468,6 +468,9 @@ namespace DAM2_Project_Desktop
         {
             flowPanelMiembros.Controls.Clear();
 
+            if (proyectoActual.miembrosProyecto == null)
+                proyectoActual.miembrosProyecto = new List<Usuario>();
+
             foreach (var usuario in proyectoActual.miembrosProyecto)
             {
                 Panel panelUsuario = new Panel
