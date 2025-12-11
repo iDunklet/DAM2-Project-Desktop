@@ -276,5 +276,10 @@ namespace DAM2_Project_Desktop
             Pantalla5 pantalla5 = new Pantalla5();
             pantalla5.Show();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
