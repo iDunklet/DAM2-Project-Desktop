@@ -536,6 +536,17 @@
         "password": "pass606",
         "userName": "JORTEGA",
         "nombreCompleto": "Javier Ortega"
+      },
+      {
+        "nombre": "Profesor",
+        "apellido1": "Informática",
+        "apellido2": null,
+        "fechaNacimiento": "1980-03-10T00:00:00",
+        "classe": "PROF",
+        "email": "prof.informatica@ies.es",
+        "password": "prof123",
+        "userName": "PINFORMÁTICA",
+        "nombreCompleto": "Profesor Informática"
       }
     ],
     "tareasProyecto": [
