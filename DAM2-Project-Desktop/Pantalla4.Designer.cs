@@ -134,6 +134,7 @@ namespace DAM2_Project_Desktop
             button5.BackgroundImageLayout = ImageLayout.Zoom;
             button5.Dock = DockStyle.Right;
             button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Montserrat Medium", 7.79999971F, FontStyle.Bold);
             button5.ForeColor = Color.Transparent;
             button5.Location = new Point(1251, 0);
             button5.Name = "button5";
@@ -203,21 +204,21 @@ namespace DAM2_Project_Desktop
             // labelId
             // 
             labelId.AutoSize = true;
-            labelId.Font = new Font("Segoe UI", 20F);
-            labelId.Location = new Point(69, 7);
+            labelId.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelId.Location = new Point(67, 0);
             labelId.Name = "labelId";
-            labelId.Size = new Size(110, 46);
+            labelId.Size = new Size(137, 52);
             labelId.TabIndex = 1;
             labelId.Text = "00000";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 20F);
-            label1.Location = new Point(8, 9);
+            label1.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(-1, -1);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(70, 39);
+            label1.Size = new Size(79, 52);
             label1.TabIndex = 0;
             label1.Text = "ID: ";
             // 
@@ -283,25 +284,26 @@ namespace DAM2_Project_Desktop
             // labelNombreProyecto
             // 
             labelNombreProyecto.AutoSize = true;
-            labelNombreProyecto.Font = new Font("Segoe UI", 20F);
-            labelNombreProyecto.Location = new Point(23, 7);
+            labelNombreProyecto.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNombreProyecto.Location = new Point(23, 1);
             labelNombreProyecto.Name = "labelNombreProyecto";
-            labelNombreProyecto.Size = new Size(286, 46);
+            labelNombreProyecto.Size = new Size(335, 52);
             labelNombreProyecto.TabIndex = 0;
             labelNombreProyecto.Text = "Nombre Proyecto";
             // 
             // labelFechaProyecto
             // 
             labelFechaProyecto.AutoSize = true;
-            labelFechaProyecto.Font = new Font("Segoe UI", 20F);
-            labelFechaProyecto.Location = new Point(11, 7);
+            labelFechaProyecto.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelFechaProyecto.Location = new Point(3, -1);
             labelFechaProyecto.Name = "labelFechaProyecto";
-            labelFechaProyecto.Size = new Size(107, 46);
+            labelFechaProyecto.Size = new Size(128, 52);
             labelFechaProyecto.TabIndex = 0;
             labelFechaProyecto.Text = "Fecha";
             // 
             // flowPanelMiembros
             // 
+            flowPanelMiembros.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             flowPanelMiembros.Location = new Point(23, 8);
             flowPanelMiembros.Name = "flowPanelMiembros";
             flowPanelMiembros.Padding = new Padding(0, 0, 10, 0);
@@ -340,6 +342,7 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.Controls.Add(button2, 0, 2);
             tableLayoutPanel1.Controls.Add(button3, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -357,7 +360,7 @@ namespace DAM2_Project_Desktop
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 15F);
+            button4.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
             button4.Location = new Point(15, 257);
             button4.Margin = new Padding(15, 4, 15, 4);
@@ -373,7 +376,7 @@ namespace DAM2_Project_Desktop
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.Dock = DockStyle.Fill;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 15F);
+            button1.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(15, 28);
             button1.Margin = new Padding(15, 4, 15, 4);
@@ -388,7 +391,7 @@ namespace DAM2_Project_Desktop
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.Dock = DockStyle.Fill;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 15F);
+            button2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
             button2.Location = new Point(15, 108);
             button2.Margin = new Padding(15, 4, 15, 4);
@@ -404,7 +407,7 @@ namespace DAM2_Project_Desktop
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.Dock = DockStyle.Fill;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 15F);
+            button3.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
             button3.Location = new Point(15, 185);
             button3.Margin = new Padding(15, 4, 15, 4);
@@ -420,9 +423,10 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla4";
-            Text = "Pantalla4";
+            Text = "Tasky";
             Load += Pantalla4_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

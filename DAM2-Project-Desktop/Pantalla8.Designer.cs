@@ -28,10 +28,10 @@ namespace DAM2_Project_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla8));
             splitContainer1 = new SplitContainer();
             buttonOut = new Button();
             pictureBoxTasky = new PictureBox();
@@ -92,7 +92,7 @@ namespace DAM2_Project_Desktop
             // 
             // buttonOut
             // 
-            buttonOut.BackgroundImage = (Image)resources.GetObject("buttonOut.BackgroundImage");
+            buttonOut.BackgroundImage = Properties.Resources._out;
             buttonOut.BackgroundImageLayout = ImageLayout.Zoom;
             buttonOut.Dock = DockStyle.Right;
             buttonOut.FlatStyle = FlatStyle.Flat;
@@ -129,6 +129,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel1.Controls.Add(buttonCrearUser);
             splitContainer2.Panel1.Controls.Add(button7);
+            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             // 
             // splitContainer2.Panel2
             // 
@@ -162,12 +163,13 @@ namespace DAM2_Project_Desktop
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
             buttonInicio.Location = new Point(3, 3);
             buttonInicio.Name = "buttonInicio";
             buttonInicio.Size = new Size(194, 59);
             buttonInicio.TabIndex = 3;
-            buttonInicio.Text = "Inicio";
+            buttonInicio.Text = "Proyectos";
             buttonInicio.UseVisualStyleBackColor = false;
             buttonInicio.Click += buttonInicio_Click_1;
             // 
@@ -175,6 +177,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
             buttonUsuarios.Location = new Point(3, 68);
             buttonUsuarios.Name = "buttonUsuarios";
@@ -188,6 +191,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonImportarJSON.Location = new Point(3, 133);
             buttonImportarJSON.Name = "buttonImportarJSON";
@@ -200,6 +204,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonExportarJSON.Location = new Point(3, 198);
             buttonExportarJSON.Name = "buttonExportarJSON";
@@ -338,6 +343,7 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla8";

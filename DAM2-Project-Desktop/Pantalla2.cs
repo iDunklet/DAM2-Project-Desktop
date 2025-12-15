@@ -192,7 +192,7 @@ namespace DAM2_Project_Desktop
         private void buttonOut_Click(object sender, EventArgs e)
         {
             ListadoDatosClasses.guardarDatos();
-            this.Close();
+            Application.Exit();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DAM2_Project_Desktop
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla3));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             buttonOut = new Button();
@@ -254,7 +254,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
             buttonCrearNuevoUsuario.Dock = DockStyle.Fill;
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 15F);
+            buttonCrearNuevoUsuario.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             buttonCrearNuevoUsuario.Location = new Point(15, 15);
             buttonCrearNuevoUsuario.Margin = new Padding(15);
@@ -412,7 +412,7 @@ namespace DAM2_Project_Desktop
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 15F);
+            button4.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
             button4.Location = new Point(15, 233);
             button4.Margin = new Padding(15, 4, 15, 4);
@@ -428,7 +428,7 @@ namespace DAM2_Project_Desktop
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.Dock = DockStyle.Fill;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 15F);
+            button1.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(15, 25);
             button1.Margin = new Padding(15, 4, 15, 4);
@@ -444,7 +444,7 @@ namespace DAM2_Project_Desktop
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.Dock = DockStyle.Fill;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 15F);
+            button2.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
             button2.Location = new Point(15, 99);
             button2.Margin = new Padding(15, 4, 15, 4);
@@ -460,7 +460,7 @@ namespace DAM2_Project_Desktop
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.Dock = DockStyle.Fill;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 15F);
+            button3.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
             button3.Location = new Point(15, 169);
             button3.Margin = new Padding(15, 4, 15, 4);
@@ -473,14 +473,14 @@ namespace DAM2_Project_Desktop
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Responsable, FechaInicio, FechaFin, Estado, Horas, colCheck });
             dataGridView1.Dock = DockStyle.Fill;
@@ -564,10 +564,11 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla3";
-            Text = "Pantalla3";
+            Text = "Tasky";
             Load += Pantalla3_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

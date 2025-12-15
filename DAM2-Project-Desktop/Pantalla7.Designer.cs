@@ -104,6 +104,7 @@ namespace DAM2_Project_Desktop
             buttonOut.BackgroundImageLayout = ImageLayout.Zoom;
             buttonOut.Dock = DockStyle.Right;
             buttonOut.FlatStyle = FlatStyle.Flat;
+            buttonOut.Font = new Font("Montserrat Medium", 9F, FontStyle.Bold);
             buttonOut.ForeColor = Color.Transparent;
             buttonOut.Location = new Point(1328, 0);
             buttonOut.Name = "buttonOut";
@@ -136,6 +137,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel1.Controls.Add(button7);
+            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             // 
             // splitContainer2.Panel2
             // 
@@ -160,7 +162,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel2.Controls.Add(textBoxConfigurarUsuarioApellido1);
             splitContainer2.Panel2.Controls.Add(label1);
             splitContainer2.Panel2.Controls.Add(textBoxConfigurarUsuarioName);
-            splitContainer2.Panel2.Font = new Font("Segoe UI", 15F);
+            splitContainer2.Panel2.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             splitContainer2.Panel2.ForeColor = Color.FromArgb(35, 78, 82);
             splitContainer2.Size = new Size(1424, 890);
             splitContainer2.SplitterDistance = 240;
@@ -176,6 +178,7 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.Controls.Add(buttonUsuarios, 0, 1);
             tableLayoutPanel1.Controls.Add(buttonImportarJSON, 0, 2);
             tableLayoutPanel1.Controls.Add(buttonExportarJSON, 0, 3);
+            tableLayoutPanel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             tableLayoutPanel1.Location = new Point(21, 14);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
@@ -190,12 +193,13 @@ namespace DAM2_Project_Desktop
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
             buttonInicio.Location = new Point(3, 3);
             buttonInicio.Name = "buttonInicio";
             buttonInicio.Size = new Size(194, 59);
             buttonInicio.TabIndex = 3;
-            buttonInicio.Text = "Inicio";
+            buttonInicio.Text = "Proyectos";
             buttonInicio.UseVisualStyleBackColor = false;
             buttonInicio.Click += buttonInicio_Click;
             // 
@@ -203,6 +207,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
             buttonUsuarios.Location = new Point(3, 68);
             buttonUsuarios.Name = "buttonUsuarios";
@@ -216,6 +221,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonImportarJSON.Location = new Point(3, 133);
             buttonImportarJSON.Name = "buttonImportarJSON";
@@ -229,6 +235,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonExportarJSON.Location = new Point(3, 198);
             buttonExportarJSON.Name = "buttonExportarJSON";
@@ -260,7 +267,7 @@ namespace DAM2_Project_Desktop
             // 
             // buttonConfigurarUsuarioGuardar
             // 
-            buttonConfigurarUsuarioGuardar.Font = new Font("Segoe UI", 18F);
+            buttonConfigurarUsuarioGuardar.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonConfigurarUsuarioGuardar.Location = new Point(401, 773);
             buttonConfigurarUsuarioGuardar.Margin = new Padding(3, 4, 3, 4);
             buttonConfigurarUsuarioGuardar.Name = "buttonConfigurarUsuarioGuardar";
@@ -273,20 +280,20 @@ namespace DAM2_Project_Desktop
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 20F);
+            label10.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(60, 64);
             label10.Name = "label10";
-            label10.Size = new Size(229, 46);
+            label10.Size = new Size(271, 52);
             label10.TabIndex = 22;
             label10.Text = "Datos Usuario";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 20F);
+            label8.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label8.Location = new Point(547, 627);
             label8.Name = "label8";
-            label8.Size = new Size(440, 46);
+            label8.Size = new Size(524, 52);
             label8.TabIndex = 21;
             label8.Text = "Confirmar nueva contraseña";
             // 
@@ -303,10 +310,10 @@ namespace DAM2_Project_Desktop
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 20F);
+            label9.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label9.Location = new Point(106, 627);
             label9.Name = "label9";
-            label9.Size = new Size(288, 46);
+            label9.Size = new Size(341, 52);
             label9.TabIndex = 19;
             label9.Text = "Nueva contraseña";
             // 
@@ -323,20 +330,20 @@ namespace DAM2_Project_Desktop
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 20F);
+            label7.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label7.Location = new Point(60, 553);
             label7.Name = "label7";
-            label7.Size = new Size(308, 46);
+            label7.Size = new Size(368, 52);
             label7.TabIndex = 17;
             label7.Text = "Cambio contraseña";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 20F);
+            label6.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label6.Location = new Point(790, 407);
             label6.Name = "label6";
-            label6.Size = new Size(98, 46);
+            label6.Size = new Size(117, 52);
             label6.TabIndex = 16;
             label6.Text = "Clase";
             // 
@@ -356,10 +363,10 @@ namespace DAM2_Project_Desktop
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 20F);
+            label5.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label5.Location = new Point(359, 407);
             label5.Name = "label5";
-            label5.Size = new Size(298, 46);
+            label5.Size = new Size(352, 52);
             label5.TabIndex = 14;
             label5.Text = "Correo Electronico";
             // 
@@ -390,20 +397,20 @@ namespace DAM2_Project_Desktop
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 20F);
+            label4.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label4.Location = new Point(790, 263);
             label4.Name = "label4";
-            label4.Size = new Size(335, 46);
+            label4.Size = new Size(398, 52);
             label4.TabIndex = 11;
             label4.Text = "Fecha de Nacimiento";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 20F);
+            label3.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label3.Location = new Point(359, 263);
             label3.Name = "label3";
-            label3.Size = new Size(171, 46);
+            label3.Size = new Size(198, 52);
             label3.TabIndex = 9;
             label3.Text = "Apellido 2";
             // 
@@ -423,10 +430,10 @@ namespace DAM2_Project_Desktop
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F);
+            label2.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label2.Location = new Point(790, 130);
             label2.Name = "label2";
-            label2.Size = new Size(171, 46);
+            label2.Size = new Size(191, 52);
             label2.TabIndex = 7;
             label2.Text = "Apellido 1";
             // 
@@ -446,10 +453,10 @@ namespace DAM2_Project_Desktop
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
+            label1.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             label1.Location = new Point(349, 130);
             label1.Name = "label1";
-            label1.Size = new Size(144, 46);
+            label1.Size = new Size(168, 52);
             label1.TabIndex = 5;
             label1.Text = "Nombre";
             // 
@@ -471,9 +478,10 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla7";
-            Text = "Pantalla7";
+            Text = "Tasky";
             Load += Pantalla7_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

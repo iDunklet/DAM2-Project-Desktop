@@ -110,6 +110,7 @@ namespace DAM2_Project_Desktop
             buttonOut.BackgroundImageLayout = ImageLayout.Zoom;
             buttonOut.Dock = DockStyle.Right;
             buttonOut.FlatStyle = FlatStyle.Flat;
+            buttonOut.Font = new Font("Montserrat Medium", 9F, FontStyle.Bold);
             buttonOut.ForeColor = Color.Transparent;
             buttonOut.Location = new Point(1328, 0);
             buttonOut.Name = "buttonOut";
@@ -151,6 +152,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
+            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             // 
             // splitContainer2.Panel2
             // 
@@ -207,6 +209,7 @@ namespace DAM2_Project_Desktop
             // 
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
             button4.Location = new Point(3, 198);
             button4.Name = "button4";
@@ -220,6 +223,7 @@ namespace DAM2_Project_Desktop
             // 
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
             button3.Location = new Point(3, 133);
             button3.Name = "button3";
@@ -233,6 +237,7 @@ namespace DAM2_Project_Desktop
             // 
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
             button2.Location = new Point(3, 68);
             button2.Name = "button2";
@@ -245,12 +250,13 @@ namespace DAM2_Project_Desktop
             // 
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
             button1.Size = new Size(194, 59);
             button1.TabIndex = 3;
-            button1.Text = "Inicio";
+            button1.Text = "Proyectos";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -280,17 +286,17 @@ namespace DAM2_Project_Desktop
             // labelDatosPersonales
             // 
             labelDatosPersonales.AutoSize = true;
-            labelDatosPersonales.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDatosPersonales.Font = new Font("Montserrat", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelDatosPersonales.ForeColor = Color.FromArgb(35, 78, 82);
             labelDatosPersonales.Location = new Point(93, 130);
             labelDatosPersonales.Name = "labelDatosPersonales";
-            labelDatosPersonales.Size = new Size(377, 52);
+            labelDatosPersonales.Size = new Size(425, 69);
             labelDatosPersonales.TabIndex = 22;
             labelDatosPersonales.Text = "Datos personales";
             // 
             // buttonCrearUsuario
             // 
-            buttonCrearUsuario.Font = new Font("Segoe UI", 18F);
+            buttonCrearUsuario.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonCrearUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             buttonCrearUsuario.Location = new Point(485, 754);
             buttonCrearUsuario.Margin = new Padding(3, 4, 3, 4);
@@ -328,11 +334,11 @@ namespace DAM2_Project_Desktop
             // labelRepContrasenya
             // 
             labelRepContrasenya.AutoSize = true;
-            labelRepContrasenya.Font = new Font("Segoe UI", 20F);
+            labelRepContrasenya.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRepContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
             labelRepContrasenya.Location = new Point(642, 599);
             labelRepContrasenya.Name = "labelRepContrasenya";
-            labelRepContrasenya.Size = new Size(193, 92);
+            labelRepContrasenya.Size = new Size(207, 94);
             labelRepContrasenya.TabIndex = 19;
             labelRepContrasenya.Text = "Repetir\r\n contraseña";
             labelRepContrasenya.TextAlign = ContentAlignment.TopCenter;
@@ -343,7 +349,7 @@ namespace DAM2_Project_Desktop
             textBoxContrasenya.BorderStyle = BorderStyle.FixedSingle;
             textBoxContrasenya.Font = new Font("Segoe UI", 15F);
             textBoxContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxContrasenya.Location = new Point(267, 643);
+            textBoxContrasenya.Location = new Point(293, 635);
             textBoxContrasenya.Margin = new Padding(3, 4, 3, 4);
             textBoxContrasenya.Name = "textBoxContrasenya";
             textBoxContrasenya.Size = new Size(343, 41);
@@ -360,33 +366,33 @@ namespace DAM2_Project_Desktop
             // labelContrasenya
             // 
             labelContrasenya.AutoSize = true;
-            labelContrasenya.Font = new Font("Segoe UI", 20F);
+            labelContrasenya.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelContrasenya.ForeColor = Color.FromArgb(35, 78, 82);
-            labelContrasenya.Location = new Point(106, 629);
+            labelContrasenya.Location = new Point(106, 632);
             labelContrasenya.Name = "labelContrasenya";
-            labelContrasenya.Size = new Size(189, 46);
+            labelContrasenya.Size = new Size(201, 47);
             labelContrasenya.TabIndex = 16;
             labelContrasenya.Text = "Contraseña";
             // 
             // labelUsuario
             // 
             labelUsuario.AutoSize = true;
-            labelUsuario.Font = new Font("Segoe UI", 20F);
+            labelUsuario.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             labelUsuario.Location = new Point(106, 552);
             labelUsuario.Name = "labelUsuario";
-            labelUsuario.Size = new Size(133, 46);
+            labelUsuario.Size = new Size(143, 47);
             labelUsuario.TabIndex = 15;
             labelUsuario.Text = "Usuario";
             // 
             // labelNuevoUsuario
             // 
             labelNuevoUsuario.AutoSize = true;
-            labelNuevoUsuario.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNuevoUsuario.Font = new Font("Montserrat", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             labelNuevoUsuario.Location = new Point(386, 36);
             labelNuevoUsuario.Name = "labelNuevoUsuario";
-            labelNuevoUsuario.Size = new Size(545, 69);
+            labelNuevoUsuario.Size = new Size(578, 94);
             labelNuevoUsuario.TabIndex = 13;
             labelNuevoUsuario.Text = "NUEVO USUARIO";
             labelNuevoUsuario.TextAlign = ContentAlignment.TopCenter;
@@ -397,7 +403,7 @@ namespace DAM2_Project_Desktop
             textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
             textBoxEmail.Font = new Font("Segoe UI", 15F);
             textBoxEmail.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxEmail.Location = new Point(267, 409);
+            textBoxEmail.Location = new Point(293, 404);
             textBoxEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(343, 41);
@@ -409,7 +415,7 @@ namespace DAM2_Project_Desktop
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.Font = new Font("Segoe UI", 15F);
             textBoxUsuario.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxUsuario.Location = new Point(267, 566);
+            textBoxUsuario.Location = new Point(293, 558);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(343, 41);
@@ -421,7 +427,7 @@ namespace DAM2_Project_Desktop
             textBoxApellido2.BorderStyle = BorderStyle.FixedSingle;
             textBoxApellido2.Font = new Font("Segoe UI", 15F);
             textBoxApellido2.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxApellido2.Location = new Point(267, 276);
+            textBoxApellido2.Location = new Point(293, 276);
             textBoxApellido2.Margin = new Padding(3, 4, 3, 4);
             textBoxApellido2.Name = "textBoxApellido2";
             textBoxApellido2.Size = new Size(343, 41);
@@ -433,7 +439,7 @@ namespace DAM2_Project_Desktop
             textBoxCurso.BorderStyle = BorderStyle.FixedSingle;
             textBoxCurso.Font = new Font("Segoe UI", 15F);
             textBoxCurso.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxCurso.Location = new Point(267, 337);
+            textBoxCurso.Location = new Point(293, 338);
             textBoxCurso.Margin = new Padding(3, 4, 3, 4);
             textBoxCurso.Name = "textBoxCurso";
             textBoxCurso.Size = new Size(343, 41);
@@ -445,7 +451,7 @@ namespace DAM2_Project_Desktop
             textBoxNombre.BorderStyle = BorderStyle.FixedSingle;
             textBoxNombre.Font = new Font("Segoe UI", 15F);
             textBoxNombre.ForeColor = Color.FromArgb(35, 78, 82);
-            textBoxNombre.Location = new Point(267, 208);
+            textBoxNombre.Location = new Point(293, 211);
             textBoxNombre.Margin = new Padding(3, 4, 3, 4);
             textBoxNombre.Name = "textBoxNombre";
             textBoxNombre.Size = new Size(343, 41);
@@ -454,33 +460,33 @@ namespace DAM2_Project_Desktop
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Segoe UI", 20F);
+            labelEmail.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelEmail.ForeColor = Color.FromArgb(35, 78, 82);
             labelEmail.Location = new Point(106, 404);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(99, 46);
+            labelEmail.Size = new Size(111, 47);
             labelEmail.TabIndex = 5;
             labelEmail.Text = "Email";
             // 
             // labelCurso
             // 
             labelCurso.AutoSize = true;
-            labelCurso.Font = new Font("Segoe UI", 20F);
+            labelCurso.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelCurso.ForeColor = Color.FromArgb(35, 78, 82);
             labelCurso.Location = new Point(106, 332);
             labelCurso.Name = "labelCurso";
-            labelCurso.Size = new Size(106, 46);
+            labelCurso.Size = new Size(111, 47);
             labelCurso.TabIndex = 4;
             labelCurso.Text = "Curso";
             // 
             // labelFechaNacimiento
             // 
             labelFechaNacimiento.AutoSize = true;
-            labelFechaNacimiento.Font = new Font("Segoe UI", 20F);
+            labelFechaNacimiento.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelFechaNacimiento.ForeColor = Color.FromArgb(35, 78, 82);
             labelFechaNacimiento.Location = new Point(642, 262);
             labelFechaNacimiento.Name = "labelFechaNacimiento";
-            labelFechaNacimiento.Size = new Size(186, 92);
+            labelFechaNacimiento.Size = new Size(201, 94);
             labelFechaNacimiento.TabIndex = 3;
             labelFechaNacimiento.Text = "Fecha \r\nnacimiento";
             labelFechaNacimiento.TextAlign = ContentAlignment.TopCenter;
@@ -488,33 +494,33 @@ namespace DAM2_Project_Desktop
             // labelApellido2
             // 
             labelApellido2.AutoSize = true;
-            labelApellido2.Font = new Font("Segoe UI", 20F);
+            labelApellido2.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelApellido2.ForeColor = Color.FromArgb(35, 78, 82);
             labelApellido2.Location = new Point(106, 273);
             labelApellido2.Name = "labelApellido2";
-            labelApellido2.Size = new Size(178, 46);
+            labelApellido2.Size = new Size(187, 47);
             labelApellido2.TabIndex = 2;
             labelApellido2.Text = "2r apellido";
             // 
             // labelApellido1
             // 
             labelApellido1.AutoSize = true;
-            labelApellido1.Font = new Font("Segoe UI", 20F);
+            labelApellido1.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelApellido1.ForeColor = Color.FromArgb(35, 78, 82);
             labelApellido1.Location = new Point(642, 200);
             labelApellido1.Name = "labelApellido1";
-            labelApellido1.Size = new Size(178, 46);
+            labelApellido1.Size = new Size(181, 47);
             labelApellido1.TabIndex = 1;
             labelApellido1.Text = "1r apellido";
             // 
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Font = new Font("Segoe UI", 20F);
+            labelNombre.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold);
             labelNombre.ForeColor = Color.FromArgb(35, 78, 82);
             labelNombre.Location = new Point(106, 200);
             labelNombre.Name = "labelNombre";
-            labelNombre.Size = new Size(144, 46);
+            labelNombre.Size = new Size(151, 47);
             labelNombre.TabIndex = 0;
             labelNombre.Text = "Nombre";
             // 
@@ -523,10 +529,11 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla5";
-            Text = "Pantalla5";
+            Text = "Tasky";
             Load += Pantalla5_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

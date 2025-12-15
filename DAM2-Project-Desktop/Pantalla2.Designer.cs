@@ -88,6 +88,7 @@ namespace DAM2_Project_Desktop
             button1.Dock = DockStyle.Right;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             button1.Location = new Point(1335, 0);
             button1.Name = "button1";
             button1.Size = new Size(87, 92);
@@ -154,12 +155,13 @@ namespace DAM2_Project_Desktop
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
             buttonInicio.Location = new Point(3, 3);
             buttonInicio.Name = "buttonInicio";
             buttonInicio.Size = new Size(194, 59);
             buttonInicio.TabIndex = 3;
-            buttonInicio.Text = "Inicio";
+            buttonInicio.Text = "Proyectos";
             buttonInicio.UseVisualStyleBackColor = false;
             buttonInicio.Click += buttonInicio_Click;
             // 
@@ -167,6 +169,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
+            buttonUsuarios.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
             buttonUsuarios.Location = new Point(3, 68);
             buttonUsuarios.Name = "buttonUsuarios";
@@ -180,6 +183,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonImportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonImportarJSON.Location = new Point(3, 133);
             buttonImportarJSON.Name = "buttonImportarJSON";
@@ -193,6 +197,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJSON.FlatStyle = FlatStyle.Flat;
+            buttonExportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
             buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonExportarJSON.Location = new Point(3, 198);
             buttonExportarJSON.Name = "buttonExportarJSON";
@@ -239,6 +244,7 @@ namespace DAM2_Project_Desktop
             controlProyectoPantalla21.Anchor = AnchorStyles.Left;
             controlProyectoPantalla21.BackColor = Color.White;
             controlProyectoPantalla21.BorderStyle = BorderStyle.FixedSingle;
+            controlProyectoPantalla21.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             controlProyectoPantalla21.Imagen = null;
             controlProyectoPantalla21.Location = new Point(0, 0);
             controlProyectoPantalla21.Margin = new Padding(0);
@@ -274,9 +280,10 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla2";
-            Text = "Form1";
+            Text = "Tasky";
             Load += Pantalla2_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
