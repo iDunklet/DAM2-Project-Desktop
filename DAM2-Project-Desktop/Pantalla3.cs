@@ -24,6 +24,7 @@ namespace DAM2_Project_Desktop
             dataGridView1.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
             dataGridView1.DataError += DataGridView1_DataError;
             pictureBox4.Click += PictureBox4_Click;
+            dataGridView1.EditingControlShowing += DataGridView1_EditingControlShowing;
 
             // Validar listas
             if (proyectoActual.tareasProyecto == null)
@@ -108,13 +109,8 @@ namespace DAM2_Project_Desktop
 
         private void ShowDatePicker(int rowIndex, int columnIndex)
         {
-            // Remover DateTimePicker anterior si existe
-            if (dtpActivo != null)
-            {
-                dataGridView1.Controls.Remove(dtpActivo);
-                dtpActivo.Dispose();
-                dtpActivo = null;
-            }
+            // Eliminar DateTimePicker previo
+            LimpiarDateTimePicker();
 
             var fila = dataGridView1.Rows[rowIndex];
 
@@ -132,7 +128,6 @@ namespace DAM2_Project_Desktop
             var tareaActual = (Tarea)fila.Tag;
             bool esFechaInicio = dataGridView1.Columns[columnIndex].Name == "FechaInicio";
 
-            // Obtener fecha inicial
             DateTime fechaActual = esFechaInicio
                 ? tareaActual.fechaInicioTarea ?? DateTime.Now
                 : tareaActual.fechaFinTarea ?? DateTime.Now;
@@ -153,58 +148,71 @@ namespace DAM2_Project_Desktop
             dataGridView1.Controls.Add(dtpActivo);
             dtpActivo.BringToFront();
 
-            // Variable para evitar doble ejecución
-            bool fechaGuardada = false;
+            bool fechaConfirmada = false;
 
-            // Evento CloseUp - cuando selecciona una fecha
-            dtpActivo.CloseUp += (s, e) =>
+            // ENTER = confirmar
+            dtpActivo.KeyDown += (s, e) =>
             {
-                if (fechaGuardada) return; // Evitar doble guardado
-                fechaGuardada = true;
-
-                try
+                if (e.KeyCode == Keys.Enter)
                 {
-                    DateTime fechaSeleccionada = ((DateTimePicker)s).Value;
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
 
-                    // Actualizar tarea
-                    if (esFechaInicio)
+                    if (!fechaConfirmada)
                     {
-                        tareaActual.fechaInicioTarea = fechaSeleccionada;
+                        fechaConfirmada = true;
+                        ConfirmarFecha(fila, tareaActual, columnIndex, esFechaInicio, dtpActivo);
                     }
-                    else
-                    {
-                        tareaActual.fechaFinTarea = fechaSeleccionada;
-                    }
-
-                    // Actualizar celda directamente
-                    fila.Cells[columnIndex].Value = fechaSeleccionada.ToShortDateString();
-
-                    // Guardar inmediatamente
-                    ListadoDatosClasses.guardarDatos();
                 }
-                catch (Exception ex)
+
+                // ESC = cancelar
+                if (e.KeyCode == Keys.Escape)
                 {
-                    MessageBox.Show($"Error al guardar fecha: {ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    // Remover el DateTimePicker
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     LimpiarDateTimePicker();
                 }
             };
 
-            // Evento LostFocus - cuando hace click fuera sin seleccionar
+            // Click fuera / selección con mouse
+            dtpActivo.CloseUp += (s, e) =>
+            {
+                if (fechaConfirmada) return;
+                fechaConfirmada = true;
+
+                ConfirmarFecha(fila, tareaActual, columnIndex, esFechaInicio, dtpActivo);
+            };
+
+            // Si pierde foco sin confirmar → cerrar
             dtpActivo.LostFocus += (s, e) =>
             {
-                if (!fechaGuardada)
-                {
+                if (!fechaConfirmada)
                     LimpiarDateTimePicker();
-                }
             };
 
             dtpActivo.Focus();
         }
+
+        private void ConfirmarFecha(
+             DataGridViewRow fila,
+             Tarea tareaActual,
+             int columnIndex,
+             bool esFechaInicio,
+             DateTimePicker picker)
+        {
+            DateTime fechaSeleccionada = picker.Value;
+
+            if (esFechaInicio)
+                tareaActual.fechaInicioTarea = fechaSeleccionada;
+            else
+                tareaActual.fechaFinTarea = fechaSeleccionada;
+
+            fila.Cells[columnIndex].Value = fechaSeleccionada.ToShortDateString();
+
+            ListadoDatosClasses.guardarDatos();
+            LimpiarDateTimePicker();
+        }
+
 
         // Método auxiliar para limpiar el DateTimePicker
         private void LimpiarDateTimePicker()
@@ -616,6 +624,29 @@ namespace DAM2_Project_Desktop
                 dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
             }
         }
+        private void DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            // Primero, desconectar cualquier manejador anterior
+            e.Control.KeyDown -= DataGridViewEditingControl_KeyDown;
+
+            // Conectar KeyDown solo al control actual
+            e.Control.KeyDown += DataGridViewEditingControl_KeyDown;
+        }
+
+        private void DataGridViewEditingControl_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                // Confirmar edición de la celda actual
+                if (dataGridView1.CurrentCell != null && dataGridView1.IsCurrentCellInEditMode)
+                {
+                    dataGridView1.EndEdit(); // Esto simula un "Aceptar"
+                }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             ListadoDatosClasses.guardarDatos();
@@ -660,6 +691,41 @@ namespace DAM2_Project_Desktop
 
             if (proyectoActualizado != null)
                 proyectoActual = proyectoActualizado;
+        }
+
+        private void EditingControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                // Confirmar edición
+                dataGridView1.EndEdit();
+
+                // Forzar guardado
+                if (dataGridView1.CurrentCell != null)
+                {
+                    var fila = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
+                    GuardarFila(fila);
+                }
+
+                // Mover a la siguiente celda
+                dataGridView1.CurrentCell = GetNextCell();
+            }
+        }
+        private DataGridViewCell GetNextCell()
+        {
+            int col = dataGridView1.CurrentCell.ColumnIndex;
+            int row = dataGridView1.CurrentCell.RowIndex;
+
+            if (col < dataGridView1.Columns.Count - 1)
+                return dataGridView1[col + 1, row];
+
+            if (row < dataGridView1.Rows.Count - 1)
+                return dataGridView1[0, row + 1];
+
+            return dataGridView1.CurrentCell;
         }
         private void DataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {

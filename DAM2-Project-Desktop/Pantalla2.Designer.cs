@@ -134,6 +134,7 @@ namespace DAM2_Project_Desktop
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.AutoSize = true;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
@@ -260,7 +261,7 @@ namespace DAM2_Project_Desktop
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(121, 35);
+            label2.Size = new Size(96, 28);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -271,7 +272,7 @@ namespace DAM2_Project_Desktop
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(158, 67);
+            label1.Size = new Size(125, 54);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 
