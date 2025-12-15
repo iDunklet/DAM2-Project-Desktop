@@ -50,7 +50,6 @@ namespace DAM2_Project_Desktop
             splitContainer6 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
             button4 = new Button();
-            button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
@@ -216,21 +215,21 @@ namespace DAM2_Project_Desktop
             // labelId
             // 
             labelId.AutoSize = true;
-            labelId.Font = new Font("Montserrat Medium", 20F, FontStyle.Bold);
-            labelId.Location = new Point(66, 3);
+            labelId.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold);
+            labelId.Location = new Point(64, 3);
             labelId.Name = "labelId";
-            labelId.Size = new Size(143, 53);
+            labelId.Size = new Size(94, 31);
             labelId.TabIndex = 1;
-            labelId.Text = "00000";
+            labelId.Text = "";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Montserrat Medium", 20F, FontStyle.Bold);
-            label1.Location = new Point(4, -1);
+            label1.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold);
+            label1.Location = new Point(4, 3);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(73, 53);
+            label1.Size = new Size(53, 31);
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
@@ -254,7 +253,7 @@ namespace DAM2_Project_Desktop
             buttonCrearNuevoUsuario.BackColor = Color.FromArgb(79, 209, 197);
             buttonCrearNuevoUsuario.Dock = DockStyle.Fill;
             buttonCrearNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            buttonCrearNuevoUsuario.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
+            buttonCrearNuevoUsuario.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold);
             buttonCrearNuevoUsuario.ForeColor = Color.FromArgb(35, 78, 82);
             buttonCrearNuevoUsuario.Location = new Point(15, 15);
             buttonCrearNuevoUsuario.Margin = new Padding(15);
@@ -315,20 +314,20 @@ namespace DAM2_Project_Desktop
             // labelNombreProyecto
             // 
             labelNombreProyecto.AutoSize = true;
-            labelNombreProyecto.Font = new Font("Montserrat Medium", 20F, FontStyle.Bold);
-            labelNombreProyecto.Location = new Point(22, 1);
+            labelNombreProyecto.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold);
+            labelNombreProyecto.Location = new Point(16, 3);
             labelNombreProyecto.Name = "labelNombreProyecto";
-            labelNombreProyecto.Size = new Size(343, 53);
+            labelNombreProyecto.Size = new Size(240, 31);
             labelNombreProyecto.TabIndex = 0;
             labelNombreProyecto.Text = "Nombre Proyecto";
             // 
             // labelFechaProyecto
             // 
             labelFechaProyecto.AutoSize = true;
-            labelFechaProyecto.Font = new Font("Montserrat Medium", 20F, FontStyle.Bold);
-            labelFechaProyecto.Location = new Point(3, -2);
+            labelFechaProyecto.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold);
+            labelFechaProyecto.Location = new Point(3, 3);
             labelFechaProyecto.Name = "labelFechaProyecto";
-            labelFechaProyecto.Size = new Size(132, 53);
+            labelFechaProyecto.Size = new Size(95, 31);
             labelFechaProyecto.TabIndex = 0;
             labelFechaProyecto.Text = "Fecha";
             // 
@@ -349,7 +348,7 @@ namespace DAM2_Project_Desktop
             label6.Location = new Point(34, 67);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(68, 20);
+            label6.Size = new Size(59, 17);
             label6.TabIndex = 7;
             label6.Text = "Agregar";
             // 
@@ -390,20 +389,19 @@ namespace DAM2_Project_Desktop
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(button4, 0, 4);
-            tableLayoutPanel1.Controls.Add(button1, 0, 1);
-            tableLayoutPanel1.Controls.Add(button2, 0, 2);
-            tableLayoutPanel1.Controls.Add(button3, 0, 3);
+            tableLayoutPanel1.Controls.Add(button4, 0, 3);
+            tableLayoutPanel1.Controls.Add(button2, 0, 1);
+            tableLayoutPanel1.Controls.Add(button3, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.98102975F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.1626015F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.620596F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.807588F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0271006F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 58.94309F));
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 3.298351F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.6446772F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.745128F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.0944538F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 65.21739F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(242, 738);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -412,44 +410,28 @@ namespace DAM2_Project_Desktop
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
+            button4.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
-            button4.Location = new Point(15, 233);
+            button4.Location = new Point(15, 177);
             button4.Margin = new Padding(15, 4, 15, 4);
             button4.Name = "button4";
-            button4.Size = new Size(212, 65);
+            button4.Size = new Size(212, 73);
             button4.TabIndex = 3;
             button4.Text = "Salir";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(79, 209, 197);
-            button1.Dock = DockStyle.Fill;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
-            button1.ForeColor = Color.FromArgb(35, 78, 82);
-            button1.Location = new Point(15, 25);
-            button1.Margin = new Padding(15, 4, 15, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(212, 66);
-            button1.TabIndex = 0;
-            button1.Text = "Crear nueva tarea";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.Dock = DockStyle.Fill;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
+            button2.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
-            button2.Location = new Point(15, 99);
+            button2.Location = new Point(15, 28);
             button2.Margin = new Padding(15, 4, 15, 4);
             button2.Name = "button2";
-            button2.Size = new Size(212, 62);
+            button2.Size = new Size(212, 70);
             button2.TabIndex = 1;
             button2.Text = "Cuadricula";
             button2.UseVisualStyleBackColor = false;
@@ -460,12 +442,12 @@ namespace DAM2_Project_Desktop
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.Dock = DockStyle.Fill;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
+            button3.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
-            button3.Location = new Point(15, 169);
+            button3.Location = new Point(15, 106);
             button3.Margin = new Padding(15, 4, 15, 4);
             button3.Name = "button3";
-            button3.Size = new Size(212, 56);
+            button3.Size = new Size(212, 63);
             button3.TabIndex = 2;
             button3.Text = "Diagrama";
             button3.UseVisualStyleBackColor = false;
@@ -514,7 +496,7 @@ namespace DAM2_Project_Desktop
             Responsable.Name = "Responsable";
             Responsable.Resizable = DataGridViewTriState.True;
             Responsable.SortMode = DataGridViewColumnSortMode.Automatic;
-            Responsable.Width = 108;
+            Responsable.Width = 88;
             // 
             // FechaInicio
             // 
@@ -522,7 +504,7 @@ namespace DAM2_Project_Desktop
             FechaInicio.HeaderText = "Fecha inicio";
             FechaInicio.MinimumWidth = 6;
             FechaInicio.Name = "FechaInicio";
-            FechaInicio.Width = 145;
+            FechaInicio.Width = 118;
             // 
             // FechaFin
             // 
@@ -530,7 +512,7 @@ namespace DAM2_Project_Desktop
             FechaFin.HeaderText = "Fecha final";
             FechaFin.MinimumWidth = 6;
             FechaFin.Name = "FechaFin";
-            FechaFin.Width = 136;
+            FechaFin.Width = 112;
             // 
             // Estado
             // 
@@ -540,7 +522,7 @@ namespace DAM2_Project_Desktop
             Estado.Name = "Estado";
             Estado.Resizable = DataGridViewTriState.True;
             Estado.SortMode = DataGridViewColumnSortMode.Automatic;
-            Estado.Width = 198;
+            Estado.Width = 164;
             // 
             // Horas
             // 
@@ -557,14 +539,14 @@ namespace DAM2_Project_Desktop
             colCheck.Name = "colCheck";
             colCheck.Resizable = DataGridViewTriState.True;
             colCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            colCheck.Width = 98;
+            colCheck.Width = 79;
             // 
             // Pantalla3
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
-            Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
+            Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MinimumSize = new Size(1440, 1018);
@@ -623,7 +605,6 @@ namespace DAM2_Project_Desktop
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonCrearNuevoUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
