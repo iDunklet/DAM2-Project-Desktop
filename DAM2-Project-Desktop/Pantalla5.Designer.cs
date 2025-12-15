@@ -152,7 +152,7 @@ namespace DAM2_Project_Desktop
             // 
             splitContainer2.Panel1.BackColor = Color.FromArgb(247, 250, 252);
             splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
-            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             // 
             // splitContainer2.Panel2
             // 
@@ -209,7 +209,7 @@ namespace DAM2_Project_Desktop
             // 
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            button4.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
             button4.Location = new Point(3, 198);
             button4.Name = "button4";
@@ -223,7 +223,7 @@ namespace DAM2_Project_Desktop
             // 
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            button3.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
             button3.Location = new Point(3, 133);
             button3.Name = "button3";
@@ -237,7 +237,7 @@ namespace DAM2_Project_Desktop
             // 
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            button2.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
             button2.Location = new Point(3, 68);
             button2.Name = "button2";
@@ -250,7 +250,7 @@ namespace DAM2_Project_Desktop
             // 
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            button1.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
