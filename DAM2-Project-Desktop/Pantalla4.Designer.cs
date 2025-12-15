@@ -332,7 +332,6 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 55.14905F));
             tableLayoutPanel1.Size = new Size(242, 738);
             tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // button4
             // 
