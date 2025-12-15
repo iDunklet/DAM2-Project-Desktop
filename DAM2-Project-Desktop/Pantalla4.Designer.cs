@@ -294,7 +294,7 @@ namespace DAM2_Project_Desktop
             // labelFechaProyecto
             // 
             labelFechaProyecto.AutoSize = true;
-            labelFechaProyecto.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelFechaProyecto.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             labelFechaProyecto.Location = new Point(3, -1);
             labelFechaProyecto.Name = "labelFechaProyecto";
             labelFechaProyecto.Size = new Size(128, 52);
@@ -342,7 +342,7 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.Controls.Add(button2, 0, 2);
             tableLayoutPanel1.Controls.Add(button3, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            tableLayoutPanel1.Font = new Font("Montserrat Medium", 19.7999973F, FontStyle.Bold);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -360,7 +360,7 @@ namespace DAM2_Project_Desktop
             button4.BackColor = Color.FromArgb(79, 209, 197);
             button4.Dock = DockStyle.Fill;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
+            button4.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.FromArgb(35, 78, 82);
             button4.Location = new Point(15, 257);
             button4.Margin = new Padding(15, 4, 15, 4);
@@ -376,7 +376,7 @@ namespace DAM2_Project_Desktop
             button1.BackColor = Color.FromArgb(79, 209, 197);
             button1.Dock = DockStyle.Fill;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
+            button1.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(35, 78, 82);
             button1.Location = new Point(15, 28);
             button1.Margin = new Padding(15, 4, 15, 4);
@@ -391,7 +391,7 @@ namespace DAM2_Project_Desktop
             button2.BackColor = Color.FromArgb(79, 209, 197);
             button2.Dock = DockStyle.Fill;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            button2.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(35, 78, 82);
             button2.Location = new Point(15, 108);
             button2.Margin = new Padding(15, 4, 15, 4);
@@ -407,7 +407,7 @@ namespace DAM2_Project_Desktop
             button3.BackColor = Color.FromArgb(79, 209, 197);
             button3.Dock = DockStyle.Fill;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Montserrat Medium", 10.8F, FontStyle.Bold);
+            button3.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(35, 78, 82);
             button3.Location = new Point(15, 185);
             button3.Margin = new Padding(15, 4, 15, 4);

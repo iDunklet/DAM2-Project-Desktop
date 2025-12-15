@@ -120,6 +120,7 @@ namespace DAM2_Project_Desktop
             splitContainer2.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel1.Controls.Add(buttonCrearProyecto);
             splitContainer2.Panel1.Controls.Add(button7);
+            splitContainer2.Panel1.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             // 
             // splitContainer2.Panel2
             // 
@@ -142,6 +143,7 @@ namespace DAM2_Project_Desktop
             tableLayoutPanel1.Controls.Add(buttonUsuarios, 0, 1);
             tableLayoutPanel1.Controls.Add(buttonImportarJSON, 0, 2);
             tableLayoutPanel1.Controls.Add(buttonExportarJSON, 0, 3);
+            tableLayoutPanel1.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(21, 17);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
@@ -156,7 +158,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonInicio.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
             buttonInicio.Location = new Point(3, 3);
             buttonInicio.Name = "buttonInicio";
@@ -170,7 +172,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonUsuarios.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
             buttonUsuarios.Location = new Point(3, 68);
             buttonUsuarios.Name = "buttonUsuarios";
@@ -184,7 +186,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonImportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonImportarJSON.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonImportarJSON.Location = new Point(3, 133);
             buttonImportarJSON.Name = "buttonImportarJSON";
@@ -198,7 +200,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonExportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonExportarJSON.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonExportarJSON.Location = new Point(3, 198);
             buttonExportarJSON.Name = "buttonExportarJSON";
@@ -211,7 +213,7 @@ namespace DAM2_Project_Desktop
             // buttonCrearProyecto
             // 
             buttonCrearProyecto.BackColor = Color.FromArgb(35, 78, 82);
-            buttonCrearProyecto.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonCrearProyecto.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonCrearProyecto.ForeColor = Color.White;
             buttonCrearProyecto.Location = new Point(0, 818);
             buttonCrearProyecto.Name = "buttonCrearProyecto";
@@ -261,7 +263,7 @@ namespace DAM2_Project_Desktop
             label2.ForeColor = Color.FromArgb(35, 78, 82);
             label2.Location = new Point(62, 128);
             label2.Name = "label2";
-            label2.Size = new Size(96, 28);
+            label2.Size = new Size(121, 35);
             label2.TabIndex = 1;
             label2.Text = "Recientes";
             // 
@@ -272,7 +274,7 @@ namespace DAM2_Project_Desktop
             label1.ForeColor = Color.FromArgb(35, 78, 82);
             label1.Location = new Point(62, 41);
             label1.Name = "label1";
-            label1.Size = new Size(125, 54);
+            label1.Size = new Size(158, 67);
             label1.TabIndex = 0;
             label1.Text = "Inicio";
             // 

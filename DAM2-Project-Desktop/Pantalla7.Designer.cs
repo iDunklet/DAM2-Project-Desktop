@@ -193,7 +193,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonInicio.BackColor = Color.FromArgb(79, 209, 197);
             buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonInicio.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonInicio.ForeColor = Color.FromArgb(35, 78, 82);
             buttonInicio.Location = new Point(3, 3);
             buttonInicio.Name = "buttonInicio";
@@ -207,7 +207,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonUsuarios.BackColor = Color.FromArgb(79, 209, 197);
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
-            buttonUsuarios.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonUsuarios.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonUsuarios.ForeColor = Color.FromArgb(35, 78, 82);
             buttonUsuarios.Location = new Point(3, 68);
             buttonUsuarios.Name = "buttonUsuarios";
@@ -221,7 +221,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonImportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonImportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonImportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonImportarJSON.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonImportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonImportarJSON.Location = new Point(3, 133);
             buttonImportarJSON.Name = "buttonImportarJSON";
@@ -235,7 +235,7 @@ namespace DAM2_Project_Desktop
             // 
             buttonExportarJSON.BackColor = Color.FromArgb(79, 209, 197);
             buttonExportarJSON.FlatStyle = FlatStyle.Flat;
-            buttonExportarJSON.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold);
+            buttonExportarJSON.Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             buttonExportarJSON.ForeColor = Color.FromArgb(35, 78, 82);
             buttonExportarJSON.Location = new Point(3, 198);
             buttonExportarJSON.Name = "buttonExportarJSON";
@@ -478,6 +478,7 @@ namespace DAM2_Project_Desktop
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1424, 985);
             Controls.Add(splitContainer1);
+            Font = new Font("Montserrat Medium", 13.7999992F, FontStyle.Bold);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1440, 1018);
             Name = "Pantalla7";
