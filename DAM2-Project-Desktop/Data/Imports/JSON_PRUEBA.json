@@ -62,27 +62,27 @@
     ],
     "tareasProyecto": [
       {
-        "nombreTarea": "Diseño UI/UX",
-        "descripcionTarea": "",
+        "nombreTarea": "Diseño UI/UXgrg",
+        "descripcionTarea": "dqwbfw",
         "fechaInicioTarea": "2024-01-15T00:00:00",
         "fechaFinTarea": null,
         "responsableAsignado": {
-          "nombre": "Carlos",
-          "apellido1": "Ruiz",
-          "apellido2": "De la Fuente",
-          "fechaNacimiento": "2003-03-01T00:00:00",
+          "nombre": "María",
+          "apellido1": "Fernández",
+          "apellido2": null,
+          "fechaNacimiento": "2001-08-12T00:00:00",
           "classe": "DAM2",
-          "email": "carlos.ruiz@ies.es",
-          "password": "pass456",
-          "userName": "CRUIZ",
-          "nombreCompleto": "Carlos Ruiz"
+          "email": "maria.fernandez@ies.es",
+          "password": "pass789",
+          "userName": "MFERNÁNDEZ",
+          "nombreCompleto": "María Fernández"
         },
         "statusTarea": "In Progress",
         "horas": 2
       },
       {
         "nombreTarea": "Desarrollo Backend",
-        "descripcionTarea": null,
+        "descripcionTarea": "",
         "fechaInicioTarea": "2024-01-20T00:00:00",
         "fechaFinTarea": null,
         "responsableAsignado": {
@@ -774,6 +774,25 @@
         },
         "statusTarea": "Done",
         "horas": 4
+      },
+      {
+        "nombreTarea": "rgehgierio",
+        "descripcionTarea": "",
+        "fechaInicioTarea": "2025-12-10T00:00:00",
+        "fechaFinTarea": "2025-12-18T00:00:00",
+        "responsableAsignado": {
+          "nombre": "Tutor",
+          "apellido1": "DAM2",
+          "apellido2": null,
+          "fechaNacimiento": "1975-08-22T00:00:00",
+          "classe": "PROF",
+          "email": "tutor.dam2@ies.es",
+          "password": "tutor456",
+          "userName": "TDAM2",
+          "nombreCompleto": "Tutor DAM2"
+        },
+        "statusTarea": "Pending",
+        "horas": null
       }
     ]
   },
