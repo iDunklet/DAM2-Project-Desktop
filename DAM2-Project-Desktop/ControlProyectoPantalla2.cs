@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
+﻿using System.Runtime.InteropServices;
 
 namespace DAM2_Project_Desktop
 {
@@ -92,8 +89,8 @@ namespace DAM2_Project_Desktop
         {
             base.OnPaint(e);
 
-            int grosor = 3; 
-            Color colorBorde = Color.DarkOliveGreen; 
+            int grosor = 3;
+            Color colorBorde = Color.DarkOliveGreen;
 
             using (Pen pen = new Pen(colorBorde, grosor))
             {

@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
-
 namespace DAM2_Project_Desktop
 {
     public partial class Pantalla2 : Form

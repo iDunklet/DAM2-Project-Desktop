@@ -1,15 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using LiveCharts;
-using LiveCharts.WinForms;
-using LiveCharts.Wpf;
 
 namespace DAM2_Project_Desktop
 {
@@ -17,9 +7,8 @@ namespace DAM2_Project_Desktop
     {
         private ComboBox comboUsuariosDAM2;
         private Proyecto proyectoActual;
-        private Usuario usuarioFiltrado = null; // Usuario actualmente seleccionado para filtrar
-        private Panel panelUsuarioSeleccionado = null; // Panel del usuario seleccionado
-
+        private Usuario usuarioFiltrado = null;
+        private Panel panelUsuarioSeleccionado = null; 
 
         public Pantalla4(Proyecto project)
         {

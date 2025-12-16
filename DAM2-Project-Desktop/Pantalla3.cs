@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-
 namespace DAM2_Project_Desktop
 {
     public partial class Pantalla3 : Form

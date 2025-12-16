@@ -1,11 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel; // Necesario para BindingList<T>
-using System.IO;
-using System.Diagnostics;
-using System.Windows.Forms;
-using System.Linq; // Necesario para .ToList()
+﻿using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace DAM2_Project_Desktop
 {

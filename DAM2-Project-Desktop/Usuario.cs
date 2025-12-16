@@ -1,20 +1,17 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Text.Json.Serialization;
-using DAM2_Project_Desktop.Properties;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
 namespace DAM2_Project_Desktop
 {
     public class Usuario
     {
         //atributos
-        public string nombre {  get; set; }
+        public string nombre { get; set; }
         public string apellido1 { get; set; }
         public string? apellido2 { get; set; }
         public DateTime fechaNacimiento { get; set; }
-        public string classe { get; set;}
-        public string email { get; set;}
+        public string classe { get; set; }
+        public string email { get; set; }
         public string password { get; set; }
 
         public string userName { get; set; }
@@ -24,7 +21,7 @@ namespace DAM2_Project_Desktop
         //artivutos ocultos
         [Newtonsoft.Json.JsonIgnore]
         public Bitmap? miniImgPerfil { get; set; }
-        
+
         [Newtonsoft.Json.JsonIgnore]
         public string apellidoCompleto
         {
@@ -87,7 +84,7 @@ namespace DAM2_Project_Desktop
 
         //metodos 
 
-        public string setApellidoCompleto() 
+        public string setApellidoCompleto()
         { return this.apellido1 + " " + this.apellido2; }
 
         public string nombreCompleto => $"{nombre} {apellido1}".Trim();

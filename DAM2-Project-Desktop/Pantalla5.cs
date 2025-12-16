@@ -1,8 +1,3 @@
-using System;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-
 namespace DAM2_Project_Desktop
 {
     public partial class Pantalla5 : Form

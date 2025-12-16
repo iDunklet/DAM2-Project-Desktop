@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-public static class Dimencions
+﻿public static class Dimencions
 {
     public class Dimencion
     {
@@ -75,9 +71,9 @@ public static class Dimencions
     }
     public static void ApplyMinimum(Form form)
     {
-        
+
     }
-     
+
     public static void ScaleAndCenterHeader(
     PictureBox pictureBoxHeader,
     SplitContainer splitContainer,
@@ -85,7 +81,7 @@ public static class Dimencions
     Form form,
     int formBaseHeight = 1024)
     {
-       
+
         float scaleY = (float)form.ClientSize.Height / formBaseHeight;
         int newSplitterDistance = (int)(originalSplitterDistance * scaleY);
         splitContainer.SplitterDistance = newSplitterDistance;
